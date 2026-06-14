@@ -11,6 +11,7 @@ bad submission is caught in CI instead of at install time.
 """
 import json
 import os
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -61,9 +62,29 @@ def validate(f, m, errors):
             fail(errors, f, f"language '{lang}' must be python or js")
 
 
+def git_note(relpath):
+    """Last commit (hash, date, subject) that touched a node file, for the in-app changelog."""
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%h%x1f%cs%x1f%s", "--", relpath],
+            cwd=ROOT, capture_output=True, text=True, timeout=15,
+        )
+        line = out.stdout.strip()
+        if line:
+            p = line.split("\x1f")
+            return {"commit": p[0] if len(p) > 0 else "", "updated": p[1] if len(p) > 1 else "", "note": p[2] if len(p) > 2 else ""}
+    except Exception:
+        pass
+    return {"commit": "", "updated": "", "note": ""}
+
+
 def entry(f, m):
     has_sub = isinstance(m.get("subgraph"), dict)
+    g = git_note(f"nodes/{f}")
     return {
+        "commit": g["commit"],
+        "updated": g["updated"],
+        "note": g["note"],
         "typeId": m.get("typeId", ""),
         "title": m.get("title", m.get("typeId", "")),
         "subtitle": m.get("subtitle", "community"),

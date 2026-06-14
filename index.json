@@ -2,6 +2,9 @@
   "count": 64,
   "nodes": [
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.base",
       "title": "Base Converter",
       "subtitle": "community",
@@ -68,6 +71,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.eval",
       "title": "Calculator",
       "subtitle": "community",
@@ -134,6 +140,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.percent",
       "title": "Percentage",
       "subtitle": "community",
@@ -200,6 +209,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.roman",
       "title": "Roman Numerals",
       "subtitle": "community",
@@ -266,6 +278,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.temp",
       "title": "Temperature Convert",
       "subtitle": "community",
@@ -332,6 +347,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.tip",
       "title": "Tip Split",
       "subtitle": "community",
@@ -398,6 +416,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.units",
       "title": "Unit Convert",
       "subtitle": "community",
@@ -464,6 +485,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "community.coinflip",
       "title": "Coin Flip",
       "subtitle": "community",
@@ -521,6 +545,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.8ball",
       "title": "Magic 8-Ball",
       "subtitle": "community",
@@ -587,6 +614,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.choose",
       "title": "Choose One",
       "subtitle": "community",
@@ -653,6 +683,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.clap",
       "title": "Clap Emojify",
       "subtitle": "community",
@@ -719,6 +752,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.compliment",
       "title": "Compliment",
       "subtitle": "community",
@@ -785,6 +821,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.decide",
       "title": "Decide",
       "subtitle": "community",
@@ -851,6 +890,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.dice",
       "title": "Dice Roller",
       "subtitle": "community",
@@ -917,6 +959,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.fortune",
       "title": "Fortune Cookie",
       "subtitle": "community",
@@ -975,6 +1020,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.insult",
       "title": "Playful Insult",
       "subtitle": "community",
@@ -1041,6 +1089,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.rps",
       "title": "Rock Paper Scissors",
       "subtitle": "community",
@@ -1107,6 +1158,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.color",
       "title": "Random Color",
       "subtitle": "community",
@@ -1165,6 +1219,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.lorem",
       "title": "Lorem Ipsum",
       "subtitle": "community",
@@ -1237,6 +1294,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.password",
       "title": "Password Generator",
       "subtitle": "community",
@@ -1309,6 +1369,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.uuid",
       "title": "UUID",
       "subtitle": "community",
@@ -1367,6 +1430,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.api",
       "title": "GitHub: API",
       "subtitle": "community",
@@ -1460,6 +1526,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.comment",
       "title": "GitHub: Comment",
       "subtitle": "community",
@@ -1555,6 +1624,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.issue.create",
       "title": "GitHub: Create Issue",
       "subtitle": "community",
@@ -1654,6 +1726,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.pr.list",
       "title": "GitHub: List PRs",
       "subtitle": "community",
@@ -1765,6 +1840,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.run",
       "title": "GitHub: Run gh",
       "subtitle": "community",
@@ -1832,6 +1910,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "hash.md5",
       "title": "MD5 Hash",
       "subtitle": "community",
@@ -1898,6 +1979,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "hash.sha256",
       "title": "SHA-256 Hash",
       "subtitle": "community",
@@ -1964,6 +2048,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "irc.rainbow",
       "title": "Rainbow Text",
       "subtitle": "community",
@@ -2030,6 +2117,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "irc.stripcolor",
       "title": "Strip IRC Colors",
       "subtitle": "community",
@@ -2096,6 +2186,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "morse.decode",
       "title": "Morse to Text",
       "subtitle": "community",
@@ -2162,6 +2255,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "morse.encode",
       "title": "Text to Morse",
       "subtitle": "community",
@@ -2228,6 +2324,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "num.words",
       "title": "Number to Words",
       "subtitle": "community",
@@ -2294,6 +2393,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "subflow.shout",
       "title": "Shout",
       "subtitle": "subflow",
@@ -2417,6 +2519,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.b64decode",
       "title": "Base64 Decode",
       "subtitle": "community",
@@ -2483,6 +2588,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.b64encode",
       "title": "Base64 Encode",
       "subtitle": "community",
@@ -2549,6 +2657,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.leet",
       "title": "Leetspeak",
       "subtitle": "community",
@@ -2615,6 +2726,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.mock",
       "title": "Mock Case",
       "subtitle": "community",
@@ -2681,6 +2795,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.rot13",
       "title": "ROT13",
       "subtitle": "community",
@@ -2747,6 +2864,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.slug",
       "title": "Slugify",
       "subtitle": "community",
@@ -2813,6 +2933,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.urldecode",
       "title": "URL Decode",
       "subtitle": "community",
@@ -2879,6 +3002,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.urlencode",
       "title": "URL Encode",
       "subtitle": "community",
@@ -2945,6 +3071,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.age",
       "title": "Age Calculator",
       "subtitle": "community",
@@ -3011,6 +3140,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.now",
       "title": "Current Time",
       "subtitle": "community",
@@ -3069,6 +3201,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.tz",
       "title": "Time in Timezone",
       "subtitle": "community",
@@ -3135,6 +3270,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.unix",
       "title": "Unix Timestamp",
       "subtitle": "community",
@@ -3201,6 +3339,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.until",
       "title": "Countdown",
       "subtitle": "community",
@@ -3267,6 +3408,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.editfile",
       "title": "Edit File",
       "subtitle": "community",
@@ -3377,6 +3521,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.listfiles",
       "title": "List Files",
       "subtitle": "community",
@@ -3459,6 +3606,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.readfile",
       "title": "Read File",
       "subtitle": "community",
@@ -3541,6 +3691,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.run",
       "title": "Run Command",
       "subtitle": "community",
@@ -3631,6 +3784,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.search",
       "title": "Search Files (grep)",
       "subtitle": "community",
@@ -3727,6 +3883,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.advice",
       "title": "Advice",
       "subtitle": "community",
@@ -3785,6 +3944,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.crypto",
       "title": "Crypto Price",
       "subtitle": "community",
@@ -3851,6 +4013,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.currency",
       "title": "Currency Convert",
       "subtitle": "community",
@@ -3917,6 +4082,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.dadjoke",
       "title": "Dad Joke",
       "subtitle": "community",
@@ -3975,6 +4143,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.define",
       "title": "Dictionary",
       "subtitle": "community",
@@ -4041,6 +4212,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.fact",
       "title": "Random Fact",
       "subtitle": "community",
@@ -4099,6 +4273,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.iplookup",
       "title": "IP / Host Lookup",
       "subtitle": "community",
@@ -4165,6 +4342,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.shorten",
       "title": "Shorten URL",
       "subtitle": "community",
@@ -4231,6 +4411,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.urban",
       "title": "Urban Dictionary",
       "subtitle": "community",
@@ -4297,6 +4480,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.weather",
       "title": "Weather",
       "subtitle": "community",
@@ -4363,6 +4549,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.wiki",
       "title": "Wikipedia",
       "subtitle": "community",
@@ -4429,6 +4618,9 @@
       }
     },
     {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "community.wordcount",
       "title": "Word Count",
       "subtitle": "community",
