@@ -1,0 +1,40 @@
+{
+  "typeId": "num.gcd",
+  "title": "GCD & LCM",
+  "subtitle": "community",
+  "icon": "➗",
+  "category": "Data",
+  "description": "Computes the greatest common divisor and least common multiple of two integers.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "a",
+      "kind": "Number"
+    },
+    {
+      "name": "b",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "gcd",
+      "kind": "Number"
+    },
+    {
+      "name": "lcm",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, json, math\ntry:\n    a = int(float((os.environ.get('A') or os.environ.get('INPUT') or '0').strip()))\n    b = int(float((os.environ.get('B') or '0').strip()))\n    g = math.gcd(a, b)\n    l = 0 if g == 0 else abs(a * b) // g\n    print(json.dumps({'gcd': g, 'lcm': l}))\nexcept Exception as e:\n    print(json.dumps({'gcd': 0, 'lcm': 0, 'error': str(e)}))\n"
+}

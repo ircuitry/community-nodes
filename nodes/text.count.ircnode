@@ -1,0 +1,40 @@
+{
+  "typeId": "text.count",
+  "title": "Count Characters & Words",
+  "subtitle": "community",
+  "icon": "🔢",
+  "category": "Data",
+  "description": "Counts characters, words, lines, and sentences in text.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "chars",
+      "kind": "Number"
+    },
+    {
+      "name": "words",
+      "kind": "Number"
+    },
+    {
+      "name": "lines",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    chars = len(text)\n    words = len(text.split())\n    lines = len(text.splitlines()) if text else 0\n    print(json.dumps({'chars': chars, 'words': words, 'lines': lines}))\nexcept Exception as e:\n    print(json.dumps({'chars': 0, 'words': 0, 'lines': 0, 'error': str(e)}))\n"
+}

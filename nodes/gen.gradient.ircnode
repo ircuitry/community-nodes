@@ -1,0 +1,43 @@
+{
+  "typeId": "gen.gradient",
+  "title": "Color Gradient",
+  "subtitle": "community",
+  "icon": "🌈",
+  "category": "Data",
+  "description": "Generates a list of hex colors interpolated between two endpoints.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "start",
+      "kind": "Text"
+    },
+    {
+      "name": "end",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "steps",
+      "label": "Steps",
+      "type": "Int",
+      "default": 5
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, re\n\ndef parse_hex(s, fallback):\n    s = (s or '').strip().lstrip('#')\n    if not re.fullmatch(r'[0-9a-fA-F]{6}', s or ''):\n        if re.fullmatch(r'[0-9a-fA-F]{3}', s or ''):\n            s = ''.join(c * 2 for c in s)\n        else:\n            s = fallback\n    return int(s[0:2], 16), int(s[2:4], 16), int(s[4:6], 16)\n\ntry:\n    start = os.environ.get('START') or os.environ.get('INPUT') or '#ff0000'\n    end = os.environ.get('END') or '#0000ff'\n    try:\n        steps = int(os.environ.get('STEPS') or 5)\n    except Exception:\n        steps = 5\n    if steps < 2:\n        steps = 2\n    sr, sg, sb = parse_hex(start, 'ff0000')\n    er, eg, eb = parse_hex(end, '0000ff')\n    colors = []\n    for i in range(steps):\n        t = i / (steps - 1)\n        r = round(sr + (er - sr) * t)\n        g = round(sg + (eg - sg) * t)\n        b = round(sb + (eb - sb) * t)\n        colors.append('#{:02x}{:02x}{:02x}'.format(r, g, b))\n    print(' '.join(colors))\nexcept Exception as e:\n    print('error: {}'.format(e))\n"
+}

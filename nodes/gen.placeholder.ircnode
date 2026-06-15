@@ -1,0 +1,47 @@
+{
+  "typeId": "gen.placeholder",
+  "title": "Placeholder Image URL",
+  "subtitle": "community",
+  "icon": "🖼️",
+  "category": "Data",
+  "description": "Builds a placeholder image URL of a given size with optional centered text.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "url",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "width",
+      "label": "Width",
+      "type": "Int",
+      "default": 300
+    },
+    {
+      "key": "height",
+      "label": "Height",
+      "type": "Int",
+      "default": 200
+    },
+    {
+      "key": "text",
+      "label": "Text",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, urllib.parse\n\ndef as_int(name, fallback):\n    raw = (os.environ.get(name) or '').strip()\n    try:\n        n = int(float(raw))\n    except Exception:\n        n = fallback\n    if n < 1:\n        n = fallback\n    return n\n\ntry:\n    w = as_int('WIDTH', 300)\n    h = as_int('HEIGHT', 200)\n    text = (os.environ.get('TEXT') or '').strip()\n    url = 'https://placehold.co/%dx%d' % (w, h)\n    if text:\n        url += '?text=' + urllib.parse.quote(text)\n    print(url)\nexcept Exception as e:\n    print('https://placehold.co/300x200')\n"
+}

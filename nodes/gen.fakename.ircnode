@@ -1,0 +1,40 @@
+{
+  "typeId": "gen.fakename",
+  "title": "Fake Name",
+  "subtitle": "community",
+  "icon": "🧑",
+  "category": "Data",
+  "description": "Generates a random fake full name from built-in word lists.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "gender",
+      "label": "Gender",
+      "type": "Choice",
+      "default": "any",
+      "choices": [
+        "any",
+        "male",
+        "female"
+      ]
+    }
+  ],
+  "language": "python",
+  "timeout": 6,
+  "code": "import os, random\ntry:\n    male = ['James','John','Robert','Michael','William','David','Daniel','Matthew','Andrew','Thomas','Joseph','Charles','Henry','George','Edward']\n    female = ['Mary','Patricia','Jennifer','Linda','Elizabeth','Susan','Jessica','Sarah','Karen','Emily','Margaret','Anna','Laura','Grace','Alice']\n    surnames = ['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Wilson','Anderson','Taylor','Thomas','Moore','Clark','Walker']\n    gender = (os.environ.get('GENDER') or 'any').strip().lower()\n    if gender == 'male':\n        first_pool = male\n    elif gender == 'female':\n        first_pool = female\n    else:\n        first_pool = male + female\n    name = random.choice(first_pool) + ' ' + random.choice(surnames)\n    print(name)\nexcept Exception as e:\n    print('Fake Name')\n"
+}

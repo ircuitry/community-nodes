@@ -1,0 +1,9 @@
+{
+  "typeId": "text.wrap", "title": "Word Wrap", "subtitle": "community", "icon": "📐", "category": "Data",
+  "description": "Wraps text to a maximum line width, breaking on spaces.",
+  "inputs": [ {"name":"","kind":"Exec"}, {"name":"text","kind":"Text"} ],
+  "outputs": [ {"name":"then","kind":"Exec"}, {"name":"result","kind":"Text"} ],
+  "params": [ {"key":"width","label":"Width","type":"Int","default":"40"} ],
+  "language": "python", "timeout": 6,
+  "code": "import os, textwrap\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\ntry:\n    w=max(1,min(400,int(os.environ.get('WIDTH') or '40')))\nexcept Exception:\n    w=40\nprint('\\n'.join(textwrap.wrap(t, w)) or t)\n"
+}

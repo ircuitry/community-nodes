@@ -1,10 +1,10 @@
 {
-  "count": 64,
+  "count": 114,
   "nodes": [
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.base",
       "title": "Base Converter",
       "subtitle": "community",
@@ -71,9 +71,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.eval",
       "title": "Calculator",
       "subtitle": "community",
@@ -140,9 +140,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.percent",
       "title": "Percentage",
       "subtitle": "community",
@@ -209,9 +209,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.roman",
       "title": "Roman Numerals",
       "subtitle": "community",
@@ -278,9 +278,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.temp",
       "title": "Temperature Convert",
       "subtitle": "community",
@@ -347,9 +347,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.tip",
       "title": "Tip Split",
       "subtitle": "community",
@@ -416,9 +416,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.units",
       "title": "Unit Convert",
       "subtitle": "community",
@@ -485,9 +485,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "community.coinflip",
       "title": "Coin Flip",
       "subtitle": "community",
@@ -545,9 +545,657 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "date.countdown",
+      "title": "Countdown",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "⏳",
+      "iconImage": null,
+      "description": "Counts the days, hours, and minutes until a future date or time.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "target",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        },
+        {
+          "name": "days",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/date.countdown.ircnode",
+      "manifest": {
+        "typeId": "date.countdown",
+        "title": "Countdown",
+        "subtitle": "community",
+        "icon": "⏳",
+        "category": "Data",
+        "description": "Counts the days, hours, and minutes until a future date or time.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "target",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          },
+          {
+            "name": "days",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, json\nfrom datetime import datetime\n\ns = (os.environ.get('TARGET') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    if not s:\n        raise ValueError('no target date given')\n    t = datetime.fromisoformat(s)\n    now = datetime.now(t.tzinfo) if t.tzinfo else datetime.now()\n    delta = t - now\n    total = int(delta.total_seconds())\n    if total <= 0:\n        result = 'that date is in the past'\n        days = 0\n    else:\n        days = total // 86400\n        hours = (total % 86400) // 3600\n        minutes = (total % 3600) // 60\n        result = f'{days} days, {hours} hours, {minutes} minutes'\n    print(json.dumps({'result': result, 'days': days}))\nexcept Exception as e:\n    print(json.dumps({'result': f'invalid date: {e} (use ISO like 2026-12-31 or 2026-12-31T18:00)', 'days': 0}))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "date.weekday",
+      "title": "Day of Week",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📅",
+      "iconImage": null,
+      "description": "Returns the weekday name for a given date.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "date",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/date.weekday.ircnode",
+      "manifest": {
+        "typeId": "date.weekday",
+        "title": "Day of Week",
+        "subtitle": "community",
+        "icon": "📅",
+        "category": "Data",
+        "description": "Returns the weekday name for a given date.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "date",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\nfrom datetime import datetime, date\ns=(os.environ.get('DATE') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    d=datetime.strptime(s,'%Y-%m-%d').date() if s else date.today()\n    print(d.strftime('%A'))\nexcept Exception:\n    print('give a date as YYYY-MM-DD (e.g. 2026-06-15)')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "enc.base32",
+      "title": "Base32 Encode/Decode",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔐",
+      "iconImage": null,
+      "description": "Encodes or decodes text using Base32.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "encode",
+          "choices": [
+            "encode",
+            "decode"
+          ]
+        }
+      ],
+      "file": "nodes/enc.base32.ircnode",
+      "manifest": {
+        "typeId": "enc.base32",
+        "title": "Base32 Encode/Decode",
+        "subtitle": "community",
+        "icon": "🔐",
+        "category": "Data",
+        "description": "Encodes or decodes text using Base32.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "encode",
+            "choices": [
+              "encode",
+              "decode"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, base64\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nmode = (os.environ.get('MODE') or 'encode').strip().lower()\ntry:\n    if mode == 'decode':\n        result = base64.b32decode(text.strip().encode()).decode('utf-8', 'replace')\n    else:\n        result = base64.b32encode(text.encode()).decode()\n    print(result)\nexcept Exception as e:\n    print(f'error: {e}')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "enc.binary",
+      "title": "Binary Encode/Decode",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "💾",
+      "iconImage": null,
+      "description": "Converts text to or from a space-separated 8-bit binary string.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "encode",
+          "choices": [
+            "encode",
+            "decode"
+          ]
+        }
+      ],
+      "file": "nodes/enc.binary.ircnode",
+      "manifest": {
+        "typeId": "enc.binary",
+        "title": "Binary Encode/Decode",
+        "subtitle": "community",
+        "icon": "💾",
+        "category": "Data",
+        "description": "Converts text to or from a space-separated 8-bit binary string.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "encode",
+            "choices": [
+              "encode",
+              "decode"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\nmode = (os.environ.get('MODE') or 'encode').strip().lower()\ntry:\n    if mode == 'decode':\n        groups = text.split()\n        chars = [chr(int(g, 2)) for g in groups if g]\n        print(''.join(chars))\n    else:\n        print(' '.join(format(ord(c), '08b') for c in text))\nexcept Exception as e:\n    print(f'error: {e}')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "enc.crc32",
+      "title": "CRC32 Checksum",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🧮",
+      "iconImage": null,
+      "description": "Computes the CRC32 checksum of text as a hex string.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/enc.crc32.ircnode",
+      "manifest": {
+        "typeId": "enc.crc32",
+        "title": "CRC32 Checksum",
+        "subtitle": "community",
+        "icon": "🧮",
+        "category": "Data",
+        "description": "Computes the CRC32 checksum of text as a hex string.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "\nimport os, zlib\ntext = os.environ.get('TEXT')\nif text is None:\n    text = os.environ.get('INPUT')\nif text is None:\n    text = os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\ntry:\n    checksum = zlib.crc32(text.encode('utf-8')) & 0xffffffff\n    print(f'{checksum:08x}')\nexcept Exception as e:\n    print(f'error: {e}')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "enc.hex",
+      "title": "Hex Encode/Decode",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔣",
+      "iconImage": null,
+      "description": "Converts text to or from its hexadecimal byte representation.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "encode",
+          "choices": [
+            "encode",
+            "decode"
+          ]
+        }
+      ],
+      "file": "nodes/enc.hex.ircnode",
+      "manifest": {
+        "typeId": "enc.hex",
+        "title": "Hex Encode/Decode",
+        "subtitle": "community",
+        "icon": "🔣",
+        "category": "Data",
+        "description": "Converts text to or from its hexadecimal byte representation.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "encode",
+            "choices": [
+              "encode",
+              "decode"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntext=(os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or '')\nmode=(os.environ.get('MODE') or 'encode').strip().lower()\ntry:\n    if mode=='decode':\n        h=''.join(text.split()).strip()\n        print(bytes.fromhex(h).decode('utf-8'))\n    else:\n        print(text.encode('utf-8').hex())\nexcept Exception as e:\n    print('error: '+str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "enc.htmlescape",
+      "title": "HTML Escape/Unescape",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🌐",
+      "iconImage": null,
+      "description": "Escapes or unescapes HTML entities in text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "escape",
+          "choices": [
+            "escape",
+            "unescape"
+          ]
+        }
+      ],
+      "file": "nodes/enc.htmlescape.ircnode",
+      "manifest": {
+        "typeId": "enc.htmlescape",
+        "title": "HTML Escape/Unescape",
+        "subtitle": "community",
+        "icon": "🌐",
+        "category": "Data",
+        "description": "Escapes or unescapes HTML entities in text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "escape",
+            "choices": [
+              "escape",
+              "unescape"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, html\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\nmode = (os.environ.get('MODE') or 'escape').strip().lower()\ntry:\n    if mode == 'unescape':\n        result = html.unescape(text)\n    else:\n        result = html.escape(text)\n    print(result)\nexcept Exception as e:\n    print(f'error: {e}')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "enc.morsebeep",
+      "title": "Morse Visualizer",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📡",
+      "iconImage": null,
+      "description": "Renders text as visual Morse code using block and dot symbols.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/enc.morsebeep.ircnode",
+      "manifest": {
+        "typeId": "enc.morsebeep",
+        "title": "Morse Visualizer",
+        "subtitle": "community",
+        "icon": "📡",
+        "category": "Data",
+        "description": "Renders text as visual Morse code using block and dot symbols.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\nM={'A':'.-','B':'-...','C':'-.-.','D':'-..','E':'.','F':'..-.','G':'--.','H':'....','I':'..','J':'.---','K':'-.-','L':'.-..','M':'--','N':'-.','O':'---','P':'.--.','Q':'--.-','R':'.-.','S':'...','T':'-','U':'..-','V':'...-','W':'.--','X':'-..-','Y':'-.--','Z':'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.'}\ntry:\n    s=(os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or '').strip().upper()\n    if not s:\n        print('give some text to render as Morse')\n    else:\n        words=[]\n        for w in s.split():\n            letters=[]\n            for ch in w:\n                code=M.get(ch)\n                if code:\n                    letters.append(code.replace('.','\\u2022').replace('-','\\u2588'))\n            if letters:\n                words.append(' '.join(letters))\n        print(' / '.join(words) if words else 'no Morse-able characters found')\nexcept Exception as e:\n    print('error rendering Morse: '+str(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.8ball",
       "title": "Magic 8-Ball",
       "subtitle": "community",
@@ -614,9 +1262,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.choose",
       "title": "Choose One",
       "subtitle": "community",
@@ -683,9 +1331,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.clap",
       "title": "Clap Emojify",
       "subtitle": "community",
@@ -752,9 +1400,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.compliment",
       "title": "Compliment",
       "subtitle": "community",
@@ -821,9 +1469,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.decide",
       "title": "Decide",
       "subtitle": "community",
@@ -890,9 +1538,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.dice",
       "title": "Dice Roller",
       "subtitle": "community",
@@ -959,9 +1607,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.fortune",
       "title": "Fortune Cookie",
       "subtitle": "community",
@@ -1020,9 +1668,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.insult",
       "title": "Playful Insult",
       "subtitle": "community",
@@ -1089,9 +1737,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.rps",
       "title": "Rock Paper Scissors",
       "subtitle": "community",
@@ -1158,9 +1806,78 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.ascii",
+      "title": "ASCII Banner",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🅰️",
+      "iconImage": null,
+      "description": "Renders short text as a multi-line ASCII art banner.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/gen.ascii.ircnode",
+      "manifest": {
+        "typeId": "gen.ascii",
+        "title": "ASCII Banner",
+        "subtitle": "community",
+        "icon": "🅰️",
+        "category": "Data",
+        "description": "Renders short text as a multi-line ASCII art banner.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\n\nFONT = {\n    'A': ['  #  ', ' # # ', '#####', '#   #', '#   #'],\n    'B': ['#### ', '#   #', '#### ', '#   #', '#### '],\n    'C': [' ####', '#    ', '#    ', '#    ', ' ####'],\n    'D': ['#### ', '#   #', '#   #', '#   #', '#### '],\n    'E': ['#####', '#    ', '#### ', '#    ', '#####'],\n    'F': ['#####', '#    ', '#### ', '#    ', '#    '],\n    'G': [' ####', '#    ', '#  ##', '#   #', ' ####'],\n    'H': ['#   #', '#   #', '#####', '#   #', '#   #'],\n    'I': ['#####', '  #  ', '  #  ', '  #  ', '#####'],\n    'J': ['#####', '   # ', '   # ', '#  # ', ' ##  '],\n    'K': ['#   #', '#  # ', '###  ', '#  # ', '#   #'],\n    'L': ['#    ', '#    ', '#    ', '#    ', '#####'],\n    'M': ['#   #', '## ##', '# # #', '#   #', '#   #'],\n    'N': ['#   #', '##  #', '# # #', '#  ##', '#   #'],\n    'O': [' ### ', '#   #', '#   #', '#   #', ' ### '],\n    'P': ['#### ', '#   #', '#### ', '#    ', '#    '],\n    'Q': [' ### ', '#   #', '# # #', '#  # ', ' ## #'],\n    'R': ['#### ', '#   #', '#### ', '#  # ', '#   #'],\n    'S': [' ####', '#    ', ' ### ', '    #', '#### '],\n    'T': ['#####', '  #  ', '  #  ', '  #  ', '  #  '],\n    'U': ['#   #', '#   #', '#   #', '#   #', ' ### '],\n    'V': ['#   #', '#   #', '#   #', ' # # ', '  #  '],\n    'W': ['#   #', '#   #', '# # #', '## ##', '#   #'],\n    'X': ['#   #', ' # # ', '  #  ', ' # # ', '#   #'],\n    'Y': ['#   #', ' # # ', '  #  ', '  #  ', '  #  '],\n    'Z': ['#####', '   # ', '  #  ', ' #   ', '#####'],\n    '0': [' ### ', '#  ##', '# # #', '##  #', ' ### '],\n    '1': ['  #  ', ' ##  ', '  #  ', '  #  ', '#####'],\n    '2': [' ### ', '#   #', '   # ', '  #  ', '#####'],\n    '3': ['#### ', '    #', ' ### ', '    #', '#### '],\n    '4': ['#  # ', '#  # ', '#####', '   # ', '   # '],\n    '5': ['#####', '#    ', '#### ', '    #', '#### '],\n    '6': [' ### ', '#    ', '#### ', '#   #', ' ### '],\n    '7': ['#####', '   # ', '  #  ', ' #   ', ' #   '],\n    '8': [' ### ', '#   #', ' ### ', '#   #', ' ### '],\n    '9': [' ### ', '#   #', ' ####', '    #', ' ### '],\n    ' ': ['     ', '     ', '     ', '     ', '     '],\n    '!': ['  #  ', '  #  ', '  #  ', '     ', '  #  '],\n    '?': [' ### ', '#   #', '  ## ', '     ', '  #  '],\n    '.': ['     ', '     ', '     ', '     ', '  #  '],\n    '-': ['     ', '     ', '#####', '     ', '     ']\n}\n\ntry:\n    text = (os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or '')\n    text = text.strip().upper()[:10]\n    if not text:\n        print('(give some text to render)')\n    else:\n        rows = ['', '', '', '', '']\n        for ch in text:\n            glyph = FONT.get(ch, FONT['?'])\n            for i in range(5):\n                rows[i] += glyph[i] + ' '\n        print('\\n'.join(r.rstrip() for r in rows))\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.color",
       "title": "Random Color",
       "subtitle": "community",
@@ -1219,9 +1936,262 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.dice",
+      "title": "Dice Notation Roller",
+      "subtitle": "community",
+      "category": "Action",
+      "icon": "🎲",
+      "iconImage": null,
+      "description": "Rolls dice using standard NdM+K notation and shows the breakdown.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "notation",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "total",
+          "kind": "Number"
+        },
+        {
+          "name": "rolls",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/gen.dice.ircnode",
+      "manifest": {
+        "typeId": "gen.dice",
+        "title": "Dice Notation Roller",
+        "subtitle": "community",
+        "icon": "🎲",
+        "category": "Action",
+        "description": "Rolls dice using standard NdM+K notation and shows the breakdown.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "notation",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "total",
+            "kind": "Number"
+          },
+          {
+            "name": "rolls",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re, json, random\nspec=(os.environ.get('NOTATION') or os.environ.get('INPUT') or os.environ.get('ARGS') or '1d20').strip().lower()\ntry:\n    m=re.fullmatch(r'(\\d*)d(\\d+)([+-]\\d+)?', spec.replace(' ',''))\n    if not m:\n        raise ValueError('use NdM+K notation, e.g. 1d20, 3d6+2, 2d8-1')\n    count=int(m.group(1) or '1')\n    sides=int(m.group(2))\n    mod=int(m.group(3) or '0')\n    if count < 1 or count > 1000 or sides < 1:\n        raise ValueError('count must be 1-1000 and sides >= 1')\n    rolls=[random.randint(1, sides) for _ in range(count)]\n    total=sum(rolls)+mod\n    print(json.dumps({'total': total, 'rolls': rolls}))\nexcept Exception as e:\n    print(json.dumps({'total': 0, 'rolls': str(e)}))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.fakename",
+      "title": "Fake Name",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🧑",
+      "iconImage": null,
+      "description": "Generates a random fake full name from built-in word lists.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "Choice",
+          "default": "any",
+          "choices": [
+            "any",
+            "male",
+            "female"
+          ]
+        }
+      ],
+      "file": "nodes/gen.fakename.ircnode",
+      "manifest": {
+        "typeId": "gen.fakename",
+        "title": "Fake Name",
+        "subtitle": "community",
+        "icon": "🧑",
+        "category": "Data",
+        "description": "Generates a random fake full name from built-in word lists.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "gender",
+            "label": "Gender",
+            "type": "Choice",
+            "default": "any",
+            "choices": [
+              "any",
+              "male",
+              "female"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os, random\ntry:\n    male = ['James','John','Robert','Michael','William','David','Daniel','Matthew','Andrew','Thomas','Joseph','Charles','Henry','George','Edward']\n    female = ['Mary','Patricia','Jennifer','Linda','Elizabeth','Susan','Jessica','Sarah','Karen','Emily','Margaret','Anna','Laura','Grace','Alice']\n    surnames = ['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Wilson','Anderson','Taylor','Thomas','Moore','Clark','Walker']\n    gender = (os.environ.get('GENDER') or 'any').strip().lower()\n    if gender == 'male':\n        first_pool = male\n    elif gender == 'female':\n        first_pool = female\n    else:\n        first_pool = male + female\n    name = random.choice(first_pool) + ' ' + random.choice(surnames)\n    print(name)\nexcept Exception as e:\n    print('Fake Name')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.gradient",
+      "title": "Color Gradient",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🌈",
+      "iconImage": null,
+      "description": "Generates a list of hex colors interpolated between two endpoints.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "start",
+          "kind": "Text"
+        },
+        {
+          "name": "end",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "steps",
+          "label": "Steps",
+          "type": "Int",
+          "default": 5
+        }
+      ],
+      "file": "nodes/gen.gradient.ircnode",
+      "manifest": {
+        "typeId": "gen.gradient",
+        "title": "Color Gradient",
+        "subtitle": "community",
+        "icon": "🌈",
+        "category": "Data",
+        "description": "Generates a list of hex colors interpolated between two endpoints.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "start",
+            "kind": "Text"
+          },
+          {
+            "name": "end",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "steps",
+            "label": "Steps",
+            "type": "Int",
+            "default": 5
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re\n\ndef parse_hex(s, fallback):\n    s = (s or '').strip().lstrip('#')\n    if not re.fullmatch(r'[0-9a-fA-F]{6}', s or ''):\n        if re.fullmatch(r'[0-9a-fA-F]{3}', s or ''):\n            s = ''.join(c * 2 for c in s)\n        else:\n            s = fallback\n    return int(s[0:2], 16), int(s[2:4], 16), int(s[4:6], 16)\n\ntry:\n    start = os.environ.get('START') or os.environ.get('INPUT') or '#ff0000'\n    end = os.environ.get('END') or '#0000ff'\n    try:\n        steps = int(os.environ.get('STEPS') or 5)\n    except Exception:\n        steps = 5\n    if steps < 2:\n        steps = 2\n    sr, sg, sb = parse_hex(start, 'ff0000')\n    er, eg, eb = parse_hex(end, '0000ff')\n    colors = []\n    for i in range(steps):\n        t = i / (steps - 1)\n        r = round(sr + (er - sr) * t)\n        g = round(sg + (eg - sg) * t)\n        b = round(sb + (eb - sb) * t)\n        colors.append('#{:02x}{:02x}{:02x}'.format(r, g, b))\n    print(' '.join(colors))\nexcept Exception as e:\n    print('error: {}'.format(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.lorem",
       "title": "Lorem Ipsum",
       "subtitle": "community",
@@ -1294,9 +2264,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.password",
       "title": "Password Generator",
       "subtitle": "community",
@@ -1369,9 +2339,276 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.placeholder",
+      "title": "Placeholder Image URL",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🖼️",
+      "iconImage": null,
+      "description": "Builds a placeholder image URL of a given size with optional centered text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "url",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "width",
+          "label": "Width",
+          "type": "Int",
+          "default": 300
+        },
+        {
+          "key": "height",
+          "label": "Height",
+          "type": "Int",
+          "default": 200
+        },
+        {
+          "key": "text",
+          "label": "Text",
+          "type": "Text",
+          "default": ""
+        }
+      ],
+      "file": "nodes/gen.placeholder.ircnode",
+      "manifest": {
+        "typeId": "gen.placeholder",
+        "title": "Placeholder Image URL",
+        "subtitle": "community",
+        "icon": "🖼️",
+        "category": "Data",
+        "description": "Builds a placeholder image URL of a given size with optional centered text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "url",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "width",
+            "label": "Width",
+            "type": "Int",
+            "default": 300
+          },
+          {
+            "key": "height",
+            "label": "Height",
+            "type": "Int",
+            "default": 200
+          },
+          {
+            "key": "text",
+            "label": "Text",
+            "type": "Text",
+            "default": ""
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, urllib.parse\n\ndef as_int(name, fallback):\n    raw = (os.environ.get(name) or '').strip()\n    try:\n        n = int(float(raw))\n    except Exception:\n        n = fallback\n    if n < 1:\n        n = fallback\n    return n\n\ntry:\n    w = as_int('WIDTH', 300)\n    h = as_int('HEIGHT', 200)\n    text = (os.environ.get('TEXT') or '').strip()\n    url = 'https://placehold.co/%dx%d' % (w, h)\n    if text:\n        url += '?text=' + urllib.parse.quote(text)\n    print(url)\nexcept Exception as e:\n    print('https://placehold.co/300x200')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.qrurl",
+      "title": "QR Code URL",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📱",
+      "iconImage": null,
+      "description": "Builds a QR code image URL for any text or link.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "url",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "size",
+          "label": "Size",
+          "type": "Int",
+          "default": 200
+        }
+      ],
+      "file": "nodes/gen.qrurl.ircnode",
+      "manifest": {
+        "typeId": "gen.qrurl",
+        "title": "QR Code URL",
+        "subtitle": "community",
+        "icon": "📱",
+        "category": "Data",
+        "description": "Builds a QR code image URL for any text or link.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "url",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "size",
+            "label": "Size",
+            "type": "Int",
+            "default": 200
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\nfrom urllib.parse import quote\ntry:\n    text=(os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or '').strip()\n    try:\n        size=int((os.environ.get('SIZE') or '200').strip())\n    except Exception:\n        size=200\n    if size<10:\n        size=10\n    if size>1000:\n        size=1000\n    if not text:\n        print('give some text or a link to encode')\n    else:\n        encoded=quote(text, safe='')\n        print(f'https://api.qrserver.com/v1/create-qr-code/?size={size}x{size}&data={encoded}')\nexcept Exception as e:\n    print(f'error: {e}')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "gen.username",
+      "title": "Username Generator",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🏷️",
+      "iconImage": null,
+      "description": "Generates a random handle from an adjective, noun, and optional number.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "style",
+          "label": "Style",
+          "type": "Choice",
+          "default": "plain",
+          "choices": [
+            "snake",
+            "camel",
+            "plain"
+          ]
+        }
+      ],
+      "file": "nodes/gen.username.ircnode",
+      "manifest": {
+        "typeId": "gen.username",
+        "title": "Username Generator",
+        "subtitle": "community",
+        "icon": "🏷️",
+        "category": "Data",
+        "description": "Generates a random handle from an adjective, noun, and optional number.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "style",
+            "label": "Style",
+            "type": "Choice",
+            "default": "plain",
+            "choices": [
+              "snake",
+              "camel",
+              "plain"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os, random\ntry:\n    adjectives = ['brave','calm','clever','cosmic','crimson','daring','electric','fuzzy','golden','happy','icy','jolly','lucky','mighty','neon','quiet','rapid','silent','sly','swift','velvet','witty','zesty','noble','wild']\n    nouns = ['otter','falcon','badger','comet','ember','glacier','hawk','jaguar','koala','lynx','meteor','nebula','orca','panther','quokka','raven','sparrow','tiger','viper','walrus','yak','zebra','phoenix','dragon','wolf']\n    style = (os.environ.get('STYLE') or 'plain').strip().lower()\n    adj = random.choice(adjectives)\n    noun = random.choice(nouns)\n    num = random.randint(0, 99)\n    if style == 'snake':\n        name = f'{adj}_{noun}_{num}'\n    elif style == 'camel':\n        name = f'{adj}{noun.capitalize()}{num}'\n    else:\n        name = f'{adj}{noun}{num}'\n    print(name)\nexcept Exception as e:\n    print(f'user{random.randint(1000, 9999)}')\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.uuid",
       "title": "UUID",
       "subtitle": "community",
@@ -1430,9 +2667,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.api",
       "title": "GitHub: API",
       "subtitle": "community",
@@ -1526,9 +2763,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.comment",
       "title": "GitHub: Comment",
       "subtitle": "community",
@@ -1624,9 +2861,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.issue.create",
       "title": "GitHub: Create Issue",
       "subtitle": "community",
@@ -1726,9 +2963,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.pr.list",
       "title": "GitHub: List PRs",
       "subtitle": "community",
@@ -1840,9 +3077,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.run",
       "title": "GitHub: Run gh",
       "subtitle": "community",
@@ -1910,9 +3147,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "hash.md5",
       "title": "MD5 Hash",
       "subtitle": "community",
@@ -1979,9 +3216,78 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "hash.sha1",
+      "title": "SHA1 Hash",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔑",
+      "iconImage": null,
+      "description": "Computes the SHA1 hash of input text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/hash.sha1.ircnode",
+      "manifest": {
+        "typeId": "hash.sha1",
+        "title": "SHA1 Hash",
+        "subtitle": "community",
+        "icon": "🔑",
+        "category": "Data",
+        "description": "Computes the SHA1 hash of input text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, hashlib\ntry:\n    text = os.environ.get('TEXT')\n    if text is None:\n        text = os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    print(hashlib.sha1(text.encode('utf-8')).hexdigest())\nexcept Exception as e:\n    print(f'error: {e}')\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "hash.sha256",
       "title": "SHA-256 Hash",
       "subtitle": "community",
@@ -2048,9 +3354,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "irc.rainbow",
       "title": "Rainbow Text",
       "subtitle": "community",
@@ -2117,9 +3423,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "irc.stripcolor",
       "title": "Strip IRC Colors",
       "subtitle": "community",
@@ -2186,9 +3492,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "morse.decode",
       "title": "Morse to Text",
       "subtitle": "community",
@@ -2255,9 +3561,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "morse.encode",
       "title": "Text to Morse",
       "subtitle": "community",
@@ -2324,9 +3630,891 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.basen",
+      "title": "Number Base Converter",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔢",
+      "iconImage": null,
+      "description": "Converts a number between arbitrary bases from 2 to 36.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "value",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "from_base",
+          "label": "From base",
+          "type": "Int",
+          "default": 10
+        },
+        {
+          "key": "to_base",
+          "label": "To base",
+          "type": "Int",
+          "default": 2
+        }
+      ],
+      "file": "nodes/num.basen.ircnode",
+      "manifest": {
+        "typeId": "num.basen",
+        "title": "Number Base Converter",
+        "subtitle": "community",
+        "icon": "🔢",
+        "category": "Data",
+        "description": "Converts a number between arbitrary bases from 2 to 36.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "value",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "from_base",
+            "label": "From base",
+            "type": "Int",
+            "default": 10
+          },
+          {
+            "key": "to_base",
+            "label": "To base",
+            "type": "Int",
+            "default": 2
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\n\ndef out(msg):\n    print(msg)\n\nvalue = (os.environ.get('VALUE') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\n\ntry:\n    from_base = int(os.environ.get('FROM_BASE') or '10')\nexcept Exception:\n    from_base = 10\ntry:\n    to_base = int(os.environ.get('TO_BASE') or '2')\nexcept Exception:\n    to_base = 2\n\nif not value:\n    out('give a number to convert')\nelif not (2 <= from_base <= 36) or not (2 <= to_base <= 36):\n    out('bases must be between 2 and 36')\nelse:\n    try:\n        n = int(value, from_base)\n    except Exception:\n        out('invalid digit for base ' + str(from_base) + ': ' + value)\n    else:\n        digits = '0123456789abcdefghijklmnopqrstuvwxyz'\n        neg = n < 0\n        m = abs(n)\n        if m == 0:\n            res = '0'\n        else:\n            buf = []\n            while m > 0:\n                buf.append(digits[m % to_base])\n                m //= to_base\n            res = ''.join(reversed(buf))\n        if neg:\n            res = '-' + res\n        out(res)\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.clamp",
+      "title": "Clamp Number",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🗜️",
+      "iconImage": null,
+      "description": "Constrains a number to fall within a minimum and maximum range.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "value",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Number"
+        }
+      ],
+      "params": [
+        {
+          "key": "min",
+          "label": "Min",
+          "type": "Text",
+          "default": "0"
+        },
+        {
+          "key": "max",
+          "label": "Max",
+          "type": "Text",
+          "default": "100"
+        }
+      ],
+      "file": "nodes/num.clamp.ircnode",
+      "manifest": {
+        "typeId": "num.clamp",
+        "title": "Clamp Number",
+        "subtitle": "community",
+        "icon": "🗜️",
+        "category": "Data",
+        "description": "Constrains a number to fall within a minimum and maximum range.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "value",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Number"
+          }
+        ],
+        "params": [
+          {
+            "key": "min",
+            "label": "Min",
+            "type": "Text",
+            "default": "0"
+          },
+          {
+            "key": "max",
+            "label": "Max",
+            "type": "Text",
+            "default": "100"
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "\nimport os\n\ndef num(s, d):\n    try:\n        return float((s if s is not None and str(s).strip() != '' else d))\n    except Exception:\n        return float(d)\n\nval = num(os.environ.get('VALUE') or os.environ.get('INPUT') or os.environ.get('ARGS'), 0)\nmn = num(os.environ.get('MIN'), 0)\nmx = num(os.environ.get('MAX'), 100)\nif mn > mx:\n    mn, mx = mx, mn\nr = max(mn, min(val, mx))\nif r == int(r):\n    r = int(r)\nprint(r)\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.factorial",
+      "title": "Factorial",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "❗",
+      "iconImage": null,
+      "description": "Computes the factorial of a non-negative integer.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "n",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/num.factorial.ircnode",
+      "manifest": {
+        "typeId": "num.factorial",
+        "title": "Factorial",
+        "subtitle": "community",
+        "icon": "❗",
+        "category": "Data",
+        "description": "Computes the factorial of a non-negative integer.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "n",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, math\ns = (os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    n = int(float(s))\n    if n < 0:\n        print('error: n must be a non-negative integer')\n    elif n > 170:\n        print('error: n too large (cap is 170)')\n    else:\n        print(math.factorial(n))\nexcept Exception:\n    print('error: give a non-negative integer (e.g. 5)')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.fibonacci",
+      "title": "Fibonacci Number",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🌀",
+      "iconImage": null,
+      "description": "Returns the Nth Fibonacci number or the first N terms.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "n",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "nth",
+          "choices": [
+            "nth",
+            "sequence"
+          ]
+        }
+      ],
+      "file": "nodes/num.fibonacci.ircnode",
+      "manifest": {
+        "typeId": "num.fibonacci",
+        "title": "Fibonacci Number",
+        "subtitle": "community",
+        "icon": "🌀",
+        "category": "Data",
+        "description": "Returns the Nth Fibonacci number or the first N terms.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "n",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "nth",
+            "choices": [
+              "nth",
+              "sequence"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\n\ndef parse_n(s):\n    s=(s or '').strip()\n    try:\n        return int(float(s))\n    except Exception:\n        return None\n\nraw=os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nn=parse_n(raw)\nmode=(os.environ.get('MODE') or 'nth').strip().lower()\n\nif n is None:\n    print('give a number (e.g. 10)')\nelif n < 0:\n    print('n must be >= 0')\nelse:\n    if n > 1000:\n        n = 1000\n    try:\n        if mode == 'sequence':\n            seq=[]\n            a,b=0,1\n            for _ in range(n):\n                seq.append(a)\n                a,b=b,a+b\n            print(' '.join(str(x) for x in seq))\n        else:\n            a,b=0,1\n            for _ in range(n):\n                a,b=b,a+b\n            print(str(a))\n    except Exception as e:\n        print('error: '+str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.gcd",
+      "title": "GCD & LCM",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "➗",
+      "iconImage": null,
+      "description": "Computes the greatest common divisor and least common multiple of two integers.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "a",
+          "kind": "Number"
+        },
+        {
+          "name": "b",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "gcd",
+          "kind": "Number"
+        },
+        {
+          "name": "lcm",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/num.gcd.ircnode",
+      "manifest": {
+        "typeId": "num.gcd",
+        "title": "GCD & LCM",
+        "subtitle": "community",
+        "icon": "➗",
+        "category": "Data",
+        "description": "Computes the greatest common divisor and least common multiple of two integers.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "a",
+            "kind": "Number"
+          },
+          {
+            "name": "b",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "gcd",
+            "kind": "Number"
+          },
+          {
+            "name": "lcm",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, json, math\ntry:\n    a = int(float((os.environ.get('A') or os.environ.get('INPUT') or '0').strip()))\n    b = int(float((os.environ.get('B') or '0').strip()))\n    g = math.gcd(a, b)\n    l = 0 if g == 0 else abs(a * b) // g\n    print(json.dumps({'gcd': g, 'lcm': l}))\nexcept Exception as e:\n    print(json.dumps({'gcd': 0, 'lcm': 0, 'error': str(e)}))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.ordinal",
+      "title": "Ordinal Suffix",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🥇",
+      "iconImage": null,
+      "description": "Adds the correct ordinal suffix (st, nd, rd, th) to a number.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "n",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/num.ordinal.ircnode",
+      "manifest": {
+        "typeId": "num.ordinal",
+        "title": "Ordinal Suffix",
+        "subtitle": "community",
+        "icon": "🥇",
+        "category": "Data",
+        "description": "Adds the correct ordinal suffix (st, nd, rd, th) to a number.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "n",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ns=(os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    n=int(float(s))\n    if 10<=abs(n)%100<=13:\n        suf='th'\n    else:\n        suf={1:'st',2:'nd',3:'rd'}.get(abs(n)%10,'th')\n    print(f'{n}{suf}')\nexcept Exception:\n    print('give a number (e.g. 21)')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.percentchange",
+      "title": "Percent Change",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📉",
+      "iconImage": null,
+      "description": "Computes the percentage change between two values.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "old",
+          "kind": "Number"
+        },
+        {
+          "name": "new",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/num.percentchange.ircnode",
+      "manifest": {
+        "typeId": "num.percentchange",
+        "title": "Percent Change",
+        "subtitle": "community",
+        "icon": "📉",
+        "category": "Data",
+        "description": "Computes the percentage change between two values.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "old",
+            "kind": "Number"
+          },
+          {
+            "name": "new",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\n\ndef num(name):\n    s = (os.environ.get(name) or '').strip()\n    return float(s)\n\ntry:\n    old = num('OLD')\n    new = num('NEW')\n    if old == 0:\n        print('error: old value is 0, percent change undefined')\n    else:\n        change = (new - old) / abs(old) * 100\n        print(round(change, 2))\nexcept Exception as e:\n    print('error: provide numeric old and new values')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.primes",
+      "title": "Prime Tools",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔱",
+      "iconImage": null,
+      "description": "Checks if a number is prime or lists primes up to a limit.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "n",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "check",
+          "choices": [
+            "check",
+            "list",
+            "factorize"
+          ]
+        }
+      ],
+      "file": "nodes/num.primes.ircnode",
+      "manifest": {
+        "typeId": "num.primes",
+        "title": "Prime Tools",
+        "subtitle": "community",
+        "icon": "🔱",
+        "category": "Data",
+        "description": "Checks if a number is prime or lists primes up to a limit.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "n",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "check",
+            "choices": [
+              "check",
+              "list",
+              "factorize"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 10,
+        "code": "import os\n\ndef get_n():\n    raw = (os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or '').strip()\n    if not raw:\n        return None\n    try:\n        return int(float(raw))\n    except Exception:\n        return None\n\ndef is_prime(x):\n    if x < 2:\n        return False\n    if x < 4:\n        return True\n    if x % 2 == 0:\n        return False\n    i = 3\n    while i * i <= x:\n        if x % i == 0:\n            return False\n        i += 2\n    return True\n\ndef sieve(limit):\n    cap = 100000\n    if limit > cap:\n        limit = cap\n    if limit < 2:\n        return []\n    flags = bytearray([1]) * (limit + 1)\n    flags[0] = 0\n    flags[1] = 0\n    i = 2\n    while i * i <= limit:\n        if flags[i]:\n            for j in range(i * i, limit + 1, i):\n                flags[j] = 0\n        i += 1\n    return [k for k in range(2, limit + 1) if flags[k]]\n\ndef factorize(x):\n    x = abs(x)\n    if x < 2:\n        return []\n    factors = []\n    d = 2\n    while d * d <= x:\n        while x % d == 0:\n            factors.append(d)\n            x //= d\n        d += 1 if d == 2 else 2\n    if x > 1:\n        factors.append(x)\n    return factors\n\ndef main():\n    mode = (os.environ.get('MODE') or 'check').strip().lower()\n    n = get_n()\n    if n is None:\n        print('give a number (e.g. 17)')\n        return\n    if mode == 'list':\n        primes = sieve(n)\n        if not primes:\n            print('no primes up to ' + str(n))\n        else:\n            print('primes up to ' + str(n) + ': ' + ', '.join(str(p) for p in primes))\n    elif mode == 'factorize':\n        if n < 2:\n            print(str(n) + ' has no prime factorization')\n            return\n        factors = factorize(n)\n        parts = []\n        last = None\n        count = 0\n        for f in factors:\n            if f == last:\n                count += 1\n            else:\n                if last is not None:\n                    parts.append(str(last) + ('^' + str(count) if count > 1 else ''))\n                last = f\n                count = 1\n        if last is not None:\n            parts.append(str(last) + ('^' + str(count) if count > 1 else ''))\n        print(str(n) + ' = ' + ' x '.join(parts))\n    else:\n        print(str(n) + ' is ' + ('prime' if is_prime(n) else 'not prime') + ' (' + ('true' if is_prime(n) else 'false') + ')')\n\ntry:\n    main()\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.round",
+      "title": "Round Number",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🎯",
+      "iconImage": null,
+      "description": "Rounds, floors, ceils, or truncates a number to a given number of decimals.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "value",
+          "kind": "Number"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Number"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "round",
+          "choices": [
+            "round",
+            "floor",
+            "ceil",
+            "trunc"
+          ]
+        },
+        {
+          "key": "decimals",
+          "label": "Decimals",
+          "type": "Int",
+          "default": 0
+        }
+      ],
+      "file": "nodes/num.round.ircnode",
+      "manifest": {
+        "typeId": "num.round",
+        "title": "Round Number",
+        "subtitle": "community",
+        "icon": "🎯",
+        "category": "Data",
+        "description": "Rounds, floors, ceils, or truncates a number to a given number of decimals.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "value",
+            "kind": "Number"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Number"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "round",
+            "choices": [
+              "round",
+              "floor",
+              "ceil",
+              "trunc"
+            ]
+          },
+          {
+            "key": "decimals",
+            "label": "Decimals",
+            "type": "Int",
+            "default": 0
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os, math\ntry:\n    raw = (os.environ.get('VALUE') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\n    x = float(raw)\n    mode = (os.environ.get('MODE') or 'round').strip().lower()\n    try:\n        d = int(os.environ.get('DECIMALS') or '0')\n    except Exception:\n        d = 0\n    f = 10 ** d\n    if mode == 'floor':\n        r = math.floor(x * f) / f\n    elif mode == 'ceil':\n        r = math.ceil(x * f) / f\n    elif mode == 'trunc':\n        r = math.trunc(x * f) / f\n    else:\n        r = round(x, d)\n    if d <= 0:\n        r = int(r)\n    print(r)\nexcept Exception:\n    print('give a number (e.g. 3.14159)')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "num.stats",
+      "title": "Number Stats",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📈",
+      "iconImage": null,
+      "description": "Computes mean, median, min, max, and sum of a list of numbers.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "numbers",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "mean",
+          "kind": "Number"
+        },
+        {
+          "name": "median",
+          "kind": "Number"
+        },
+        {
+          "name": "min",
+          "kind": "Number"
+        },
+        {
+          "name": "max",
+          "kind": "Number"
+        },
+        {
+          "name": "sum",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/num.stats.ircnode",
+      "manifest": {
+        "typeId": "num.stats",
+        "title": "Number Stats",
+        "subtitle": "community",
+        "icon": "📈",
+        "category": "Data",
+        "description": "Computes mean, median, min, max, and sum of a list of numbers.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "numbers",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "mean",
+            "kind": "Number"
+          },
+          {
+            "name": "median",
+            "kind": "Number"
+          },
+          {
+            "name": "min",
+            "kind": "Number"
+          },
+          {
+            "name": "max",
+            "kind": "Number"
+          },
+          {
+            "name": "sum",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re, json, statistics\ntry:\n    src = os.environ.get('NUMBERS') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or ''\n    nums = [float(x) for x in re.findall(r'-?\\d+(?:\\.\\d+)?', src)]\n    if not nums:\n        print(json.dumps({'mean': 0, 'median': 0, 'min': 0, 'max': 0, 'sum': 0}))\n    else:\n        print(json.dumps({\n            'mean': statistics.mean(nums),\n            'median': statistics.median(nums),\n            'min': min(nums),\n            'max': max(nums),\n            'sum': sum(nums),\n        }))\nexcept Exception as e:\n    print(json.dumps({'mean': 0, 'median': 0, 'min': 0, 'max': 0, 'sum': 0, 'error': str(e)}))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "num.words",
       "title": "Number to Words",
       "subtitle": "community",
@@ -2393,9 +4581,568 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.csvfield",
+      "title": "CSV Field",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📊",
+      "iconImage": null,
+      "description": "Extracts a column value from a CSV row by index or header.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "row",
+          "kind": "Text"
+        },
+        {
+          "name": "field",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "delimiter",
+          "label": "Delimiter",
+          "type": "Text",
+          "default": ","
+        }
+      ],
+      "file": "nodes/parse.csvfield.ircnode",
+      "manifest": {
+        "typeId": "parse.csvfield",
+        "title": "CSV Field",
+        "subtitle": "community",
+        "icon": "📊",
+        "category": "Data",
+        "description": "Extracts a column value from a CSV row by index or header.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "row",
+            "kind": "Text"
+          },
+          {
+            "name": "field",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "delimiter",
+            "label": "Delimiter",
+            "type": "Text",
+            "default": ","
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, csv, io\nrow = (os.environ.get('ROW') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or '').strip()\nfield = (os.environ.get('FIELD') or '0').strip()\ndelim = (os.environ.get('DELIMITER') or ',')\nif delim == '':\n    delim = ','\ntry:\n    cells = next(csv.reader(io.StringIO(row), delimiter=delim))\nexcept Exception:\n    cells = row.split(delim)\ntry:\n    if field.lstrip('+-').isdigit():\n        idx = int(field)\n        print(cells[idx])\n    else:\n        header = next(csv.reader(io.StringIO(row), delimiter=delim))\n        idx = header.index(field)\n        print(cells[idx])\nexcept (IndexError, ValueError):\n    print('')\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.emails",
+      "title": "Extract Emails",
+      "subtitle": "community",
+      "category": "Filter",
+      "icon": "📧",
+      "iconImage": null,
+      "description": "Finds all email addresses in a block of text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        },
+        {
+          "name": "count",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/parse.emails.ircnode",
+      "manifest": {
+        "typeId": "parse.emails",
+        "title": "Extract Emails",
+        "subtitle": "community",
+        "icon": "📧",
+        "category": "Filter",
+        "description": "Finds all email addresses in a block of text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          },
+          {
+            "name": "count",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    pattern = r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}'\n    found = re.findall(pattern, text)\n    seen = set()\n    emails = []\n    for e in found:\n        k = e.lower()\n        if k not in seen:\n            seen.add(k)\n            emails.append(e)\n    print(json.dumps({'result': '\\n'.join(emails), 'count': len(emails)}))\nexcept Exception as ex:\n    print(json.dumps({'result': '', 'count': 0, 'error': str(ex)}))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.hashtags",
+      "title": "Extract Hashtags & Mentions",
+      "subtitle": "community",
+      "category": "Filter",
+      "icon": "#️⃣",
+      "iconImage": null,
+      "description": "Extracts #hashtags and @mentions from text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "hashtags",
+          "kind": "Text"
+        },
+        {
+          "name": "mentions",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/parse.hashtags.ircnode",
+      "manifest": {
+        "typeId": "parse.hashtags",
+        "title": "Extract Hashtags & Mentions",
+        "subtitle": "community",
+        "icon": "#️⃣",
+        "category": "Filter",
+        "description": "Extracts #hashtags and @mentions from text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "hashtags",
+            "kind": "Text"
+          },
+          {
+            "name": "mentions",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    hashtags = re.findall(r'#\\w+', text)\n    mentions = re.findall(r'@\\w+', text)\n    print(json.dumps({'hashtags': ' '.join(hashtags), 'mentions': ' '.join(mentions)}))\nexcept Exception as e:\n    print(json.dumps({'hashtags': '', 'mentions': ''}))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.jsonpath",
+      "title": "JSON Field Picker",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🗂️",
+      "iconImage": null,
+      "description": "Extracts a value from JSON using a simple dotted path.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        },
+        {
+          "name": "path",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/parse.jsonpath.ircnode",
+      "manifest": {
+        "typeId": "parse.jsonpath",
+        "title": "JSON Field Picker",
+        "subtitle": "community",
+        "icon": "🗂️",
+        "category": "Data",
+        "description": "Extracts a value from JSON using a simple dotted path.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          },
+          {
+            "name": "path",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, json\n\nraw = os.environ.get('JSON') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\npath = (os.environ.get('PATH_') or os.environ.get('PATH') or os.environ.get('ARGS') or '').strip()\n\ntry:\n    data = json.loads(raw)\nexcept Exception as e:\n    print('invalid JSON: ' + str(e))\n    raise SystemExit\n\ncur = data\nif path:\n    for part in path.split('.'):\n        if part == '':\n            continue\n        try:\n            if isinstance(cur, list):\n                cur = cur[int(part)]\n            elif isinstance(cur, dict):\n                if part in cur:\n                    cur = cur[part]\n                else:\n                    print('missing key: ' + part)\n                    raise SystemExit\n            else:\n                print('cannot descend into ' + type(cur).__name__ + ' at: ' + part)\n                raise SystemExit\n        except (ValueError, IndexError, KeyError, TypeError):\n            print('cannot resolve path segment: ' + part)\n            raise SystemExit\n\nif isinstance(cur, str):\n    print(cur)\nelse:\n    print(json.dumps(cur, ensure_ascii=False))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.lines",
+      "title": "Pick Line",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📑",
+      "iconImage": null,
+      "description": "Selects a specific line from multi-line text by number.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "line",
+          "label": "Line",
+          "type": "Int",
+          "default": 1
+        }
+      ],
+      "file": "nodes/parse.lines.ircnode",
+      "manifest": {
+        "typeId": "parse.lines",
+        "title": "Pick Line",
+        "subtitle": "community",
+        "icon": "📑",
+        "category": "Data",
+        "description": "Selects a specific line from multi-line text by number.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "line",
+            "label": "Line",
+            "type": "Int",
+            "default": 1
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntext = os.environ.get('TEXT', os.environ.get('INPUT', os.environ.get('MESSAGE', '')))\ntry:\n    n = int(str(os.environ.get('LINE', '1')).strip() or '1')\nexcept Exception:\n    n = 1\ntry:\n    lines = text.split('\\n')\n    if n > 0:\n        idx = n - 1\n    else:\n        idx = len(lines) + n\n    if 0 <= idx < len(lines):\n        print(lines[idx])\n    else:\n        print('')\nexcept Exception:\n    print('')\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.numbers",
+      "title": "Extract Numbers",
+      "subtitle": "community",
+      "category": "Filter",
+      "icon": "🔢",
+      "iconImage": null,
+      "description": "Pulls all numbers out of text and optionally sums them.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        },
+        {
+          "name": "sum",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/parse.numbers.ircnode",
+      "manifest": {
+        "typeId": "parse.numbers",
+        "title": "Extract Numbers",
+        "subtitle": "community",
+        "icon": "🔢",
+        "category": "Filter",
+        "description": "Pulls all numbers out of text and optionally sums them.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          },
+          {
+            "name": "sum",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    nums = re.findall(r'-?\\d+(?:\\.\\d+)?', text)\n    total = sum(float(n) for n in nums)\n    total_out = int(total) if total == int(total) else total\n    print(json.dumps({\"result\": ' '.join(nums), \"sum\": total_out}))\nexcept Exception as e:\n    print(json.dumps({\"result\": \"\", \"sum\": 0}))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "parse.urls",
+      "title": "Extract URLs",
+      "subtitle": "community",
+      "category": "Filter",
+      "icon": "🔗",
+      "iconImage": null,
+      "description": "Finds all http/https URLs in text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        },
+        {
+          "name": "count",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/parse.urls.ircnode",
+      "manifest": {
+        "typeId": "parse.urls",
+        "title": "Extract URLs",
+        "subtitle": "community",
+        "icon": "🔗",
+        "category": "Filter",
+        "description": "Finds all http/https URLs in text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          },
+          {
+            "name": "count",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\n    found = re.findall(r'https?://[^\\s<>\"\\')]+', text)\n    seen = set()\n    urls = []\n    for u in found:\n        if u not in seen:\n            seen.add(u)\n            urls.append(u)\n    print(json.dumps({'result': '\\n'.join(urls), 'count': len(urls)}))\nexcept Exception as e:\n    print(json.dumps({'result': '', 'count': 0}))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "subflow.shout",
       "title": "Shout",
       "subtitle": "subflow",
@@ -2519,9 +5266,78 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.acronym",
+      "title": "Acronym Maker",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🆎",
+      "iconImage": null,
+      "description": "Builds an acronym from the first letter of each word.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/text.acronym.ircnode",
+      "manifest": {
+        "typeId": "text.acronym",
+        "title": "Acronym Maker",
+        "subtitle": "community",
+        "icon": "🆎",
+        "category": "Data",
+        "description": "Builds an acronym from the first letter of each word.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re\ntext = (os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or '').strip()\ntry:\n    letters = []\n    for word in text.split():\n        for ch in word:\n            if ch.isalpha():\n                letters.append(ch.upper())\n                break\n    acronym = ''.join(letters)\n    print(acronym if acronym else 'give some words to acronymize')\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.b64decode",
       "title": "Base64 Decode",
       "subtitle": "community",
@@ -2588,9 +5404,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.b64encode",
       "title": "Base64 Encode",
       "subtitle": "community",
@@ -2657,9 +5473,191 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.case",
+      "title": "Change Case",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔠",
+      "iconImage": null,
+      "description": "Converts text between upper, lower, title, sentence, and swap case.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "upper",
+          "choices": [
+            "upper",
+            "lower",
+            "title",
+            "sentence",
+            "swap"
+          ]
+        }
+      ],
+      "file": "nodes/text.case.ircnode",
+      "manifest": {
+        "typeId": "text.case",
+        "title": "Change Case",
+        "subtitle": "community",
+        "icon": "🔠",
+        "category": "Data",
+        "description": "Converts text between upper, lower, title, sentence, and swap case.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "upper",
+            "choices": [
+              "upper",
+              "lower",
+              "title",
+              "sentence",
+              "swap"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    mode = (os.environ.get('MODE') or 'upper').strip().lower()\n    if mode == 'upper':\n        out = text.upper()\n    elif mode == 'lower':\n        out = text.lower()\n    elif mode == 'title':\n        out = text.title()\n    elif mode == 'swap':\n        out = text.swapcase()\n    elif mode == 'sentence':\n        def cap(m):\n            return m.group(0).upper()\n        out = re.sub(r'(^\\s*[a-z])|([.!?]\\s+[a-z])', cap, text.lower())\n    else:\n        out = text\n    print(out)\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.count",
+      "title": "Count Characters & Words",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔢",
+      "iconImage": null,
+      "description": "Counts characters, words, lines, and sentences in text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "chars",
+          "kind": "Number"
+        },
+        {
+          "name": "words",
+          "kind": "Number"
+        },
+        {
+          "name": "lines",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/text.count.ircnode",
+      "manifest": {
+        "typeId": "text.count",
+        "title": "Count Characters & Words",
+        "subtitle": "community",
+        "icon": "🔢",
+        "category": "Data",
+        "description": "Counts characters, words, lines, and sentences in text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "chars",
+            "kind": "Number"
+          },
+          {
+            "name": "words",
+            "kind": "Number"
+          },
+          {
+            "name": "lines",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    chars = len(text)\n    words = len(text.split())\n    lines = len(text.splitlines()) if text else 0\n    print(json.dumps({'chars': chars, 'words': words, 'lines': lines}))\nexcept Exception as e:\n    print(json.dumps({'chars': 0, 'words': 0, 'lines': 0, 'error': str(e)}))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.leet",
       "title": "Leetspeak",
       "subtitle": "community",
@@ -2726,9 +5724,78 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.mdstrip",
+      "title": "Strip Markdown",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📝",
+      "iconImage": null,
+      "description": "Removes common markdown formatting to produce plain text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/text.mdstrip.ircnode",
+      "manifest": {
+        "typeId": "text.mdstrip",
+        "title": "Strip Markdown",
+        "subtitle": "community",
+        "icon": "📝",
+        "category": "Data",
+        "description": "Removes common markdown formatting to produce plain text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re\ntry:\n    t = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    # links [text](url) -> text ; images ![alt](url) -> alt\n    t = re.sub(r'!?\\[([^\\]]*)\\]\\([^)]*\\)', r'\\1', t)\n    # headers at line start: ###, ## ...\n    t = re.sub(r'(?m)^\\s{0,3}#{1,6}\\s*', '', t)\n    # blockquotes at line start\n    t = re.sub(r'(?m)^\\s{0,3}>\\s?', '', t)\n    # bold/italic: ** __ * _\n    t = re.sub(r'\\*\\*([^*]+)\\*\\*', r'\\1', t)\n    t = re.sub(r'__([^_]+)__', r'\\1', t)\n    t = re.sub(r'\\*([^*]+)\\*', r'\\1', t)\n    t = re.sub(r'_([^_]+)_', r'\\1', t)\n    # inline code `code`\n    t = re.sub(r'`([^`]*)`', r'\\1', t)\n    print(t.strip())\nexcept Exception as e:\n    print((os.environ.get('TEXT') or os.environ.get('INPUT') or ''))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.mock",
       "title": "Mock Case",
       "subtitle": "community",
@@ -2795,9 +5862,526 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.numbering",
+      "title": "Number a List",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔟",
+      "iconImage": null,
+      "description": "Adds sequential numbering or bullets to each line of text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "style",
+          "label": "Style",
+          "type": "Choice",
+          "default": "numbers",
+          "choices": [
+            "numbers",
+            "bullets",
+            "letters"
+          ]
+        },
+        {
+          "key": "start",
+          "label": "Start",
+          "type": "Int",
+          "default": 1
+        }
+      ],
+      "file": "nodes/text.numbering.ircnode",
+      "manifest": {
+        "typeId": "text.numbering",
+        "title": "Number a List",
+        "subtitle": "community",
+        "icon": "🔟",
+        "category": "Data",
+        "description": "Adds sequential numbering or bullets to each line of text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "style",
+            "label": "Style",
+            "type": "Choice",
+            "default": "numbers",
+            "choices": [
+              "numbers",
+              "bullets",
+              "letters"
+            ]
+          },
+          {
+            "key": "start",
+            "label": "Start",
+            "type": "Int",
+            "default": 1
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\n\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\n    style = (os.environ.get('STYLE') or 'numbers').strip().lower()\n    try:\n        start = int((os.environ.get('START') or '1').strip())\n    except Exception:\n        start = 1\n    lines = text.split('\\n')\n    out = []\n    n = start\n    for line in lines:\n        if line.strip() == '':\n            out.append(line)\n            continue\n        if style == 'bullets':\n            prefix = '- '\n        elif style == 'letters':\n            idx = n - 1\n            letters = ''\n            base = idx\n            while True:\n                letters = chr(ord('a') + (base % 26)) + letters\n                base = base // 26 - 1\n                if base < 0:\n                    break\n            prefix = letters + ') '\n        else:\n            prefix = str(n) + '. '\n        out.append(prefix + line)\n        n += 1\n    print('\\n'.join(out))\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.pad",
+      "title": "Pad Text",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📐",
+      "iconImage": null,
+      "description": "Pads text to a target width on the left, right, or both sides.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "width",
+          "label": "Width",
+          "type": "Int",
+          "default": 20
+        },
+        {
+          "key": "fill",
+          "label": "Fill",
+          "type": "Text",
+          "default": " "
+        },
+        {
+          "key": "side",
+          "label": "Side",
+          "type": "Choice",
+          "default": "right",
+          "choices": [
+            "left",
+            "right",
+            "center"
+          ]
+        }
+      ],
+      "file": "nodes/text.pad.ircnode",
+      "manifest": {
+        "typeId": "text.pad",
+        "title": "Pad Text",
+        "subtitle": "community",
+        "icon": "📐",
+        "category": "Data",
+        "description": "Pads text to a target width on the left, right, or both sides.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "width",
+            "label": "Width",
+            "type": "Int",
+            "default": 20
+          },
+          {
+            "key": "fill",
+            "label": "Fill",
+            "type": "Text",
+            "default": " "
+          },
+          {
+            "key": "side",
+            "label": "Side",
+            "type": "Choice",
+            "default": "right",
+            "choices": [
+              "left",
+              "right",
+              "center"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or ''\ntry:\n    width = int((os.environ.get('WIDTH') or '20').strip() or '20')\nexcept Exception:\n    width = 20\nfill = os.environ.get('FILL')\nif not fill:\n    fill = ' '\nfill = fill[0]\nside = (os.environ.get('SIDE') or 'right').strip().lower()\ntry:\n    if side == 'left':\n        out = text.rjust(width, fill)\n    elif side == 'center':\n        out = text.center(width, fill)\n    else:\n        out = text.ljust(width, fill)\n    print(out)\nexcept Exception as e:\n    print(text)\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.repeat",
+      "title": "Repeat Text",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔁",
+      "iconImage": null,
+      "description": "Repeats the text a number of times, optionally joined by a separator.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "count",
+          "label": "Times",
+          "type": "Int",
+          "default": "3"
+        },
+        {
+          "key": "sep",
+          "label": "Separator",
+          "type": "Text",
+          "default": ""
+        }
+      ],
+      "file": "nodes/text.repeat.ircnode",
+      "manifest": {
+        "typeId": "text.repeat",
+        "title": "Repeat Text",
+        "subtitle": "community",
+        "icon": "🔁",
+        "category": "Data",
+        "description": "Repeats the text a number of times, optionally joined by a separator.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "count",
+            "label": "Times",
+            "type": "Int",
+            "default": "3"
+          },
+          {
+            "key": "sep",
+            "label": "Separator",
+            "type": "Text",
+            "default": ""
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\ntry:\n    n=max(0,min(200,int(os.environ.get('COUNT') or '3')))\nexcept Exception:\n    n=3\nsep=os.environ.get('SEP','')\nprint(sep.join([t]*n)[:2000])\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.replace",
+      "title": "Find & Replace",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔤",
+      "iconImage": null,
+      "description": "Replaces every occurrence of one string with another in the text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "find",
+          "label": "Find",
+          "type": "Text",
+          "default": ""
+        },
+        {
+          "key": "replace",
+          "label": "Replace with",
+          "type": "Text",
+          "default": ""
+        },
+        {
+          "key": "ci",
+          "label": "Ignore case",
+          "type": "Bool",
+          "default": "false"
+        }
+      ],
+      "file": "nodes/text.replace.ircnode",
+      "manifest": {
+        "typeId": "text.replace",
+        "title": "Find & Replace",
+        "subtitle": "community",
+        "icon": "🔤",
+        "category": "Data",
+        "description": "Replaces every occurrence of one string with another in the text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "find",
+            "label": "Find",
+            "type": "Text",
+            "default": ""
+          },
+          {
+            "key": "replace",
+            "label": "Replace with",
+            "type": "Text",
+            "default": ""
+          },
+          {
+            "key": "ci",
+            "label": "Ignore case",
+            "type": "Bool",
+            "default": "false"
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os, re\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nf=os.environ.get('FIND','')\nr=os.environ.get('REPLACE','')\nci=(os.environ.get('CI','false').lower() in ('true','1','yes'))\nif not f: print(t)\nelif ci: print(re.sub(re.escape(f), r, t, flags=re.I))\nelse: print(t.replace(f, r))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.reverse",
+      "title": "Reverse Text",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🔁",
+      "iconImage": null,
+      "description": "Reverses a string by characters, words, or lines.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "chars",
+          "choices": [
+            "chars",
+            "words",
+            "lines"
+          ]
+        }
+      ],
+      "file": "nodes/text.reverse.ircnode",
+      "manifest": {
+        "typeId": "text.reverse",
+        "title": "Reverse Text",
+        "subtitle": "community",
+        "icon": "🔁",
+        "category": "Data",
+        "description": "Reverses a string by characters, words, or lines.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "chars",
+            "choices": [
+              "chars",
+              "words",
+              "lines"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    mode = (os.environ.get('MODE') or 'chars').strip().lower()\n    if mode == 'words':\n        result = ' '.join(reversed(text.split(' ')))\n    elif mode == 'lines':\n        result = '\\n'.join(reversed(text.splitlines()))\n    else:\n        result = text[::-1]\n    print(result)\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.rot13",
       "title": "ROT13",
       "subtitle": "community",
@@ -2864,9 +6448,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.slug",
       "title": "Slugify",
       "subtitle": "community",
@@ -2933,9 +6517,347 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.spongebob",
+      "title": "Caps Alternator",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🧽",
+      "iconImage": null,
+      "description": "Alternates the case of letters for sarcastic mocking text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/text.spongebob.ircnode",
+      "manifest": {
+        "typeId": "text.spongebob",
+        "title": "Caps Alternator",
+        "subtitle": "community",
+        "icon": "🧽",
+        "category": "Data",
+        "description": "Alternates the case of letters for sarcastic mocking text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ns=(os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or '')\ntry:\n    out=[]\n    upper=False\n    for ch in s:\n        if ch.isalpha():\n            out.append(ch.upper() if upper else ch.lower())\n            upper=not upper\n        else:\n            out.append(ch)\n    print(''.join(out))\nexcept Exception as e:\n    print(s)\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.titlecase",
+      "title": "Smart Title Case",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📖",
+      "iconImage": null,
+      "description": "Capitalizes words but keeps small joining words lowercase.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/text.titlecase.ircnode",
+      "manifest": {
+        "typeId": "text.titlecase",
+        "title": "Smart Title Case",
+        "subtitle": "community",
+        "icon": "📖",
+        "category": "Data",
+        "description": "Capitalizes words but keeps small joining words lowercase.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, re\nsrc = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or ''\ntry:\n    stop = {'a','an','the','and','or','but','of','in','on','to','for'}\n    words = re.split(r'(\\s+)', src.strip())\n    tokens = [i for i, w in enumerate(words) if w.strip()]\n    first = tokens[0] if tokens else -1\n    last = tokens[-1] if tokens else -1\n    out = []\n    for i, w in enumerate(words):\n        if not w.strip():\n            out.append(w)\n            continue\n        lw = w.lower()\n        if lw in stop and i != first and i != last:\n            out.append(lw)\n        else:\n            out.append(w[0].upper() + w[1:].lower())\n    print(''.join(out))\nexcept Exception as e:\n    print(src)\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.trim",
+      "title": "Trim Text",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "✂️",
+      "iconImage": null,
+      "description": "Removes leading/trailing whitespace (or specific characters) from the text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "chars",
+          "label": "Chars (blank = whitespace)",
+          "type": "Text",
+          "default": ""
+        },
+        {
+          "key": "side",
+          "label": "Side",
+          "type": "Choice",
+          "default": "both",
+          "choices": [
+            "both",
+            "left",
+            "right"
+          ]
+        }
+      ],
+      "file": "nodes/text.trim.ircnode",
+      "manifest": {
+        "typeId": "text.trim",
+        "title": "Trim Text",
+        "subtitle": "community",
+        "icon": "✂️",
+        "category": "Data",
+        "description": "Removes leading/trailing whitespace (or specific characters) from the text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "chars",
+            "label": "Chars (blank = whitespace)",
+            "type": "Text",
+            "default": ""
+          },
+          {
+            "key": "side",
+            "label": "Side",
+            "type": "Choice",
+            "default": "both",
+            "choices": [
+              "both",
+              "left",
+              "right"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nc=os.environ.get('CHARS') or None\nside=os.environ.get('SIDE','both')\nif side=='left': print(t.lstrip(c))\nelif side=='right': print(t.rstrip(c))\nelse: print(t.strip(c))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.truncate",
+      "title": "Truncate Text",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "✂️",
+      "iconImage": null,
+      "description": "Shortens text to a max length and appends an ellipsis.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "length",
+          "label": "Max Length",
+          "type": "Int",
+          "default": 80
+        },
+        {
+          "key": "suffix",
+          "label": "Suffix",
+          "type": "Text",
+          "default": "..."
+        }
+      ],
+      "file": "nodes/text.truncate.ircnode",
+      "manifest": {
+        "typeId": "text.truncate",
+        "title": "Truncate Text",
+        "subtitle": "community",
+        "icon": "✂️",
+        "category": "Data",
+        "description": "Shortens text to a max length and appends an ellipsis.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "length",
+            "label": "Max Length",
+            "type": "Int",
+            "default": 80
+          },
+          {
+            "key": "suffix",
+            "label": "Suffix",
+            "type": "Text",
+            "default": "..."
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\n    try:\n        length = int(os.environ.get('LENGTH') or '80')\n    except Exception:\n        length = 80\n    suffix = os.environ.get('SUFFIX')\n    if suffix is None:\n        suffix = '...'\n    if length < 0:\n        length = 0\n    if len(text) > length:\n        result = text[:length].rstrip() + suffix\n    else:\n        result = text\n    print(result)\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.urldecode",
       "title": "URL Decode",
       "subtitle": "community",
@@ -3002,9 +6924,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.urlencode",
       "title": "URL Encode",
       "subtitle": "community",
@@ -3071,9 +6993,343 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.vowels",
+      "title": "Disemvowel",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "🅰️",
+      "iconImage": null,
+      "description": "Removes or counts the vowels in a piece of text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "label": "Mode",
+          "type": "Choice",
+          "default": "remove",
+          "choices": [
+            "remove",
+            "count"
+          ]
+        }
+      ],
+      "file": "nodes/text.vowels.ircnode",
+      "manifest": {
+        "typeId": "text.vowels",
+        "title": "Disemvowel",
+        "subtitle": "community",
+        "icon": "🅰️",
+        "category": "Data",
+        "description": "Removes or counts the vowels in a piece of text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "mode",
+            "label": "Mode",
+            "type": "Choice",
+            "default": "remove",
+            "choices": [
+              "remove",
+              "count"
+            ]
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    mode = (os.environ.get('MODE') or 'remove').strip().lower()\n    vowels = set('aeiouAEIOU')\n    if mode == 'count':\n        print(sum(1 for ch in text if ch in vowels))\n    else:\n        print(''.join(ch for ch in text if ch not in vowels))\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.wrap",
+      "title": "Word Wrap",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "📐",
+      "iconImage": null,
+      "description": "Wraps text to a maximum line width, breaking on spaces.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "width",
+          "label": "Width",
+          "type": "Int",
+          "default": "40"
+        }
+      ],
+      "file": "nodes/text.wrap.ircnode",
+      "manifest": {
+        "typeId": "text.wrap",
+        "title": "Word Wrap",
+        "subtitle": "community",
+        "icon": "📐",
+        "category": "Data",
+        "description": "Wraps text to a maximum line width, breaking on spaces.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "width",
+            "label": "Width",
+            "type": "Int",
+            "default": "40"
+          }
+        ],
+        "language": "python",
+        "timeout": 6,
+        "code": "import os, textwrap\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\ntry:\n    w=max(1,min(400,int(os.environ.get('WIDTH') or '40')))\nexcept Exception:\n    w=40\nprint('\\n'.join(textwrap.wrap(t, w)) or t)\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.zalgo",
+      "title": "Zalgo Text",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "👹",
+      "iconImage": null,
+      "description": "Adds creepy combining diacritics to text for a glitchy look.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "intensity",
+          "label": "Intensity",
+          "type": "Int",
+          "default": 3
+        }
+      ],
+      "file": "nodes/text.zalgo.ircnode",
+      "manifest": {
+        "typeId": "text.zalgo",
+        "title": "Zalgo Text",
+        "subtitle": "community",
+        "icon": "👹",
+        "category": "Data",
+        "description": "Adds creepy combining diacritics to text for a glitchy look.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "intensity",
+            "label": "Intensity",
+            "type": "Int",
+            "default": 3
+          }
+        ],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os, random\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    try:\n        intensity = int(os.environ.get('INTENSITY') or 3)\n    except Exception:\n        intensity = 3\n    if intensity < 0:\n        intensity = 0\n    marks = [chr(c) for c in range(0x0300, 0x0370)]\n    out = []\n    for ch in text:\n        out.append(ch)\n        if not ch.isspace():\n            for _ in range(intensity):\n                out.append(random.choice(marks))\n    print(''.join(out))\nexcept Exception as e:\n    print('zalgo error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "text.zwsp",
+      "title": "Invisible Ink (ZWSP)",
+      "subtitle": "community",
+      "category": "Data",
+      "icon": "👻",
+      "iconImage": null,
+      "description": "Hides a secret message inside zero-width characters appended to cover text.",
+      "language": "python",
+      "author": "ircuitry",
+      "tags": [],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        },
+        {
+          "name": "secret",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/text.zwsp.ircnode",
+      "manifest": {
+        "typeId": "text.zwsp",
+        "title": "Invisible Ink (ZWSP)",
+        "subtitle": "community",
+        "icon": "👻",
+        "category": "Data",
+        "description": "Hides a secret message inside zero-width characters appended to cover text.",
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          },
+          {
+            "name": "secret",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "language": "python",
+        "timeout": 8,
+        "code": "import os\ntry:\n    cover = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\n    secret = os.environ.get('SECRET') or os.environ.get('ARGS') or ''\n    data = secret.encode('utf-8')\n    bits = ''.join(format(b, '08b') for b in data)\n    hidden = ''.join('\\u200b' if c == '0' else '\\u200c' for c in bits)\n    print(cover + hidden)\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+      }
+    },
+    {
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.age",
       "title": "Age Calculator",
       "subtitle": "community",
@@ -3140,9 +7396,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.now",
       "title": "Current Time",
       "subtitle": "community",
@@ -3201,9 +7457,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.tz",
       "title": "Time in Timezone",
       "subtitle": "community",
@@ -3270,9 +7526,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.unix",
       "title": "Unix Timestamp",
       "subtitle": "community",
@@ -3339,9 +7595,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.until",
       "title": "Countdown",
       "subtitle": "community",
@@ -3408,9 +7664,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.editfile",
       "title": "Edit File",
       "subtitle": "community",
@@ -3521,9 +7777,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.listfiles",
       "title": "List Files",
       "subtitle": "community",
@@ -3606,9 +7862,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.readfile",
       "title": "Read File",
       "subtitle": "community",
@@ -3691,9 +7947,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.run",
       "title": "Run Command",
       "subtitle": "community",
@@ -3784,9 +8040,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.search",
       "title": "Search Files (grep)",
       "subtitle": "community",
@@ -3883,9 +8139,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.advice",
       "title": "Advice",
       "subtitle": "community",
@@ -3944,9 +8200,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.crypto",
       "title": "Crypto Price",
       "subtitle": "community",
@@ -4013,9 +8269,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.currency",
       "title": "Currency Convert",
       "subtitle": "community",
@@ -4082,9 +8338,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.dadjoke",
       "title": "Dad Joke",
       "subtitle": "community",
@@ -4143,9 +8399,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.define",
       "title": "Dictionary",
       "subtitle": "community",
@@ -4212,9 +8468,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.fact",
       "title": "Random Fact",
       "subtitle": "community",
@@ -4273,9 +8529,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.iplookup",
       "title": "IP / Host Lookup",
       "subtitle": "community",
@@ -4342,9 +8598,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.shorten",
       "title": "Shorten URL",
       "subtitle": "community",
@@ -4411,9 +8667,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.urban",
       "title": "Urban Dictionary",
       "subtitle": "community",
@@ -4480,9 +8736,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.weather",
       "title": "Weather",
       "subtitle": "community",
@@ -4549,9 +8805,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.wiki",
       "title": "Wikipedia",
       "subtitle": "community",
@@ -4618,9 +8874,9 @@
       }
     },
     {
-      "commit": "b8855da",
-      "updated": "2026-06-15",
-      "note": "validator: allow the new Ircv3 node category",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "community.wordcount",
       "title": "Word Count",
       "subtitle": "community",

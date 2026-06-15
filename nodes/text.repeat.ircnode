@@ -1,0 +1,9 @@
+{
+  "typeId": "text.repeat", "title": "Repeat Text", "subtitle": "community", "icon": "🔁", "category": "Data",
+  "description": "Repeats the text a number of times, optionally joined by a separator.",
+  "inputs": [ {"name":"","kind":"Exec"}, {"name":"text","kind":"Text"} ],
+  "outputs": [ {"name":"then","kind":"Exec"}, {"name":"result","kind":"Text"} ],
+  "params": [ {"key":"count","label":"Times","type":"Int","default":"3"}, {"key":"sep","label":"Separator","type":"Text","default":""} ],
+  "language": "python", "timeout": 6,
+  "code": "import os\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\ntry:\n    n=max(0,min(200,int(os.environ.get('COUNT') or '3')))\nexcept Exception:\n    n=3\nsep=os.environ.get('SEP','')\nprint(sep.join([t]*n)[:2000])\n"
+}

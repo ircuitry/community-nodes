@@ -1,0 +1,46 @@
+{
+  "typeId": "text.numbering",
+  "title": "Number a List",
+  "subtitle": "community",
+  "icon": "🔟",
+  "category": "Data",
+  "description": "Adds sequential numbering or bullets to each line of text.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "style",
+      "label": "Style",
+      "type": "Choice",
+      "default": "numbers",
+      "choices": ["numbers", "bullets", "letters"]
+    },
+    {
+      "key": "start",
+      "label": "Start",
+      "type": "Int",
+      "default": 1
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\n\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\n    style = (os.environ.get('STYLE') or 'numbers').strip().lower()\n    try:\n        start = int((os.environ.get('START') or '1').strip())\n    except Exception:\n        start = 1\n    lines = text.split('\\n')\n    out = []\n    n = start\n    for line in lines:\n        if line.strip() == '':\n            out.append(line)\n            continue\n        if style == 'bullets':\n            prefix = '- '\n        elif style == 'letters':\n            idx = n - 1\n            letters = ''\n            base = idx\n            while True:\n                letters = chr(ord('a') + (base % 26)) + letters\n                base = base // 26 - 1\n                if base < 0:\n                    break\n            prefix = letters + ') '\n        else:\n            prefix = str(n) + '. '\n        out.append(prefix + line)\n        n += 1\n    print('\\n'.join(out))\nexcept Exception as e:\n    print('error: ' + str(e))\n"
+}

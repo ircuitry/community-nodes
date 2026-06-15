@@ -1,0 +1,48 @@
+{
+  "typeId": "num.stats",
+  "title": "Number Stats",
+  "subtitle": "community",
+  "icon": "📈",
+  "category": "Data",
+  "description": "Computes mean, median, min, max, and sum of a list of numbers.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "numbers",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "mean",
+      "kind": "Number"
+    },
+    {
+      "name": "median",
+      "kind": "Number"
+    },
+    {
+      "name": "min",
+      "kind": "Number"
+    },
+    {
+      "name": "max",
+      "kind": "Number"
+    },
+    {
+      "name": "sum",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, re, json, statistics\ntry:\n    src = os.environ.get('NUMBERS') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or ''\n    nums = [float(x) for x in re.findall(r'-?\\d+(?:\\.\\d+)?', src)]\n    if not nums:\n        print(json.dumps({'mean': 0, 'median': 0, 'min': 0, 'max': 0, 'sum': 0}))\n    else:\n        print(json.dumps({\n            'mean': statistics.mean(nums),\n            'median': statistics.median(nums),\n            'min': min(nums),\n            'max': max(nums),\n            'sum': sum(nums),\n        }))\nexcept Exception as e:\n    print(json.dumps({'mean': 0, 'median': 0, 'min': 0, 'max': 0, 'sum': 0, 'error': str(e)}))\n"
+}

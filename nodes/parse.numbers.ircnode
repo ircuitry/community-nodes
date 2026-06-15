@@ -1,0 +1,36 @@
+{
+  "typeId": "parse.numbers",
+  "title": "Extract Numbers",
+  "subtitle": "community",
+  "icon": "🔢",
+  "category": "Filter",
+  "description": "Pulls all numbers out of text and optionally sums them.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    },
+    {
+      "name": "sum",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, re, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    nums = re.findall(r'-?\\d+(?:\\.\\d+)?', text)\n    total = sum(float(n) for n in nums)\n    total_out = int(total) if total == int(total) else total\n    print(json.dumps({\"result\": ' '.join(nums), \"sum\": total_out}))\nexcept Exception as e:\n    print(json.dumps({\"result\": \"\", \"sum\": 0}))\n"
+}

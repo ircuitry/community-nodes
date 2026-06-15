@@ -1,0 +1,32 @@
+{
+  "typeId": "date.weekday",
+  "title": "Day of Week",
+  "subtitle": "community",
+  "icon": "📅",
+  "category": "Data",
+  "description": "Returns the weekday name for a given date.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "date",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\nfrom datetime import datetime, date\ns=(os.environ.get('DATE') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    d=datetime.strptime(s,'%Y-%m-%d').date() if s else date.today()\n    print(d.strftime('%A'))\nexcept Exception:\n    print('give a date as YYYY-MM-DD (e.g. 2026-06-15)')\n"
+}

@@ -1,0 +1,36 @@
+{
+  "typeId": "date.countdown",
+  "title": "Countdown",
+  "subtitle": "community",
+  "icon": "⏳",
+  "category": "Data",
+  "description": "Counts the days, hours, and minutes until a future date or time.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "target",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    },
+    {
+      "name": "days",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, json\nfrom datetime import datetime\n\ns = (os.environ.get('TARGET') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    if not s:\n        raise ValueError('no target date given')\n    t = datetime.fromisoformat(s)\n    now = datetime.now(t.tzinfo) if t.tzinfo else datetime.now()\n    delta = t - now\n    total = int(delta.total_seconds())\n    if total <= 0:\n        result = 'that date is in the past'\n        days = 0\n    else:\n        days = total // 86400\n        hours = (total % 86400) // 3600\n        minutes = (total % 3600) // 60\n        result = f'{days} days, {hours} hours, {minutes} minutes'\n    print(json.dumps({'result': result, 'days': days}))\nexcept Exception as e:\n    print(json.dumps({'result': f'invalid date: {e} (use ISO like 2026-12-31 or 2026-12-31T18:00)', 'days': 0}))\n"
+}

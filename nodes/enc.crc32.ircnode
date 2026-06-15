@@ -1,0 +1,32 @@
+{
+  "typeId": "enc.crc32",
+  "title": "CRC32 Checksum",
+  "subtitle": "community",
+  "icon": "🧮",
+  "category": "Data",
+  "description": "Computes the CRC32 checksum of text as a hex string.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "\nimport os, zlib\ntext = os.environ.get('TEXT')\nif text is None:\n    text = os.environ.get('INPUT')\nif text is None:\n    text = os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\ntry:\n    checksum = zlib.crc32(text.encode('utf-8')) & 0xffffffff\n    print(f'{checksum:08x}')\nexcept Exception as e:\n    print(f'error: {e}')\n"
+}

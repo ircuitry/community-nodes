@@ -1,0 +1,40 @@
+{
+  "typeId": "enc.base32",
+  "title": "Base32 Encode/Decode",
+  "subtitle": "community",
+  "icon": "🔐",
+  "category": "Data",
+  "description": "Encodes or decodes text using Base32.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Choice",
+      "default": "encode",
+      "choices": ["encode", "decode"]
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, base64\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nmode = (os.environ.get('MODE') or 'encode').strip().lower()\ntry:\n    if mode == 'decode':\n        result = base64.b32decode(text.strip().encode()).decode('utf-8', 'replace')\n    else:\n        result = base64.b32encode(text.encode()).decode()\n    print(result)\nexcept Exception as e:\n    print(f'error: {e}')\n"
+}

@@ -1,0 +1,51 @@
+{
+  "typeId": "num.round",
+  "title": "Round Number",
+  "subtitle": "community",
+  "icon": "🎯",
+  "category": "Data",
+  "description": "Rounds, floors, ceils, or truncates a number to a given number of decimals.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "value",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Number"
+    }
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Choice",
+      "default": "round",
+      "choices": [
+        "round",
+        "floor",
+        "ceil",
+        "trunc"
+      ]
+    },
+    {
+      "key": "decimals",
+      "label": "Decimals",
+      "type": "Int",
+      "default": 0
+    }
+  ],
+  "language": "python",
+  "timeout": 6,
+  "code": "import os, math\ntry:\n    raw = (os.environ.get('VALUE') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\n    x = float(raw)\n    mode = (os.environ.get('MODE') or 'round').strip().lower()\n    try:\n        d = int(os.environ.get('DECIMALS') or '0')\n    except Exception:\n        d = 0\n    f = 10 ** d\n    if mode == 'floor':\n        r = math.floor(x * f) / f\n    elif mode == 'ceil':\n        r = math.ceil(x * f) / f\n    elif mode == 'trunc':\n        r = math.trunc(x * f) / f\n    else:\n        r = round(x, d)\n    if d <= 0:\n        r = int(r)\n    print(r)\nexcept Exception:\n    print('give a number (e.g. 3.14159)')\n"
+}

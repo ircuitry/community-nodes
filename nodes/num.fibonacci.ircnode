@@ -1,0 +1,40 @@
+{
+  "typeId": "num.fibonacci",
+  "title": "Fibonacci Number",
+  "subtitle": "community",
+  "icon": "🌀",
+  "category": "Data",
+  "description": "Returns the Nth Fibonacci number or the first N terms.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "n",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Choice",
+      "default": "nth",
+      "choices": ["nth", "sequence"]
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\n\ndef parse_n(s):\n    s=(s or '').strip()\n    try:\n        return int(float(s))\n    except Exception:\n        return None\n\nraw=os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nn=parse_n(raw)\nmode=(os.environ.get('MODE') or 'nth').strip().lower()\n\nif n is None:\n    print('give a number (e.g. 10)')\nelif n < 0:\n    print('n must be >= 0')\nelse:\n    if n > 1000:\n        n = 1000\n    try:\n        if mode == 'sequence':\n            seq=[]\n            a,b=0,1\n            for _ in range(n):\n                seq.append(a)\n                a,b=b,a+b\n            print(' '.join(str(x) for x in seq))\n        else:\n            a,b=0,1\n            for _ in range(n):\n                a,b=b,a+b\n            print(str(a))\n    except Exception as e:\n        print('error: '+str(e))\n"
+}

@@ -1,0 +1,32 @@
+{
+  "typeId": "num.factorial",
+  "title": "Factorial",
+  "subtitle": "community",
+  "icon": "❗",
+  "category": "Data",
+  "description": "Computes the factorial of a non-negative integer.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "n",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, math\ns = (os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    n = int(float(s))\n    if n < 0:\n        print('error: n must be a non-negative integer')\n    elif n > 170:\n        print('error: n too large (cap is 170)')\n    else:\n        print(math.factorial(n))\nexcept Exception:\n    print('error: give a non-negative integer (e.g. 5)')\n"
+}

@@ -1,0 +1,32 @@
+{
+  "typeId": "num.ordinal",
+  "title": "Ordinal Suffix",
+  "subtitle": "community",
+  "icon": "🥇",
+  "category": "Data",
+  "description": "Adds the correct ordinal suffix (st, nd, rd, th) to a number.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "n",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\ns=(os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    n=int(float(s))\n    if 10<=abs(n)%100<=13:\n        suf='th'\n    else:\n        suf={1:'st',2:'nd',3:'rd'}.get(abs(n)%10,'th')\n    print(f'{n}{suf}')\nexcept Exception:\n    print('give a number (e.g. 21)')\n"
+}

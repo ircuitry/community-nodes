@@ -1,0 +1,56 @@
+{
+  "typeId": "text.pad",
+  "title": "Pad Text",
+  "subtitle": "community",
+  "icon": "📐",
+  "category": "Data",
+  "description": "Pads text to a target width on the left, right, or both sides.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "width",
+      "label": "Width",
+      "type": "Int",
+      "default": 20
+    },
+    {
+      "key": "fill",
+      "label": "Fill",
+      "type": "Text",
+      "default": " "
+    },
+    {
+      "key": "side",
+      "label": "Side",
+      "type": "Choice",
+      "default": "right",
+      "choices": [
+        "left",
+        "right",
+        "center"
+      ]
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or ''\ntry:\n    width = int((os.environ.get('WIDTH') or '20').strip() or '20')\nexcept Exception:\n    width = 20\nfill = os.environ.get('FILL')\nif not fill:\n    fill = ' '\nfill = fill[0]\nside = (os.environ.get('SIDE') or 'right').strip().lower()\ntry:\n    if side == 'left':\n        out = text.rjust(width, fill)\n    elif side == 'center':\n        out = text.center(width, fill)\n    else:\n        out = text.ljust(width, fill)\n    print(out)\nexcept Exception as e:\n    print(text)\n"
+}

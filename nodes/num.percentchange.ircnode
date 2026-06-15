@@ -1,0 +1,36 @@
+{
+  "typeId": "num.percentchange",
+  "title": "Percent Change",
+  "subtitle": "community",
+  "icon": "📉",
+  "category": "Data",
+  "description": "Computes the percentage change between two values.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "old",
+      "kind": "Number"
+    },
+    {
+      "name": "new",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Number"
+    }
+  ],
+  "params": [],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\n\ndef num(name):\n    s = (os.environ.get(name) or '').strip()\n    return float(s)\n\ntry:\n    old = num('OLD')\n    new = num('NEW')\n    if old == 0:\n        print('error: old value is 0, percent change undefined')\n    else:\n        change = (new - old) / abs(old) * 100\n        print(round(change, 2))\nexcept Exception as e:\n    print('error: provide numeric old and new values')\n"
+}

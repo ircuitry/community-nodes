@@ -1,0 +1,39 @@
+{
+  "typeId": "parse.lines",
+  "title": "Pick Line",
+  "subtitle": "community",
+  "icon": "📑",
+  "category": "Data",
+  "description": "Selects a specific line from multi-line text by number.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "line",
+      "label": "Line",
+      "type": "Int",
+      "default": 1
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os\ntext = os.environ.get('TEXT', os.environ.get('INPUT', os.environ.get('MESSAGE', '')))\ntry:\n    n = int(str(os.environ.get('LINE', '1')).strip() or '1')\nexcept Exception:\n    n = 1\ntry:\n    lines = text.split('\\n')\n    if n > 0:\n        idx = n - 1\n    else:\n        idx = len(lines) + n\n    if 0 <= idx < len(lines):\n        print(lines[idx])\n    else:\n        print('')\nexcept Exception:\n    print('')\n"
+}

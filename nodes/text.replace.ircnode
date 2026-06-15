@@ -1,0 +1,9 @@
+{
+  "typeId": "text.replace", "title": "Find & Replace", "subtitle": "community", "icon": "🔤", "category": "Data",
+  "description": "Replaces every occurrence of one string with another in the text.",
+  "inputs": [ {"name":"","kind":"Exec"}, {"name":"text","kind":"Text"} ],
+  "outputs": [ {"name":"then","kind":"Exec"}, {"name":"result","kind":"Text"} ],
+  "params": [ {"key":"find","label":"Find","type":"Text","default":""}, {"key":"replace","label":"Replace with","type":"Text","default":""}, {"key":"ci","label":"Ignore case","type":"Bool","default":"false"} ],
+  "language": "python", "timeout": 6,
+  "code": "import os, re\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nf=os.environ.get('FIND','')\nr=os.environ.get('REPLACE','')\nci=(os.environ.get('CI','false').lower() in ('true','1','yes'))\nif not f: print(t)\nelif ci: print(re.sub(re.escape(f), r, t, flags=re.I))\nelse: print(t.replace(f, r))\n"
+}

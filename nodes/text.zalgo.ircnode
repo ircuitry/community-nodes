@@ -1,0 +1,39 @@
+{
+  "typeId": "text.zalgo",
+  "title": "Zalgo Text",
+  "subtitle": "community",
+  "icon": "👹",
+  "category": "Data",
+  "description": "Adds creepy combining diacritics to text for a glitchy look.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Text"
+    }
+  ],
+  "params": [
+    {
+      "key": "intensity",
+      "label": "Intensity",
+      "type": "Int",
+      "default": 3
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "import os, random\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    try:\n        intensity = int(os.environ.get('INTENSITY') or 3)\n    except Exception:\n        intensity = 3\n    if intensity < 0:\n        intensity = 0\n    marks = [chr(c) for c in range(0x0300, 0x0370)]\n    out = []\n    for ch in text:\n        out.append(ch)\n        if not ch.isspace():\n            for _ in range(intensity):\n                out.append(random.choice(marks))\n    print(''.join(out))\nexcept Exception as e:\n    print('zalgo error: ' + str(e))\n"
+}

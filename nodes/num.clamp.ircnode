@@ -1,0 +1,45 @@
+{
+  "typeId": "num.clamp",
+  "title": "Clamp Number",
+  "subtitle": "community",
+  "icon": "🗜️",
+  "category": "Data",
+  "description": "Constrains a number to fall within a minimum and maximum range.",
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "value",
+      "kind": "Number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "result",
+      "kind": "Number"
+    }
+  ],
+  "params": [
+    {
+      "key": "min",
+      "label": "Min",
+      "type": "Text",
+      "default": "0"
+    },
+    {
+      "key": "max",
+      "label": "Max",
+      "type": "Text",
+      "default": "100"
+    }
+  ],
+  "language": "python",
+  "timeout": 8,
+  "code": "\nimport os\n\ndef num(s, d):\n    try:\n        return float((s if s is not None and str(s).strip() != '' else d))\n    except Exception:\n        return float(d)\n\nval = num(os.environ.get('VALUE') or os.environ.get('INPUT') or os.environ.get('ARGS'), 0)\nmn = num(os.environ.get('MIN'), 0)\nmx = num(os.environ.get('MAX'), 100)\nif mn > mx:\n    mn, mx = mx, mn\nr = max(mn, min(val, mx))\nif r == int(r):\n    r = int(r)\nprint(r)\n"
+}

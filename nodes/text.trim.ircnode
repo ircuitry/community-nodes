@@ -1,0 +1,9 @@
+{
+  "typeId": "text.trim", "title": "Trim Text", "subtitle": "community", "icon": "✂️", "category": "Data",
+  "description": "Removes leading/trailing whitespace (or specific characters) from the text.",
+  "inputs": [ {"name":"","kind":"Exec"}, {"name":"text","kind":"Text"} ],
+  "outputs": [ {"name":"then","kind":"Exec"}, {"name":"result","kind":"Text"} ],
+  "params": [ {"key":"chars","label":"Chars (blank = whitespace)","type":"Text","default":""}, {"key":"side","label":"Side","type":"Choice","default":"both","choices":["both","left","right"]} ],
+  "language": "python", "timeout": 6,
+  "code": "import os\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nc=os.environ.get('CHARS') or None\nside=os.environ.get('SIDE','both')\nif side=='left': print(t.lstrip(c))\nelif side=='right': print(t.rstrip(c))\nelse: print(t.strip(c))\n"
+}
