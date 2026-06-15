@@ -1,0 +1,109 @@
+{
+  "typeId": "subflow.reverse-shout",
+  "title": "Reverse Shout",
+  "subtitle": "composite",
+  "icon": "🔁",
+  "category": "Data",
+  "description": "Composite example: UPPERCASES then reverses the text (two nodes baked into one).",
+  "author": "ircuitry",
+  "tags": [
+    "composite",
+    "text"
+  ],
+  "inputs": [
+    {
+      "name": "",
+      "kind": "Exec"
+    },
+    {
+      "name": "text",
+      "kind": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "then",
+      "kind": "Exec"
+    },
+    {
+      "name": "out",
+      "kind": "Text"
+    }
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Reverse Shout",
+    "nodes": [
+      {
+        "id": "in",
+        "type": "flow.in",
+        "x": 0,
+        "y": 0,
+        "params": {}
+      },
+      {
+        "id": "arg",
+        "type": "flow.arg",
+        "x": 0,
+        "y": 160,
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "t0",
+        "type": "data.transform",
+        "x": 230,
+        "y": 160,
+        "params": {
+          "op": "upper"
+        }
+      },
+      {
+        "id": "t1",
+        "type": "data.transform",
+        "x": 440,
+        "y": 160,
+        "params": {
+          "op": "reverse"
+        }
+      },
+      {
+        "id": "ret",
+        "type": "flow.return",
+        "x": 650,
+        "y": 160,
+        "params": {
+          "name": "out"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "in",
+        "fromPin": 0,
+        "to": "ret",
+        "toPin": 0
+      },
+      {
+        "from": "arg",
+        "fromPin": 0,
+        "to": "t0",
+        "toPin": 0
+      },
+      {
+        "from": "t0",
+        "fromPin": 0,
+        "to": "t1",
+        "toPin": 0
+      },
+      {
+        "from": "t1",
+        "fromPin": 0,
+        "to": "ret",
+        "toPin": 1
+      }
+    ]
+  }
+}

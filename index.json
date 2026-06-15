@@ -1,10 +1,10 @@
 {
-  "count": 115,
+  "count": 118,
   "nodes": [
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.base",
       "title": "Base Converter",
       "subtitle": "community",
@@ -71,9 +71,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.eval",
       "title": "Calculator",
       "subtitle": "community",
@@ -140,9 +140,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.percent",
       "title": "Percentage",
       "subtitle": "community",
@@ -209,9 +209,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.roman",
       "title": "Roman Numerals",
       "subtitle": "community",
@@ -278,9 +278,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.temp",
       "title": "Temperature Convert",
       "subtitle": "community",
@@ -347,9 +347,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.tip",
       "title": "Tip Split",
       "subtitle": "community",
@@ -416,9 +416,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "calc.units",
       "title": "Unit Convert",
       "subtitle": "community",
@@ -485,9 +485,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "community.coinflip",
       "title": "Coin Flip",
       "subtitle": "community",
@@ -545,9 +545,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "date.countdown",
       "title": "Countdown",
       "subtitle": "community",
@@ -622,9 +622,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "date.weekday",
       "title": "Day of Week",
       "subtitle": "community",
@@ -691,9 +691,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.base32",
       "title": "Base32 Encode/Decode",
       "subtitle": "community",
@@ -782,9 +782,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.binary",
       "title": "Binary Encode/Decode",
       "subtitle": "community",
@@ -873,9 +873,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.crc32",
       "title": "CRC32 Checksum",
       "subtitle": "community",
@@ -942,9 +942,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.hex",
       "title": "Hex Encode/Decode",
       "subtitle": "community",
@@ -1033,9 +1033,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.htmlescape",
       "title": "HTML Escape/Unescape",
       "subtitle": "community",
@@ -1124,9 +1124,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.morsebeep",
       "title": "Morse Visualizer",
       "subtitle": "community",
@@ -1193,9 +1193,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.8ball",
       "title": "Magic 8-Ball",
       "subtitle": "community",
@@ -1262,9 +1262,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.choose",
       "title": "Choose One",
       "subtitle": "community",
@@ -1331,9 +1331,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.clap",
       "title": "Clap Emojify",
       "subtitle": "community",
@@ -1400,9 +1400,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.compliment",
       "title": "Compliment",
       "subtitle": "community",
@@ -1469,9 +1469,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.decide",
       "title": "Decide",
       "subtitle": "community",
@@ -1538,9 +1538,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.dice",
       "title": "Dice Roller",
       "subtitle": "community",
@@ -1607,9 +1607,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.fortune",
       "title": "Fortune Cookie",
       "subtitle": "community",
@@ -1668,9 +1668,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.insult",
       "title": "Playful Insult",
       "subtitle": "community",
@@ -1737,9 +1737,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "fun.rps",
       "title": "Rock Paper Scissors",
       "subtitle": "community",
@@ -1806,9 +1806,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.ascii",
       "title": "ASCII Banner",
       "subtitle": "community",
@@ -1875,9 +1875,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.color",
       "title": "Random Color",
       "subtitle": "community",
@@ -1936,9 +1936,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.dice",
       "title": "Dice Notation Roller",
       "subtitle": "community",
@@ -2013,9 +2013,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.fakename",
       "title": "Fake Name",
       "subtitle": "community",
@@ -2098,9 +2098,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.gradient",
       "title": "Color Gradient",
       "subtitle": "community",
@@ -2189,9 +2189,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.lorem",
       "title": "Lorem Ipsum",
       "subtitle": "community",
@@ -2264,9 +2264,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.password",
       "title": "Password Generator",
       "subtitle": "community",
@@ -2339,9 +2339,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.placeholder",
       "title": "Placeholder Image URL",
       "subtitle": "community",
@@ -2438,9 +2438,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.qrurl",
       "title": "QR Code URL",
       "subtitle": "community",
@@ -2521,9 +2521,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.username",
       "title": "Username Generator",
       "subtitle": "community",
@@ -2606,9 +2606,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gen.uuid",
       "title": "UUID",
       "subtitle": "community",
@@ -2667,9 +2667,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.api",
       "title": "GitHub: API",
       "subtitle": "community",
@@ -2763,9 +2763,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.comment",
       "title": "GitHub: Comment",
       "subtitle": "community",
@@ -2861,9 +2861,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.issue.create",
       "title": "GitHub: Create Issue",
       "subtitle": "community",
@@ -2963,9 +2963,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.pr.list",
       "title": "GitHub: List PRs",
       "subtitle": "community",
@@ -3077,9 +3077,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "gh.run",
       "title": "GitHub: Run gh",
       "subtitle": "community",
@@ -3147,9 +3147,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "hash.md5",
       "title": "MD5 Hash",
       "subtitle": "community",
@@ -3216,9 +3216,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "hash.sha1",
       "title": "SHA1 Hash",
       "subtitle": "community",
@@ -3285,9 +3285,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "hash.sha256",
       "title": "SHA-256 Hash",
       "subtitle": "community",
@@ -3354,9 +3354,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "irc.rainbow",
       "title": "Rainbow Text",
       "subtitle": "community",
@@ -3423,9 +3423,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "irc.stripcolor",
       "title": "Strip IRC Colors",
       "subtitle": "community",
@@ -3492,9 +3492,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "morse.decode",
       "title": "Morse to Text",
       "subtitle": "community",
@@ -3561,9 +3561,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "morse.encode",
       "title": "Text to Morse",
       "subtitle": "community",
@@ -3630,9 +3630,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.basen",
       "title": "Number Base Converter",
       "subtitle": "community",
@@ -3725,9 +3725,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.clamp",
       "title": "Clamp Number",
       "subtitle": "community",
@@ -3820,9 +3820,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.factorial",
       "title": "Factorial",
       "subtitle": "community",
@@ -3889,9 +3889,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.fibonacci",
       "title": "Fibonacci Number",
       "subtitle": "community",
@@ -3980,9 +3980,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.gcd",
       "title": "GCD & LCM",
       "subtitle": "community",
@@ -4065,9 +4065,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.ordinal",
       "title": "Ordinal Suffix",
       "subtitle": "community",
@@ -4134,9 +4134,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.percentchange",
       "title": "Percent Change",
       "subtitle": "community",
@@ -4211,9 +4211,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.primes",
       "title": "Prime Tools",
       "subtitle": "community",
@@ -4304,9 +4304,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.round",
       "title": "Round Number",
       "subtitle": "community",
@@ -4411,9 +4411,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.stats",
       "title": "Number Stats",
       "subtitle": "community",
@@ -4512,9 +4512,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "num.words",
       "title": "Number to Words",
       "subtitle": "community",
@@ -4581,9 +4581,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.csvfield",
       "title": "CSV Field",
       "subtitle": "community",
@@ -4672,9 +4672,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.emails",
       "title": "Extract Emails",
       "subtitle": "community",
@@ -4749,9 +4749,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.hashtags",
       "title": "Extract Hashtags & Mentions",
       "subtitle": "community",
@@ -4826,9 +4826,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.jsonpath",
       "title": "JSON Field Picker",
       "subtitle": "community",
@@ -4903,9 +4903,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.lines",
       "title": "Pick Line",
       "subtitle": "community",
@@ -4986,9 +4986,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.numbers",
       "title": "Extract Numbers",
       "subtitle": "community",
@@ -5063,9 +5063,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.urls",
       "title": "Extract URLs",
       "subtitle": "community",
@@ -5140,9 +5140,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "subflow.shout",
       "title": "Shout",
       "subtitle": "subflow",
@@ -5266,9 +5266,418 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "subflow.coinflip",
+      "title": "Coin Flip",
+      "subtitle": "composite",
+      "category": "Data",
+      "icon": "🪙",
+      "iconImage": null,
+      "description": "Composite example: returns 'heads' or 'tails' at random.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "composite",
+        "text"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "out",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/subflow.coinflip.ircnode",
+      "manifest": {
+        "typeId": "subflow.coinflip",
+        "title": "Coin Flip",
+        "subtitle": "composite",
+        "icon": "🪙",
+        "category": "Data",
+        "description": "Composite example: returns 'heads' or 'tails' at random.",
+        "author": "ircuitry",
+        "tags": [
+          "composite",
+          "text"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "out",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Coin Flip",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": 0,
+              "y": 0,
+              "params": {}
+            },
+            {
+              "id": "rnd",
+              "type": "data.random",
+              "x": 230,
+              "y": 160,
+              "params": {
+                "options": "heads\ntails"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 460,
+              "y": 160,
+              "params": {
+                "name": "out"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "rnd",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "subflow.reverse-shout",
+      "title": "Reverse Shout",
+      "subtitle": "composite",
+      "category": "Data",
+      "icon": "🔁",
+      "iconImage": null,
+      "description": "Composite example: UPPERCASES then reverses the text (two nodes baked into one).",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "composite",
+        "text"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "out",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/subflow.reverse-shout.ircnode",
+      "manifest": {
+        "typeId": "subflow.reverse-shout",
+        "title": "Reverse Shout",
+        "subtitle": "composite",
+        "icon": "🔁",
+        "category": "Data",
+        "description": "Composite example: UPPERCASES then reverses the text (two nodes baked into one).",
+        "author": "ircuitry",
+        "tags": [
+          "composite",
+          "text"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "out",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Reverse Shout",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": 0,
+              "y": 0,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": 0,
+              "y": 160,
+              "params": {
+                "name": "text"
+              }
+            },
+            {
+              "id": "t0",
+              "type": "data.transform",
+              "x": 230,
+              "y": 160,
+              "params": {
+                "op": "upper"
+              }
+            },
+            {
+              "id": "t1",
+              "type": "data.transform",
+              "x": 440,
+              "y": 160,
+              "params": {
+                "op": "reverse"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 650,
+              "y": 160,
+              "params": {
+                "name": "out"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "t0",
+              "toPin": 0
+            },
+            {
+              "from": "t0",
+              "fromPin": 0,
+              "to": "t1",
+              "toPin": 0
+            },
+            {
+              "from": "t1",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "subflow.tidy-text",
+      "title": "Tidy Text",
+      "subtitle": "composite",
+      "category": "Data",
+      "icon": "🧹",
+      "iconImage": null,
+      "description": "Composite example: trims whitespace then lowercases the text.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "composite",
+        "text"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "out",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/subflow.tidy-text.ircnode",
+      "manifest": {
+        "typeId": "subflow.tidy-text",
+        "title": "Tidy Text",
+        "subtitle": "composite",
+        "icon": "🧹",
+        "category": "Data",
+        "description": "Composite example: trims whitespace then lowercases the text.",
+        "author": "ircuitry",
+        "tags": [
+          "composite",
+          "text"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "out",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Tidy Text",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": 0,
+              "y": 0,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": 0,
+              "y": 160,
+              "params": {
+                "name": "text"
+              }
+            },
+            {
+              "id": "t0",
+              "type": "data.transform",
+              "x": 230,
+              "y": 160,
+              "params": {
+                "op": "trim"
+              }
+            },
+            {
+              "id": "t1",
+              "type": "data.transform",
+              "x": 440,
+              "y": 160,
+              "params": {
+                "op": "lower"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 650,
+              "y": 160,
+              "params": {
+                "name": "out"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "t0",
+              "toPin": 0
+            },
+            {
+              "from": "t0",
+              "fromPin": 0,
+              "to": "t1",
+              "toPin": 0
+            },
+            {
+              "from": "t1",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.acronym",
       "title": "Acronym Maker",
       "subtitle": "community",
@@ -5335,9 +5744,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.b64decode",
       "title": "Base64 Decode",
       "subtitle": "community",
@@ -5404,9 +5813,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.b64encode",
       "title": "Base64 Encode",
       "subtitle": "community",
@@ -5473,9 +5882,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.case",
       "title": "Change Case",
       "subtitle": "community",
@@ -5570,9 +5979,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.count",
       "title": "Count Characters & Words",
       "subtitle": "community",
@@ -5655,9 +6064,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.leet",
       "title": "Leetspeak",
       "subtitle": "community",
@@ -5724,9 +6133,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.mdstrip",
       "title": "Strip Markdown",
       "subtitle": "community",
@@ -5793,9 +6202,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.mock",
       "title": "Mock Case",
       "subtitle": "community",
@@ -5862,9 +6271,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.numbering",
       "title": "Number a List",
       "subtitle": "community",
@@ -5967,9 +6376,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.pad",
       "title": "Pad Text",
       "subtitle": "community",
@@ -6084,9 +6493,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.repeat",
       "title": "Repeat Text",
       "subtitle": "community",
@@ -6179,9 +6588,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.replace",
       "title": "Find & Replace",
       "subtitle": "community",
@@ -6286,9 +6695,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.reverse",
       "title": "Reverse Text",
       "subtitle": "community",
@@ -6379,9 +6788,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.rot13",
       "title": "ROT13",
       "subtitle": "community",
@@ -6448,9 +6857,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.slug",
       "title": "Slugify",
       "subtitle": "community",
@@ -6517,9 +6926,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.spongebob",
       "title": "Caps Alternator",
       "subtitle": "community",
@@ -6586,9 +6995,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.titlecase",
       "title": "Smart Title Case",
       "subtitle": "community",
@@ -6655,9 +7064,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.trim",
       "title": "Trim Text",
       "subtitle": "community",
@@ -6760,9 +7169,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.truncate",
       "title": "Truncate Text",
       "subtitle": "community",
@@ -6855,9 +7264,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.urldecode",
       "title": "URL Decode",
       "subtitle": "community",
@@ -6924,9 +7333,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "text.urlencode",
       "title": "URL Encode",
       "subtitle": "community",
@@ -6993,9 +7402,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.vowels",
       "title": "Disemvowel",
       "subtitle": "community",
@@ -7084,9 +7493,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.wrap",
       "title": "Word Wrap",
       "subtitle": "community",
@@ -7167,9 +7576,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.zalgo",
       "title": "Zalgo Text",
       "subtitle": "community",
@@ -7250,9 +7659,9 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "d52a80d",
       "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.zwsp",
       "title": "Invisible Ink (ZWSP)",
       "subtitle": "community",
@@ -7327,9 +7736,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.age",
       "title": "Age Calculator",
       "subtitle": "community",
@@ -7396,9 +7805,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.now",
       "title": "Current Time",
       "subtitle": "community",
@@ -7457,9 +7866,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.tz",
       "title": "Time in Timezone",
       "subtitle": "community",
@@ -7526,9 +7935,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.unix",
       "title": "Unix Timestamp",
       "subtitle": "community",
@@ -7595,9 +8004,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "time.until",
       "title": "Countdown",
       "subtitle": "community",
@@ -7664,9 +8073,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.editfile",
       "title": "Edit File",
       "subtitle": "community",
@@ -7777,9 +8186,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.listfiles",
       "title": "List Files",
       "subtitle": "community",
@@ -7862,9 +8271,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.readfile",
       "title": "Read File",
       "subtitle": "community",
@@ -7947,9 +8356,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.run",
       "title": "Run Command",
       "subtitle": "community",
@@ -8040,9 +8449,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "tool.search",
       "title": "Search Files (grep)",
       "subtitle": "community",
@@ -8139,9 +8548,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.advice",
       "title": "Advice",
       "subtitle": "community",
@@ -8200,9 +8609,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.crypto",
       "title": "Crypto Price",
       "subtitle": "community",
@@ -8269,9 +8678,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.currency",
       "title": "Currency Convert",
       "subtitle": "community",
@@ -8338,9 +8747,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.dadjoke",
       "title": "Dad Joke",
       "subtitle": "community",
@@ -8399,9 +8808,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.define",
       "title": "Dictionary",
       "subtitle": "community",
@@ -8468,9 +8877,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.fact",
       "title": "Random Fact",
       "subtitle": "community",
@@ -8529,9 +8938,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.iplookup",
       "title": "IP / Host Lookup",
       "subtitle": "community",
@@ -8598,7 +9007,7 @@
       }
     },
     {
-      "commit": "fdc3380",
+      "commit": "a6683b2",
       "updated": "2026-06-15",
       "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
       "typeId": "web.search",
@@ -8671,9 +9080,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.shorten",
       "title": "Shorten URL",
       "subtitle": "community",
@@ -8740,9 +9149,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.urban",
       "title": "Urban Dictionary",
       "subtitle": "community",
@@ -8809,9 +9218,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.weather",
       "title": "Weather",
       "subtitle": "community",
@@ -8878,9 +9287,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "web.wiki",
       "title": "Wikipedia",
       "subtitle": "community",
@@ -8947,9 +9356,9 @@
       }
     },
     {
-      "commit": "fdc3380",
-      "updated": "2026-06-15",
-      "note": "node: Web Search AI tool (DuckDuckGo, no key) + guide on building AI-tool nodes",
+      "commit": "003bf86",
+      "updated": "2026-06-14",
+      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
       "typeId": "community.wordcount",
       "title": "Word Count",
       "subtitle": "community",
