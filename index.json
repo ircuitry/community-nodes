@@ -2,9 +2,9 @@
   "count": 114,
   "nodes": [
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.base",
       "title": "Base Converter",
       "subtitle": "community",
@@ -71,9 +71,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.eval",
       "title": "Calculator",
       "subtitle": "community",
@@ -140,9 +140,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.percent",
       "title": "Percentage",
       "subtitle": "community",
@@ -209,9 +209,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.roman",
       "title": "Roman Numerals",
       "subtitle": "community",
@@ -278,9 +278,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.temp",
       "title": "Temperature Convert",
       "subtitle": "community",
@@ -347,9 +347,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.tip",
       "title": "Tip Split",
       "subtitle": "community",
@@ -416,9 +416,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "calc.units",
       "title": "Unit Convert",
       "subtitle": "community",
@@ -485,9 +485,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "community.coinflip",
       "title": "Coin Flip",
       "subtitle": "community",
@@ -545,9 +545,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "date.countdown",
       "title": "Countdown",
       "subtitle": "community",
@@ -622,9 +622,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "date.weekday",
       "title": "Day of Week",
       "subtitle": "community",
@@ -691,9 +691,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.base32",
       "title": "Base32 Encode/Decode",
       "subtitle": "community",
@@ -782,9 +782,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.binary",
       "title": "Binary Encode/Decode",
       "subtitle": "community",
@@ -873,9 +873,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.crc32",
       "title": "CRC32 Checksum",
       "subtitle": "community",
@@ -942,9 +942,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.hex",
       "title": "Hex Encode/Decode",
       "subtitle": "community",
@@ -1033,9 +1033,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.htmlescape",
       "title": "HTML Escape/Unescape",
       "subtitle": "community",
@@ -1124,9 +1124,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "enc.morsebeep",
       "title": "Morse Visualizer",
       "subtitle": "community",
@@ -1193,9 +1193,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.8ball",
       "title": "Magic 8-Ball",
       "subtitle": "community",
@@ -1262,9 +1262,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.choose",
       "title": "Choose One",
       "subtitle": "community",
@@ -1331,9 +1331,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.clap",
       "title": "Clap Emojify",
       "subtitle": "community",
@@ -1400,9 +1400,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.compliment",
       "title": "Compliment",
       "subtitle": "community",
@@ -1469,9 +1469,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.decide",
       "title": "Decide",
       "subtitle": "community",
@@ -1538,9 +1538,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.dice",
       "title": "Dice Roller",
       "subtitle": "community",
@@ -1607,9 +1607,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.fortune",
       "title": "Fortune Cookie",
       "subtitle": "community",
@@ -1668,9 +1668,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.insult",
       "title": "Playful Insult",
       "subtitle": "community",
@@ -1737,9 +1737,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "fun.rps",
       "title": "Rock Paper Scissors",
       "subtitle": "community",
@@ -1806,9 +1806,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.ascii",
       "title": "ASCII Banner",
       "subtitle": "community",
@@ -1875,9 +1875,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.color",
       "title": "Random Color",
       "subtitle": "community",
@@ -1936,9 +1936,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.dice",
       "title": "Dice Notation Roller",
       "subtitle": "community",
@@ -2013,9 +2013,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.fakename",
       "title": "Fake Name",
       "subtitle": "community",
@@ -2098,9 +2098,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.gradient",
       "title": "Color Gradient",
       "subtitle": "community",
@@ -2189,9 +2189,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.lorem",
       "title": "Lorem Ipsum",
       "subtitle": "community",
@@ -2264,9 +2264,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.password",
       "title": "Password Generator",
       "subtitle": "community",
@@ -2339,9 +2339,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.placeholder",
       "title": "Placeholder Image URL",
       "subtitle": "community",
@@ -2438,9 +2438,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.qrurl",
       "title": "QR Code URL",
       "subtitle": "community",
@@ -2521,9 +2521,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.username",
       "title": "Username Generator",
       "subtitle": "community",
@@ -2606,9 +2606,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gen.uuid",
       "title": "UUID",
       "subtitle": "community",
@@ -2667,9 +2667,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gh.api",
       "title": "GitHub: API",
       "subtitle": "community",
@@ -2763,9 +2763,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gh.comment",
       "title": "GitHub: Comment",
       "subtitle": "community",
@@ -2861,9 +2861,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gh.issue.create",
       "title": "GitHub: Create Issue",
       "subtitle": "community",
@@ -2963,9 +2963,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gh.pr.list",
       "title": "GitHub: List PRs",
       "subtitle": "community",
@@ -3077,9 +3077,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "gh.run",
       "title": "GitHub: Run gh",
       "subtitle": "community",
@@ -3147,9 +3147,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "hash.md5",
       "title": "MD5 Hash",
       "subtitle": "community",
@@ -3216,9 +3216,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "hash.sha1",
       "title": "SHA1 Hash",
       "subtitle": "community",
@@ -3285,9 +3285,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "hash.sha256",
       "title": "SHA-256 Hash",
       "subtitle": "community",
@@ -3354,9 +3354,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "irc.rainbow",
       "title": "Rainbow Text",
       "subtitle": "community",
@@ -3423,9 +3423,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "irc.stripcolor",
       "title": "Strip IRC Colors",
       "subtitle": "community",
@@ -3492,9 +3492,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "morse.decode",
       "title": "Morse to Text",
       "subtitle": "community",
@@ -3561,9 +3561,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "morse.encode",
       "title": "Text to Morse",
       "subtitle": "community",
@@ -3630,9 +3630,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.basen",
       "title": "Number Base Converter",
       "subtitle": "community",
@@ -3725,9 +3725,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.clamp",
       "title": "Clamp Number",
       "subtitle": "community",
@@ -3820,9 +3820,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.factorial",
       "title": "Factorial",
       "subtitle": "community",
@@ -3889,9 +3889,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.fibonacci",
       "title": "Fibonacci Number",
       "subtitle": "community",
@@ -3980,9 +3980,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.gcd",
       "title": "GCD & LCM",
       "subtitle": "community",
@@ -4065,9 +4065,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.ordinal",
       "title": "Ordinal Suffix",
       "subtitle": "community",
@@ -4134,9 +4134,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.percentchange",
       "title": "Percent Change",
       "subtitle": "community",
@@ -4211,9 +4211,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.primes",
       "title": "Prime Tools",
       "subtitle": "community",
@@ -4304,9 +4304,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.round",
       "title": "Round Number",
       "subtitle": "community",
@@ -4411,9 +4411,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.stats",
       "title": "Number Stats",
       "subtitle": "community",
@@ -4512,9 +4512,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "num.words",
       "title": "Number to Words",
       "subtitle": "community",
@@ -4581,9 +4581,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.csvfield",
       "title": "CSV Field",
       "subtitle": "community",
@@ -4672,9 +4672,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.emails",
       "title": "Extract Emails",
       "subtitle": "community",
@@ -4749,9 +4749,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.hashtags",
       "title": "Extract Hashtags & Mentions",
       "subtitle": "community",
@@ -4826,9 +4826,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.jsonpath",
       "title": "JSON Field Picker",
       "subtitle": "community",
@@ -4903,9 +4903,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.lines",
       "title": "Pick Line",
       "subtitle": "community",
@@ -4986,9 +4986,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.numbers",
       "title": "Extract Numbers",
       "subtitle": "community",
@@ -5063,9 +5063,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "parse.urls",
       "title": "Extract URLs",
       "subtitle": "community",
@@ -5140,9 +5140,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "subflow.shout",
       "title": "Shout",
       "subtitle": "subflow",
@@ -5266,9 +5266,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.acronym",
       "title": "Acronym Maker",
       "subtitle": "community",
@@ -5335,9 +5335,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.b64decode",
       "title": "Base64 Decode",
       "subtitle": "community",
@@ -5404,9 +5404,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.b64encode",
       "title": "Base64 Encode",
       "subtitle": "community",
@@ -5473,9 +5473,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.case",
       "title": "Change Case",
       "subtitle": "community",
@@ -5570,9 +5570,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.count",
       "title": "Count Characters & Words",
       "subtitle": "community",
@@ -5655,9 +5655,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.leet",
       "title": "Leetspeak",
       "subtitle": "community",
@@ -5724,9 +5724,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.mdstrip",
       "title": "Strip Markdown",
       "subtitle": "community",
@@ -5793,9 +5793,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.mock",
       "title": "Mock Case",
       "subtitle": "community",
@@ -5862,9 +5862,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.numbering",
       "title": "Number a List",
       "subtitle": "community",
@@ -5967,9 +5967,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.pad",
       "title": "Pad Text",
       "subtitle": "community",
@@ -6084,9 +6084,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.repeat",
       "title": "Repeat Text",
       "subtitle": "community",
@@ -6179,9 +6179,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.replace",
       "title": "Find & Replace",
       "subtitle": "community",
@@ -6286,9 +6286,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.reverse",
       "title": "Reverse Text",
       "subtitle": "community",
@@ -6379,9 +6379,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.rot13",
       "title": "ROT13",
       "subtitle": "community",
@@ -6448,9 +6448,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.slug",
       "title": "Slugify",
       "subtitle": "community",
@@ -6517,9 +6517,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.spongebob",
       "title": "Caps Alternator",
       "subtitle": "community",
@@ -6586,9 +6586,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.titlecase",
       "title": "Smart Title Case",
       "subtitle": "community",
@@ -6655,9 +6655,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.trim",
       "title": "Trim Text",
       "subtitle": "community",
@@ -6760,9 +6760,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.truncate",
       "title": "Truncate Text",
       "subtitle": "community",
@@ -6855,9 +6855,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.urldecode",
       "title": "URL Decode",
       "subtitle": "community",
@@ -6924,9 +6924,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.urlencode",
       "title": "URL Encode",
       "subtitle": "community",
@@ -6993,9 +6993,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.vowels",
       "title": "Disemvowel",
       "subtitle": "community",
@@ -7084,9 +7084,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.wrap",
       "title": "Word Wrap",
       "subtitle": "community",
@@ -7167,9 +7167,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.zalgo",
       "title": "Zalgo Text",
       "subtitle": "community",
@@ -7250,9 +7250,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "text.zwsp",
       "title": "Invisible Ink (ZWSP)",
       "subtitle": "community",
@@ -7327,9 +7327,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "time.age",
       "title": "Age Calculator",
       "subtitle": "community",
@@ -7396,9 +7396,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "time.now",
       "title": "Current Time",
       "subtitle": "community",
@@ -7457,9 +7457,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "time.tz",
       "title": "Time in Timezone",
       "subtitle": "community",
@@ -7526,9 +7526,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "time.unix",
       "title": "Unix Timestamp",
       "subtitle": "community",
@@ -7595,9 +7595,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "time.until",
       "title": "Countdown",
       "subtitle": "community",
@@ -7664,9 +7664,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "tool.editfile",
       "title": "Edit File",
       "subtitle": "community",
@@ -7777,9 +7777,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "tool.listfiles",
       "title": "List Files",
       "subtitle": "community",
@@ -7862,9 +7862,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "tool.readfile",
       "title": "Read File",
       "subtitle": "community",
@@ -7947,9 +7947,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "tool.run",
       "title": "Run Command",
       "subtitle": "community",
@@ -8040,9 +8040,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "tool.search",
       "title": "Search Files (grep)",
       "subtitle": "community",
@@ -8139,9 +8139,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.advice",
       "title": "Advice",
       "subtitle": "community",
@@ -8200,9 +8200,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.crypto",
       "title": "Crypto Price",
       "subtitle": "community",
@@ -8269,9 +8269,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.currency",
       "title": "Currency Convert",
       "subtitle": "community",
@@ -8338,9 +8338,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.dadjoke",
       "title": "Dad Joke",
       "subtitle": "community",
@@ -8399,9 +8399,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.define",
       "title": "Dictionary",
       "subtitle": "community",
@@ -8468,9 +8468,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.fact",
       "title": "Random Fact",
       "subtitle": "community",
@@ -8529,9 +8529,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.iplookup",
       "title": "IP / Host Lookup",
       "subtitle": "community",
@@ -8598,9 +8598,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.shorten",
       "title": "Shorten URL",
       "subtitle": "community",
@@ -8667,9 +8667,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.urban",
       "title": "Urban Dictionary",
       "subtitle": "community",
@@ -8736,9 +8736,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.weather",
       "title": "Weather",
       "subtitle": "community",
@@ -8805,9 +8805,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "web.wiki",
       "title": "Wikipedia",
       "subtitle": "community",
@@ -8874,9 +8874,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d52a80d",
+      "updated": "2026-06-15",
+      "note": "Add 50 community nodes (text/encode/parse/math/date utilities), validated by the loader",
       "typeId": "community.wordcount",
       "title": "Word Count",
       "subtitle": "community",
