@@ -2,9 +2,9 @@
   "count": 119,
   "nodes": [
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.base",
       "title": "Base Converter",
       "subtitle": "composite",
@@ -156,9 +156,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.eval",
       "title": "Calculator",
       "subtitle": "composite",
@@ -294,9 +294,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.percent",
       "title": "Percentage",
       "subtitle": "composite",
@@ -432,9 +432,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.roman",
       "title": "Roman Numerals",
       "subtitle": "composite",
@@ -572,9 +572,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.temp",
       "title": "Temperature Convert",
       "subtitle": "composite",
@@ -739,9 +739,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.tip",
       "title": "Tip Split",
       "subtitle": "composite",
@@ -877,9 +877,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "calc.units",
       "title": "Unit Convert",
       "subtitle": "composite",
@@ -1056,9 +1056,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "coinflip",
       "title": "Coin Flip",
       "subtitle": "composite",
@@ -1169,9 +1169,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "date.countdown",
       "title": "Countdown",
       "subtitle": "composite",
@@ -1363,9 +1363,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "date.weekday",
       "title": "Day of Week",
       "subtitle": "composite",
@@ -1504,9 +1504,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "enc.base32",
       "title": "Base32 Encode/Decode",
       "subtitle": "composite",
@@ -1657,9 +1657,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "enc.binary",
       "title": "Binary Encode/Decode",
       "subtitle": "composite",
@@ -1810,9 +1810,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "enc.crc32",
       "title": "CRC32 Checksum",
       "subtitle": "composite",
@@ -1948,9 +1948,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "enc.hex",
       "title": "Hex Encode/Decode",
       "subtitle": "composite",
@@ -2101,9 +2101,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "enc.htmlescape",
       "title": "HTML Escape/Unescape",
       "subtitle": "composite",
@@ -2254,9 +2254,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "enc.morsebeep",
       "title": "Morse Visualizer",
       "subtitle": "composite",
@@ -2393,9 +2393,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "filehost.image",
       "title": "Push Image to Filehost",
       "subtitle": "composite",
@@ -2595,9 +2595,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.8ball",
       "title": "Magic 8-Ball",
       "subtitle": "composite",
@@ -2707,9 +2707,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.choose",
       "title": "Choose One",
       "subtitle": "composite",
@@ -2847,9 +2847,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.clap",
       "title": "Clap Emojify",
       "subtitle": "composite",
@@ -2985,9 +2985,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.compliment",
       "title": "Compliment",
       "subtitle": "composite",
@@ -3097,9 +3097,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.decide",
       "title": "Decide",
       "subtitle": "composite",
@@ -3209,9 +3209,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.dice",
       "title": "Dice Roller",
       "subtitle": "composite",
@@ -3348,9 +3348,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.fortune",
       "title": "Fortune Cookie",
       "subtitle": "composite",
@@ -3460,9 +3460,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.insult",
       "title": "Playful Insult",
       "subtitle": "composite",
@@ -3572,9 +3572,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "fun.rps",
       "title": "Rock Paper Scissors",
       "subtitle": "composite",
@@ -3684,9 +3684,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.ascii",
       "title": "ASCII Banner",
       "subtitle": "composite",
@@ -3824,9 +3824,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.color",
       "title": "Random Color",
       "subtitle": "composite",
@@ -3937,9 +3937,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.dice",
       "title": "Dice Notation Roller",
       "subtitle": "composite",
@@ -4076,9 +4076,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.fakename",
       "title": "Fake Name",
       "subtitle": "composite",
@@ -4189,9 +4189,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.gradient",
       "title": "Color Gradient",
       "subtitle": "composite",
@@ -4372,9 +4372,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.lorem",
       "title": "Lorem Ipsum",
       "subtitle": "composite",
@@ -4499,9 +4499,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.password",
       "title": "Password Generator",
       "subtitle": "composite",
@@ -4626,9 +4626,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.placeholder",
       "title": "Placeholder Image URL",
       "subtitle": "composite",
@@ -4753,9 +4753,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.qrurl",
       "title": "QR Code URL",
       "subtitle": "composite",
@@ -4910,9 +4910,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.username",
       "title": "Username Generator",
       "subtitle": "composite",
@@ -5023,9 +5023,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gen.uuid",
       "title": "UUID",
       "subtitle": "composite",
@@ -5136,9 +5136,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gh.api",
       "title": "GitHub: API",
       "subtitle": "composite",
@@ -5318,9 +5318,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gh.comment",
       "title": "GitHub: Comment",
       "subtitle": "composite",
@@ -5509,9 +5509,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gh.issue.create",
       "title": "GitHub: Create Issue",
       "subtitle": "composite",
@@ -5714,9 +5714,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gh.pr.list",
       "title": "GitHub: List PRs",
       "subtitle": "composite",
@@ -5849,9 +5849,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "gh.run",
       "title": "GitHub: Run gh",
       "subtitle": "composite",
@@ -6028,9 +6028,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "hash.md5",
       "title": "MD5 Hash",
       "subtitle": "composite",
@@ -6166,9 +6166,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "hash.sha1",
       "title": "SHA1 Hash",
       "subtitle": "composite",
@@ -6304,9 +6304,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "hash.sha256",
       "title": "SHA-256 Hash",
       "subtitle": "composite",
@@ -6442,9 +6442,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "irc.rainbow",
       "title": "Rainbow Text",
       "subtitle": "composite",
@@ -6580,9 +6580,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "irc.stripcolor",
       "title": "Strip IRC Colors",
       "subtitle": "composite",
@@ -6718,9 +6718,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "morse.decode",
       "title": "Morse to Text",
       "subtitle": "composite",
@@ -6857,9 +6857,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "morse.encode",
       "title": "Text to Morse",
       "subtitle": "composite",
@@ -6996,9 +6996,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.basen",
       "title": "Number Base Converter",
       "subtitle": "composite",
@@ -7150,9 +7150,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.clamp",
       "title": "Clamp Number",
       "subtitle": "composite",
@@ -7338,9 +7338,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.factorial",
       "title": "Factorial",
       "subtitle": "composite",
@@ -7478,9 +7478,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.fibonacci",
       "title": "Fibonacci Number",
       "subtitle": "composite",
@@ -7618,9 +7618,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.gcd",
       "title": "GCD & LCM",
       "subtitle": "composite",
@@ -7842,9 +7842,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.ordinal",
       "title": "Ordinal Suffix",
       "subtitle": "composite",
@@ -7982,9 +7982,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.percentchange",
       "title": "Percent Change",
       "subtitle": "composite",
@@ -8194,9 +8194,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.primes",
       "title": "Prime Check",
       "subtitle": "composite",
@@ -8334,9 +8334,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.round",
       "title": "Round Number",
       "subtitle": "composite",
@@ -8474,9 +8474,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.stats",
       "title": "Number Stats",
       "subtitle": "composite",
@@ -8812,9 +8812,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "num.words",
       "title": "Number to Words",
       "subtitle": "composite",
@@ -8952,9 +8952,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.csvfield",
       "title": "CSV Field",
       "subtitle": "composite",
@@ -9106,9 +9106,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.emails",
       "title": "Extract Emails",
       "subtitle": "composite",
@@ -9300,9 +9300,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.hashtags",
       "title": "Extract Hashtags & Mentions",
       "subtitle": "composite",
@@ -9494,9 +9494,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.jsonpath",
       "title": "JSON Field Picker",
       "subtitle": "composite",
@@ -9646,9 +9646,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.lines",
       "title": "Pick Line",
       "subtitle": "composite",
@@ -9800,9 +9800,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.numbers",
       "title": "Extract Numbers",
       "subtitle": "composite",
@@ -9991,9 +9991,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "parse.urls",
       "title": "Extract URLs",
       "subtitle": "composite",
@@ -10185,9 +10185,9 @@
       }
     },
     {
-      "commit": "003bf86",
-      "updated": "2026-06-14",
-      "note": "Community nodes library: 64 seed nodes, validator, index, contribution flow",
+      "commit": "d84b0a5",
+      "updated": "2026-06-16",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "subflow.shout",
       "title": "Shout",
       "subtitle": "subflow",
@@ -10311,9 +10311,9 @@
       }
     },
     {
-      "commit": "f601401",
-      "updated": "2026-06-15",
-      "note": "nodes: composite examples (Reverse Shout, Tidy Text, Coin Flip) - small nodes baked into one, no code",
+      "commit": "d84b0a5",
+      "updated": "2026-06-16",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "subflow.coinflip",
       "title": "Coin Flip",
       "subtitle": "composite",
@@ -10422,9 +10422,9 @@
       }
     },
     {
-      "commit": "f601401",
-      "updated": "2026-06-15",
-      "note": "nodes: composite examples (Reverse Shout, Tidy Text, Coin Flip) - small nodes baked into one, no code",
+      "commit": "d84b0a5",
+      "updated": "2026-06-16",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "subflow.reverse-shout",
       "title": "Reverse Shout",
       "subtitle": "composite",
@@ -10571,9 +10571,9 @@
       }
     },
     {
-      "commit": "f601401",
-      "updated": "2026-06-15",
-      "note": "nodes: composite examples (Reverse Shout, Tidy Text, Coin Flip) - small nodes baked into one, no code",
+      "commit": "d84b0a5",
+      "updated": "2026-06-16",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "subflow.tidy-text",
       "title": "Tidy Text",
       "subtitle": "composite",
@@ -10720,9 +10720,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.acronym",
       "title": "Acronym Maker",
       "subtitle": "composite",
@@ -10860,9 +10860,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.b64decode",
       "title": "Base64 Decode",
       "subtitle": "composite",
@@ -10999,9 +10999,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.b64encode",
       "title": "Base64 Encode",
       "subtitle": "composite",
@@ -11138,9 +11138,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.case",
       "title": "Change Case",
       "subtitle": "composite",
@@ -11290,9 +11290,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.count",
       "title": "Count Characters & Words",
       "subtitle": "composite",
@@ -11536,9 +11536,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.leet",
       "title": "Leetspeak",
       "subtitle": "composite",
@@ -11674,9 +11674,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.mdstrip",
       "title": "Strip Markdown",
       "subtitle": "composite",
@@ -11815,9 +11815,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.mock",
       "title": "Mock Case",
       "subtitle": "composite",
@@ -11953,9 +11953,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.numbering",
       "title": "Number a List",
       "subtitle": "composite",
@@ -12093,9 +12093,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.pad",
       "title": "Pad Text",
       "subtitle": "composite",
@@ -12259,9 +12259,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.repeat",
       "title": "Repeat Text",
       "subtitle": "composite",
@@ -12413,9 +12413,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.replace",
       "title": "Find & Replace",
       "subtitle": "composite",
@@ -12592,9 +12592,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.reverse",
       "title": "Reverse Text",
       "subtitle": "composite",
@@ -12732,9 +12732,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.rot13",
       "title": "ROT13",
       "subtitle": "composite",
@@ -12871,9 +12871,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.slug",
       "title": "Slugify",
       "subtitle": "composite",
@@ -13011,9 +13011,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.spongebob",
       "title": "Caps Alternator",
       "subtitle": "composite",
@@ -13149,9 +13149,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.titlecase",
       "title": "Smart Title Case",
       "subtitle": "composite",
@@ -13287,9 +13287,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.trim",
       "title": "Trim Text",
       "subtitle": "composite",
@@ -13427,9 +13427,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.truncate",
       "title": "Truncate Text",
       "subtitle": "composite",
@@ -13581,9 +13581,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.urldecode",
       "title": "URL Decode",
       "subtitle": "composite",
@@ -13720,9 +13720,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.urlencode",
       "title": "URL Encode",
       "subtitle": "composite",
@@ -13859,9 +13859,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.vowels",
       "title": "Disemvowel",
       "subtitle": "composite",
@@ -13999,9 +13999,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.wrap",
       "title": "Word Wrap",
       "subtitle": "composite",
@@ -14153,9 +14153,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.zalgo",
       "title": "Zalgo Text",
       "subtitle": "composite",
@@ -14307,9 +14307,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "text.zwsp",
       "title": "Invisible Ink (ZWSP)",
       "subtitle": "composite",
@@ -14460,9 +14460,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "time.age",
       "title": "Age Calculator",
       "subtitle": "composite",
@@ -14601,9 +14601,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "time.now",
       "title": "Current Time",
       "subtitle": "composite",
@@ -14742,9 +14742,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "time.tz",
       "title": "Time in Timezone",
       "subtitle": "composite",
@@ -14871,9 +14871,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "time.unix",
       "title": "Unix Timestamp",
       "subtitle": "composite",
@@ -15012,9 +15012,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "time.until",
       "title": "Countdown",
       "subtitle": "composite",
@@ -15153,9 +15153,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "tool.editfile",
       "title": "Edit File",
       "subtitle": "composite",
@@ -15368,9 +15368,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "tool.listfiles",
       "title": "List Files",
       "subtitle": "composite",
@@ -15528,9 +15528,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "tool.readfile",
       "title": "Read File",
       "subtitle": "composite",
@@ -15690,9 +15690,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "tool.run",
       "title": "Run Command",
       "subtitle": "composite",
@@ -15851,9 +15851,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "tool.search",
       "title": "Search Files (grep)",
       "subtitle": "composite",
@@ -16012,9 +16012,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.advice",
       "title": "Advice",
       "subtitle": "composite",
@@ -16154,9 +16154,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.crypto",
       "title": "Crypto Price",
       "subtitle": "composite",
@@ -16341,9 +16341,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.currency",
       "title": "Currency Convert",
       "subtitle": "composite",
@@ -16509,9 +16509,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.dadjoke",
       "title": "Dad Joke",
       "subtitle": "composite",
@@ -16651,9 +16651,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.define",
       "title": "Dictionary",
       "subtitle": "composite",
@@ -16856,9 +16856,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.fact",
       "title": "Random Fact",
       "subtitle": "composite",
@@ -16998,9 +16998,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.iplookup",
       "title": "IP / Host Lookup",
       "subtitle": "composite",
@@ -17185,9 +17185,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.search",
       "title": "Web Search",
       "subtitle": "composite",
@@ -17390,9 +17390,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.shorten",
       "title": "Shorten URL",
       "subtitle": "composite",
@@ -17577,9 +17577,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.urban",
       "title": "Urban Dictionary",
       "subtitle": "composite",
@@ -17782,9 +17782,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.weather",
       "title": "Weather",
       "subtitle": "composite",
@@ -17969,9 +17969,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "web.wiki",
       "title": "Wikipedia",
       "subtitle": "composite",
@@ -18174,9 +18174,9 @@
       }
     },
     {
-      "commit": "f3c71d8",
+      "commit": "d84b0a5",
       "updated": "2026-06-16",
-      "note": "nodes: rebuild every community node as a composite of built-in nodes",
+      "note": "build: regenerate index.json (119 nodes, all composites)",
       "typeId": "wordcount",
       "title": "Word Count",
       "subtitle": "composite",
