@@ -1,32 +1,72 @@
-{
-  "typeId": "irc.stripcolor",
-  "title": "Strip IRC Colors",
-  "subtitle": "community",
-  "icon": "🧹",
-  "category": "Data",
-  "description": "Removes mIRC color/format codes (\\x03,\\x02,\\x1f,...).",
-  "inputs": [
+{"typeId":"irc.stripcolor","title":"Strip IRC Colors","subtitle":"composite","icon":"\uD83C\uDFA8","category":"Ircv3","description":"Removes IRC colour/format codes.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Strip IRC Colors",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n95d486",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n96d486",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n97d486",
+      "type": "irc.color",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "strip"
+      }
+    },
+    {
+      "id": "n98d486",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,re\ns=(os.environ.get('TEXT') or os.environ.get('ARGS') or '')\ns=re.sub(r'\\x03(\\d{1,2}(,\\d{1,2})?)?','',s)\nprint(re.sub(r'[\\x02\\x0f\\x16\\x1d\\x1e\\x1f]','',s))\n"
-}
+  "connections": [
+    {
+      "from": "n96d486",
+      "fromPin": 0,
+      "to": "n97d486",
+      "toPin": 0
+    },
+    {
+      "from": "n95d486",
+      "fromPin": 0,
+      "to": "n98d486",
+      "toPin": 0
+    },
+    {
+      "from": "n97d486",
+      "fromPin": 0,
+      "to": "n98d486",
+      "toPin": 1
+    }
+  ]
+}}

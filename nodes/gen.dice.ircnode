@@ -1,36 +1,73 @@
-{
-  "typeId": "gen.dice",
-  "title": "Dice Notation Roller",
-  "subtitle": "community",
-  "icon": "🎲",
-  "category": "Action",
-  "description": "Rolls dice using standard NdM+K notation and shows the breakdown.",
-  "inputs": [
+{"typeId":"gen.dice","title":"Dice Notation Roller","subtitle":"composite","icon":"\uD83C\uDFB2","category":"Data","description":"Rolls dice in NdM\u002BK notation.","inputs":[{"name":"","kind":"Exec"},{"name":"notation","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"total","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Dice Notation Roller",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n137d48b",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "notation",
-      "kind": "Text"
+      "id": "n138d48b",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "notation"
+      }
+    },
+    {
+      "id": "n139d48b",
+      "type": "gen.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "dice",
+        "spec": ""
+      }
+    },
+    {
+      "id": "n13ad48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "total"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "n138d48b",
+      "fromPin": 0,
+      "to": "n139d48b",
+      "toPin": 0
     },
     {
-      "name": "total",
-      "kind": "Number"
+      "from": "n137d48b",
+      "fromPin": 0,
+      "to": "n13ad48b",
+      "toPin": 0
     },
     {
-      "name": "rolls",
-      "kind": "Text"
+      "from": "n139d48b",
+      "fromPin": 0,
+      "to": "n13ad48b",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, re, json, random\nspec=(os.environ.get('NOTATION') or os.environ.get('INPUT') or os.environ.get('ARGS') or '1d20').strip().lower()\ntry:\n    m=re.fullmatch(r'(\\d*)d(\\d+)([+-]\\d+)?', spec.replace(' ',''))\n    if not m:\n        raise ValueError('use NdM+K notation, e.g. 1d20, 3d6+2, 2d8-1')\n    count=int(m.group(1) or '1')\n    sides=int(m.group(2))\n    mod=int(m.group(3) or '0')\n    if count < 1 or count > 1000 or sides < 1:\n        raise ValueError('count must be 1-1000 and sides >= 1')\n    rolls=[random.randint(1, sides) for _ in range(count)]\n    total=sum(rolls)+mod\n    print(json.dumps({'total': total, 'rolls': rolls}))\nexcept Exception as e:\n    print(json.dumps({'total': 0, 'rolls': str(e)}))\n"
-}
+  ]
+}}

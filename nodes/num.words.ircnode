@@ -1,32 +1,74 @@
-{
-  "typeId": "num.words",
-  "title": "Number to Words",
-  "subtitle": "community",
-  "icon": "🔤",
-  "category": "Data",
-  "description": "Spells an integer in English, e.g. 42 -> forty-two.",
-  "inputs": [
+{"typeId":"num.words","title":"Number to Words","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"123 -\u003E one hundred twenty three.","inputs":[{"name":"","kind":"Exec"},{"name":"number","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Number to Words",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nf1d489",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "number",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "nf2d489",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "number"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "nf3d489",
+      "type": "num.format",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "words",
+        "value": "",
+        "radix": "16"
+      }
+    },
+    {
+      "id": "nf4d489",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os\nones='zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split()\ntens='_ _ twenty thirty forty fifty sixty seventy eighty ninety'.split()\ndef w(n):\n    if n<0: return 'negative '+w(-n)\n    if n<20: return ones[n]\n    if n<100: return tens[n//10]+('-'+ones[n%10] if n%10 else '')\n    if n<1000: return ones[n//100]+' hundred'+(' '+w(n%100) if n%100 else '')\n    if n<1000000: return w(n//1000)+' thousand'+(' '+w(n%1000) if n%1000 else '')\n    if n<1000000000: return w(n//1000000)+' million'+(' '+w(n%1000000) if n%1000000 else '')\n    return str(n)\ns=(os.environ.get('NUMBER') or os.environ.get('ARGS') or '').strip()\ntry: print(w(int(s)))\nexcept Exception: print('give an integer')\n"
-}
+  "connections": [
+    {
+      "from": "nf2d489",
+      "fromPin": 0,
+      "to": "nf3d489",
+      "toPin": 0
+    },
+    {
+      "from": "nf1d489",
+      "fromPin": 0,
+      "to": "nf4d489",
+      "toPin": 0
+    },
+    {
+      "from": "nf3d489",
+      "fromPin": 0,
+      "to": "nf4d489",
+      "toPin": 1
+    }
+  ]
+}}

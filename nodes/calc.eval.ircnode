@@ -1,32 +1,72 @@
-{
-  "typeId": "calc.eval",
-  "title": "Calculator",
-  "subtitle": "community",
-  "icon": "🧮",
-  "category": "Data",
-  "description": "Safely evaluates an arithmetic expression (+ - * / % ** // and parens).",
-  "inputs": [
+{"typeId":"calc.eval","title":"Calculator","subtitle":"composite","icon":"\uD83E\uDDEE","category":"Data","description":"Evaluates an arithmetic expression.","inputs":[{"name":"","kind":"Exec"},{"name":"expr","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Calculator",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nbdd488",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "expr",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "nbed488",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "expr"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "nbfd488",
+      "type": "data.mathx",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "expr": ""
+      }
+    },
+    {
+      "id": "nc0d488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,ast,operator as op\nops={ast.Add:op.add,ast.Sub:op.sub,ast.Mult:op.mul,ast.Div:op.truediv,ast.Mod:op.mod,ast.Pow:op.pow,ast.FloorDiv:op.floordiv,ast.USub:op.neg,ast.UAdd:op.pos}\ndef ev(n):\n    if isinstance(n,ast.Constant) and isinstance(n.value,(int,float)): return n.value\n    if isinstance(n,ast.BinOp):\n        if isinstance(n.op,ast.Pow) and ev(n.right)>256: raise ValueError('exponent too large')\n        return ops[type(n.op)](ev(n.left),ev(n.right))\n    if isinstance(n,ast.UnaryOp): return ops[type(n.op)](ev(n.operand))\n    raise ValueError('bad')\ne=(os.environ.get('EXPR') or os.environ.get('ARGS') or '').strip()\ntry:\n    r=ev(ast.parse(e,mode='eval').body); print(('%g'%r) if isinstance(r,float) else str(r))\nexcept Exception: print('cannot evaluate: '+e)\n"
-}
+  "connections": [
+    {
+      "from": "nbed488",
+      "fromPin": 0,
+      "to": "nbfd488",
+      "toPin": 0
+    },
+    {
+      "from": "nbdd488",
+      "fromPin": 0,
+      "to": "nc0d488",
+      "toPin": 0
+    },
+    {
+      "from": "nbfd488",
+      "fromPin": 0,
+      "to": "nc0d488",
+      "toPin": 1
+    }
+  ]
+}}

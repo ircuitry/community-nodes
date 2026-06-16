@@ -1,32 +1,74 @@
-{
-  "typeId": "calc.base",
-  "title": "Base Converter",
-  "subtitle": "community",
-  "icon": "🔢",
-  "category": "Data",
-  "description": "Converts a number between bases. Input like '255' or '0xff' or '0b1010'.",
-  "inputs": [
+{"typeId":"calc.base","title":"Base Converter","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Converts a number to another base.","inputs":[{"name":"","kind":"Exec"},{"name":"number","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"radix","label":"Radix","type":"Text","default":"16"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Base Converter",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nd1d488",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "number",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "nd2d488",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "number"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "nd3d488",
+      "type": "num.format",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "base",
+        "value": "",
+        "radix": "{radix}"
+      }
+    },
+    {
+      "id": "nd4d488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os\ns=(os.environ.get('NUMBER') or os.environ.get('ARGS') or '').strip().lower()\ntry:\n    v=int(s,0) if s.startswith(('0x','0b','0o')) else int(s)\n    print(f'dec {v} · hex 0x{v:X} · oct 0o{v:o} · bin 0b{v:b}')\nexcept Exception: print('give an integer (e.g. 255, 0xff, 0b1010)')\n"
-}
+  "connections": [
+    {
+      "from": "nd2d488",
+      "fromPin": 0,
+      "to": "nd3d488",
+      "toPin": 0
+    },
+    {
+      "from": "nd1d488",
+      "fromPin": 0,
+      "to": "nd4d488",
+      "toPin": 0
+    },
+    {
+      "from": "nd3d488",
+      "fromPin": 0,
+      "to": "nd4d488",
+      "toPin": 1
+    }
+  ]
+}}

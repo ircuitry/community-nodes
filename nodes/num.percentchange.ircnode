@@ -1,36 +1,138 @@
-{
-  "typeId": "num.percentchange",
-  "title": "Percent Change",
-  "subtitle": "community",
-  "icon": "📉",
-  "category": "Data",
-  "description": "Computes the percentage change between two values.",
-  "inputs": [
+{"typeId":"num.percentchange","title":"Percent Change","subtitle":"composite","icon":"\uD83D\uDCC8","category":"Data","description":"Percent change from old to new.","inputs":[{"name":"","kind":"Exec"},{"name":"old","kind":"Text"},{"name":"new","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Percent Change",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n101d48a",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "old",
-      "kind": "Number"
+      "id": "n102d48a",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "old"
+      }
     },
     {
-      "name": "new",
-      "kind": "Number"
+      "id": "n103d48a",
+      "type": "flow.arg",
+      "x": -460,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "new"
+      }
+    },
+    {
+      "id": "n104d48a",
+      "type": "data.math",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "-",
+        "a": "0",
+        "b": "1"
+      }
+    },
+    {
+      "id": "n105d48a",
+      "type": "data.math",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "\u00F7",
+        "a": "0",
+        "b": "1"
+      }
+    },
+    {
+      "id": "n106d48a",
+      "type": "data.math",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "\u00D7",
+        "a": "0",
+        "b": "100"
+      }
+    },
+    {
+      "id": "n107d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "n103d48a",
+      "fromPin": 0,
+      "to": "n104d48a",
+      "toPin": 0
     },
     {
-      "name": "result",
-      "kind": "Number"
+      "from": "n102d48a",
+      "fromPin": 0,
+      "to": "n104d48a",
+      "toPin": 1
+    },
+    {
+      "from": "n104d48a",
+      "fromPin": 0,
+      "to": "n105d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n102d48a",
+      "fromPin": 0,
+      "to": "n105d48a",
+      "toPin": 1
+    },
+    {
+      "from": "n105d48a",
+      "fromPin": 0,
+      "to": "n106d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n101d48a",
+      "fromPin": 0,
+      "to": "n107d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n106d48a",
+      "fromPin": 0,
+      "to": "n107d48a",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\n\ndef num(name):\n    s = (os.environ.get(name) or '').strip()\n    return float(s)\n\ntry:\n    old = num('OLD')\n    new = num('NEW')\n    if old == 0:\n        print('error: old value is 0, percent change undefined')\n    else:\n        change = (new - old) / abs(old) * 100\n        print(round(change, 2))\nexcept Exception as e:\n    print('error: provide numeric old and new values')\n"
-}
+  ]
+}}

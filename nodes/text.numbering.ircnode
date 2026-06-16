@@ -1,46 +1,74 @@
-{
-  "typeId": "text.numbering",
-  "title": "Number a List",
-  "subtitle": "community",
-  "icon": "🔟",
-  "category": "Data",
-  "description": "Adds sequential numbering or bullets to each line of text.",
-  "inputs": [
+{"typeId":"text.numbering","title":"Number a List","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Numbers each line.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Number a List",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n7dd485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n7ed485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
-    {
-      "key": "style",
-      "label": "Style",
-      "type": "Choice",
-      "default": "numbers",
-      "choices": ["numbers", "bullets", "letters"]
+      "id": "n7fd485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "numbering",
+        "n": "1",
+        "fill": " "
+      }
     },
     {
-      "key": "start",
-      "label": "Start",
-      "type": "Int",
-      "default": 1
+      "id": "n80d485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\n\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\n    style = (os.environ.get('STYLE') or 'numbers').strip().lower()\n    try:\n        start = int((os.environ.get('START') or '1').strip())\n    except Exception:\n        start = 1\n    lines = text.split('\\n')\n    out = []\n    n = start\n    for line in lines:\n        if line.strip() == '':\n            out.append(line)\n            continue\n        if style == 'bullets':\n            prefix = '- '\n        elif style == 'letters':\n            idx = n - 1\n            letters = ''\n            base = idx\n            while True:\n                letters = chr(ord('a') + (base % 26)) + letters\n                base = base // 26 - 1\n                if base < 0:\n                    break\n            prefix = letters + ') '\n        else:\n            prefix = str(n) + '. '\n        out.append(prefix + line)\n        n += 1\n    print('\\n'.join(out))\nexcept Exception as e:\n    print('error: ' + str(e))\n"
-}
+  "connections": [
+    {
+      "from": "n7ed485",
+      "fromPin": 0,
+      "to": "n7fd485",
+      "toPin": 0
+    },
+    {
+      "from": "n7dd485",
+      "fromPin": 0,
+      "to": "n80d485",
+      "toPin": 0
+    },
+    {
+      "from": "n7fd485",
+      "fromPin": 0,
+      "to": "n80d485",
+      "toPin": 1
+    }
+  ]
+}}

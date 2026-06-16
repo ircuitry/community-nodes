@@ -1,32 +1,74 @@
-{
-  "typeId": "fun.choose",
-  "title": "Choose One",
-  "subtitle": "community",
-  "icon": "🎯",
-  "category": "Data",
-  "description": "Picks one option at random from a list (comma or 'or' separated).",
-  "inputs": [
+{"typeId":"fun.choose","title":"Choose One","subtitle":"composite","icon":"\uD83C\uDFAF","category":"Data","description":"Picks one of the comma-separated options.","inputs":[{"name":"","kind":"Exec"},{"name":"options","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Choose One",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n15bd48c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "options",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n15cd48c",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "options"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n15dd48c",
+      "type": "data.pick",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "random",
+        "sep": "comma",
+        "n": "1"
+      }
+    },
+    {
+      "id": "n15ed48c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,re,random\ns=(os.environ.get('OPTIONS') or os.environ.get('ARGS') or '')\nparts=[p.strip() for p in re.split(r',| or ',s) if p.strip()]\nprint('🎯 '+random.choice(parts) if parts else 'give me some options (a, b, c)')\n"
-}
+  "connections": [
+    {
+      "from": "n15cd48c",
+      "fromPin": 0,
+      "to": "n15dd48c",
+      "toPin": 0
+    },
+    {
+      "from": "n15bd48c",
+      "fromPin": 0,
+      "to": "n15ed48c",
+      "toPin": 0
+    },
+    {
+      "from": "n15dd48c",
+      "fromPin": 0,
+      "to": "n15ed48c",
+      "toPin": 1
+    }
+  ]
+}}

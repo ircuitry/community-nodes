@@ -1,48 +1,240 @@
-{
-  "typeId": "num.stats",
-  "title": "Number Stats",
-  "subtitle": "community",
-  "icon": "📈",
-  "category": "Data",
-  "description": "Computes mean, median, min, max, and sum of a list of numbers.",
-  "inputs": [
+{"typeId":"num.stats","title":"Number Stats","subtitle":"composite","icon":"\uD83D\uDCCA","category":"Data","description":"Mean, median, min, max and sum of a list of numbers.","inputs":[{"name":"","kind":"Exec"},{"name":"numbers","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"mean","kind":"Text"},{"name":"median","kind":"Text"},{"name":"min","kind":"Text"},{"name":"max","kind":"Text"},{"name":"sum","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Number Stats",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n108d48a",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "numbers",
-      "kind": "Text"
+      "id": "n109d48a",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "numbers"
+      }
+    },
+    {
+      "id": "n10ad48a",
+      "type": "data.stats",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "mean"
+      }
+    },
+    {
+      "id": "n10bd48a",
+      "type": "data.stats",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "median"
+      }
+    },
+    {
+      "id": "n10cd48a",
+      "type": "data.stats",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "min"
+      }
+    },
+    {
+      "id": "n10dd48a",
+      "type": "data.stats",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "max"
+      }
+    },
+    {
+      "id": "n10ed48a",
+      "type": "data.stats",
+      "x": -120,
+      "y": 260,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "sum"
+      }
+    },
+    {
+      "id": "n10fd48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "mean"
+      }
+    },
+    {
+      "id": "n110d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "median"
+      }
+    },
+    {
+      "id": "n111d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": 20,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "min"
+      }
+    },
+    {
+      "id": "n112d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": 110,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "max"
+      }
+    },
+    {
+      "id": "n113d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": 200,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "sum"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "n109d48a",
+      "fromPin": 0,
+      "to": "n10ad48a",
+      "toPin": 0
     },
     {
-      "name": "mean",
-      "kind": "Number"
+      "from": "n109d48a",
+      "fromPin": 0,
+      "to": "n10bd48a",
+      "toPin": 0
     },
     {
-      "name": "median",
-      "kind": "Number"
+      "from": "n109d48a",
+      "fromPin": 0,
+      "to": "n10cd48a",
+      "toPin": 0
     },
     {
-      "name": "min",
-      "kind": "Number"
+      "from": "n109d48a",
+      "fromPin": 0,
+      "to": "n10dd48a",
+      "toPin": 0
     },
     {
-      "name": "max",
-      "kind": "Number"
+      "from": "n109d48a",
+      "fromPin": 0,
+      "to": "n10ed48a",
+      "toPin": 0
     },
     {
-      "name": "sum",
-      "kind": "Number"
+      "from": "n108d48a",
+      "fromPin": 0,
+      "to": "n10fd48a",
+      "toPin": 0
+    },
+    {
+      "from": "n10ad48a",
+      "fromPin": 0,
+      "to": "n10fd48a",
+      "toPin": 1
+    },
+    {
+      "from": "n108d48a",
+      "fromPin": 0,
+      "to": "n110d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n10bd48a",
+      "fromPin": 0,
+      "to": "n110d48a",
+      "toPin": 1
+    },
+    {
+      "from": "n108d48a",
+      "fromPin": 0,
+      "to": "n111d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n10cd48a",
+      "fromPin": 0,
+      "to": "n111d48a",
+      "toPin": 1
+    },
+    {
+      "from": "n108d48a",
+      "fromPin": 0,
+      "to": "n112d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n10dd48a",
+      "fromPin": 0,
+      "to": "n112d48a",
+      "toPin": 1
+    },
+    {
+      "from": "n108d48a",
+      "fromPin": 0,
+      "to": "n113d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n10ed48a",
+      "fromPin": 0,
+      "to": "n113d48a",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, re, json, statistics\ntry:\n    src = os.environ.get('NUMBERS') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or ''\n    nums = [float(x) for x in re.findall(r'-?\\d+(?:\\.\\d+)?', src)]\n    if not nums:\n        print(json.dumps({'mean': 0, 'median': 0, 'min': 0, 'max': 0, 'sum': 0}))\n    else:\n        print(json.dumps({\n            'mean': statistics.mean(nums),\n            'median': statistics.median(nums),\n            'min': min(nums),\n            'max': max(nums),\n            'sum': sum(nums),\n        }))\nexcept Exception as e:\n    print(json.dumps({'mean': 0, 'median': 0, 'min': 0, 'max': 0, 'sum': 0, 'error': str(e)}))\n"
-}
+  ]
+}}

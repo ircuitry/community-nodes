@@ -1,32 +1,139 @@
-{
-  "typeId": "web.wiki",
-  "title": "Wikipedia",
-  "subtitle": "community",
-  "icon": "📚",
-  "category": "Action",
-  "description": "First-paragraph summary of a Wikipedia article (no key).",
-  "inputs": [
+{"typeId":"web.wiki","title":"Wikipedia","subtitle":"composite","icon":"\uD83D\uDCDA","category":"Action","description":"The summary of a Wikipedia topic.","inputs":[{"name":"","kind":"Exec"},{"name":"topic","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Wikipedia",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n18fd48e",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "topic",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n190d48e",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "method": "GET",
+        "url": "https://",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": ""
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n191d48e",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "topic"
+      }
+    },
+    {
+      "id": "n192d48e",
+      "type": "data.encode",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n193d48e",
+      "type": "data.format",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "template": "https://en.wikipedia.org/api/rest_v1/page/summary/{a}"
+      }
+    },
+    {
+      "id": "n194d48e",
+      "type": "data.json",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "path": "extract"
+      }
+    },
+    {
+      "id": "n195d48e",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 15,
-  "code": "\nimport os,urllib.request,urllib.parse,json\ndef get(url,headers=None,timeout=9):\n    req=urllib.request.Request(url,headers=headers or {'User-Agent':'ircuitry-bot'})\n    return urllib.request.urlopen(req,timeout=timeout).read().decode('utf-8','replace')\n\nq=(os.environ.get('TOPIC') or os.environ.get('ARGS') or '').strip().replace(' ','_')\ntry:\n    d=json.loads(get('https://en.wikipedia.org/api/rest_v1/page/summary/'+urllib.parse.quote(q)))\n    ex=d.get('extract','no summary'); print((ex[:380]+'…' if len(ex)>380 else ex))\nexcept Exception as e: print('not found / error: '+str(e)[:60])\n"
-}
+  "connections": [
+    {
+      "from": "n191d48e",
+      "fromPin": 0,
+      "to": "n192d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n192d48e",
+      "fromPin": 0,
+      "to": "n193d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n193d48e",
+      "fromPin": 0,
+      "to": "n190d48e",
+      "toPin": 1
+    },
+    {
+      "from": "n190d48e",
+      "fromPin": 1,
+      "to": "n194d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n18fd48e",
+      "fromPin": 0,
+      "to": "n190d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n190d48e",
+      "fromPin": 0,
+      "to": "n195d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n194d48e",
+      "fromPin": 0,
+      "to": "n195d48e",
+      "toPin": 1
+    }
+  ]
+}}

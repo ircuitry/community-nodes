@@ -1,32 +1,72 @@
-{
-  "typeId": "text.mock",
-  "title": "Mock Case",
-  "subtitle": "community",
-  "icon": "🤪",
-  "category": "Data",
-  "description": "mOcKiNg SpOnGeBoB alternating caps.",
-  "inputs": [
+{"typeId":"text.mock","title":"Mock Case","subtitle":"composite","icon":"\uD83D\uDD20","category":"Data","description":"mOcKiNg SpOnGeBoB case.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Mock Case",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n4dd484",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n4ed484",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n4fd484",
+      "type": "data.case",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "mock"
+      }
+    },
+    {
+      "id": "n50d484",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os\ns=(os.environ.get('TEXT') or os.environ.get('ARGS') or '')\no=[];u=False\nfor c in s:\n    if c.isalpha(): o.append(c.upper() if u else c.lower()); u=not u\n    else: o.append(c)\nprint(''.join(o))\n"
-}
+  "connections": [
+    {
+      "from": "n4ed484",
+      "fromPin": 0,
+      "to": "n4fd484",
+      "toPin": 0
+    },
+    {
+      "from": "n4dd484",
+      "fromPin": 0,
+      "to": "n50d484",
+      "toPin": 0
+    },
+    {
+      "from": "n4fd484",
+      "fromPin": 0,
+      "to": "n50d484",
+      "toPin": 1
+    }
+  ]
+}}

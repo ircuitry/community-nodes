@@ -1,32 +1,72 @@
-{
-  "typeId": "enc.crc32",
-  "title": "CRC32 Checksum",
-  "subtitle": "community",
-  "icon": "🧮",
-  "category": "Data",
-  "description": "Computes the CRC32 checksum of text as a hex string.",
-  "inputs": [
+{"typeId":"enc.crc32","title":"CRC32 Checksum","subtitle":"composite","icon":"\uD83D\uDD10","category":"Data","description":"CRC32 checksum of the input.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "CRC32 Checksum",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n41d484",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n42d484",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n43d484",
+      "type": "data.hash",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "crc32"
+      }
+    },
+    {
+      "id": "n44d484",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "\nimport os, zlib\ntext = os.environ.get('TEXT')\nif text is None:\n    text = os.environ.get('INPUT')\nif text is None:\n    text = os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\ntry:\n    checksum = zlib.crc32(text.encode('utf-8')) & 0xffffffff\n    print(f'{checksum:08x}')\nexcept Exception as e:\n    print(f'error: {e}')\n"
-}
+  "connections": [
+    {
+      "from": "n42d484",
+      "fromPin": 0,
+      "to": "n43d484",
+      "toPin": 0
+    },
+    {
+      "from": "n41d484",
+      "fromPin": 0,
+      "to": "n44d484",
+      "toPin": 0
+    },
+    {
+      "from": "n43d484",
+      "fromPin": 0,
+      "to": "n44d484",
+      "toPin": 1
+    }
+  ]
+}}

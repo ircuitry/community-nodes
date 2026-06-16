@@ -1,39 +1,74 @@
-{
-  "typeId": "parse.lines",
-  "title": "Pick Line",
-  "subtitle": "community",
-  "icon": "📑",
-  "category": "Data",
-  "description": "Selects a specific line from multi-line text by number.",
-  "inputs": [
+{"typeId":"parse.lines","title":"Pick Line","subtitle":"composite","icon":"\uD83D\uDCC3","category":"Data","description":"Picks the Nth line.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"1"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Pick Line",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n9dd486",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n9ed486",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "n9fd486",
+      "type": "data.pick",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "nth",
+        "sep": "newline",
+        "n": "{n}"
+      }
+    },
     {
-      "key": "line",
-      "label": "Line",
-      "type": "Int",
-      "default": 1
+      "id": "na0d486",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\ntext = os.environ.get('TEXT', os.environ.get('INPUT', os.environ.get('MESSAGE', '')))\ntry:\n    n = int(str(os.environ.get('LINE', '1')).strip() or '1')\nexcept Exception:\n    n = 1\ntry:\n    lines = text.split('\\n')\n    if n > 0:\n        idx = n - 1\n    else:\n        idx = len(lines) + n\n    if 0 <= idx < len(lines):\n        print(lines[idx])\n    else:\n        print('')\nexcept Exception:\n    print('')\n"
-}
+  "connections": [
+    {
+      "from": "n9ed486",
+      "fromPin": 0,
+      "to": "n9fd486",
+      "toPin": 0
+    },
+    {
+      "from": "n9dd486",
+      "fromPin": 0,
+      "to": "na0d486",
+      "toPin": 0
+    },
+    {
+      "from": "n9fd486",
+      "fromPin": 0,
+      "to": "na0d486",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,36 +1,120 @@
-{
-  "typeId": "parse.hashtags",
-  "title": "Extract Hashtags & Mentions",
-  "subtitle": "community",
-  "icon": "#️⃣",
-  "category": "Filter",
-  "description": "Extracts #hashtags and @mentions from text.",
-  "inputs": [
+{"typeId":"parse.hashtags","title":"Extract Hashtags \u0026 Mentions","subtitle":"composite","icon":"#\uFE0F\u20E3","category":"Filter","description":"Pulls #hashtags and @mentions out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"hashtags","kind":"Text"},{"name":"mentions","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Hashtags \u0026 Mentions",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nb7d488",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
+      "id": "nb8d488",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "nb9d488",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "all",
+        "pattern": "#\\w\u002B",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "nbad488",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "all",
+        "pattern": "@\\w\u002B",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "nbbd488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "hashtags"
+      }
+    },
+    {
+      "id": "nbcd488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "mentions"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "nb8d488",
+      "fromPin": 0,
+      "to": "nb9d488",
+      "toPin": 0
     },
     {
-      "name": "hashtags",
-      "kind": "Text"
+      "from": "nb8d488",
+      "fromPin": 0,
+      "to": "nbad488",
+      "toPin": 0
     },
     {
-      "name": "mentions",
-      "kind": "Text"
+      "from": "nb7d488",
+      "fromPin": 0,
+      "to": "nbbd488",
+      "toPin": 0
+    },
+    {
+      "from": "nb9d488",
+      "fromPin": 0,
+      "to": "nbbd488",
+      "toPin": 1
+    },
+    {
+      "from": "nb7d488",
+      "fromPin": 0,
+      "to": "nbcd488",
+      "toPin": 0
+    },
+    {
+      "from": "nbad488",
+      "fromPin": 0,
+      "to": "nbcd488",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, re, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    hashtags = re.findall(r'#\\w+', text)\n    mentions = re.findall(r'@\\w+', text)\n    print(json.dumps({'hashtags': ' '.join(hashtags), 'mentions': ' '.join(mentions)}))\nexcept Exception as e:\n    print(json.dumps({'hashtags': '', 'mentions': ''}))\n"
-}
+  ]
+}}

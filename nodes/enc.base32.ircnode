@@ -1,40 +1,73 @@
-{
-  "typeId": "enc.base32",
-  "title": "Base32 Encode/Decode",
-  "subtitle": "community",
-  "icon": "🔐",
-  "category": "Data",
-  "description": "Encodes or decodes text using Base32.",
-  "inputs": [
+{"typeId":"enc.base32","title":"Base32 Encode/Decode","subtitle":"composite","icon":"\uD83D\uDD21","category":"Data","description":"Encodes or decodes Base32.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"mode","label":"Mode","type":"Text","default":"encode"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Base32 Encode/Decode",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n9d482",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "nad482",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "nbd482",
+      "type": "data.encode",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "base32",
+        "mode": "{mode}"
+      }
+    },
     {
-      "key": "mode",
-      "label": "Mode",
-      "type": "Choice",
-      "default": "encode",
-      "choices": ["encode", "decode"]
+      "id": "ncd482",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, base64\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nmode = (os.environ.get('MODE') or 'encode').strip().lower()\ntry:\n    if mode == 'decode':\n        result = base64.b32decode(text.strip().encode()).decode('utf-8', 'replace')\n    else:\n        result = base64.b32encode(text.encode()).decode()\n    print(result)\nexcept Exception as e:\n    print(f'error: {e}')\n"
-}
+  "connections": [
+    {
+      "from": "nad482",
+      "fromPin": 0,
+      "to": "nbd482",
+      "toPin": 0
+    },
+    {
+      "from": "n9d482",
+      "fromPin": 0,
+      "to": "ncd482",
+      "toPin": 0
+    },
+    {
+      "from": "nbd482",
+      "fromPin": 0,
+      "to": "ncd482",
+      "toPin": 1
+    }
+  ]
+}}

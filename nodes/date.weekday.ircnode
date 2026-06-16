@@ -1,32 +1,75 @@
-{
-  "typeId": "date.weekday",
-  "title": "Day of Week",
-  "subtitle": "community",
-  "icon": "📅",
-  "category": "Data",
-  "description": "Returns the weekday name for a given date.",
-  "inputs": [
+{"typeId":"date.weekday","title":"Day of Week","subtitle":"composite","icon":"\uD83D\uDCC5","category":"Data","description":"The weekday of a date.","inputs":[{"name":"","kind":"Exec"},{"name":"date","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Day of Week",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n11ad48a",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "date",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n11bd48a",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "date"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n11cd48a",
+      "type": "data.datetime",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "weekday",
+        "input": "",
+        "format": "",
+        "zone": ""
+      }
+    },
+    {
+      "id": "n11dd48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\nfrom datetime import datetime, date\ns=(os.environ.get('DATE') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    d=datetime.strptime(s,'%Y-%m-%d').date() if s else date.today()\n    print(d.strftime('%A'))\nexcept Exception:\n    print('give a date as YYYY-MM-DD (e.g. 2026-06-15)')\n"
-}
+  "connections": [
+    {
+      "from": "n11bd48a",
+      "fromPin": 0,
+      "to": "n11cd48a",
+      "toPin": 0
+    },
+    {
+      "from": "n11ad48a",
+      "fromPin": 0,
+      "to": "n11dd48a",
+      "toPin": 0
+    },
+    {
+      "from": "n11cd48a",
+      "fromPin": 0,
+      "to": "n11dd48a",
+      "toPin": 1
+    }
+  ]
+}}

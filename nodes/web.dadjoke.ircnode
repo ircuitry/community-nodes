@@ -1,28 +1,84 @@
-{
-  "typeId": "web.dadjoke",
-  "title": "Dad Joke",
-  "subtitle": "community",
-  "icon": "😄",
-  "category": "Action",
-  "description": "A random dad joke (icanhazdadjoke, no key).",
-  "inputs": [
+{"typeId":"web.dadjoke","title":"Dad Joke","subtitle":"composite","icon":"\uD83D\uDE02","category":"Action","description":"A random dad joke.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Dad Joke",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n183d48e",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n184d48e",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "method": "GET",
+        "url": "https://icanhazdadjoke.com/",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "Accept: application/json",
+        "body": ""
+      }
+    },
+    {
+      "id": "n185d48e",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "path": "joke"
+      }
+    },
+    {
+      "id": "n186d48e",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 15,
-  "code": "\nimport os,urllib.request,urllib.parse,json\ndef get(url,headers=None,timeout=9):\n    req=urllib.request.Request(url,headers=headers or {'User-Agent':'ircuitry-bot'})\n    return urllib.request.urlopen(req,timeout=timeout).read().decode('utf-8','replace')\n\ntry:\n    d=json.loads(get('https://icanhazdadjoke.com/',{'Accept':'application/json','User-Agent':'ircuitry-bot'}))\n    print(d.get('joke','...'))\nexcept Exception as e: print('error: '+str(e)[:60])\n"
-}
+  "connections": [
+    {
+      "from": "n184d48e",
+      "fromPin": 1,
+      "to": "n185d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n183d48e",
+      "fromPin": 0,
+      "to": "n184d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n184d48e",
+      "fromPin": 0,
+      "to": "n186d48e",
+      "toPin": 0
+    },
+    {
+      "from": "n185d48e",
+      "fromPin": 0,
+      "to": "n186d48e",
+      "toPin": 1
+    }
+  ]
+}}

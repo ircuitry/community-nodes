@@ -1,39 +1,91 @@
-{
-  "typeId": "gen.qrurl",
-  "title": "QR Code URL",
-  "subtitle": "community",
-  "icon": "📱",
-  "category": "Data",
-  "description": "Builds a QR code image URL for any text or link.",
-  "inputs": [
+{"typeId":"gen.qrurl","title":"QR Code URL","subtitle":"composite","icon":"\uD83D\uDD33","category":"Data","description":"Builds a QR-code image URL for the text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "QR Code URL",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n153d48c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n154d48c",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "url",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "n155d48c",
+      "type": "data.encode",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
     {
-      "key": "size",
-      "label": "Size",
-      "type": "Int",
-      "default": 200
+      "id": "n156d48c",
+      "type": "data.format",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "template": "https://api.qrserver.com/v1/create-qr-code/?size=240x240\u0026data={a}"
+      }
+    },
+    {
+      "id": "n157d48c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "url"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\nfrom urllib.parse import quote\ntry:\n    text=(os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or '').strip()\n    try:\n        size=int((os.environ.get('SIZE') or '200').strip())\n    except Exception:\n        size=200\n    if size<10:\n        size=10\n    if size>1000:\n        size=1000\n    if not text:\n        print('give some text or a link to encode')\n    else:\n        encoded=quote(text, safe='')\n        print(f'https://api.qrserver.com/v1/create-qr-code/?size={size}x{size}&data={encoded}')\nexcept Exception as e:\n    print(f'error: {e}')\n"
-}
+  "connections": [
+    {
+      "from": "n154d48c",
+      "fromPin": 0,
+      "to": "n155d48c",
+      "toPin": 0
+    },
+    {
+      "from": "n155d48c",
+      "fromPin": 0,
+      "to": "n156d48c",
+      "toPin": 0
+    },
+    {
+      "from": "n153d48c",
+      "fromPin": 0,
+      "to": "n157d48c",
+      "toPin": 0
+    },
+    {
+      "from": "n156d48c",
+      "fromPin": 0,
+      "to": "n157d48c",
+      "toPin": 1
+    }
+  ]
+}}

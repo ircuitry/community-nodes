@@ -1,40 +1,142 @@
-{
-  "typeId": "num.gcd",
-  "title": "GCD & LCM",
-  "subtitle": "community",
-  "icon": "➗",
-  "category": "Data",
-  "description": "Computes the greatest common divisor and least common multiple of two integers.",
-  "inputs": [
+{"typeId":"num.gcd","title":"GCD \u0026 LCM","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Greatest common divisor and least common multiple of two numbers.","inputs":[{"name":"","kind":"Exec"},{"name":"a","kind":"Text"},{"name":"b","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"gcd","kind":"Text"},{"name":"lcm","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "GCD \u0026 LCM",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nf5d489",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "a",
-      "kind": "Number"
+      "id": "nf6d489",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "a"
+      }
     },
     {
-      "name": "b",
-      "kind": "Number"
+      "id": "nf7d489",
+      "type": "flow.arg",
+      "x": -460,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "b"
+      }
+    },
+    {
+      "id": "nf8d489",
+      "type": "num.theory",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "gcd",
+        "a": "",
+        "b": ""
+      }
+    },
+    {
+      "id": "nf9d489",
+      "type": "num.theory",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "lcm",
+        "a": "",
+        "b": ""
+      }
+    },
+    {
+      "id": "nfad489",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "gcd"
+      }
+    },
+    {
+      "id": "nfbd489",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "lcm"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "nf6d489",
+      "fromPin": 0,
+      "to": "nf8d489",
+      "toPin": 0
     },
     {
-      "name": "gcd",
-      "kind": "Number"
+      "from": "nf7d489",
+      "fromPin": 0,
+      "to": "nf8d489",
+      "toPin": 1
     },
     {
-      "name": "lcm",
-      "kind": "Number"
+      "from": "nf6d489",
+      "fromPin": 0,
+      "to": "nf9d489",
+      "toPin": 0
+    },
+    {
+      "from": "nf7d489",
+      "fromPin": 0,
+      "to": "nf9d489",
+      "toPin": 1
+    },
+    {
+      "from": "nf5d489",
+      "fromPin": 0,
+      "to": "nfad489",
+      "toPin": 0
+    },
+    {
+      "from": "nf8d489",
+      "fromPin": 0,
+      "to": "nfad489",
+      "toPin": 1
+    },
+    {
+      "from": "nf5d489",
+      "fromPin": 0,
+      "to": "nfbd489",
+      "toPin": 0
+    },
+    {
+      "from": "nf9d489",
+      "fromPin": 0,
+      "to": "nfbd489",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, json, math\ntry:\n    a = int(float((os.environ.get('A') or os.environ.get('INPUT') or '0').strip()))\n    b = int(float((os.environ.get('B') or '0').strip()))\n    g = math.gcd(a, b)\n    l = 0 if g == 0 else abs(a * b) // g\n    print(json.dumps({'gcd': g, 'lcm': l}))\nexcept Exception as e:\n    print(json.dumps({'gcd': 0, 'lcm': 0, 'error': str(e)}))\n"
-}
+  ]
+}}

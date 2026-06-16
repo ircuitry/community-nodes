@@ -1,32 +1,74 @@
-{
-  "typeId": "num.factorial",
-  "title": "Factorial",
-  "subtitle": "community",
-  "icon": "❗",
-  "category": "Data",
-  "description": "Computes the factorial of a non-negative integer.",
-  "inputs": [
+{"typeId":"num.factorial","title":"Factorial","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"n! factorial.","inputs":[{"name":"","kind":"Exec"},{"name":"n","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Factorial",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nd9d488",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "n",
-      "kind": "Number"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "ndad488",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "n"
+      }
     },
     {
-      "name": "result",
-      "kind": "Number"
+      "id": "ndbd488",
+      "type": "num.theory",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "factorial",
+        "a": "",
+        "b": ""
+      }
+    },
+    {
+      "id": "ndcd488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, math\ns = (os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    n = int(float(s))\n    if n < 0:\n        print('error: n must be a non-negative integer')\n    elif n > 170:\n        print('error: n too large (cap is 170)')\n    else:\n        print(math.factorial(n))\nexcept Exception:\n    print('error: give a non-negative integer (e.g. 5)')\n"
-}
+  "connections": [
+    {
+      "from": "ndad488",
+      "fromPin": 0,
+      "to": "ndbd488",
+      "toPin": 0
+    },
+    {
+      "from": "nd9d488",
+      "fromPin": 0,
+      "to": "ndcd488",
+      "toPin": 0
+    },
+    {
+      "from": "ndbd488",
+      "fromPin": 0,
+      "to": "ndcd488",
+      "toPin": 1
+    }
+  ]
+}}

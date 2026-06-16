@@ -1,39 +1,74 @@
-{
-  "typeId": "text.zalgo",
-  "title": "Zalgo Text",
-  "subtitle": "community",
-  "icon": "👹",
-  "category": "Data",
-  "description": "Adds creepy combining diacritics to text for a glitchy look.",
-  "inputs": [
+{"typeId":"text.zalgo","title":"Zalgo Text","subtitle":"composite","icon":"\uD83E\uDD91","category":"Data","description":"Adds c\u0337r\u0337e\u0337e\u0337p\u0337y\u0337 combining marks.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"3"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Zalgo Text",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n85d485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n86d485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "n87d485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "zalgo",
+        "n": "{n}",
+        "fill": " "
+      }
+    },
     {
-      "key": "intensity",
-      "label": "Intensity",
-      "type": "Int",
-      "default": 3
+      "id": "n88d485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, random\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    try:\n        intensity = int(os.environ.get('INTENSITY') or 3)\n    except Exception:\n        intensity = 3\n    if intensity < 0:\n        intensity = 0\n    marks = [chr(c) for c in range(0x0300, 0x0370)]\n    out = []\n    for ch in text:\n        out.append(ch)\n        if not ch.isspace():\n            for _ in range(intensity):\n                out.append(random.choice(marks))\n    print(''.join(out))\nexcept Exception as e:\n    print('zalgo error: ' + str(e))\n"
-}
+  "connections": [
+    {
+      "from": "n86d485",
+      "fromPin": 0,
+      "to": "n87d485",
+      "toPin": 0
+    },
+    {
+      "from": "n85d485",
+      "fromPin": 0,
+      "to": "n88d485",
+      "toPin": 0
+    },
+    {
+      "from": "n87d485",
+      "fromPin": 0,
+      "to": "n88d485",
+      "toPin": 1
+    }
+  ]
+}}

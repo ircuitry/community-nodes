@@ -1,36 +1,120 @@
-{
-  "typeId": "date.countdown",
-  "title": "Countdown",
-  "subtitle": "community",
-  "icon": "⏳",
-  "category": "Data",
-  "description": "Counts the days, hours, and minutes until a future date or time.",
-  "inputs": [
+{"typeId":"date.countdown","title":"Countdown","subtitle":"composite","icon":"\u23F3","category":"Data","description":"Time and days until a target date.","inputs":[{"name":"","kind":"Exec"},{"name":"target","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"days","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Countdown",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n12ad48b",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "target",
-      "kind": "Text"
+      "id": "n12bd48b",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "target"
+      }
+    },
+    {
+      "id": "n12cd48b",
+      "type": "data.datetime",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "until",
+        "input": "",
+        "format": "",
+        "zone": ""
+      }
+    },
+    {
+      "id": "n12dd48b",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "first",
+        "pattern": "\\d\u002B",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n12ed48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n12fd48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "days"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "n12bd48b",
+      "fromPin": 0,
+      "to": "n12cd48b",
+      "toPin": 0
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "from": "n12cd48b",
+      "fromPin": 0,
+      "to": "n12dd48b",
+      "toPin": 0
     },
     {
-      "name": "days",
-      "kind": "Number"
+      "from": "n12ad48b",
+      "fromPin": 0,
+      "to": "n12ed48b",
+      "toPin": 0
+    },
+    {
+      "from": "n12cd48b",
+      "fromPin": 0,
+      "to": "n12ed48b",
+      "toPin": 1
+    },
+    {
+      "from": "n12ad48b",
+      "fromPin": 0,
+      "to": "n12fd48b",
+      "toPin": 0
+    },
+    {
+      "from": "n12dd48b",
+      "fromPin": 0,
+      "to": "n12fd48b",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, json\nfrom datetime import datetime\n\ns = (os.environ.get('TARGET') or os.environ.get('INPUT') or os.environ.get('ARGS') or '').strip()\ntry:\n    if not s:\n        raise ValueError('no target date given')\n    t = datetime.fromisoformat(s)\n    now = datetime.now(t.tzinfo) if t.tzinfo else datetime.now()\n    delta = t - now\n    total = int(delta.total_seconds())\n    if total <= 0:\n        result = 'that date is in the past'\n        days = 0\n    else:\n        days = total // 86400\n        hours = (total % 86400) // 3600\n        minutes = (total % 3600) // 60\n        result = f'{days} days, {hours} hours, {minutes} minutes'\n    print(json.dumps({'result': result, 'days': days}))\nexcept Exception as e:\n    print(json.dumps({'result': f'invalid date: {e} (use ISO like 2026-12-31 or 2026-12-31T18:00)', 'days': 0}))\n"
-}
+  ]
+}}

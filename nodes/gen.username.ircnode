@@ -1,40 +1,55 @@
-{
-  "typeId": "gen.username",
-  "title": "Username Generator",
-  "subtitle": "community",
-  "icon": "🏷️",
-  "category": "Data",
-  "description": "Generates a random handle from an adjective, noun, and optional number.",
-  "inputs": [
+{"typeId":"gen.username","title":"Username Generator","subtitle":"composite","icon":"\uD83D\uDE4B","category":"Data","description":"A cute random username.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Username Generator",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n141d48b",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "n142d48b",
+      "type": "gen.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "username",
+        "spec": ""
+      }
+    },
     {
-      "key": "style",
-      "label": "Style",
-      "type": "Choice",
-      "default": "plain",
-      "choices": [
-        "snake",
-        "camel",
-        "plain"
-      ]
+      "id": "n143d48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 6,
-  "code": "import os, random\ntry:\n    adjectives = ['brave','calm','clever','cosmic','crimson','daring','electric','fuzzy','golden','happy','icy','jolly','lucky','mighty','neon','quiet','rapid','silent','sly','swift','velvet','witty','zesty','noble','wild']\n    nouns = ['otter','falcon','badger','comet','ember','glacier','hawk','jaguar','koala','lynx','meteor','nebula','orca','panther','quokka','raven','sparrow','tiger','viper','walrus','yak','zebra','phoenix','dragon','wolf']\n    style = (os.environ.get('STYLE') or 'plain').strip().lower()\n    adj = random.choice(adjectives)\n    noun = random.choice(nouns)\n    num = random.randint(0, 99)\n    if style == 'snake':\n        name = f'{adj}_{noun}_{num}'\n    elif style == 'camel':\n        name = f'{adj}{noun.capitalize()}{num}'\n    else:\n        name = f'{adj}{noun}{num}'\n    print(name)\nexcept Exception as e:\n    print(f'user{random.randint(1000, 9999)}')\n"
-}
+  "connections": [
+    {
+      "from": "n141d48b",
+      "fromPin": 0,
+      "to": "n143d48b",
+      "toPin": 0
+    },
+    {
+      "from": "n142d48b",
+      "fromPin": 0,
+      "to": "n143d48b",
+      "toPin": 1
+    }
+  ]
+}}

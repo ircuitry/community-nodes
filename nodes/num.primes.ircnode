@@ -1,40 +1,74 @@
-{
-  "typeId": "num.primes",
-  "title": "Prime Tools",
-  "subtitle": "community",
-  "icon": "🔱",
-  "category": "Data",
-  "description": "Checks if a number is prime or lists primes up to a limit.",
-  "inputs": [
+{"typeId":"num.primes","title":"Prime Check","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Whether n is prime.","inputs":[{"name":"","kind":"Exec"},{"name":"n","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Prime Check",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "ne5d489",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "n",
-      "kind": "Number"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "ne6d489",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "n"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "ne7d489",
+      "type": "num.theory",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "isprime",
+        "a": "",
+        "b": ""
+      }
+    },
     {
-      "key": "mode",
-      "label": "Mode",
-      "type": "Choice",
-      "default": "check",
-      "choices": ["check", "list", "factorize"]
+      "id": "ne8d489",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 10,
-  "code": "import os\n\ndef get_n():\n    raw = (os.environ.get('N') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or '').strip()\n    if not raw:\n        return None\n    try:\n        return int(float(raw))\n    except Exception:\n        return None\n\ndef is_prime(x):\n    if x < 2:\n        return False\n    if x < 4:\n        return True\n    if x % 2 == 0:\n        return False\n    i = 3\n    while i * i <= x:\n        if x % i == 0:\n            return False\n        i += 2\n    return True\n\ndef sieve(limit):\n    cap = 100000\n    if limit > cap:\n        limit = cap\n    if limit < 2:\n        return []\n    flags = bytearray([1]) * (limit + 1)\n    flags[0] = 0\n    flags[1] = 0\n    i = 2\n    while i * i <= limit:\n        if flags[i]:\n            for j in range(i * i, limit + 1, i):\n                flags[j] = 0\n        i += 1\n    return [k for k in range(2, limit + 1) if flags[k]]\n\ndef factorize(x):\n    x = abs(x)\n    if x < 2:\n        return []\n    factors = []\n    d = 2\n    while d * d <= x:\n        while x % d == 0:\n            factors.append(d)\n            x //= d\n        d += 1 if d == 2 else 2\n    if x > 1:\n        factors.append(x)\n    return factors\n\ndef main():\n    mode = (os.environ.get('MODE') or 'check').strip().lower()\n    n = get_n()\n    if n is None:\n        print('give a number (e.g. 17)')\n        return\n    if mode == 'list':\n        primes = sieve(n)\n        if not primes:\n            print('no primes up to ' + str(n))\n        else:\n            print('primes up to ' + str(n) + ': ' + ', '.join(str(p) for p in primes))\n    elif mode == 'factorize':\n        if n < 2:\n            print(str(n) + ' has no prime factorization')\n            return\n        factors = factorize(n)\n        parts = []\n        last = None\n        count = 0\n        for f in factors:\n            if f == last:\n                count += 1\n            else:\n                if last is not None:\n                    parts.append(str(last) + ('^' + str(count) if count > 1 else ''))\n                last = f\n                count = 1\n        if last is not None:\n            parts.append(str(last) + ('^' + str(count) if count > 1 else ''))\n        print(str(n) + ' = ' + ' x '.join(parts))\n    else:\n        print(str(n) + ' is ' + ('prime' if is_prime(n) else 'not prime') + ' (' + ('true' if is_prime(n) else 'false') + ')')\n\ntry:\n    main()\nexcept Exception as e:\n    print('error: ' + str(e))\n"
-}
+  "connections": [
+    {
+      "from": "ne6d489",
+      "fromPin": 0,
+      "to": "ne7d489",
+      "toPin": 0
+    },
+    {
+      "from": "ne5d489",
+      "fromPin": 0,
+      "to": "ne8d489",
+      "toPin": 0
+    },
+    {
+      "from": "ne7d489",
+      "fromPin": 0,
+      "to": "ne8d489",
+      "toPin": 1
+    }
+  ]
+}}

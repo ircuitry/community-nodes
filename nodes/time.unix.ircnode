@@ -1,32 +1,75 @@
-{
-  "typeId": "time.unix",
-  "title": "Unix Timestamp",
-  "subtitle": "community",
-  "icon": "⏱️",
-  "category": "Data",
-  "description": "Current unix timestamp, or convert one to a date.",
-  "inputs": [
+{"typeId":"time.unix","title":"Unix Timestamp","subtitle":"composite","icon":"\u23F1\uFE0F","category":"Data","description":"Converts to/from a unix timestamp.","inputs":[{"name":"","kind":"Exec"},{"name":"ts","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Unix Timestamp",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n11ed48a",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "ts",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n11fd48a",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "ts"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n120d48a",
+      "type": "data.datetime",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "unix",
+        "input": "",
+        "format": "",
+        "zone": ""
+      }
+    },
+    {
+      "id": "n121d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,datetime\ns=(os.environ.get('TS') or os.environ.get('ARGS') or '').strip()\nif not s: print(int(datetime.datetime.now().timestamp())); raise SystemExit\ntry: print(datetime.datetime.fromtimestamp(int(s)).strftime('%Y-%m-%d %H:%M:%S'))\nexcept Exception: print('give a unix timestamp (or leave blank for now)')\n"
-}
+  "connections": [
+    {
+      "from": "n11fd48a",
+      "fromPin": 0,
+      "to": "n120d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n11ed48a",
+      "fromPin": 0,
+      "to": "n121d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n120d48a",
+      "fromPin": 0,
+      "to": "n121d48a",
+      "toPin": 1
+    }
+  ]
+}}

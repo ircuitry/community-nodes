@@ -1,32 +1,72 @@
-{
-  "typeId": "text.leet",
-  "title": "Leetspeak",
-  "subtitle": "community",
-  "icon": "🅻",
-  "category": "Data",
-  "description": "Converts text to l33t sp34k.",
-  "inputs": [
+{"typeId":"text.leet","title":"Leetspeak","subtitle":"composite","icon":"\uD83D\uDCBE","category":"Data","description":"Converts letters to l33t numerals.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Leetspeak",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n55d484",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n56d484",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n57d484",
+      "type": "data.case",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "leet"
+      }
+    },
+    {
+      "id": "n58d484",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os\ns=(os.environ.get('TEXT') or os.environ.get('ARGS') or '')\nm={'a':'4','e':'3','i':'1','o':'0','t':'7','s':'5','l':'1','b':'8','g':'9'}\nprint(''.join(m.get(c.lower(),c) for c in s))\n"
-}
+  "connections": [
+    {
+      "from": "n56d484",
+      "fromPin": 0,
+      "to": "n57d484",
+      "toPin": 0
+    },
+    {
+      "from": "n55d484",
+      "fromPin": 0,
+      "to": "n58d484",
+      "toPin": 0
+    },
+    {
+      "from": "n57d484",
+      "fromPin": 0,
+      "to": "n58d484",
+      "toPin": 1
+    }
+  ]
+}}

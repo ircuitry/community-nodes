@@ -1,32 +1,54 @@
-{
-  "typeId": "fun.8ball",
-  "title": "Magic 8-Ball",
-  "subtitle": "community",
-  "icon": "🎱",
-  "category": "Data",
-  "description": "Answers a yes/no question.",
-  "inputs": [
+{"typeId":"fun.8ball","title":"Magic 8-Ball","subtitle":"composite","icon":"\uD83C\uDFB1","category":"Data","description":"Classic Magic 8-Ball answers.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Magic 8-Ball",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n162d48c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "question",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n163d48c",
+      "type": "data.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "options": "It is certain\nWithout a doubt\nYes definitely\nMost likely\nOutlook good\nReply hazy, try again\nAsk again later\nDon\u0027t count on it\nMy reply is no\nVery doubtful"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n164d48c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,random\na=['It is certain.','Without a doubt.','Yes definitely.','You may rely on it.','Most likely.','Outlook good.','Signs point to yes.','Reply hazy, try again.','Ask again later.','Cannot predict now.','Don\\'t count on it.','My reply is no.','Very doubtful.','Outlook not so good.']\nq=(os.environ.get('QUESTION') or os.environ.get('ARGS') or '').strip()\nprint('🎱 '+random.choice(a))\n"
-}
+  "connections": [
+    {
+      "from": "n162d48c",
+      "fromPin": 0,
+      "to": "n164d48c",
+      "toPin": 0
+    },
+    {
+      "from": "n163d48c",
+      "fromPin": 0,
+      "to": "n164d48c",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,32 +1,73 @@
-{
-  "typeId": "morse.decode",
-  "title": "Morse to Text",
-  "subtitle": "community",
-  "icon": "📡",
-  "category": "Data",
-  "description": "Decodes Morse code (space between letters, / for space).",
-  "inputs": [
+{"typeId":"morse.decode","title":"Morse to Text","subtitle":"composite","icon":"\uD83D\uDCFB","category":"Data","description":"Converts Morse code back to text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Morse to Text",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n29d483",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n2ad483",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n2bd483",
+      "type": "data.encode",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "morse",
+        "mode": "decode"
+      }
+    },
+    {
+      "id": "n2cd483",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os\nM={'.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f','--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l','--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r','...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x','-.--':'y','--..':'z','-----':'0','.----':'1','..---':'2','...--':'3','....-':'4','.....':'5','-....':'6','--...':'7','---..':'8','----.':'9'}\ns=(os.environ.get('TEXT') or os.environ.get('ARGS') or '').strip()\nprint(''.join(' ' if t=='/' else M.get(t,'?') for t in s.split(' ')) or '(nothing)')\n"
-}
+  "connections": [
+    {
+      "from": "n2ad483",
+      "fromPin": 0,
+      "to": "n2bd483",
+      "toPin": 0
+    },
+    {
+      "from": "n29d483",
+      "fromPin": 0,
+      "to": "n2cd483",
+      "toPin": 0
+    },
+    {
+      "from": "n2bd483",
+      "fromPin": 0,
+      "to": "n2cd483",
+      "toPin": 1
+    }
+  ]
+}}

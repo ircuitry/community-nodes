@@ -1,40 +1,164 @@
-{
-  "typeId": "text.count",
-  "title": "Count Characters & Words",
-  "subtitle": "community",
-  "icon": "🔢",
-  "category": "Data",
-  "description": "Counts characters, words, lines, and sentences in text.",
-  "inputs": [
+{"typeId":"text.count","title":"Count Characters \u0026 Words","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Counts characters, words and lines.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"chars","kind":"Text"},{"name":"words","kind":"Text"},{"name":"lines","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Count Characters \u0026 Words",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n175d48d",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
+      "id": "n176d48d",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n177d48d",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "length",
+        "n": "1",
+        "fill": " "
+      }
+    },
+    {
+      "id": "n178d48d",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "count",
+        "pattern": "\\S\u002B",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n179d48d",
+      "type": "data.regex",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "count",
+        "pattern": "^",
+        "replace": "",
+        "flags": "m"
+      }
+    },
+    {
+      "id": "n17ad48d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "chars"
+      }
+    },
+    {
+      "id": "n17bd48d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "words"
+      }
+    },
+    {
+      "id": "n17cd48d",
+      "type": "flow.return",
+      "x": 320,
+      "y": 20,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "lines"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "n176d48d",
+      "fromPin": 0,
+      "to": "n177d48d",
+      "toPin": 0
     },
     {
-      "name": "chars",
-      "kind": "Number"
+      "from": "n176d48d",
+      "fromPin": 0,
+      "to": "n178d48d",
+      "toPin": 0
     },
     {
-      "name": "words",
-      "kind": "Number"
+      "from": "n176d48d",
+      "fromPin": 0,
+      "to": "n179d48d",
+      "toPin": 0
     },
     {
-      "name": "lines",
-      "kind": "Number"
+      "from": "n175d48d",
+      "fromPin": 0,
+      "to": "n17ad48d",
+      "toPin": 0
+    },
+    {
+      "from": "n177d48d",
+      "fromPin": 0,
+      "to": "n17ad48d",
+      "toPin": 1
+    },
+    {
+      "from": "n175d48d",
+      "fromPin": 0,
+      "to": "n17bd48d",
+      "toPin": 0
+    },
+    {
+      "from": "n178d48d",
+      "fromPin": 0,
+      "to": "n17bd48d",
+      "toPin": 1
+    },
+    {
+      "from": "n175d48d",
+      "fromPin": 0,
+      "to": "n17cd48d",
+      "toPin": 0
+    },
+    {
+      "from": "n179d48d",
+      "fromPin": 0,
+      "to": "n17cd48d",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, json\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    chars = len(text)\n    words = len(text.split())\n    lines = len(text.splitlines()) if text else 0\n    print(json.dumps({'chars': chars, 'words': words, 'lines': lines}))\nexcept Exception as e:\n    print(json.dumps({'chars': 0, 'words': 0, 'lines': 0, 'error': str(e)}))\n"
-}
+  ]
+}}

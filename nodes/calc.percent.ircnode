@@ -1,32 +1,72 @@
-{
-  "typeId": "calc.percent",
-  "title": "Percentage",
-  "subtitle": "community",
-  "icon": "％",
-  "category": "Data",
-  "description": "X% of Y, or X out of Y. e.g. '20% of 150' or '30 of 120'.",
-  "inputs": [
+{"typeId":"calc.percent","title":"Percentage","subtitle":"composite","icon":"\uFF05","category":"Data","description":"Percentage math - e.g. 80*15/100.","inputs":[{"name":"","kind":"Exec"},{"name":"expr","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Percentage",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nc1d488",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "expr",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "nc2d488",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "expr"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "nc3d488",
+      "type": "data.mathx",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "expr": ""
+      }
+    },
+    {
+      "id": "nc4d488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,re\ns=(os.environ.get('EXPR') or os.environ.get('ARGS') or '').strip().lower()\nm=re.match(r'^(-?\\d+(?:\\.\\d+)?)\\s*%\\s*of\\s*(-?\\d+(?:\\.\\d+)?)$',s)\nif m: print('%g'%(float(m.group(1))/100*float(m.group(2)))); raise SystemExit\nm=re.match(r'^(-?\\d+(?:\\.\\d+)?)\\s*of\\s*(-?\\d+(?:\\.\\d+)?)$',s)\nif m and float(m.group(2)): print('%g%%'%(float(m.group(1))/float(m.group(2))*100)); raise SystemExit\nprint(\"try '20% of 150' or '30 of 120'\")\n"
-}
+  "connections": [
+    {
+      "from": "nc2d488",
+      "fromPin": 0,
+      "to": "nc3d488",
+      "toPin": 0
+    },
+    {
+      "from": "nc1d488",
+      "fromPin": 0,
+      "to": "nc4d488",
+      "toPin": 0
+    },
+    {
+      "from": "nc3d488",
+      "fromPin": 0,
+      "to": "nc4d488",
+      "toPin": 1
+    }
+  ]
+}}

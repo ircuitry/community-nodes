@@ -1,32 +1,74 @@
-{
-  "typeId": "text.acronym",
-  "title": "Acronym Maker",
-  "subtitle": "community",
-  "icon": "🆎",
-  "category": "Data",
-  "description": "Builds an acronym from the first letter of each word.",
-  "inputs": [
+{"typeId":"text.acronym","title":"Acronym Maker","subtitle":"composite","icon":"\uD83D\uDD24","category":"Data","description":"First letters of each word.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Acronym Maker",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n75d485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n76d485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n77d485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "acronym",
+        "n": "1",
+        "fill": " "
+      }
+    },
+    {
+      "id": "n78d485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, re\ntext = (os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or '').strip()\ntry:\n    letters = []\n    for word in text.split():\n        for ch in word:\n            if ch.isalpha():\n                letters.append(ch.upper())\n                break\n    acronym = ''.join(letters)\n    print(acronym if acronym else 'give some words to acronymize')\nexcept Exception as e:\n    print('error: ' + str(e))\n"
-}
+  "connections": [
+    {
+      "from": "n76d485",
+      "fromPin": 0,
+      "to": "n77d485",
+      "toPin": 0
+    },
+    {
+      "from": "n75d485",
+      "fromPin": 0,
+      "to": "n78d485",
+      "toPin": 0
+    },
+    {
+      "from": "n77d485",
+      "fromPin": 0,
+      "to": "n78d485",
+      "toPin": 1
+    }
+  ]
+}}

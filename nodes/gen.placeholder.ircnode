@@ -1,47 +1,55 @@
-{
-  "typeId": "gen.placeholder",
-  "title": "Placeholder Image URL",
-  "subtitle": "community",
-  "icon": "🖼️",
-  "category": "Data",
-  "description": "Builds a placeholder image URL of a given size with optional centered text.",
-  "inputs": [
+{"typeId":"gen.placeholder","title":"Placeholder Image URL","subtitle":"composite","icon":"\uD83D\uDDBC\uFE0F","category":"Data","description":"A placeholder image URL of a given size.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[{"key":"size","label":"Size","type":"Text","default":"600x400"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Placeholder Image URL",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n158d48c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "url",
-      "kind": "Text"
-    }
-  ],
-  "params": [
-    {
-      "key": "width",
-      "label": "Width",
-      "type": "Int",
-      "default": 300
+      "id": "n159d48c",
+      "type": "data.format",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "template": "https://placehold.co/{size}",
+        "size": "{size}"
+      }
     },
     {
-      "key": "height",
-      "label": "Height",
-      "type": "Int",
-      "default": 200
-    },
-    {
-      "key": "text",
-      "label": "Text",
-      "type": "Text",
-      "default": ""
+      "id": "n15ad48c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "url"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, urllib.parse\n\ndef as_int(name, fallback):\n    raw = (os.environ.get(name) or '').strip()\n    try:\n        n = int(float(raw))\n    except Exception:\n        n = fallback\n    if n < 1:\n        n = fallback\n    return n\n\ntry:\n    w = as_int('WIDTH', 300)\n    h = as_int('HEIGHT', 200)\n    text = (os.environ.get('TEXT') or '').strip()\n    url = 'https://placehold.co/%dx%d' % (w, h)\n    if text:\n        url += '?text=' + urllib.parse.quote(text)\n    print(url)\nexcept Exception as e:\n    print('https://placehold.co/300x200')\n"
-}
+  "connections": [
+    {
+      "from": "n158d48c",
+      "fromPin": 0,
+      "to": "n15ad48c",
+      "toPin": 0
+    },
+    {
+      "from": "n159d48c",
+      "fromPin": 0,
+      "to": "n15ad48c",
+      "toPin": 1
+    }
+  ]
+}}

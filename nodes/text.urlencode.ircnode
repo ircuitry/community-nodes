@@ -1,32 +1,73 @@
-{
-  "typeId": "text.urlencode",
-  "title": "URL Encode",
-  "subtitle": "community",
-  "icon": "🔗",
-  "category": "Data",
-  "description": "Percent-encodes text for URLs.",
-  "inputs": [
+{"typeId":"text.urlencode","title":"URL Encode","subtitle":"composite","icon":"\uD83D\uDD17","category":"Data","description":"Percent-encodes text for use in a URL.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "URL Encode",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n11d483",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n12d483",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n13d483",
+      "type": "data.encode",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n14d483",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,urllib.parse\nprint(urllib.parse.quote((os.environ.get('TEXT') or os.environ.get('ARGS') or '')))\n"
-}
+  "connections": [
+    {
+      "from": "n12d483",
+      "fromPin": 0,
+      "to": "n13d483",
+      "toPin": 0
+    },
+    {
+      "from": "n11d483",
+      "fromPin": 0,
+      "to": "n14d483",
+      "toPin": 0
+    },
+    {
+      "from": "n13d483",
+      "fromPin": 0,
+      "to": "n14d483",
+      "toPin": 1
+    }
+  ]
+}}

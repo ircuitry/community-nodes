@@ -1,56 +1,74 @@
-{
-  "typeId": "text.pad",
-  "title": "Pad Text",
-  "subtitle": "community",
-  "icon": "📐",
-  "category": "Data",
-  "description": "Pads text to a target width on the left, right, or both sides.",
-  "inputs": [
+{"typeId":"text.pad","title":"Pad Text","subtitle":"composite","icon":"\uD83D\uDCCF","category":"Data","description":"Pads text to a width.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"10"},{"key":"fill","label":"Fill","type":"Text","default":" "}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Pad Text",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n69d485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
+      "id": "n6ad485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n6bd485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "padleft",
+        "n": "{n}",
+        "fill": "{fill}"
+      }
+    },
+    {
+      "id": "n6cd485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "n6ad485",
+      "fromPin": 0,
+      "to": "n6bd485",
+      "toPin": 0
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "from": "n69d485",
+      "fromPin": 0,
+      "to": "n6cd485",
+      "toPin": 0
+    },
+    {
+      "from": "n6bd485",
+      "fromPin": 0,
+      "to": "n6cd485",
+      "toPin": 1
     }
-  ],
-  "params": [
-    {
-      "key": "width",
-      "label": "Width",
-      "type": "Int",
-      "default": 20
-    },
-    {
-      "key": "fill",
-      "label": "Fill",
-      "type": "Text",
-      "default": " "
-    },
-    {
-      "key": "side",
-      "label": "Side",
-      "type": "Choice",
-      "default": "right",
-      "choices": [
-        "left",
-        "right",
-        "center"
-      ]
-    }
-  ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\ntext = os.environ.get('TEXT') or os.environ.get('INPUT') or ''\ntry:\n    width = int((os.environ.get('WIDTH') or '20').strip() or '20')\nexcept Exception:\n    width = 20\nfill = os.environ.get('FILL')\nif not fill:\n    fill = ' '\nfill = fill[0]\nside = (os.environ.get('SIDE') or 'right').strip().lower()\ntry:\n    if side == 'left':\n        out = text.rjust(width, fill)\n    elif side == 'center':\n        out = text.center(width, fill)\n    else:\n        out = text.ljust(width, fill)\n    print(out)\nexcept Exception as e:\n    print(text)\n"
-}
+  ]
+}}

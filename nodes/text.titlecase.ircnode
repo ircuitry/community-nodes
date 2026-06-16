@@ -1,32 +1,72 @@
-{
-  "typeId": "text.titlecase",
-  "title": "Smart Title Case",
-  "subtitle": "community",
-  "icon": "📖",
-  "category": "Data",
-  "description": "Capitalizes words but keeps small joining words lowercase.",
-  "inputs": [
+{"typeId":"text.titlecase","title":"Smart Title Case","subtitle":"composite","icon":"\uD83D\uDD20","category":"Data","description":"Title-cases text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Smart Title Case",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n49d484",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n4ad484",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n4bd484",
+      "type": "data.case",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "title"
+      }
+    },
+    {
+      "id": "n4cd484",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, re\nsrc = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or os.environ.get('MESSAGE') or ''\ntry:\n    stop = {'a','an','the','and','or','but','of','in','on','to','for'}\n    words = re.split(r'(\\s+)', src.strip())\n    tokens = [i for i, w in enumerate(words) if w.strip()]\n    first = tokens[0] if tokens else -1\n    last = tokens[-1] if tokens else -1\n    out = []\n    for i, w in enumerate(words):\n        if not w.strip():\n            out.append(w)\n            continue\n        lw = w.lower()\n        if lw in stop and i != first and i != last:\n            out.append(lw)\n        else:\n            out.append(w[0].upper() + w[1:].lower())\n    print(''.join(out))\nexcept Exception as e:\n    print(src)\n"
-}
+  "connections": [
+    {
+      "from": "n4ad484",
+      "fromPin": 0,
+      "to": "n4bd484",
+      "toPin": 0
+    },
+    {
+      "from": "n49d484",
+      "fromPin": 0,
+      "to": "n4cd484",
+      "toPin": 0
+    },
+    {
+      "from": "n4bd484",
+      "fromPin": 0,
+      "to": "n4cd484",
+      "toPin": 1
+    }
+  ]
+}}

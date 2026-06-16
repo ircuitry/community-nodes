@@ -20,7 +20,7 @@ INDEX_PATH = os.path.join(ROOT, "index.json")
 
 PIN_KINDS = {"Exec", "Text", "User", "Channel", "Number", "Bool", "Tool"}
 # must match the NodeCategory enum in the app (case-insensitive on load)
-CATEGORIES = {"Event", "Filter", "Logic", "Action", "Data", "Ai", "Storage", "Ircv3"}
+CATEGORIES = {"Event", "Filter", "Logic", "Action", "Data", "Ai", "Storage", "Code", "Ircv3"}
 
 
 def fail(errors, f, msg):

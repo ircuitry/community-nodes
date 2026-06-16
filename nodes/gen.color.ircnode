@@ -1,28 +1,55 @@
-{
-  "typeId": "gen.color",
-  "title": "Random Color",
-  "subtitle": "community",
-  "icon": "🎨",
-  "category": "Data",
-  "description": "A random colour as hex + RGB.",
-  "inputs": [
+{"typeId":"gen.color","title":"Random Color","subtitle":"composite","icon":"\uD83C\uDFA8","category":"Data","description":"A random hex colour.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"hex","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Random Color",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n147d48b",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "hex",
-      "kind": "Text"
+      "id": "n148d48b",
+      "type": "gen.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "color",
+        "spec": ""
+      }
+    },
+    {
+      "id": "n149d48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "hex"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport random\nr,g,b=(random.randint(0,255) for _ in range(3))\nprint('#%02X%02X%02X  rgb(%d, %d, %d)'%(r,g,b,r,g,b))\n"
-}
+  "connections": [
+    {
+      "from": "n147d48b",
+      "fromPin": 0,
+      "to": "n149d48b",
+      "toPin": 0
+    },
+    {
+      "from": "n148d48b",
+      "fromPin": 0,
+      "to": "n149d48b",
+      "toPin": 1
+    }
+  ]
+}}

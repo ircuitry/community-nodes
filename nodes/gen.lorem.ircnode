@@ -1,35 +1,55 @@
-{
-  "typeId": "gen.lorem",
-  "title": "Lorem Ipsum",
-  "subtitle": "community",
-  "icon": "📝",
-  "category": "Data",
-  "description": "Generates placeholder lorem-ipsum words.",
-  "inputs": [
+{"typeId":"gen.lorem","title":"Lorem Ipsum","subtitle":"composite","icon":"\uD83D\uDCDC","category":"Data","description":"Lorem ipsum placeholder text.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"spec","label":"Spec","type":"Text","default":"24"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Lorem Ipsum",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n14ad48b",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "n14bd48b",
+      "type": "gen.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "lorem",
+        "spec": "{spec}"
+      }
+    },
     {
-      "key": "words",
-      "label": "Words",
-      "type": "Int",
-      "default": "20"
+      "id": "n14cd48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,random\nw='lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud'.split()\nn=min(max(int(os.environ.get('WORDS') or os.environ.get('ARGS') or 20),1),100)\ns=' '.join(random.choice(w) for _ in range(n))\nprint(s.capitalize()+'.')\n"
-}
+  "connections": [
+    {
+      "from": "n14ad48b",
+      "fromPin": 0,
+      "to": "n14cd48b",
+      "toPin": 0
+    },
+    {
+      "from": "n14bd48b",
+      "fromPin": 0,
+      "to": "n14cd48b",
+      "toPin": 1
+    }
+  ]
+}}

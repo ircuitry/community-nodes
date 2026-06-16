@@ -1,36 +1,72 @@
-{
-  "typeId": "parse.jsonpath",
-  "title": "JSON Field Picker",
-  "subtitle": "community",
-  "icon": "🗂️",
-  "category": "Data",
-  "description": "Extracts a value from JSON using a simple dotted path.",
-  "inputs": [
+{"typeId":"parse.jsonpath","title":"JSON Field Picker","subtitle":"composite","icon":"\uD83E\uDDE9","category":"Data","description":"Reads a field from JSON by dotted path.","inputs":[{"name":"","kind":"Exec"},{"name":"json","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"path","label":"Path","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "JSON Field Picker",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "na1d486",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "json",
-      "kind": "Text"
+      "id": "na2d486",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "json"
+      }
     },
     {
-      "name": "path",
-      "kind": "Text"
+      "id": "na3d486",
+      "type": "data.json",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "path": "{path}"
+      }
+    },
+    {
+      "id": "na4d486",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "outputs": [
+  "connections": [
     {
-      "name": "then",
-      "kind": "Exec"
+      "from": "na2d486",
+      "fromPin": 0,
+      "to": "na3d486",
+      "toPin": 0
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "from": "na1d486",
+      "fromPin": 0,
+      "to": "na4d486",
+      "toPin": 0
+    },
+    {
+      "from": "na3d486",
+      "fromPin": 0,
+      "to": "na4d486",
+      "toPin": 1
     }
-  ],
-  "params": [],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os, json\n\nraw = os.environ.get('JSON') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or ''\npath = (os.environ.get('PATH_') or os.environ.get('PATH') or os.environ.get('ARGS') or '').strip()\n\ntry:\n    data = json.loads(raw)\nexcept Exception as e:\n    print('invalid JSON: ' + str(e))\n    raise SystemExit\n\ncur = data\nif path:\n    for part in path.split('.'):\n        if part == '':\n            continue\n        try:\n            if isinstance(cur, list):\n                cur = cur[int(part)]\n            elif isinstance(cur, dict):\n                if part in cur:\n                    cur = cur[part]\n                else:\n                    print('missing key: ' + part)\n                    raise SystemExit\n            else:\n                print('cannot descend into ' + type(cur).__name__ + ' at: ' + part)\n                raise SystemExit\n        except (ValueError, IndexError, KeyError, TypeError):\n            print('cannot resolve path segment: ' + part)\n            raise SystemExit\n\nif isinstance(cur, str):\n    print(cur)\nelse:\n    print(json.dumps(cur, ensure_ascii=False))\n"
-}
+  ]
+}}

@@ -1,28 +1,57 @@
-{
-  "typeId": "time.now",
-  "title": "Current Time",
-  "subtitle": "community",
-  "icon": "🕐",
-  "category": "Data",
-  "description": "The current local date and time.",
-  "inputs": [
+{"typeId":"time.now","title":"Current Time","subtitle":"composite","icon":"\uD83D\uDD70\uFE0F","category":"Data","description":"The current date and time.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"format","label":"Format","type":"Text","default":"yyyy-MM-dd HH:mm:ss"},{"key":"zone","label":"Zone","type":"Text","default":"UTC"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Current Time",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n114d48a",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n115d48a",
+      "type": "data.datetime",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "now",
+        "input": "",
+        "format": "{format}",
+        "zone": "{zone}"
+      }
+    },
+    {
+      "id": "n116d48a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport datetime\nprint(datetime.datetime.now().strftime('%A %d %B %Y, %H:%M:%S'))\n"
-}
+  "connections": [
+    {
+      "from": "n114d48a",
+      "fromPin": 0,
+      "to": "n116d48a",
+      "toPin": 0
+    },
+    {
+      "from": "n115d48a",
+      "fromPin": 0,
+      "to": "n116d48a",
+      "toPin": 1
+    }
+  ]
+}}

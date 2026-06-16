@@ -1,47 +1,81 @@
-{
-  "typeId": "tool.search",
-  "title": "Search Files (grep)",
-  "subtitle": "community",
-  "icon": "🔎",
-  "category": "Storage",
-  "description": "Regex-searches files under Root and outputs file:line: text for each match (capped).",
-  "inputs": [
+{"typeId":"tool.search","title":"Search Files (grep)","subtitle":"composite","icon":"\uD83D\uDD0E","category":"Code","description":"Greps the codebase folder for a pattern.","inputs":[{"name":"","kind":"Exec"},{"name":"pattern","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"matches","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Search Files (grep)",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n1eed491",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "pattern",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n1efd491",
+      "type": "code.grep",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "search_code",
+        "root": "{root}",
+        "pattern": "",
+        "glob": ""
+      }
     },
     {
-      "name": "matches",
-      "kind": "Text"
-    }
-  ],
-  "params": [
-    {
-      "key": "root",
-      "label": "Workspace root",
-      "type": "Text",
-      "default": ".",
-      "placeholder": "."
+      "id": "n1f0d491",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "pattern"
+      }
     },
     {
-      "key": "glob",
-      "label": "File glob",
-      "type": "Text",
-      "default": "**/*",
-      "placeholder": "**/*.cs"
+      "id": "n1f1d491",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "matches"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 20,
-  "code": "import os,glob,re\nroot=os.environ.get('ROOT','.') or '.'\ng=os.environ.get('GLOB','**/*') or '**/*'\ntry:\n    rx=re.compile(os.environ.get('PATTERN',''))\nexcept Exception as e:\n    print('bad pattern: '+str(e)); raise SystemExit\nout=[]\nfor f in glob.glob(os.path.join(root,g),recursive=True):\n    if not os.path.isfile(f): continue\n    try:\n        for i,line in enumerate(open(f,errors='replace'),1):\n            if rx.search(line):\n                out.append(os.path.relpath(f,root)+':'+str(i)+': '+line.rstrip()[:200])\n                if len(out)>=200: break\n    except: pass\n    if len(out)>=200: break\nprint('\\n'.join(out) if out else 'no matches')\n"
-}
+  "connections": [
+    {
+      "from": "n1f0d491",
+      "fromPin": 0,
+      "to": "n1efd491",
+      "toPin": 1
+    },
+    {
+      "from": "n1eed491",
+      "fromPin": 0,
+      "to": "n1efd491",
+      "toPin": 0
+    },
+    {
+      "from": "n1efd491",
+      "fromPin": 0,
+      "to": "n1f1d491",
+      "toPin": 0
+    },
+    {
+      "from": "n1efd491",
+      "fromPin": 1,
+      "to": "n1f1d491",
+      "toPin": 1
+    }
+  ]
+}}

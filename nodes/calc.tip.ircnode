@@ -1,32 +1,72 @@
-{
-  "typeId": "calc.tip",
-  "title": "Tip Split",
-  "subtitle": "community",
-  "icon": "🧾",
-  "category": "Data",
-  "description": "Tip + split a bill. Input 'amount [tip%] [people]', e.g. '80 18 4'.",
-  "inputs": [
+{"typeId":"calc.tip","title":"Tip Split","subtitle":"composite","icon":"\uD83E\uDDFE","category":"Data","description":"Tip math - e.g. 80*1.18/4 for 18% split 4 ways.","inputs":[{"name":"","kind":"Exec"},{"name":"expr","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Tip Split",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "nc5d488",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "bill",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "nc6d488",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "expr"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "nc7d488",
+      "type": "data.mathx",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "expr": ""
+      }
+    },
+    {
+      "id": "nc8d488",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os\np=(os.environ.get('BILL') or os.environ.get('ARGS') or '').split()\ntry:\n    amt=float(p[0]); pct=float(p[1]) if len(p)>1 else 18.0; ppl=int(p[2]) if len(p)>2 else 1\n    tip=amt*pct/100; tot=amt+tip\n    print('bill %.2f + %.0f%% tip %.2f = %.2f  (%.2f each / %d)'%(amt,pct,tip,tot,tot/max(ppl,1),max(ppl,1)))\nexcept Exception: print('e.g. 80 18 4  (amount tip%% people)')\n"
-}
+  "connections": [
+    {
+      "from": "nc6d488",
+      "fromPin": 0,
+      "to": "nc7d488",
+      "toPin": 0
+    },
+    {
+      "from": "nc5d488",
+      "fromPin": 0,
+      "to": "nc8d488",
+      "toPin": 0
+    },
+    {
+      "from": "nc7d488",
+      "fromPin": 0,
+      "to": "nc8d488",
+      "toPin": 1
+    }
+  ]
+}}

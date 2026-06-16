@@ -1,32 +1,54 @@
-{
-  "typeId": "fun.compliment",
-  "title": "Compliment",
-  "subtitle": "community",
-  "icon": "💖",
-  "category": "Data",
-  "description": "A wholesome compliment for {nick} or the given name.",
-  "inputs": [
+{"typeId":"fun.compliment","title":"Compliment","subtitle":"composite","icon":"\uD83D\uDC96","category":"Data","description":"A random pick-me-up.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Compliment",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n168d48c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "target",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n169d48c",
+      "type": "data.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "options": "You\u0027re doing great!\nYour code compiles on the first try.\nYou light up the channel.\nYou\u0027re sharper than a tack.\nEveryone\u0027s glad you\u0027re here."
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n16ad48c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,random\nc=['you are a ray of sunshine','your code compiles on the first try','you are the bug-fix this channel needed','you make great choices','your ping is low and your spirits high','you are 100% uptime energy']\nt=(os.environ.get('TARGET') or os.environ.get('ARGS') or os.environ.get('NICK') or 'you').strip()\nprint(f'{t}, {random.choice(c)}. 💖')\n"
-}
+  "connections": [
+    {
+      "from": "n168d48c",
+      "fromPin": 0,
+      "to": "n16ad48c",
+      "toPin": 0
+    },
+    {
+      "from": "n169d48c",
+      "fromPin": 0,
+      "to": "n16ad48c",
+      "toPin": 1
+    }
+  ]
+}}

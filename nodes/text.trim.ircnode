@@ -1,9 +1,74 @@
-{
-  "typeId": "text.trim", "title": "Trim Text", "subtitle": "community", "icon": "✂️", "category": "Data",
-  "description": "Removes leading/trailing whitespace (or specific characters) from the text.",
-  "inputs": [ {"name":"","kind":"Exec"}, {"name":"text","kind":"Text"} ],
-  "outputs": [ {"name":"then","kind":"Exec"}, {"name":"result","kind":"Text"} ],
-  "params": [ {"key":"chars","label":"Chars (blank = whitespace)","type":"Text","default":""}, {"key":"side","label":"Side","type":"Choice","default":"both","choices":["both","left","right"]} ],
-  "language": "python", "timeout": 6,
-  "code": "import os\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\nc=os.environ.get('CHARS') or None\nside=os.environ.get('SIDE','both')\nif side=='left': print(t.lstrip(c))\nelif side=='right': print(t.rstrip(c))\nelse: print(t.strip(c))\n"
-}
+{"typeId":"text.trim","title":"Trim Text","subtitle":"composite","icon":"\u2702\uFE0F","category":"Data","description":"Trims surrounding whitespace.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Trim Text",
+  "nodes": [
+    {
+      "id": "n61d485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
+    },
+    {
+      "id": "n62d485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n63d485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "trim",
+        "n": "1",
+        "fill": " "
+      }
+    },
+    {
+      "id": "n64d485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n62d485",
+      "fromPin": 0,
+      "to": "n63d485",
+      "toPin": 0
+    },
+    {
+      "from": "n61d485",
+      "fromPin": 0,
+      "to": "n64d485",
+      "toPin": 0
+    },
+    {
+      "from": "n63d485",
+      "fromPin": 0,
+      "to": "n64d485",
+      "toPin": 1
+    }
+  ]
+}}

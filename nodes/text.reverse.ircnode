@@ -1,44 +1,74 @@
-{
-  "typeId": "text.reverse",
-  "title": "Reverse Text",
-  "subtitle": "community",
-  "icon": "🔁",
-  "category": "Data",
-  "description": "Reverses a string by characters, words, or lines.",
-  "inputs": [
+{"typeId":"text.reverse","title":"Reverse Text","subtitle":"composite","icon":"\u21A9\uFE0F","category":"Data","description":"Reverses the characters.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Reverse Text",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n5dd485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n5ed485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
-    }
-  ],
-  "params": [
+      "id": "n5fd485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "reverse",
+        "n": "1",
+        "fill": " "
+      }
+    },
     {
-      "key": "mode",
-      "label": "Mode",
-      "type": "Choice",
-      "default": "chars",
-      "choices": [
-        "chars",
-        "words",
-        "lines"
-      ]
+      "id": "n60d485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "language": "python",
-  "timeout": 8,
-  "code": "import os\ntry:\n    text = os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('MESSAGE') or os.environ.get('ARGS') or ''\n    mode = (os.environ.get('MODE') or 'chars').strip().lower()\n    if mode == 'words':\n        result = ' '.join(reversed(text.split(' ')))\n    elif mode == 'lines':\n        result = '\\n'.join(reversed(text.splitlines()))\n    else:\n        result = text[::-1]\n    print(result)\nexcept Exception as e:\n    print('error: ' + str(e))\n"
-}
+  "connections": [
+    {
+      "from": "n5ed485",
+      "fromPin": 0,
+      "to": "n5fd485",
+      "toPin": 0
+    },
+    {
+      "from": "n5dd485",
+      "fromPin": 0,
+      "to": "n60d485",
+      "toPin": 0
+    },
+    {
+      "from": "n5fd485",
+      "fromPin": 0,
+      "to": "n60d485",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,32 +1,75 @@
-{
-  "typeId": "time.until",
-  "title": "Countdown",
-  "subtitle": "community",
-  "icon": "⏳",
-  "category": "Data",
-  "description": "Time remaining until a date/time, e.g. '2026-12-31' or '2026-12-31 09:00'.",
-  "inputs": [
+{"typeId":"time.until","title":"Countdown","subtitle":"composite","icon":"\u23F3","category":"Data","description":"How long until a date/time.","inputs":[{"name":"","kind":"Exec"},{"name":"when","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Countdown",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n122d48b",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "when",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n123d48b",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "when"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n124d48b",
+      "type": "data.datetime",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "until",
+        "input": "",
+        "format": "",
+        "zone": ""
+      }
+    },
+    {
+      "id": "n125d48b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,datetime\ns=(os.environ.get('WHEN') or os.environ.get('ARGS') or '').strip()\ndt=None\nfor f in ('%Y-%m-%d %H:%M','%Y-%m-%d','%d/%m/%Y','%H:%M'):\n    try: dt=datetime.datetime.strptime(s,f); break\n    except: pass\nif not dt: print(\"date like 2026-12-31 or 2026-12-31 09:00\"); raise SystemExit\nnow=datetime.datetime.now()\nif dt.year==1900: dt=dt.replace(year=now.year,month=now.month,day=now.day)\nd=dt-now; secs=int(d.total_seconds())\nif secs<0: print('that was '+str(-d).split('.')[0]+' ago'); raise SystemExit\ndays=secs//86400; h=secs%86400//3600; m=secs%3600//60\nprint(f'{days}d {h}h {m}m until {dt.strftime(\"%Y-%m-%d %H:%M\")}')\n"
-}
+  "connections": [
+    {
+      "from": "n123d48b",
+      "fromPin": 0,
+      "to": "n124d48b",
+      "toPin": 0
+    },
+    {
+      "from": "n122d48b",
+      "fromPin": 0,
+      "to": "n125d48b",
+      "toPin": 0
+    },
+    {
+      "from": "n124d48b",
+      "fromPin": 0,
+      "to": "n125d48b",
+      "toPin": 1
+    }
+  ]
+}}

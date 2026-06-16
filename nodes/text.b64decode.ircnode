@@ -1,32 +1,73 @@
-{
-  "typeId": "text.b64decode",
-  "title": "Base64 Decode",
-  "subtitle": "community",
-  "icon": "🔓",
-  "category": "Data",
-  "description": "Decodes Base64 back to text.",
-  "inputs": [
+{"typeId":"text.b64decode","title":"Base64 Decode","subtitle":"composite","icon":"\uD83D\uDD21","category":"Data","description":"Decodes Base64 back to text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Base64 Decode",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
+      "id": "n5d482",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "text",
-      "kind": "Text"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n6d482",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n7d482",
+      "type": "data.encode",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "base64",
+        "mode": "decode"
+      }
+    },
+    {
+      "id": "n8d482",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport os,base64\ntry: print(base64.b64decode((os.environ.get('TEXT') or os.environ.get('ARGS') or '')+'===').decode('utf-8','replace'))\nexcept Exception as e: print('decode error: '+str(e))\n"
-}
+  "connections": [
+    {
+      "from": "n6d482",
+      "fromPin": 0,
+      "to": "n7d482",
+      "toPin": 0
+    },
+    {
+      "from": "n5d482",
+      "fromPin": 0,
+      "to": "n8d482",
+      "toPin": 0
+    },
+    {
+      "from": "n7d482",
+      "fromPin": 0,
+      "to": "n8d482",
+      "toPin": 1
+    }
+  ]
+}}

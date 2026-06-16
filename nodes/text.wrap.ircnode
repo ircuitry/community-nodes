@@ -1,9 +1,74 @@
-{
-  "typeId": "text.wrap", "title": "Word Wrap", "subtitle": "community", "icon": "📐", "category": "Data",
-  "description": "Wraps text to a maximum line width, breaking on spaces.",
-  "inputs": [ {"name":"","kind":"Exec"}, {"name":"text","kind":"Text"} ],
-  "outputs": [ {"name":"then","kind":"Exec"}, {"name":"result","kind":"Text"} ],
-  "params": [ {"key":"width","label":"Width","type":"Int","default":"40"} ],
-  "language": "python", "timeout": 6,
-  "code": "import os, textwrap\nt=os.environ.get('TEXT') or os.environ.get('INPUT') or os.environ.get('ARGS') or ''\ntry:\n    w=max(1,min(400,int(os.environ.get('WIDTH') or '40')))\nexcept Exception:\n    w=40\nprint('\\n'.join(textwrap.wrap(t, w)) or t)\n"
-}
+{"typeId":"text.wrap","title":"Word Wrap","subtitle":"composite","icon":"\uD83D\uDCC3","category":"Data","description":"Wraps text to a column width.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"40"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Word Wrap",
+  "nodes": [
+    {
+      "id": "n81d485",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
+    },
+    {
+      "id": "n82d485",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n83d485",
+      "type": "data.shape",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "op": "wrap",
+        "n": "{n}",
+        "fill": " "
+      }
+    },
+    {
+      "id": "n84d485",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n82d485",
+      "fromPin": 0,
+      "to": "n83d485",
+      "toPin": 0
+    },
+    {
+      "from": "n81d485",
+      "fromPin": 0,
+      "to": "n84d485",
+      "toPin": 0
+    },
+    {
+      "from": "n83d485",
+      "fromPin": 0,
+      "to": "n84d485",
+      "toPin": 1
+    }
+  ]
+}}

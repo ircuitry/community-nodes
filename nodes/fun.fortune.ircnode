@@ -1,28 +1,54 @@
-{
-  "typeId": "fun.fortune",
-  "title": "Fortune Cookie",
-  "subtitle": "community",
-  "icon": "🥠",
-  "category": "Data",
-  "description": "A random fortune-cookie message.",
-  "inputs": [
+{"typeId":"fun.fortune","title":"Fortune Cookie","subtitle":"composite","icon":"\uD83E\uDD60","category":"Data","description":"A random fortune.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Fortune Cookie",
+  "nodes": [
     {
-      "name": "",
-      "kind": "Exec"
-    }
-  ],
-  "outputs": [
-    {
-      "name": "then",
-      "kind": "Exec"
+      "id": "n165d48c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {}
     },
     {
-      "name": "result",
-      "kind": "Text"
+      "id": "n166d48c",
+      "type": "data.random",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "options": "A pleasant surprise is waiting for you.\nFortune favours the bold.\nYou will find what you seek.\nGood news will come to you by mail.\nA friend asks only for your time, not your money.\nNow is the time to try something new."
+      }
+    },
+    {
+      "id": "n167d48c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "params": {
+        "name": "result"
+      }
     }
   ],
-  "params": [],
-  "language": "python",
-  "timeout": 12,
-  "code": "\nimport random\nf=['A pleasant surprise is waiting for you.','Your hard work is about to pay off.','Now is the time to try something new.','Good news will come to you by email.','A thrilling time is in your near future.','The bug you seek is on line 42.','Trust your instincts; ship it.','Beware of off-by-one errors.']\nprint('🥠 '+random.choice(f))\n"
-}
+  "connections": [
+    {
+      "from": "n165d48c",
+      "fromPin": 0,
+      "to": "n167d48c",
+      "toPin": 0
+    },
+    {
+      "from": "n166d48c",
+      "fromPin": 0,
+      "to": "n167d48c",
+      "toPin": 1
+    }
+  ]
+}}
