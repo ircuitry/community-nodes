@@ -1,72 +1,101 @@
-{"typeId":"hash.md5","title":"MD5 Hash","subtitle":"composite","icon":"\uD83D\uDD10","category":"Data","description":"MD5 hash of the input.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "MD5 Hash",
-  "nodes": [
+{
+  "typeId": "hash.md5",
+  "title": "MD5 Hash",
+  "subtitle": "composite",
+  "icon": "lock-key",
+  "category": "Data",
+  "description": "MD5 hash of the input.",
+  "inputs": [
     {
-      "id": "n35d483",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n36d483",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n37d483",
-      "type": "data.hash",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "md5"
-      }
-    },
-    {
-      "id": "n38d483",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n36d483",
-      "fromPin": 0,
-      "to": "n37d483",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n35d483",
-      "fromPin": 0,
-      "to": "n38d483",
-      "toPin": 0
-    },
-    {
-      "from": "n37d483",
-      "fromPin": 0,
-      "to": "n38d483",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "MD5 Hash",
+    "nodes": [
+      {
+        "id": "n35d483",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n36d483",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n37d483",
+        "type": "data.hash",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "md5"
+        }
+      },
+      {
+        "id": "n38d483",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n36d483",
+        "fromPin": 0,
+        "to": "n37d483",
+        "toPin": 0
+      },
+      {
+        "from": "n35d483",
+        "fromPin": 0,
+        "to": "n38d483",
+        "toPin": 0
+      },
+      {
+        "from": "n37d483",
+        "fromPin": 0,
+        "to": "n38d483",
+        "toPin": 1
+      }
+    ]
+  }
+}

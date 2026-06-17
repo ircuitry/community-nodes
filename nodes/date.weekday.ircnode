@@ -1,75 +1,104 @@
-{"typeId":"date.weekday","title":"Day of Week","subtitle":"composite","icon":"\uD83D\uDCC5","category":"Data","description":"The weekday of a date.","inputs":[{"name":"","kind":"Exec"},{"name":"date","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Day of Week",
-  "nodes": [
+{
+  "typeId": "date.weekday",
+  "title": "Day of Week",
+  "subtitle": "composite",
+  "icon": "calendar",
+  "category": "Data",
+  "description": "The weekday of a date.",
+  "inputs": [
     {
-      "id": "n11ad48a",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n11bd48a",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "date"
-      }
-    },
-    {
-      "id": "n11cd48a",
-      "type": "data.datetime",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "weekday",
-        "input": "",
-        "format": "",
-        "zone": ""
-      }
-    },
-    {
-      "id": "n11dd48a",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "date",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n11bd48a",
-      "fromPin": 0,
-      "to": "n11cd48a",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n11ad48a",
-      "fromPin": 0,
-      "to": "n11dd48a",
-      "toPin": 0
-    },
-    {
-      "from": "n11cd48a",
-      "fromPin": 0,
-      "to": "n11dd48a",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Day of Week",
+    "nodes": [
+      {
+        "id": "n11ad48a",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n11bd48a",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "date"
+        }
+      },
+      {
+        "id": "n11cd48a",
+        "type": "data.datetime",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "weekday",
+          "input": "",
+          "format": "",
+          "zone": ""
+        }
+      },
+      {
+        "id": "n11dd48a",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n11bd48a",
+        "fromPin": 0,
+        "to": "n11cd48a",
+        "toPin": 0
+      },
+      {
+        "from": "n11ad48a",
+        "fromPin": 0,
+        "to": "n11dd48a",
+        "toPin": 0
+      },
+      {
+        "from": "n11cd48a",
+        "fromPin": 0,
+        "to": "n11dd48a",
+        "toPin": 1
+      }
+    ]
+  }
+}

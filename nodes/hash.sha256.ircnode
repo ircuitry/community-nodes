@@ -1,72 +1,101 @@
-{"typeId":"hash.sha256","title":"SHA-256 Hash","subtitle":"composite","icon":"\uD83D\uDD10","category":"Data","description":"SHA-256 hash of the input.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "SHA-256 Hash",
-  "nodes": [
+{
+  "typeId": "hash.sha256",
+  "title": "SHA-256 Hash",
+  "subtitle": "composite",
+  "icon": "lock-key",
+  "category": "Data",
+  "description": "SHA-256 hash of the input.",
+  "inputs": [
     {
-      "id": "n3dd484",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n3ed484",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n3fd484",
-      "type": "data.hash",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "sha256"
-      }
-    },
-    {
-      "id": "n40d484",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n3ed484",
-      "fromPin": 0,
-      "to": "n3fd484",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n3dd484",
-      "fromPin": 0,
-      "to": "n40d484",
-      "toPin": 0
-    },
-    {
-      "from": "n3fd484",
-      "fromPin": 0,
-      "to": "n40d484",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "SHA-256 Hash",
+    "nodes": [
+      {
+        "id": "n3dd484",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n3ed484",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n3fd484",
+        "type": "data.hash",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "sha256"
+        }
+      },
+      {
+        "id": "n40d484",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n3ed484",
+        "fromPin": 0,
+        "to": "n3fd484",
+        "toPin": 0
+      },
+      {
+        "from": "n3dd484",
+        "fromPin": 0,
+        "to": "n40d484",
+        "toPin": 0
+      },
+      {
+        "from": "n3fd484",
+        "fromPin": 0,
+        "to": "n40d484",
+        "toPin": 1
+      }
+    ]
+  }
+}

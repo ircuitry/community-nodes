@@ -1,74 +1,110 @@
-{"typeId":"text.zalgo","title":"Zalgo Text","subtitle":"composite","icon":"\uD83E\uDD91","category":"Data","description":"Adds c\u0337r\u0337e\u0337e\u0337p\u0337y\u0337 combining marks.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"3"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Zalgo Text",
-  "nodes": [
+{
+  "typeId": "text.zalgo",
+  "title": "Zalgo Text",
+  "subtitle": "composite",
+  "icon": "fish",
+  "category": "Data",
+  "description": "Adds c̷r̷e̷e̷p̷y̷ combining marks.",
+  "inputs": [
     {
-      "id": "n85d485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n86d485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n87d485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "zalgo",
-        "n": "{n}",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n88d485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n86d485",
-      "fromPin": 0,
-      "to": "n87d485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n85d485",
-      "fromPin": 0,
-      "to": "n88d485",
-      "toPin": 0
-    },
-    {
-      "from": "n87d485",
-      "fromPin": 0,
-      "to": "n88d485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "n",
+      "label": "N",
+      "type": "Text",
+      "default": "3"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Zalgo Text",
+    "nodes": [
+      {
+        "id": "n85d485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n86d485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n87d485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "zalgo",
+          "n": "{n}",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n88d485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n86d485",
+        "fromPin": 0,
+        "to": "n87d485",
+        "toPin": 0
+      },
+      {
+        "from": "n85d485",
+        "fromPin": 0,
+        "to": "n88d485",
+        "toPin": 0
+      },
+      {
+        "from": "n87d485",
+        "fromPin": 0,
+        "to": "n88d485",
+        "toPin": 1
+      }
+    ]
+  }
+}

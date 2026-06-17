@@ -1,75 +1,123 @@
-{"typeId":"text.replace","title":"Find \u0026 Replace","subtitle":"composite","icon":"\uD83D\uDD01","category":"Data","description":"Regex find \u0026 replace.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"pattern","label":"Pattern","type":"Text","default":""},{"key":"replace","label":"Replace","type":"Text","default":""},{"key":"flags","label":"Flags","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Find \u0026 Replace",
-  "nodes": [
+{
+  "typeId": "text.replace",
+  "title": "Find & Replace",
+  "subtitle": "composite",
+  "icon": "repeat",
+  "category": "Data",
+  "description": "Regex find & replace.",
+  "inputs": [
     {
-      "id": "n8dd486",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n8ed486",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n8fd486",
-      "type": "data.regex",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "replace",
-        "pattern": "{pattern}",
-        "replace": "{replace}",
-        "flags": "{flags}"
-      }
-    },
-    {
-      "id": "n90d486",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n8ed486",
-      "fromPin": 0,
-      "to": "n8fd486",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n8dd486",
-      "fromPin": 0,
-      "to": "n90d486",
-      "toPin": 0
-    },
-    {
-      "from": "n8fd486",
-      "fromPin": 0,
-      "to": "n90d486",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "pattern",
+      "label": "Pattern",
+      "type": "Text",
+      "default": ""
+    },
+    {
+      "key": "replace",
+      "label": "Replace",
+      "type": "Text",
+      "default": ""
+    },
+    {
+      "key": "flags",
+      "label": "Flags",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Find & Replace",
+    "nodes": [
+      {
+        "id": "n8dd486",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n8ed486",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n8fd486",
+        "type": "data.regex",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "replace",
+          "pattern": "{pattern}",
+          "replace": "{replace}",
+          "flags": "{flags}"
+        }
+      },
+      {
+        "id": "n90d486",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n8ed486",
+        "fromPin": 0,
+        "to": "n8fd486",
+        "toPin": 0
+      },
+      {
+        "from": "n8dd486",
+        "fromPin": 0,
+        "to": "n90d486",
+        "toPin": 0
+      },
+      {
+        "from": "n8fd486",
+        "fromPin": 0,
+        "to": "n90d486",
+        "toPin": 1
+      }
+    ]
+  }
+}

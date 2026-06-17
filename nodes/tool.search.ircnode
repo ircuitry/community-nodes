@@ -1,81 +1,117 @@
-{"typeId":"tool.search","title":"Search Files (grep)","subtitle":"composite","icon":"\uD83D\uDD0E","category":"Code","description":"Greps the codebase folder for a pattern.","inputs":[{"name":"","kind":"Exec"},{"name":"pattern","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"matches","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Search Files (grep)",
-  "nodes": [
+{
+  "typeId": "tool.search",
+  "title": "Search Files (grep)",
+  "subtitle": "composite",
+  "icon": "magnifying-glass",
+  "category": "Code",
+  "description": "Greps the codebase folder for a pattern.",
+  "inputs": [
     {
-      "id": "n1eed491",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1efd491",
-      "type": "code.grep",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "search_code",
-        "root": "{root}",
-        "pattern": "",
-        "glob": ""
-      }
-    },
-    {
-      "id": "n1f0d491",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "pattern"
-      }
-    },
-    {
-      "id": "n1f1d491",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "matches"
-      }
+      "name": "pattern",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1f0d491",
-      "fromPin": 0,
-      "to": "n1efd491",
-      "toPin": 1
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1eed491",
-      "fromPin": 0,
-      "to": "n1efd491",
-      "toPin": 0
-    },
-    {
-      "from": "n1efd491",
-      "fromPin": 0,
-      "to": "n1f1d491",
-      "toPin": 0
-    },
-    {
-      "from": "n1efd491",
-      "fromPin": 1,
-      "to": "n1f1d491",
-      "toPin": 1
+      "name": "matches",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Search Files (grep)",
+    "nodes": [
+      {
+        "id": "n1eed491",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1efd491",
+        "type": "code.grep",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "search_code",
+          "root": "{root}",
+          "pattern": "",
+          "glob": ""
+        }
+      },
+      {
+        "id": "n1f0d491",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "pattern"
+        }
+      },
+      {
+        "id": "n1f1d491",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "matches"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1f0d491",
+        "fromPin": 0,
+        "to": "n1efd491",
+        "toPin": 1
+      },
+      {
+        "from": "n1eed491",
+        "fromPin": 0,
+        "to": "n1efd491",
+        "toPin": 0
+      },
+      {
+        "from": "n1efd491",
+        "fromPin": 0,
+        "to": "n1f1d491",
+        "toPin": 0
+      },
+      {
+        "from": "n1efd491",
+        "fromPin": 1,
+        "to": "n1f1d491",
+        "toPin": 1
+      }
+    ]
+  }
+}

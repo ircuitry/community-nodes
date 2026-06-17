@@ -1,117 +1,157 @@
-{"typeId":"gh.issue.create","title":"GitHub: Create Issue","subtitle":"composite","icon":"\uD83D\uDC19","category":"Code","description":"Creates a GitHub issue via the gh CLI. Set the codebase folder.","inputs":[{"name":"","kind":"Exec"},{"name":"title","kind":"Text"},{"name":"body","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "GitHub: Create Issue",
-  "nodes": [
+{
+  "typeId": "gh.issue.create",
+  "title": "GitHub: Create Issue",
+  "subtitle": "composite",
+  "icon": "github-logo",
+  "category": "Code",
+  "description": "Creates a GitHub issue via the gh CLI. Set the codebase folder.",
+  "inputs": [
     {
-      "id": "n1d5d490",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1d6d490",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "title"
-      }
+      "name": "title",
+      "kind": "Text"
     },
     {
-      "id": "n1d7d490",
-      "type": "flow.arg",
-      "x": -460,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "body"
-      }
-    },
-    {
-      "id": "n1d8d490",
-      "type": "data.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "gh issue create --title \u0022{a}\u0022 --body \u0022{b}\u0022"
-      }
-    },
-    {
-      "id": "n1d9d490",
-      "type": "code.shell",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "run_command",
-        "root": "{root}",
-        "command": "",
-        "timeout": "30"
-      }
-    },
-    {
-      "id": "n1dad490",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "url"
-      }
+      "name": "body",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1d6d490",
-      "fromPin": 0,
-      "to": "n1d8d490",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1d7d490",
-      "fromPin": 0,
-      "to": "n1d8d490",
-      "toPin": 1
-    },
-    {
-      "from": "n1d8d490",
-      "fromPin": 0,
-      "to": "n1d9d490",
-      "toPin": 1
-    },
-    {
-      "from": "n1d5d490",
-      "fromPin": 0,
-      "to": "n1d9d490",
-      "toPin": 0
-    },
-    {
-      "from": "n1d9d490",
-      "fromPin": 0,
-      "to": "n1dad490",
-      "toPin": 0
-    },
-    {
-      "from": "n1d9d490",
-      "fromPin": 1,
-      "to": "n1dad490",
-      "toPin": 1
+      "name": "url",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "GitHub: Create Issue",
+    "nodes": [
+      {
+        "id": "n1d5d490",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1d6d490",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "title"
+        }
+      },
+      {
+        "id": "n1d7d490",
+        "type": "flow.arg",
+        "x": -460,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "body"
+        }
+      },
+      {
+        "id": "n1d8d490",
+        "type": "data.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "gh issue create --title \"{a}\" --body \"{b}\""
+        }
+      },
+      {
+        "id": "n1d9d490",
+        "type": "code.shell",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "run_command",
+          "root": "{root}",
+          "command": "",
+          "timeout": "30"
+        }
+      },
+      {
+        "id": "n1dad490",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "url"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1d6d490",
+        "fromPin": 0,
+        "to": "n1d8d490",
+        "toPin": 0
+      },
+      {
+        "from": "n1d7d490",
+        "fromPin": 0,
+        "to": "n1d8d490",
+        "toPin": 1
+      },
+      {
+        "from": "n1d8d490",
+        "fromPin": 0,
+        "to": "n1d9d490",
+        "toPin": 1
+      },
+      {
+        "from": "n1d5d490",
+        "fromPin": 0,
+        "to": "n1d9d490",
+        "toPin": 0
+      },
+      {
+        "from": "n1d9d490",
+        "fromPin": 0,
+        "to": "n1dad490",
+        "toPin": 0
+      },
+      {
+        "from": "n1d9d490",
+        "fromPin": 1,
+        "to": "n1dad490",
+        "toPin": 1
+      }
+    ]
+  }
+}

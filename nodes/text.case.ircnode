@@ -1,72 +1,108 @@
-{"typeId":"text.case","title":"Change Case","subtitle":"composite","icon":"\uD83D\uDD20","category":"Data","description":"Recases text (set the style).","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"op","label":"Op","type":"Text","default":"upper"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Change Case",
-  "nodes": [
+{
+  "typeId": "text.case",
+  "title": "Change Case",
+  "subtitle": "composite",
+  "icon": "text-aa",
+  "category": "Data",
+  "description": "Recases text (set the style).",
+  "inputs": [
     {
-      "id": "n45d484",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n46d484",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n47d484",
-      "type": "data.case",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "{op}"
-      }
-    },
-    {
-      "id": "n48d484",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n46d484",
-      "fromPin": 0,
-      "to": "n47d484",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n45d484",
-      "fromPin": 0,
-      "to": "n48d484",
-      "toPin": 0
-    },
-    {
-      "from": "n47d484",
-      "fromPin": 0,
-      "to": "n48d484",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "op",
+      "label": "Op",
+      "type": "Text",
+      "default": "upper"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Change Case",
+    "nodes": [
+      {
+        "id": "n45d484",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n46d484",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n47d484",
+        "type": "data.case",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "{op}"
+        }
+      },
+      {
+        "id": "n48d484",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n46d484",
+        "fromPin": 0,
+        "to": "n47d484",
+        "toPin": 0
+      },
+      {
+        "from": "n45d484",
+        "fromPin": 0,
+        "to": "n48d484",
+        "toPin": 0
+      },
+      {
+        "from": "n47d484",
+        "fromPin": 0,
+        "to": "n48d484",
+        "toPin": 1
+      }
+    ]
+  }
+}

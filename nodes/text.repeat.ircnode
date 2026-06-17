@@ -1,74 +1,110 @@
-{"typeId":"text.repeat","title":"Repeat Text","subtitle":"composite","icon":"\uD83D\uDD01","category":"Data","description":"Repeats text N times.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"3"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Repeat Text",
-  "nodes": [
+{
+  "typeId": "text.repeat",
+  "title": "Repeat Text",
+  "subtitle": "composite",
+  "icon": "repeat",
+  "category": "Data",
+  "description": "Repeats text N times.",
+  "inputs": [
     {
-      "id": "n65d485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n66d485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n67d485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "repeat",
-        "n": "{n}",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n68d485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n66d485",
-      "fromPin": 0,
-      "to": "n67d485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n65d485",
-      "fromPin": 0,
-      "to": "n68d485",
-      "toPin": 0
-    },
-    {
-      "from": "n67d485",
-      "fromPin": 0,
-      "to": "n68d485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "n",
+      "label": "N",
+      "type": "Text",
+      "default": "3"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Repeat Text",
+    "nodes": [
+      {
+        "id": "n65d485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n66d485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n67d485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "repeat",
+          "n": "{n}",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n68d485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n66d485",
+        "fromPin": 0,
+        "to": "n67d485",
+        "toPin": 0
+      },
+      {
+        "from": "n65d485",
+        "fromPin": 0,
+        "to": "n68d485",
+        "toPin": 0
+      },
+      {
+        "from": "n67d485",
+        "fromPin": 0,
+        "to": "n68d485",
+        "toPin": 1
+      }
+    ]
+  }
+}

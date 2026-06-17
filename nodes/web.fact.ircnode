@@ -1,84 +1,109 @@
-{"typeId":"web.fact","title":"Random Fact","subtitle":"composite","icon":"\uD83E\uDDE0","category":"Action","description":"A random useless fact.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Random Fact",
-  "nodes": [
+{
+  "typeId": "web.fact",
+  "title": "Random Fact",
+  "subtitle": "composite",
+  "icon": "brain",
+  "category": "Action",
+  "description": "A random useless fact.",
+  "inputs": [
     {
-      "id": "n18bd48e",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n18cd48e",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://uselessfacts.jsph.pl/api/v2/facts/random",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "",
-        "body": ""
-      }
-    },
-    {
-      "id": "n18dd48e",
-      "type": "data.json",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "path": "text"
-      }
-    },
-    {
-      "id": "n18ed48e",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n18cd48e",
-      "fromPin": 1,
-      "to": "n18dd48e",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n18bd48e",
-      "fromPin": 0,
-      "to": "n18cd48e",
-      "toPin": 0
-    },
-    {
-      "from": "n18cd48e",
-      "fromPin": 0,
-      "to": "n18ed48e",
-      "toPin": 0
-    },
-    {
-      "from": "n18dd48e",
-      "fromPin": 0,
-      "to": "n18ed48e",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Random Fact",
+    "nodes": [
+      {
+        "id": "n18bd48e",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n18cd48e",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://uselessfacts.jsph.pl/api/v2/facts/random",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "",
+          "body": ""
+        }
+      },
+      {
+        "id": "n18dd48e",
+        "type": "data.json",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "path": "text"
+        }
+      },
+      {
+        "id": "n18ed48e",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n18cd48e",
+        "fromPin": 1,
+        "to": "n18dd48e",
+        "toPin": 0
+      },
+      {
+        "from": "n18bd48e",
+        "fromPin": 0,
+        "to": "n18cd48e",
+        "toPin": 0
+      },
+      {
+        "from": "n18cd48e",
+        "fromPin": 0,
+        "to": "n18ed48e",
+        "toPin": 0
+      },
+      {
+        "from": "n18dd48e",
+        "fromPin": 0,
+        "to": "n18ed48e",
+        "toPin": 1
+      }
+    ]
+  }
+}

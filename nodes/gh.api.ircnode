@@ -1,102 +1,138 @@
-{"typeId":"gh.api","title":"GitHub: API","subtitle":"composite","icon":"\uD83D\uDC19","category":"Action","description":"Calls the GitHub REST API. Set a token header for private data.","inputs":[{"name":"","kind":"Exec"},{"name":"endpoint","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"json","kind":"Text"}],"params":[{"key":"headers","label":"Headers","type":"Text","default":"Accept: application/vnd.github\u002Bjson"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "GitHub: API",
-  "nodes": [
+{
+  "typeId": "gh.api",
+  "title": "GitHub: API",
+  "subtitle": "composite",
+  "icon": "github-logo",
+  "category": "Action",
+  "description": "Calls the GitHub REST API. Set a token header for private data.",
+  "inputs": [
     {
-      "id": "n1c8d48f",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1c9d48f",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "{headers}",
-        "body": ""
-      }
-    },
-    {
-      "id": "n1cad48f",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "endpoint"
-      }
-    },
-    {
-      "id": "n1cbd48f",
-      "type": "data.format",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://api.github.com{a}"
-      }
-    },
-    {
-      "id": "n1ccd48f",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "json"
-      }
+      "name": "endpoint",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1cad48f",
-      "fromPin": 0,
-      "to": "n1cbd48f",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1cbd48f",
-      "fromPin": 0,
-      "to": "n1c9d48f",
-      "toPin": 1
-    },
-    {
-      "from": "n1c8d48f",
-      "fromPin": 0,
-      "to": "n1c9d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1c9d48f",
-      "fromPin": 0,
-      "to": "n1ccd48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1c9d48f",
-      "fromPin": 1,
-      "to": "n1ccd48f",
-      "toPin": 1
+      "name": "json",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "headers",
+      "label": "Headers",
+      "type": "Text",
+      "default": "Accept: application/vnd.github+json"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "GitHub: API",
+    "nodes": [
+      {
+        "id": "n1c8d48f",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1c9d48f",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "{headers}",
+          "body": ""
+        }
+      },
+      {
+        "id": "n1cad48f",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "endpoint"
+        }
+      },
+      {
+        "id": "n1cbd48f",
+        "type": "data.format",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://api.github.com{a}"
+        }
+      },
+      {
+        "id": "n1ccd48f",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "json"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1cad48f",
+        "fromPin": 0,
+        "to": "n1cbd48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1cbd48f",
+        "fromPin": 0,
+        "to": "n1c9d48f",
+        "toPin": 1
+      },
+      {
+        "from": "n1c8d48f",
+        "fromPin": 0,
+        "to": "n1c9d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1c9d48f",
+        "fromPin": 0,
+        "to": "n1ccd48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1c9d48f",
+        "fromPin": 1,
+        "to": "n1ccd48f",
+        "toPin": 1
+      }
+    ]
+  }
+}

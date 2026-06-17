@@ -1,74 +1,110 @@
-{"typeId":"parse.csvfield","title":"CSV Field","subtitle":"composite","icon":"\uD83D\uDD2A","category":"Data","description":"Picks the Nth comma-separated field.","inputs":[{"name":"","kind":"Exec"},{"name":"row","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"1"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "CSV Field",
-  "nodes": [
+{
+  "typeId": "parse.csvfield",
+  "title": "CSV Field",
+  "subtitle": "composite",
+  "icon": "knife",
+  "category": "Data",
+  "description": "Picks the Nth comma-separated field.",
+  "inputs": [
     {
-      "id": "n99d486",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n9ad486",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "row"
-      }
-    },
-    {
-      "id": "n9bd486",
-      "type": "data.pick",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "nth",
-        "sep": "comma",
-        "n": "{n}"
-      }
-    },
-    {
-      "id": "n9cd486",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "row",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n9ad486",
-      "fromPin": 0,
-      "to": "n9bd486",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n99d486",
-      "fromPin": 0,
-      "to": "n9cd486",
-      "toPin": 0
-    },
-    {
-      "from": "n9bd486",
-      "fromPin": 0,
-      "to": "n9cd486",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "n",
+      "label": "N",
+      "type": "Text",
+      "default": "1"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "CSV Field",
+    "nodes": [
+      {
+        "id": "n99d486",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n9ad486",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "row"
+        }
+      },
+      {
+        "id": "n9bd486",
+        "type": "data.pick",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "nth",
+          "sep": "comma",
+          "n": "{n}"
+        }
+      },
+      {
+        "id": "n9cd486",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n9ad486",
+        "fromPin": 0,
+        "to": "n9bd486",
+        "toPin": 0
+      },
+      {
+        "from": "n99d486",
+        "fromPin": 0,
+        "to": "n9cd486",
+        "toPin": 0
+      },
+      {
+        "from": "n9bd486",
+        "fromPin": 0,
+        "to": "n9cd486",
+        "toPin": 1
+      }
+    ]
+  }
+}

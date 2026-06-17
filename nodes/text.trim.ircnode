@@ -1,74 +1,103 @@
-{"typeId":"text.trim","title":"Trim Text","subtitle":"composite","icon":"\u2702\uFE0F","category":"Data","description":"Trims surrounding whitespace.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Trim Text",
-  "nodes": [
+{
+  "typeId": "text.trim",
+  "title": "Trim Text",
+  "subtitle": "composite",
+  "icon": "scissors",
+  "category": "Data",
+  "description": "Trims surrounding whitespace.",
+  "inputs": [
     {
-      "id": "n61d485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n62d485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n63d485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "trim",
-        "n": "1",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n64d485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n62d485",
-      "fromPin": 0,
-      "to": "n63d485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n61d485",
-      "fromPin": 0,
-      "to": "n64d485",
-      "toPin": 0
-    },
-    {
-      "from": "n63d485",
-      "fromPin": 0,
-      "to": "n64d485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Trim Text",
+    "nodes": [
+      {
+        "id": "n61d485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n62d485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n63d485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "trim",
+          "n": "1",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n64d485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n62d485",
+        "fromPin": 0,
+        "to": "n63d485",
+        "toPin": 0
+      },
+      {
+        "from": "n61d485",
+        "fromPin": 0,
+        "to": "n64d485",
+        "toPin": 0
+      },
+      {
+        "from": "n63d485",
+        "fromPin": 0,
+        "to": "n64d485",
+        "toPin": 1
+      }
+    ]
+  }
+}

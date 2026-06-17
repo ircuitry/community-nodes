@@ -1,54 +1,79 @@
-{"typeId":"fun.8ball","title":"Magic 8-Ball","subtitle":"composite","icon":"\uD83C\uDFB1","category":"Data","description":"Classic Magic 8-Ball answers.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Magic 8-Ball",
-  "nodes": [
+{
+  "typeId": "fun.8ball",
+  "title": "Magic 8-Ball",
+  "subtitle": "composite",
+  "icon": "magic-wand",
+  "category": "Data",
+  "description": "Classic Magic 8-Ball answers.",
+  "inputs": [
     {
-      "id": "n162d48c",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n163d48c",
-      "type": "data.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "options": "It is certain\nWithout a doubt\nYes definitely\nMost likely\nOutlook good\nReply hazy, try again\nAsk again later\nDon\u0027t count on it\nMy reply is no\nVery doubtful"
-      }
-    },
-    {
-      "id": "n164d48c",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n162d48c",
-      "fromPin": 0,
-      "to": "n164d48c",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n163d48c",
-      "fromPin": 0,
-      "to": "n164d48c",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Magic 8-Ball",
+    "nodes": [
+      {
+        "id": "n162d48c",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n163d48c",
+        "type": "data.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "options": "It is certain\nWithout a doubt\nYes definitely\nMost likely\nOutlook good\nReply hazy, try again\nAsk again later\nDon't count on it\nMy reply is no\nVery doubtful"
+        }
+      },
+      {
+        "id": "n164d48c",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n162d48c",
+        "fromPin": 0,
+        "to": "n164d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n163d48c",
+        "fromPin": 0,
+        "to": "n164d48c",
+        "toPin": 1
+      }
+    ]
+  }
+}

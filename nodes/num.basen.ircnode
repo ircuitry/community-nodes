@@ -1,74 +1,110 @@
-{"typeId":"num.basen","title":"Number Base Converter","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Converts a number to another base.","inputs":[{"name":"","kind":"Exec"},{"name":"value","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"radix","label":"Radix","type":"Text","default":"2"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Number Base Converter",
-  "nodes": [
+{
+  "typeId": "num.basen",
+  "title": "Number Base Converter",
+  "subtitle": "composite",
+  "icon": "hash",
+  "category": "Data",
+  "description": "Converts a number to another base.",
+  "inputs": [
     {
-      "id": "nedd489",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "need489",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "value"
-      }
-    },
-    {
-      "id": "nefd489",
-      "type": "num.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "base",
-        "value": "",
-        "radix": "{radix}"
-      }
-    },
-    {
-      "id": "nf0d489",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "value",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "need489",
-      "fromPin": 0,
-      "to": "nefd489",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "nedd489",
-      "fromPin": 0,
-      "to": "nf0d489",
-      "toPin": 0
-    },
-    {
-      "from": "nefd489",
-      "fromPin": 0,
-      "to": "nf0d489",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "radix",
+      "label": "Radix",
+      "type": "Text",
+      "default": "2"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Number Base Converter",
+    "nodes": [
+      {
+        "id": "nedd489",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "need489",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "value"
+        }
+      },
+      {
+        "id": "nefd489",
+        "type": "num.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "base",
+          "value": "",
+          "radix": "{radix}"
+        }
+      },
+      {
+        "id": "nf0d489",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "need489",
+        "fromPin": 0,
+        "to": "nefd489",
+        "toPin": 0
+      },
+      {
+        "from": "nedd489",
+        "fromPin": 0,
+        "to": "nf0d489",
+        "toPin": 0
+      },
+      {
+        "from": "nefd489",
+        "fromPin": 0,
+        "to": "nf0d489",
+        "toPin": 1
+      }
+    ]
+  }
+}

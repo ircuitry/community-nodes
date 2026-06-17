@@ -1,138 +1,171 @@
-{"typeId":"num.percentchange","title":"Percent Change","subtitle":"composite","icon":"\uD83D\uDCC8","category":"Data","description":"Percent change from old to new.","inputs":[{"name":"","kind":"Exec"},{"name":"old","kind":"Text"},{"name":"new","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Percent Change",
-  "nodes": [
+{
+  "typeId": "num.percentchange",
+  "title": "Percent Change",
+  "subtitle": "composite",
+  "icon": "chart-line-up",
+  "category": "Data",
+  "description": "Percent change from old to new.",
+  "inputs": [
     {
-      "id": "n101d48a",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n102d48a",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "old"
-      }
+      "name": "old",
+      "kind": "Text"
     },
     {
-      "id": "n103d48a",
-      "type": "flow.arg",
-      "x": -460,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "new"
-      }
-    },
-    {
-      "id": "n104d48a",
-      "type": "data.math",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "-",
-        "a": "0",
-        "b": "1"
-      }
-    },
-    {
-      "id": "n105d48a",
-      "type": "data.math",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "\u00F7",
-        "a": "0",
-        "b": "1"
-      }
-    },
-    {
-      "id": "n106d48a",
-      "type": "data.math",
-      "x": -120,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "\u00D7",
-        "a": "0",
-        "b": "100"
-      }
-    },
-    {
-      "id": "n107d48a",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "new",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n103d48a",
-      "fromPin": 0,
-      "to": "n104d48a",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n102d48a",
-      "fromPin": 0,
-      "to": "n104d48a",
-      "toPin": 1
-    },
-    {
-      "from": "n104d48a",
-      "fromPin": 0,
-      "to": "n105d48a",
-      "toPin": 0
-    },
-    {
-      "from": "n102d48a",
-      "fromPin": 0,
-      "to": "n105d48a",
-      "toPin": 1
-    },
-    {
-      "from": "n105d48a",
-      "fromPin": 0,
-      "to": "n106d48a",
-      "toPin": 0
-    },
-    {
-      "from": "n101d48a",
-      "fromPin": 0,
-      "to": "n107d48a",
-      "toPin": 0
-    },
-    {
-      "from": "n106d48a",
-      "fromPin": 0,
-      "to": "n107d48a",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Percent Change",
+    "nodes": [
+      {
+        "id": "n101d48a",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n102d48a",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "old"
+        }
+      },
+      {
+        "id": "n103d48a",
+        "type": "flow.arg",
+        "x": -460,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "new"
+        }
+      },
+      {
+        "id": "n104d48a",
+        "type": "data.math",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "-",
+          "a": "0",
+          "b": "1"
+        }
+      },
+      {
+        "id": "n105d48a",
+        "type": "data.math",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "÷",
+          "a": "0",
+          "b": "1"
+        }
+      },
+      {
+        "id": "n106d48a",
+        "type": "data.math",
+        "x": -120,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "×",
+          "a": "0",
+          "b": "100"
+        }
+      },
+      {
+        "id": "n107d48a",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n103d48a",
+        "fromPin": 0,
+        "to": "n104d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n102d48a",
+        "fromPin": 0,
+        "to": "n104d48a",
+        "toPin": 1
+      },
+      {
+        "from": "n104d48a",
+        "fromPin": 0,
+        "to": "n105d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n102d48a",
+        "fromPin": 0,
+        "to": "n105d48a",
+        "toPin": 1
+      },
+      {
+        "from": "n105d48a",
+        "fromPin": 0,
+        "to": "n106d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n101d48a",
+        "fromPin": 0,
+        "to": "n107d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n106d48a",
+        "fromPin": 0,
+        "to": "n107d48a",
+        "toPin": 1
+      }
+    ]
+  }
+}

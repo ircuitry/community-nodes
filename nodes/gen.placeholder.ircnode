@@ -1,55 +1,87 @@
-{"typeId":"gen.placeholder","title":"Placeholder Image URL","subtitle":"composite","icon":"\uD83D\uDDBC\uFE0F","category":"Data","description":"A placeholder image URL of a given size.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[{"key":"size","label":"Size","type":"Text","default":"600x400"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Placeholder Image URL",
-  "nodes": [
+{
+  "typeId": "gen.placeholder",
+  "title": "Placeholder Image URL",
+  "subtitle": "composite",
+  "icon": "image",
+  "category": "Data",
+  "description": "A placeholder image URL of a given size.",
+  "inputs": [
     {
-      "id": "n158d48c",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n159d48c",
-      "type": "data.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://placehold.co/{size}",
-        "size": "{size}"
-      }
-    },
-    {
-      "id": "n15ad48c",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "url"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n158d48c",
-      "fromPin": 0,
-      "to": "n15ad48c",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n159d48c",
-      "fromPin": 0,
-      "to": "n15ad48c",
-      "toPin": 1
+      "name": "url",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "size",
+      "label": "Size",
+      "type": "Text",
+      "default": "600x400"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Placeholder Image URL",
+    "nodes": [
+      {
+        "id": "n158d48c",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n159d48c",
+        "type": "data.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://placehold.co/{size}",
+          "size": "{size}"
+        }
+      },
+      {
+        "id": "n15ad48c",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "url"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n158d48c",
+        "fromPin": 0,
+        "to": "n15ad48c",
+        "toPin": 0
+      },
+      {
+        "from": "n159d48c",
+        "fromPin": 0,
+        "to": "n15ad48c",
+        "toPin": 1
+      }
+    ]
+  }
+}

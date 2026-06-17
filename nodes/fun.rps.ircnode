@@ -1,54 +1,79 @@
-{"typeId":"fun.rps","title":"Rock Paper Scissors","subtitle":"composite","icon":"\u270A","category":"Data","description":"The bot throws rock, paper, or scissors.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Rock Paper Scissors",
-  "nodes": [
+{
+  "typeId": "fun.rps",
+  "title": "Rock Paper Scissors",
+  "subtitle": "composite",
+  "icon": "hand-fist",
+  "category": "Data",
+  "description": "The bot throws rock, paper, or scissors.",
+  "inputs": [
     {
-      "id": "n16ed48d",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n16fd48d",
-      "type": "data.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "options": "rock\npaper\nscissors"
-      }
-    },
-    {
-      "id": "n170d48d",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n16ed48d",
-      "fromPin": 0,
-      "to": "n170d48d",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n16fd48d",
-      "fromPin": 0,
-      "to": "n170d48d",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Rock Paper Scissors",
+    "nodes": [
+      {
+        "id": "n16ed48d",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n16fd48d",
+        "type": "data.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "options": "rock\npaper\nscissors"
+        }
+      },
+      {
+        "id": "n170d48d",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n16ed48d",
+        "fromPin": 0,
+        "to": "n170d48d",
+        "toPin": 0
+      },
+      {
+        "from": "n16fd48d",
+        "fromPin": 0,
+        "to": "n170d48d",
+        "toPin": 1
+      }
+    ]
+  }
+}

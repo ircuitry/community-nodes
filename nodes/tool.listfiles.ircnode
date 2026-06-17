@@ -1,80 +1,116 @@
-{"typeId":"tool.listfiles","title":"List Files","subtitle":"composite","icon":"\uD83D\uDCC1","category":"Code","description":"Lists files in the codebase folder by glob.","inputs":[{"name":"","kind":"Exec"},{"name":"glob","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"files","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "List Files",
-  "nodes": [
+{
+  "typeId": "tool.listfiles",
+  "title": "List Files",
+  "subtitle": "composite",
+  "icon": "folder",
+  "category": "Code",
+  "description": "Lists files in the codebase folder by glob.",
+  "inputs": [
     {
-      "id": "n1ead491",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1ebd491",
-      "type": "code.glob",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "find_files",
-        "root": "{root}",
-        "pattern": "**/*"
-      }
-    },
-    {
-      "id": "n1ecd491",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "glob"
-      }
-    },
-    {
-      "id": "n1edd491",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "files"
-      }
+      "name": "glob",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1ecd491",
-      "fromPin": 0,
-      "to": "n1ebd491",
-      "toPin": 1
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1ead491",
-      "fromPin": 0,
-      "to": "n1ebd491",
-      "toPin": 0
-    },
-    {
-      "from": "n1ebd491",
-      "fromPin": 0,
-      "to": "n1edd491",
-      "toPin": 0
-    },
-    {
-      "from": "n1ebd491",
-      "fromPin": 1,
-      "to": "n1edd491",
-      "toPin": 1
+      "name": "files",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "List Files",
+    "nodes": [
+      {
+        "id": "n1ead491",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1ebd491",
+        "type": "code.glob",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "find_files",
+          "root": "{root}",
+          "pattern": "**/*"
+        }
+      },
+      {
+        "id": "n1ecd491",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "glob"
+        }
+      },
+      {
+        "id": "n1edd491",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "files"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1ecd491",
+        "fromPin": 0,
+        "to": "n1ebd491",
+        "toPin": 1
+      },
+      {
+        "from": "n1ead491",
+        "fromPin": 0,
+        "to": "n1ebd491",
+        "toPin": 0
+      },
+      {
+        "from": "n1ebd491",
+        "fromPin": 0,
+        "to": "n1edd491",
+        "toPin": 0
+      },
+      {
+        "from": "n1ebd491",
+        "fromPin": 1,
+        "to": "n1edd491",
+        "toPin": 1
+      }
+    ]
+  }
+}

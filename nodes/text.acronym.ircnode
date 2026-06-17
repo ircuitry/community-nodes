@@ -1,74 +1,103 @@
-{"typeId":"text.acronym","title":"Acronym Maker","subtitle":"composite","icon":"\uD83D\uDD24","category":"Data","description":"First letters of each word.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Acronym Maker",
-  "nodes": [
+{
+  "typeId": "text.acronym",
+  "title": "Acronym Maker",
+  "subtitle": "composite",
+  "icon": "translate",
+  "category": "Data",
+  "description": "First letters of each word.",
+  "inputs": [
     {
-      "id": "n75d485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n76d485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n77d485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "acronym",
-        "n": "1",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n78d485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n76d485",
-      "fromPin": 0,
-      "to": "n77d485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n75d485",
-      "fromPin": 0,
-      "to": "n78d485",
-      "toPin": 0
-    },
-    {
-      "from": "n77d485",
-      "fromPin": 0,
-      "to": "n78d485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Acronym Maker",
+    "nodes": [
+      {
+        "id": "n75d485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n76d485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n77d485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "acronym",
+          "n": "1",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n78d485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n76d485",
+        "fromPin": 0,
+        "to": "n77d485",
+        "toPin": 0
+      },
+      {
+        "from": "n75d485",
+        "fromPin": 0,
+        "to": "n78d485",
+        "toPin": 0
+      },
+      {
+        "from": "n77d485",
+        "fromPin": 0,
+        "to": "n78d485",
+        "toPin": 1
+      }
+    ]
+  }
+}

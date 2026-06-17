@@ -1,75 +1,104 @@
-{"typeId":"time.unix","title":"Unix Timestamp","subtitle":"composite","icon":"\u23F1\uFE0F","category":"Data","description":"Converts to/from a unix timestamp.","inputs":[{"name":"","kind":"Exec"},{"name":"ts","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Unix Timestamp",
-  "nodes": [
+{
+  "typeId": "time.unix",
+  "title": "Unix Timestamp",
+  "subtitle": "composite",
+  "icon": "timer",
+  "category": "Data",
+  "description": "Converts to/from a unix timestamp.",
+  "inputs": [
     {
-      "id": "n11ed48a",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n11fd48a",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "ts"
-      }
-    },
-    {
-      "id": "n120d48a",
-      "type": "data.datetime",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "unix",
-        "input": "",
-        "format": "",
-        "zone": ""
-      }
-    },
-    {
-      "id": "n121d48a",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "ts",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n11fd48a",
-      "fromPin": 0,
-      "to": "n120d48a",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n11ed48a",
-      "fromPin": 0,
-      "to": "n121d48a",
-      "toPin": 0
-    },
-    {
-      "from": "n120d48a",
-      "fromPin": 0,
-      "to": "n121d48a",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Unix Timestamp",
+    "nodes": [
+      {
+        "id": "n11ed48a",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n11fd48a",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "ts"
+        }
+      },
+      {
+        "id": "n120d48a",
+        "type": "data.datetime",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "unix",
+          "input": "",
+          "format": "",
+          "zone": ""
+        }
+      },
+      {
+        "id": "n121d48a",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n11fd48a",
+        "fromPin": 0,
+        "to": "n120d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n11ed48a",
+        "fromPin": 0,
+        "to": "n121d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n120d48a",
+        "fromPin": 0,
+        "to": "n121d48a",
+        "toPin": 1
+      }
+    ]
+  }
+}

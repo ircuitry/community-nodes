@@ -1,82 +1,118 @@
-{"typeId":"tool.readfile","title":"Read File","subtitle":"composite","icon":"\uD83D\uDCC2","category":"Code","description":"Reads a file from the codebase folder.","inputs":[{"name":"","kind":"Exec"},{"name":"file","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"content","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Read File",
-  "nodes": [
+{
+  "typeId": "tool.readfile",
+  "title": "Read File",
+  "subtitle": "composite",
+  "icon": "folder-open",
+  "category": "Code",
+  "description": "Reads a file from the codebase folder.",
+  "inputs": [
     {
-      "id": "n1e0d491",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1e1d491",
-      "type": "code.read",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "read_file",
-        "root": "{root}",
-        "path": "",
-        "startLine": "0",
-        "endLine": "0"
-      }
-    },
-    {
-      "id": "n1e2d491",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "file"
-      }
-    },
-    {
-      "id": "n1e3d491",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "content"
-      }
+      "name": "file",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1e2d491",
-      "fromPin": 0,
-      "to": "n1e1d491",
-      "toPin": 1
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1e0d491",
-      "fromPin": 0,
-      "to": "n1e1d491",
-      "toPin": 0
-    },
-    {
-      "from": "n1e1d491",
-      "fromPin": 0,
-      "to": "n1e3d491",
-      "toPin": 0
-    },
-    {
-      "from": "n1e1d491",
-      "fromPin": 2,
-      "to": "n1e3d491",
-      "toPin": 1
+      "name": "content",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Read File",
+    "nodes": [
+      {
+        "id": "n1e0d491",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1e1d491",
+        "type": "code.read",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "read_file",
+          "root": "{root}",
+          "path": "",
+          "startLine": "0",
+          "endLine": "0"
+        }
+      },
+      {
+        "id": "n1e2d491",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "file"
+        }
+      },
+      {
+        "id": "n1e3d491",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "content"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1e2d491",
+        "fromPin": 0,
+        "to": "n1e1d491",
+        "toPin": 1
+      },
+      {
+        "from": "n1e0d491",
+        "fromPin": 0,
+        "to": "n1e1d491",
+        "toPin": 0
+      },
+      {
+        "from": "n1e1d491",
+        "fromPin": 0,
+        "to": "n1e3d491",
+        "toPin": 0
+      },
+      {
+        "from": "n1e1d491",
+        "fromPin": 2,
+        "to": "n1e3d491",
+        "toPin": 1
+      }
+    ]
+  }
+}

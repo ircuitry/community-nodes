@@ -1,73 +1,109 @@
-{"typeId":"text.zwsp","title":"Invisible Ink (ZWSP)","subtitle":"composite","icon":"\uD83D\uDC7B","category":"Data","description":"Hides text as zero-width characters (encode), or reveals it (decode).","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"mode","label":"Mode","type":"Text","default":"encode"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Invisible Ink (ZWSP)",
-  "nodes": [
+{
+  "typeId": "text.zwsp",
+  "title": "Invisible Ink (ZWSP)",
+  "subtitle": "composite",
+  "icon": "ghost",
+  "category": "Data",
+  "description": "Hides text as zero-width characters (encode), or reveals it (decode).",
+  "inputs": [
     {
-      "id": "n31d483",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n32d483",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n33d483",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "zwsp",
-        "mode": "{mode}"
-      }
-    },
-    {
-      "id": "n34d483",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n32d483",
-      "fromPin": 0,
-      "to": "n33d483",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n31d483",
-      "fromPin": 0,
-      "to": "n34d483",
-      "toPin": 0
-    },
-    {
-      "from": "n33d483",
-      "fromPin": 0,
-      "to": "n34d483",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Text",
+      "default": "encode"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Invisible Ink (ZWSP)",
+    "nodes": [
+      {
+        "id": "n31d483",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n32d483",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n33d483",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "zwsp",
+          "mode": "{mode}"
+        }
+      },
+      {
+        "id": "n34d483",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n32d483",
+        "fromPin": 0,
+        "to": "n33d483",
+        "toPin": 0
+      },
+      {
+        "from": "n31d483",
+        "fromPin": 0,
+        "to": "n34d483",
+        "toPin": 0
+      },
+      {
+        "from": "n33d483",
+        "fromPin": 0,
+        "to": "n34d483",
+        "toPin": 1
+      }
+    ]
+  }
+}

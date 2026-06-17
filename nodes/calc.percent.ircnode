@@ -1,72 +1,101 @@
-{"typeId":"calc.percent","title":"Percentage","subtitle":"composite","icon":"\uFF05","category":"Data","description":"Percentage math - e.g. 80*15/100.","inputs":[{"name":"","kind":"Exec"},{"name":"expr","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Percentage",
-  "nodes": [
+{
+  "typeId": "calc.percent",
+  "title": "Percentage",
+  "subtitle": "composite",
+  "icon": "percent",
+  "category": "Data",
+  "description": "Percentage math - e.g. 80*15/100.",
+  "inputs": [
     {
-      "id": "nc1d488",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "nc2d488",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "expr"
-      }
-    },
-    {
-      "id": "nc3d488",
-      "type": "data.mathx",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "expr": ""
-      }
-    },
-    {
-      "id": "nc4d488",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "expr",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "nc2d488",
-      "fromPin": 0,
-      "to": "nc3d488",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "nc1d488",
-      "fromPin": 0,
-      "to": "nc4d488",
-      "toPin": 0
-    },
-    {
-      "from": "nc3d488",
-      "fromPin": 0,
-      "to": "nc4d488",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Percentage",
+    "nodes": [
+      {
+        "id": "nc1d488",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "nc2d488",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "expr"
+        }
+      },
+      {
+        "id": "nc3d488",
+        "type": "data.mathx",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "expr": ""
+        }
+      },
+      {
+        "id": "nc4d488",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "nc2d488",
+        "fromPin": 0,
+        "to": "nc3d488",
+        "toPin": 0
+      },
+      {
+        "from": "nc1d488",
+        "fromPin": 0,
+        "to": "nc4d488",
+        "toPin": 0
+      },
+      {
+        "from": "nc3d488",
+        "fromPin": 0,
+        "to": "nc4d488",
+        "toPin": 1
+      }
+    ]
+  }
+}

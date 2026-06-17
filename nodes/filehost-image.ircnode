@@ -1,86 +1,140 @@
-{"typeId":"filehost.image","title":"Push Image to Filehost","subtitle":"composite","icon":"\uD83D\uDDBC\uFE0F","category":"Storage","description":"Uploads an image (a path under ~/ircuitry/files - e.g. from a Download File node) to a filehost via standard multipart/form-data and outputs the returned link. It is just an HTTP Request node in multipart mode, so right-click -\u003E Edit to see how it works or point it at your own host. Defaults to 0x0.st; for catbox set endpoint https://catbox.moe/user/api.php, field fileToUpload, and add a form field \u0027reqtype=fileupload\u0027.","inputs":[{"name":"","kind":"Exec"},{"name":"image","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[{"key":"endpoint","label":"Endpoint","type":"Text","default":"https://0x0.st"},{"key":"field","label":"Field","type":"Text","default":"file"},{"key":"headers","label":"Headers","type":"Text","default":""},{"key":"fields","label":"Fields","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Push Image to Filehost",
-  "nodes": [
+{
+  "typeId": "filehost.image",
+  "title": "Push Image to Filehost",
+  "subtitle": "composite",
+  "icon": "image",
+  "category": "Storage",
+  "description": "Uploads an image (a path under ~/ircuitry/files - e.g. from a Download File node) to a filehost via standard multipart/form-data and outputs the returned link. It is just an HTTP Request node in multipart mode, so right-click -> Edit to see how it works or point it at your own host. Defaults to 0x0.st; for catbox set endpoint https://catbox.moe/user/api.php, field fileToUpload, and add a form field 'reqtype=fileupload'.",
+  "inputs": [
     {
-      "id": "n1f6d492",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1f7d492",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "image"
-      }
-    },
-    {
-      "id": "n1f8d492",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "POST",
-        "url": "{endpoint}",
-        "send": "file (multipart)",
-        "field": "{field}",
-        "file": "",
-        "headers": "{headers}",
-        "body": "{fields}",
-        "endpoint": "{endpoint}",
-        "fields": "{fields}"
-      }
-    },
-    {
-      "id": "n1f9d492",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "url"
-      }
+      "name": "image",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1f7d492",
-      "fromPin": 0,
-      "to": "n1f8d492",
-      "toPin": 2
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1f6d492",
-      "fromPin": 0,
-      "to": "n1f8d492",
-      "toPin": 0
-    },
-    {
-      "from": "n1f8d492",
-      "fromPin": 0,
-      "to": "n1f9d492",
-      "toPin": 0
-    },
-    {
-      "from": "n1f8d492",
-      "fromPin": 1,
-      "to": "n1f9d492",
-      "toPin": 1
+      "name": "url",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "endpoint",
+      "label": "Endpoint",
+      "type": "Text",
+      "default": "https://0x0.st"
+    },
+    {
+      "key": "field",
+      "label": "Field",
+      "type": "Text",
+      "default": "file"
+    },
+    {
+      "key": "headers",
+      "label": "Headers",
+      "type": "Text",
+      "default": ""
+    },
+    {
+      "key": "fields",
+      "label": "Fields",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Push Image to Filehost",
+    "nodes": [
+      {
+        "id": "n1f6d492",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1f7d492",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "image"
+        }
+      },
+      {
+        "id": "n1f8d492",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "POST",
+          "url": "{endpoint}",
+          "send": "file (multipart)",
+          "field": "{field}",
+          "file": "",
+          "headers": "{headers}",
+          "body": "{fields}",
+          "endpoint": "{endpoint}",
+          "fields": "{fields}"
+        }
+      },
+      {
+        "id": "n1f9d492",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "url"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1f7d492",
+        "fromPin": 0,
+        "to": "n1f8d492",
+        "toPin": 2
+      },
+      {
+        "from": "n1f6d492",
+        "fromPin": 0,
+        "to": "n1f8d492",
+        "toPin": 0
+      },
+      {
+        "from": "n1f8d492",
+        "fromPin": 0,
+        "to": "n1f9d492",
+        "toPin": 0
+      },
+      {
+        "from": "n1f8d492",
+        "fromPin": 1,
+        "to": "n1f9d492",
+        "toPin": 1
+      }
+    ]
+  }
+}

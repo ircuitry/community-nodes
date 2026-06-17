@@ -1,99 +1,135 @@
-{"typeId":"gh.run","title":"GitHub: Run gh","subtitle":"composite","icon":"\uD83D\uDC19","category":"Code","description":"Runs the gh CLI in your repo (e.g. \u0027pr list\u0027). Set the codebase folder.","inputs":[{"name":"","kind":"Exec"},{"name":"ghargs","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "GitHub: Run gh",
-  "nodes": [
+{
+  "typeId": "gh.run",
+  "title": "GitHub: Run gh",
+  "subtitle": "composite",
+  "icon": "github-logo",
+  "category": "Code",
+  "description": "Runs the gh CLI in your repo (e.g. 'pr list'). Set the codebase folder.",
+  "inputs": [
     {
-      "id": "n1cdd490",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1ced490",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "ghargs"
-      }
-    },
-    {
-      "id": "n1cfd490",
-      "type": "data.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "gh {a}"
-      }
-    },
-    {
-      "id": "n1d0d490",
-      "type": "code.shell",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "run_command",
-        "root": "{root}",
-        "command": "",
-        "timeout": "30"
-      }
-    },
-    {
-      "id": "n1d1d490",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "output"
-      }
+      "name": "ghargs",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1ced490",
-      "fromPin": 0,
-      "to": "n1cfd490",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1cfd490",
-      "fromPin": 0,
-      "to": "n1d0d490",
-      "toPin": 1
-    },
-    {
-      "from": "n1cdd490",
-      "fromPin": 0,
-      "to": "n1d0d490",
-      "toPin": 0
-    },
-    {
-      "from": "n1d0d490",
-      "fromPin": 0,
-      "to": "n1d1d490",
-      "toPin": 0
-    },
-    {
-      "from": "n1d0d490",
-      "fromPin": 1,
-      "to": "n1d1d490",
-      "toPin": 1
+      "name": "output",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "GitHub: Run gh",
+    "nodes": [
+      {
+        "id": "n1cdd490",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1ced490",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "ghargs"
+        }
+      },
+      {
+        "id": "n1cfd490",
+        "type": "data.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "gh {a}"
+        }
+      },
+      {
+        "id": "n1d0d490",
+        "type": "code.shell",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "run_command",
+          "root": "{root}",
+          "command": "",
+          "timeout": "30"
+        }
+      },
+      {
+        "id": "n1d1d490",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "output"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1ced490",
+        "fromPin": 0,
+        "to": "n1cfd490",
+        "toPin": 0
+      },
+      {
+        "from": "n1cfd490",
+        "fromPin": 0,
+        "to": "n1d0d490",
+        "toPin": 1
+      },
+      {
+        "from": "n1cdd490",
+        "fromPin": 0,
+        "to": "n1d0d490",
+        "toPin": 0
+      },
+      {
+        "from": "n1d0d490",
+        "fromPin": 0,
+        "to": "n1d1d490",
+        "toPin": 0
+      },
+      {
+        "from": "n1d0d490",
+        "fromPin": 1,
+        "to": "n1d1d490",
+        "toPin": 1
+      }
+    ]
+  }
+}

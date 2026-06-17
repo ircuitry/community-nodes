@@ -1,73 +1,102 @@
-{"typeId":"text.b64encode","title":"Base64 Encode","subtitle":"composite","icon":"\uD83D\uDD21","category":"Data","description":"Encodes text to Base64.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Base64 Encode",
-  "nodes": [
+{
+  "typeId": "text.b64encode",
+  "title": "Base64 Encode",
+  "subtitle": "composite",
+  "icon": "text-t",
+  "category": "Data",
+  "description": "Encodes text to Base64.",
+  "inputs": [
     {
-      "id": "n1d431",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n2d431",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n3d431",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "base64",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n4d434",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n2d431",
-      "fromPin": 0,
-      "to": "n3d431",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1d431",
-      "fromPin": 0,
-      "to": "n4d434",
-      "toPin": 0
-    },
-    {
-      "from": "n3d431",
-      "fromPin": 0,
-      "to": "n4d434",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Base64 Encode",
+    "nodes": [
+      {
+        "id": "n1d431",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n2d431",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n3d431",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "base64",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n4d434",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n2d431",
+        "fromPin": 0,
+        "to": "n3d431",
+        "toPin": 0
+      },
+      {
+        "from": "n1d431",
+        "fromPin": 0,
+        "to": "n4d434",
+        "toPin": 0
+      },
+      {
+        "from": "n3d431",
+        "fromPin": 0,
+        "to": "n4d434",
+        "toPin": 1
+      }
+    ]
+  }
+}

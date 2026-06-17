@@ -1,74 +1,103 @@
-{"typeId":"num.factorial","title":"Factorial","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"n! factorial.","inputs":[{"name":"","kind":"Exec"},{"name":"n","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Factorial",
-  "nodes": [
+{
+  "typeId": "num.factorial",
+  "title": "Factorial",
+  "subtitle": "composite",
+  "icon": "hash",
+  "category": "Data",
+  "description": "n! factorial.",
+  "inputs": [
     {
-      "id": "nd9d488",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "ndad488",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "n"
-      }
-    },
-    {
-      "id": "ndbd488",
-      "type": "num.theory",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "factorial",
-        "a": "",
-        "b": ""
-      }
-    },
-    {
-      "id": "ndcd488",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "n",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "ndad488",
-      "fromPin": 0,
-      "to": "ndbd488",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "nd9d488",
-      "fromPin": 0,
-      "to": "ndcd488",
-      "toPin": 0
-    },
-    {
-      "from": "ndbd488",
-      "fromPin": 0,
-      "to": "ndcd488",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Factorial",
+    "nodes": [
+      {
+        "id": "nd9d488",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "ndad488",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "n"
+        }
+      },
+      {
+        "id": "ndbd488",
+        "type": "num.theory",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "factorial",
+          "a": "",
+          "b": ""
+        }
+      },
+      {
+        "id": "ndcd488",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "ndad488",
+        "fromPin": 0,
+        "to": "ndbd488",
+        "toPin": 0
+      },
+      {
+        "from": "nd9d488",
+        "fromPin": 0,
+        "to": "ndcd488",
+        "toPin": 0
+      },
+      {
+        "from": "ndbd488",
+        "fromPin": 0,
+        "to": "ndcd488",
+        "toPin": 1
+      }
+    ]
+  }
+}

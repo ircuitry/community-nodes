@@ -1,75 +1,104 @@
-{"typeId":"time.age","title":"Age Calculator","subtitle":"composite","icon":"\uD83C\uDF82","category":"Data","description":"Age in years from a birthdate.","inputs":[{"name":"","kind":"Exec"},{"name":"birthdate","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Age Calculator",
-  "nodes": [
+{
+  "typeId": "time.age",
+  "title": "Age Calculator",
+  "subtitle": "composite",
+  "icon": "cake",
+  "category": "Data",
+  "description": "Age in years from a birthdate.",
+  "inputs": [
     {
-      "id": "n126d48b",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n127d48b",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "birthdate"
-      }
-    },
-    {
-      "id": "n128d48b",
-      "type": "data.datetime",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "age",
-        "input": "",
-        "format": "",
-        "zone": ""
-      }
-    },
-    {
-      "id": "n129d48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "birthdate",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n127d48b",
-      "fromPin": 0,
-      "to": "n128d48b",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n126d48b",
-      "fromPin": 0,
-      "to": "n129d48b",
-      "toPin": 0
-    },
-    {
-      "from": "n128d48b",
-      "fromPin": 0,
-      "to": "n129d48b",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Age Calculator",
+    "nodes": [
+      {
+        "id": "n126d48b",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n127d48b",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "birthdate"
+        }
+      },
+      {
+        "id": "n128d48b",
+        "type": "data.datetime",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "age",
+          "input": "",
+          "format": "",
+          "zone": ""
+        }
+      },
+      {
+        "id": "n129d48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n127d48b",
+        "fromPin": 0,
+        "to": "n128d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n126d48b",
+        "fromPin": 0,
+        "to": "n129d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n128d48b",
+        "fromPin": 0,
+        "to": "n129d48b",
+        "toPin": 1
+      }
+    ]
+  }
+}

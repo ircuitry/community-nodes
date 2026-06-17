@@ -1,73 +1,102 @@
-{"typeId":"fun.dice","title":"Dice Roller","subtitle":"composite","icon":"\uD83C\uDFB2","category":"Data","description":"Rolls dice in NdM\u002BK notation.","inputs":[{"name":"","kind":"Exec"},{"name":"dice","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Dice Roller",
-  "nodes": [
+{
+  "typeId": "fun.dice",
+  "title": "Dice Roller",
+  "subtitle": "composite",
+  "icon": "dice-five",
+  "category": "Data",
+  "description": "Rolls dice in NdM+K notation.",
+  "inputs": [
     {
-      "id": "n133d48b",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n134d48b",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "dice"
-      }
-    },
-    {
-      "id": "n135d48b",
-      "type": "gen.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "dice",
-        "spec": ""
-      }
-    },
-    {
-      "id": "n136d48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "dice",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n134d48b",
-      "fromPin": 0,
-      "to": "n135d48b",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n133d48b",
-      "fromPin": 0,
-      "to": "n136d48b",
-      "toPin": 0
-    },
-    {
-      "from": "n135d48b",
-      "fromPin": 0,
-      "to": "n136d48b",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Dice Roller",
+    "nodes": [
+      {
+        "id": "n133d48b",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n134d48b",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "dice"
+        }
+      },
+      {
+        "id": "n135d48b",
+        "type": "gen.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "dice",
+          "spec": ""
+        }
+      },
+      {
+        "id": "n136d48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n134d48b",
+        "fromPin": 0,
+        "to": "n135d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n133d48b",
+        "fromPin": 0,
+        "to": "n136d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n135d48b",
+        "fromPin": 0,
+        "to": "n136d48b",
+        "toPin": 1
+      }
+    ]
+  }
+}

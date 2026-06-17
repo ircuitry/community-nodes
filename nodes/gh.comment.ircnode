@@ -1,99 +1,141 @@
-{"typeId":"gh.comment","title":"GitHub: Comment","subtitle":"composite","icon":"\uD83D\uDC19","category":"Code","description":"Comments on an issue/PR via the gh CLI. Set the codebase folder and the issue/PR number.","inputs":[{"name":"","kind":"Exec"},{"name":"body","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"target","label":"Target","type":"Text","default":"1"},{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "GitHub: Comment",
-  "nodes": [
+{
+  "typeId": "gh.comment",
+  "title": "GitHub: Comment",
+  "subtitle": "composite",
+  "icon": "github-logo",
+  "category": "Code",
+  "description": "Comments on an issue/PR via the gh CLI. Set the codebase folder and the issue/PR number.",
+  "inputs": [
     {
-      "id": "n1dbd490",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1dcd490",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "body"
-      }
-    },
-    {
-      "id": "n1ddd490",
-      "type": "data.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "gh issue comment {target} --body \u0022{a}\u0022"
-      }
-    },
-    {
-      "id": "n1ded490",
-      "type": "code.shell",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "run_command",
-        "root": "{root}",
-        "command": "",
-        "timeout": "30"
-      }
-    },
-    {
-      "id": "n1dfd491",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "body",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1dcd490",
-      "fromPin": 0,
-      "to": "n1ddd490",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1ddd490",
-      "fromPin": 0,
-      "to": "n1ded490",
-      "toPin": 1
-    },
-    {
-      "from": "n1dbd490",
-      "fromPin": 0,
-      "to": "n1ded490",
-      "toPin": 0
-    },
-    {
-      "from": "n1ded490",
-      "fromPin": 0,
-      "to": "n1dfd491",
-      "toPin": 0
-    },
-    {
-      "from": "n1ded490",
-      "fromPin": 1,
-      "to": "n1dfd491",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "target",
+      "label": "Target",
+      "type": "Text",
+      "default": "1"
+    },
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "GitHub: Comment",
+    "nodes": [
+      {
+        "id": "n1dbd490",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1dcd490",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "body"
+        }
+      },
+      {
+        "id": "n1ddd490",
+        "type": "data.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "gh issue comment {target} --body \"{a}\""
+        }
+      },
+      {
+        "id": "n1ded490",
+        "type": "code.shell",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "run_command",
+          "root": "{root}",
+          "command": "",
+          "timeout": "30"
+        }
+      },
+      {
+        "id": "n1dfd491",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1dcd490",
+        "fromPin": 0,
+        "to": "n1ddd490",
+        "toPin": 0
+      },
+      {
+        "from": "n1ddd490",
+        "fromPin": 0,
+        "to": "n1ded490",
+        "toPin": 1
+      },
+      {
+        "from": "n1dbd490",
+        "fromPin": 0,
+        "to": "n1ded490",
+        "toPin": 0
+      },
+      {
+        "from": "n1ded490",
+        "fromPin": 0,
+        "to": "n1dfd491",
+        "toPin": 0
+      },
+      {
+        "from": "n1ded490",
+        "fromPin": 1,
+        "to": "n1dfd491",
+        "toPin": 1
+      }
+    ]
+  }
+}

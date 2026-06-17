@@ -1,91 +1,120 @@
-{"typeId":"gen.qrurl","title":"QR Code URL","subtitle":"composite","icon":"\uD83D\uDD33","category":"Data","description":"Builds a QR-code image URL for the text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "QR Code URL",
-  "nodes": [
+{
+  "typeId": "gen.qrurl",
+  "title": "QR Code URL",
+  "subtitle": "composite",
+  "icon": "square",
+  "category": "Data",
+  "description": "Builds a QR-code image URL for the text.",
+  "inputs": [
     {
-      "id": "n153d48c",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n154d48c",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n155d48c",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "url",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n156d48c",
-      "type": "data.format",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://api.qrserver.com/v1/create-qr-code/?size=240x240\u0026data={a}"
-      }
-    },
-    {
-      "id": "n157d48c",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "url"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n154d48c",
-      "fromPin": 0,
-      "to": "n155d48c",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n155d48c",
-      "fromPin": 0,
-      "to": "n156d48c",
-      "toPin": 0
-    },
-    {
-      "from": "n153d48c",
-      "fromPin": 0,
-      "to": "n157d48c",
-      "toPin": 0
-    },
-    {
-      "from": "n156d48c",
-      "fromPin": 0,
-      "to": "n157d48c",
-      "toPin": 1
+      "name": "url",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "QR Code URL",
+    "nodes": [
+      {
+        "id": "n153d48c",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n154d48c",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n155d48c",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "url",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n156d48c",
+        "type": "data.format",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data={a}"
+        }
+      },
+      {
+        "id": "n157d48c",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "url"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n154d48c",
+        "fromPin": 0,
+        "to": "n155d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n155d48c",
+        "fromPin": 0,
+        "to": "n156d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n153d48c",
+        "fromPin": 0,
+        "to": "n157d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n156d48c",
+        "fromPin": 0,
+        "to": "n157d48c",
+        "toPin": 1
+      }
+    ]
+  }
+}

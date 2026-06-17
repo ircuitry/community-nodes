@@ -1,120 +1,153 @@
-{"typeId":"date.countdown","title":"Countdown","subtitle":"composite","icon":"\u23F3","category":"Data","description":"Time and days until a target date.","inputs":[{"name":"","kind":"Exec"},{"name":"target","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"days","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Countdown",
-  "nodes": [
+{
+  "typeId": "date.countdown",
+  "title": "Countdown",
+  "subtitle": "composite",
+  "icon": "hourglass",
+  "category": "Data",
+  "description": "Time and days until a target date.",
+  "inputs": [
     {
-      "id": "n12ad48b",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n12bd48b",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "target"
-      }
-    },
-    {
-      "id": "n12cd48b",
-      "type": "data.datetime",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "until",
-        "input": "",
-        "format": "",
-        "zone": ""
-      }
-    },
-    {
-      "id": "n12dd48b",
-      "type": "data.regex",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "first",
-        "pattern": "\\d\u002B",
-        "replace": "",
-        "flags": ""
-      }
-    },
-    {
-      "id": "n12ed48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
-    },
-    {
-      "id": "n12fd48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "days"
-      }
+      "name": "target",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n12bd48b",
-      "fromPin": 0,
-      "to": "n12cd48b",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n12cd48b",
-      "fromPin": 0,
-      "to": "n12dd48b",
-      "toPin": 0
+      "name": "result",
+      "kind": "Text"
     },
     {
-      "from": "n12ad48b",
-      "fromPin": 0,
-      "to": "n12ed48b",
-      "toPin": 0
-    },
-    {
-      "from": "n12cd48b",
-      "fromPin": 0,
-      "to": "n12ed48b",
-      "toPin": 1
-    },
-    {
-      "from": "n12ad48b",
-      "fromPin": 0,
-      "to": "n12fd48b",
-      "toPin": 0
-    },
-    {
-      "from": "n12dd48b",
-      "fromPin": 0,
-      "to": "n12fd48b",
-      "toPin": 1
+      "name": "days",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Countdown",
+    "nodes": [
+      {
+        "id": "n12ad48b",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n12bd48b",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "target"
+        }
+      },
+      {
+        "id": "n12cd48b",
+        "type": "data.datetime",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "until",
+          "input": "",
+          "format": "",
+          "zone": ""
+        }
+      },
+      {
+        "id": "n12dd48b",
+        "type": "data.regex",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "first",
+          "pattern": "\\d+",
+          "replace": "",
+          "flags": ""
+        }
+      },
+      {
+        "id": "n12ed48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      },
+      {
+        "id": "n12fd48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "days"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n12bd48b",
+        "fromPin": 0,
+        "to": "n12cd48b",
+        "toPin": 0
+      },
+      {
+        "from": "n12cd48b",
+        "fromPin": 0,
+        "to": "n12dd48b",
+        "toPin": 0
+      },
+      {
+        "from": "n12ad48b",
+        "fromPin": 0,
+        "to": "n12ed48b",
+        "toPin": 0
+      },
+      {
+        "from": "n12cd48b",
+        "fromPin": 0,
+        "to": "n12ed48b",
+        "toPin": 1
+      },
+      {
+        "from": "n12ad48b",
+        "fromPin": 0,
+        "to": "n12fd48b",
+        "toPin": 0
+      },
+      {
+        "from": "n12dd48b",
+        "fromPin": 0,
+        "to": "n12fd48b",
+        "toPin": 1
+      }
+    ]
+  }
+}

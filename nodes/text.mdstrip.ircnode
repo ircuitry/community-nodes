@@ -1,75 +1,104 @@
-{"typeId":"text.mdstrip","title":"Strip Markdown","subtitle":"composite","icon":"\uD83D\uDCDD","category":"Data","description":"Removes common Markdown markers.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Strip Markdown",
-  "nodes": [
+{
+  "typeId": "text.mdstrip",
+  "title": "Strip Markdown",
+  "subtitle": "composite",
+  "icon": "note-pencil",
+  "category": "Data",
+  "description": "Removes common Markdown markers.",
+  "inputs": [
     {
-      "id": "n91d486",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n92d486",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n93d486",
-      "type": "data.regex",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "replace",
-        "pattern": "[*_\u0060~#\u003E]\u002B",
-        "replace": "",
-        "flags": "m"
-      }
-    },
-    {
-      "id": "n94d486",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n92d486",
-      "fromPin": 0,
-      "to": "n93d486",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n91d486",
-      "fromPin": 0,
-      "to": "n94d486",
-      "toPin": 0
-    },
-    {
-      "from": "n93d486",
-      "fromPin": 0,
-      "to": "n94d486",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Strip Markdown",
+    "nodes": [
+      {
+        "id": "n91d486",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n92d486",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n93d486",
+        "type": "data.regex",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "replace",
+          "pattern": "[*_`~#>]+",
+          "replace": "",
+          "flags": "m"
+        }
+      },
+      {
+        "id": "n94d486",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n92d486",
+        "fromPin": 0,
+        "to": "n93d486",
+        "toPin": 0
+      },
+      {
+        "from": "n91d486",
+        "fromPin": 0,
+        "to": "n94d486",
+        "toPin": 0
+      },
+      {
+        "from": "n93d486",
+        "fromPin": 0,
+        "to": "n94d486",
+        "toPin": 1
+      }
+    ]
+  }
+}

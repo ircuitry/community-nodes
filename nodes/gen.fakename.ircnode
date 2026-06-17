@@ -1,55 +1,80 @@
-{"typeId":"gen.fakename","title":"Fake Name","subtitle":"composite","icon":"\uD83E\uDEAA","category":"Data","description":"A random person name.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Fake Name",
-  "nodes": [
+{
+  "typeId": "gen.fakename",
+  "title": "Fake Name",
+  "subtitle": "composite",
+  "icon": "identification-card",
+  "category": "Data",
+  "description": "A random person name.",
+  "inputs": [
     {
-      "id": "n144d48b",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n145d48b",
-      "type": "gen.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "fakename",
-        "spec": ""
-      }
-    },
-    {
-      "id": "n146d48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n144d48b",
-      "fromPin": 0,
-      "to": "n146d48b",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n145d48b",
-      "fromPin": 0,
-      "to": "n146d48b",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Fake Name",
+    "nodes": [
+      {
+        "id": "n144d48b",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n145d48b",
+        "type": "gen.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "fakename",
+          "spec": ""
+        }
+      },
+      {
+        "id": "n146d48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n144d48b",
+        "fromPin": 0,
+        "to": "n146d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n145d48b",
+        "fromPin": 0,
+        "to": "n146d48b",
+        "toPin": 1
+      }
+    ]
+  }
+}

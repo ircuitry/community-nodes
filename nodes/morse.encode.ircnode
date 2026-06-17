@@ -1,73 +1,102 @@
-{"typeId":"morse.encode","title":"Text to Morse","subtitle":"composite","icon":"\uD83D\uDCFB","category":"Data","description":"Converts text to Morse code.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Text to Morse",
-  "nodes": [
+{
+  "typeId": "morse.encode",
+  "title": "Text to Morse",
+  "subtitle": "composite",
+  "icon": "radio",
+  "category": "Data",
+  "description": "Converts text to Morse code.",
+  "inputs": [
     {
-      "id": "n25d483",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n26d483",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n27d483",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "morse",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n28d483",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n26d483",
-      "fromPin": 0,
-      "to": "n27d483",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n25d483",
-      "fromPin": 0,
-      "to": "n28d483",
-      "toPin": 0
-    },
-    {
-      "from": "n27d483",
-      "fromPin": 0,
-      "to": "n28d483",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Text to Morse",
+    "nodes": [
+      {
+        "id": "n25d483",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n26d483",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n27d483",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "morse",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n28d483",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n26d483",
+        "fromPin": 0,
+        "to": "n27d483",
+        "toPin": 0
+      },
+      {
+        "from": "n25d483",
+        "fromPin": 0,
+        "to": "n28d483",
+        "toPin": 0
+      },
+      {
+        "from": "n27d483",
+        "fromPin": 0,
+        "to": "n28d483",
+        "toPin": 1
+      }
+    ]
+  }
+}

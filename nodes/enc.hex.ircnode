@@ -1,73 +1,109 @@
-{"typeId":"enc.hex","title":"Hex Encode/Decode","subtitle":"composite","icon":"\uD83D\uDD23","category":"Data","description":"Encodes text to hex or decodes it back.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"mode","label":"Mode","type":"Text","default":"encode"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Hex Encode/Decode",
-  "nodes": [
+{
+  "typeId": "enc.hex",
+  "title": "Hex Encode/Decode",
+  "subtitle": "composite",
+  "icon": "math-operations",
+  "category": "Data",
+  "description": "Encodes text to hex or decodes it back.",
+  "inputs": [
     {
-      "id": "ndd482",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "ned482",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "nfd482",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "hex",
-        "mode": "{mode}"
-      }
-    },
-    {
-      "id": "n10d482",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "ned482",
-      "fromPin": 0,
-      "to": "nfd482",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "ndd482",
-      "fromPin": 0,
-      "to": "n10d482",
-      "toPin": 0
-    },
-    {
-      "from": "nfd482",
-      "fromPin": 0,
-      "to": "n10d482",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Text",
+      "default": "encode"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Hex Encode/Decode",
+    "nodes": [
+      {
+        "id": "ndd482",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "ned482",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "nfd482",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "hex",
+          "mode": "{mode}"
+        }
+      },
+      {
+        "id": "n10d482",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "ned482",
+        "fromPin": 0,
+        "to": "nfd482",
+        "toPin": 0
+      },
+      {
+        "from": "ndd482",
+        "fromPin": 0,
+        "to": "n10d482",
+        "toPin": 0
+      },
+      {
+        "from": "nfd482",
+        "fromPin": 0,
+        "to": "n10d482",
+        "toPin": 1
+      }
+    ]
+  }
+}

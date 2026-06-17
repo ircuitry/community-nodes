@@ -1,54 +1,79 @@
-{"typeId":"fun.compliment","title":"Compliment","subtitle":"composite","icon":"\uD83D\uDC96","category":"Data","description":"A random pick-me-up.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Compliment",
-  "nodes": [
+{
+  "typeId": "fun.compliment",
+  "title": "Compliment",
+  "subtitle": "composite",
+  "icon": "heart",
+  "category": "Data",
+  "description": "A random pick-me-up.",
+  "inputs": [
     {
-      "id": "n168d48c",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n169d48c",
-      "type": "data.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "options": "You\u0027re doing great!\nYour code compiles on the first try.\nYou light up the channel.\nYou\u0027re sharper than a tack.\nEveryone\u0027s glad you\u0027re here."
-      }
-    },
-    {
-      "id": "n16ad48c",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n168d48c",
-      "fromPin": 0,
-      "to": "n16ad48c",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n169d48c",
-      "fromPin": 0,
-      "to": "n16ad48c",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Compliment",
+    "nodes": [
+      {
+        "id": "n168d48c",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n169d48c",
+        "type": "data.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "options": "You're doing great!\nYour code compiles on the first try.\nYou light up the channel.\nYou're sharper than a tack.\nEveryone's glad you're here."
+        }
+      },
+      {
+        "id": "n16ad48c",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n168d48c",
+        "fromPin": 0,
+        "to": "n16ad48c",
+        "toPin": 0
+      },
+      {
+        "from": "n169d48c",
+        "fromPin": 0,
+        "to": "n16ad48c",
+        "toPin": 1
+      }
+    ]
+  }
+}

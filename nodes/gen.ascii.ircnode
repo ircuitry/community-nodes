@@ -1,74 +1,103 @@
-{"typeId":"gen.ascii","title":"ASCII Banner","subtitle":"composite","icon":"\uD83D\uDD20","category":"Data","description":"Wraps text in a simple ASCII box.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "ASCII Banner",
-  "nodes": [
+{
+  "typeId": "gen.ascii",
+  "title": "ASCII Banner",
+  "subtitle": "composite",
+  "icon": "text-aa",
+  "category": "Data",
+  "description": "Wraps text in a simple ASCII box.",
+  "inputs": [
     {
-      "id": "n89d486",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n8ad486",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n8bd486",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "banner",
-        "n": "1",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n8cd486",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n8ad486",
-      "fromPin": 0,
-      "to": "n8bd486",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n89d486",
-      "fromPin": 0,
-      "to": "n8cd486",
-      "toPin": 0
-    },
-    {
-      "from": "n8bd486",
-      "fromPin": 0,
-      "to": "n8cd486",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "ASCII Banner",
+    "nodes": [
+      {
+        "id": "n89d486",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n8ad486",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n8bd486",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "banner",
+          "n": "1",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n8cd486",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n8ad486",
+        "fromPin": 0,
+        "to": "n8bd486",
+        "toPin": 0
+      },
+      {
+        "from": "n89d486",
+        "fromPin": 0,
+        "to": "n8cd486",
+        "toPin": 0
+      },
+      {
+        "from": "n8bd486",
+        "fromPin": 0,
+        "to": "n8cd486",
+        "toPin": 1
+      }
+    ]
+  }
+}

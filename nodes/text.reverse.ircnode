@@ -1,74 +1,103 @@
-{"typeId":"text.reverse","title":"Reverse Text","subtitle":"composite","icon":"\u21A9\uFE0F","category":"Data","description":"Reverses the characters.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Reverse Text",
-  "nodes": [
+{
+  "typeId": "text.reverse",
+  "title": "Reverse Text",
+  "subtitle": "composite",
+  "icon": "arrow-bend-up-left",
+  "category": "Data",
+  "description": "Reverses the characters.",
+  "inputs": [
     {
-      "id": "n5dd485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n5ed485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n5fd485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "reverse",
-        "n": "1",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n60d485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n5ed485",
-      "fromPin": 0,
-      "to": "n5fd485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n5dd485",
-      "fromPin": 0,
-      "to": "n60d485",
-      "toPin": 0
-    },
-    {
-      "from": "n5fd485",
-      "fromPin": 0,
-      "to": "n60d485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Reverse Text",
+    "nodes": [
+      {
+        "id": "n5dd485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n5ed485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n5fd485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "reverse",
+          "n": "1",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n60d485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n5ed485",
+        "fromPin": 0,
+        "to": "n5fd485",
+        "toPin": 0
+      },
+      {
+        "from": "n5dd485",
+        "fromPin": 0,
+        "to": "n60d485",
+        "toPin": 0
+      },
+      {
+        "from": "n5fd485",
+        "fromPin": 0,
+        "to": "n60d485",
+        "toPin": 1
+      }
+    ]
+  }
+}

@@ -1,55 +1,80 @@
-{"typeId":"coinflip","title":"Coin Flip","subtitle":"composite","icon":"\uD83E\uDE99","category":"Data","description":"Heads or tails.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Coin Flip",
-  "nodes": [
+{
+  "typeId": "coinflip",
+  "title": "Coin Flip",
+  "subtitle": "composite",
+  "icon": "coin",
+  "category": "Data",
+  "description": "Heads or tails.",
+  "inputs": [
     {
-      "id": "n130d48b",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n131d48b",
-      "type": "gen.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "coin",
-        "spec": ""
-      }
-    },
-    {
-      "id": "n132d48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n130d48b",
-      "fromPin": 0,
-      "to": "n132d48b",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n131d48b",
-      "fromPin": 0,
-      "to": "n132d48b",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Coin Flip",
+    "nodes": [
+      {
+        "id": "n130d48b",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n131d48b",
+        "type": "gen.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "coin",
+          "spec": ""
+        }
+      },
+      {
+        "id": "n132d48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n130d48b",
+        "fromPin": 0,
+        "to": "n132d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n131d48b",
+        "fromPin": 0,
+        "to": "n132d48b",
+        "toPin": 1
+      }
+    ]
+  }
+}

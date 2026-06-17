@@ -1,72 +1,101 @@
-{"typeId":"calc.eval","title":"Calculator","subtitle":"composite","icon":"\uD83E\uDDEE","category":"Data","description":"Evaluates an arithmetic expression.","inputs":[{"name":"","kind":"Exec"},{"name":"expr","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Calculator",
-  "nodes": [
+{
+  "typeId": "calc.eval",
+  "title": "Calculator",
+  "subtitle": "composite",
+  "icon": "calculator",
+  "category": "Data",
+  "description": "Evaluates an arithmetic expression.",
+  "inputs": [
     {
-      "id": "nbdd488",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "nbed488",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "expr"
-      }
-    },
-    {
-      "id": "nbfd488",
-      "type": "data.mathx",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "expr": ""
-      }
-    },
-    {
-      "id": "nc0d488",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "expr",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "nbed488",
-      "fromPin": 0,
-      "to": "nbfd488",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "nbdd488",
-      "fromPin": 0,
-      "to": "nc0d488",
-      "toPin": 0
-    },
-    {
-      "from": "nbfd488",
-      "fromPin": 0,
-      "to": "nc0d488",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Calculator",
+    "nodes": [
+      {
+        "id": "nbdd488",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "nbed488",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "expr"
+        }
+      },
+      {
+        "id": "nbfd488",
+        "type": "data.mathx",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "expr": ""
+        }
+      },
+      {
+        "id": "nc0d488",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "nbed488",
+        "fromPin": 0,
+        "to": "nbfd488",
+        "toPin": 0
+      },
+      {
+        "from": "nbdd488",
+        "fromPin": 0,
+        "to": "nc0d488",
+        "toPin": 0
+      },
+      {
+        "from": "nbfd488",
+        "fromPin": 0,
+        "to": "nc0d488",
+        "toPin": 1
+      }
+    ]
+  }
+}

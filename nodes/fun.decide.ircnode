@@ -1,54 +1,79 @@
-{"typeId":"fun.decide","title":"Decide","subtitle":"composite","icon":"\uD83E\uDD14","category":"Data","description":"Yes, no, or maybe.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Decide",
-  "nodes": [
+{
+  "typeId": "fun.decide",
+  "title": "Decide",
+  "subtitle": "composite",
+  "icon": "smiley-meh",
+  "category": "Data",
+  "description": "Yes, no, or maybe.",
+  "inputs": [
     {
-      "id": "n15fd48c",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n160d48c",
-      "type": "data.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "options": "yes\nno\nmaybe\ndefinitely\nno way\nask again later"
-      }
-    },
-    {
-      "id": "n161d48c",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n15fd48c",
-      "fromPin": 0,
-      "to": "n161d48c",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n160d48c",
-      "fromPin": 0,
-      "to": "n161d48c",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Decide",
+    "nodes": [
+      {
+        "id": "n15fd48c",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n160d48c",
+        "type": "data.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "options": "yes\nno\nmaybe\ndefinitely\nno way\nask again later"
+        }
+      },
+      {
+        "id": "n161d48c",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n15fd48c",
+        "fromPin": 0,
+        "to": "n161d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n160d48c",
+        "fromPin": 0,
+        "to": "n161d48c",
+        "toPin": 1
+      }
+    ]
+  }
+}

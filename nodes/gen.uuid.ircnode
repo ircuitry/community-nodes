@@ -1,55 +1,80 @@
-{"typeId":"gen.uuid","title":"UUID","subtitle":"composite","icon":"\uD83C\uDD94","category":"Data","description":"A random UUID v4.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "UUID",
-  "nodes": [
+{
+  "typeId": "gen.uuid",
+  "title": "UUID",
+  "subtitle": "composite",
+  "icon": "identification-badge",
+  "category": "Data",
+  "description": "A random UUID v4.",
+  "inputs": [
     {
-      "id": "n13ed48b",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n13fd48b",
-      "type": "gen.random",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "uuid",
-        "spec": ""
-      }
-    },
-    {
-      "id": "n140d48b",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n13ed48b",
-      "fromPin": 0,
-      "to": "n140d48b",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n13fd48b",
-      "fromPin": 0,
-      "to": "n140d48b",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "UUID",
+    "nodes": [
+      {
+        "id": "n13ed48b",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n13fd48b",
+        "type": "gen.random",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "uuid",
+          "spec": ""
+        }
+      },
+      {
+        "id": "n140d48b",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n13ed48b",
+        "fromPin": 0,
+        "to": "n140d48b",
+        "toPin": 0
+      },
+      {
+        "from": "n13fd48b",
+        "fromPin": 0,
+        "to": "n140d48b",
+        "toPin": 1
+      }
+    ]
+  }
+}

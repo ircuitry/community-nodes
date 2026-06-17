@@ -1,102 +1,131 @@
-{"typeId":"web.currency","title":"Currency Convert","subtitle":"composite","icon":"\uD83D\uDCB1","category":"Action","description":"Exchange rate lookup (set the URL for your provider).","inputs":[{"name":"","kind":"Exec"},{"name":"query","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Currency Convert",
-  "nodes": [
+{
+  "typeId": "web.currency",
+  "title": "Currency Convert",
+  "subtitle": "composite",
+  "icon": "currency-dollar",
+  "category": "Action",
+  "description": "Exchange rate lookup (set the URL for your provider).",
+  "inputs": [
     {
-      "id": "n1bcd48f",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1bdd48f",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "",
-        "body": ""
-      }
-    },
-    {
-      "id": "n1bed48f",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "query"
-      }
-    },
-    {
-      "id": "n1bfd48f",
-      "type": "data.format",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://api.frankfurter.app/latest?{a}"
-      }
-    },
-    {
-      "id": "n1c0d48f",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "query",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1bed48f",
-      "fromPin": 0,
-      "to": "n1bfd48f",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1bfd48f",
-      "fromPin": 0,
-      "to": "n1bdd48f",
-      "toPin": 1
-    },
-    {
-      "from": "n1bcd48f",
-      "fromPin": 0,
-      "to": "n1bdd48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1bdd48f",
-      "fromPin": 0,
-      "to": "n1c0d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1bdd48f",
-      "fromPin": 1,
-      "to": "n1c0d48f",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Currency Convert",
+    "nodes": [
+      {
+        "id": "n1bcd48f",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1bdd48f",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "",
+          "body": ""
+        }
+      },
+      {
+        "id": "n1bed48f",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "query"
+        }
+      },
+      {
+        "id": "n1bfd48f",
+        "type": "data.format",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://api.frankfurter.app/latest?{a}"
+        }
+      },
+      {
+        "id": "n1c0d48f",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1bed48f",
+        "fromPin": 0,
+        "to": "n1bfd48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1bfd48f",
+        "fromPin": 0,
+        "to": "n1bdd48f",
+        "toPin": 1
+      },
+      {
+        "from": "n1bcd48f",
+        "fromPin": 0,
+        "to": "n1bdd48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1bdd48f",
+        "fromPin": 0,
+        "to": "n1c0d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1bdd48f",
+        "fromPin": 1,
+        "to": "n1c0d48f",
+        "toPin": 1
+      }
+    ]
+  }
+}

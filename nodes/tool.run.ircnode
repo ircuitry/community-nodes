@@ -1,81 +1,117 @@
-{"typeId":"tool.run","title":"Run Command","subtitle":"composite","icon":"\u2328\uFE0F","category":"Code","description":"Runs a command in the codebase folder.","inputs":[{"name":"","kind":"Exec"},{"name":"cmd","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"stdout","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Run Command",
-  "nodes": [
+{
+  "typeId": "tool.run",
+  "title": "Run Command",
+  "subtitle": "composite",
+  "icon": "keyboard",
+  "category": "Code",
+  "description": "Runs a command in the codebase folder.",
+  "inputs": [
     {
-      "id": "n1f2d491",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1f3d491",
-      "type": "code.shell",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "run_command",
-        "root": "{root}",
-        "command": "",
-        "timeout": "30"
-      }
-    },
-    {
-      "id": "n1f4d491",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "cmd"
-      }
-    },
-    {
-      "id": "n1f5d491",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "stdout"
-      }
+      "name": "cmd",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1f4d491",
-      "fromPin": 0,
-      "to": "n1f3d491",
-      "toPin": 1
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1f2d491",
-      "fromPin": 0,
-      "to": "n1f3d491",
-      "toPin": 0
-    },
-    {
-      "from": "n1f3d491",
-      "fromPin": 0,
-      "to": "n1f5d491",
-      "toPin": 0
-    },
-    {
-      "from": "n1f3d491",
-      "fromPin": 1,
-      "to": "n1f5d491",
-      "toPin": 1
+      "name": "stdout",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "root",
+      "label": "Root",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Run Command",
+    "nodes": [
+      {
+        "id": "n1f2d491",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1f3d491",
+        "type": "code.shell",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "run_command",
+          "root": "{root}",
+          "command": "",
+          "timeout": "30"
+        }
+      },
+      {
+        "id": "n1f4d491",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "cmd"
+        }
+      },
+      {
+        "id": "n1f5d491",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "stdout"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1f4d491",
+        "fromPin": 0,
+        "to": "n1f3d491",
+        "toPin": 1
+      },
+      {
+        "from": "n1f2d491",
+        "fromPin": 0,
+        "to": "n1f3d491",
+        "toPin": 0
+      },
+      {
+        "from": "n1f3d491",
+        "fromPin": 0,
+        "to": "n1f5d491",
+        "toPin": 0
+      },
+      {
+        "from": "n1f3d491",
+        "fromPin": 1,
+        "to": "n1f5d491",
+        "toPin": 1
+      }
+    ]
+  }
+}

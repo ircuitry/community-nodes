@@ -1,74 +1,103 @@
-{"typeId":"text.vowels","title":"Disemvowel","subtitle":"composite","icon":"\uD83D\uDEAB","category":"Data","description":"Removes the vowels.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Disemvowel",
-  "nodes": [
+{
+  "typeId": "text.vowels",
+  "title": "Disemvowel",
+  "subtitle": "composite",
+  "icon": "prohibit",
+  "category": "Data",
+  "description": "Removes the vowels.",
+  "inputs": [
     {
-      "id": "n79d485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n7ad485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n7bd485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "disemvowel",
-        "n": "1",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n7cd485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n7ad485",
-      "fromPin": 0,
-      "to": "n7bd485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n79d485",
-      "fromPin": 0,
-      "to": "n7cd485",
-      "toPin": 0
-    },
-    {
-      "from": "n7bd485",
-      "fromPin": 0,
-      "to": "n7cd485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Disemvowel",
+    "nodes": [
+      {
+        "id": "n79d485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n7ad485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n7bd485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "disemvowel",
+          "n": "1",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n7cd485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n7ad485",
+        "fromPin": 0,
+        "to": "n7bd485",
+        "toPin": 0
+      },
+      {
+        "from": "n79d485",
+        "fromPin": 0,
+        "to": "n7cd485",
+        "toPin": 0
+      },
+      {
+        "from": "n7bd485",
+        "fromPin": 0,
+        "to": "n7cd485",
+        "toPin": 1
+      }
+    ]
+  }
+}

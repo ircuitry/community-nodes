@@ -1,74 +1,103 @@
-{"typeId":"calc.roman","title":"Roman Numerals","subtitle":"composite","icon":"\uD83C\uDFDB\uFE0F","category":"Data","description":"Converts a number to Roman numerals.","inputs":[{"name":"","kind":"Exec"},{"name":"value","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Roman Numerals",
-  "nodes": [
+{
+  "typeId": "calc.roman",
+  "title": "Roman Numerals",
+  "subtitle": "composite",
+  "icon": "bank",
+  "category": "Data",
+  "description": "Converts a number to Roman numerals.",
+  "inputs": [
     {
-      "id": "nd5d488",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "nd6d488",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "value"
-      }
-    },
-    {
-      "id": "nd7d488",
-      "type": "num.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "roman",
-        "value": "",
-        "radix": "16"
-      }
-    },
-    {
-      "id": "nd8d488",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "value",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "nd6d488",
-      "fromPin": 0,
-      "to": "nd7d488",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "nd5d488",
-      "fromPin": 0,
-      "to": "nd8d488",
-      "toPin": 0
-    },
-    {
-      "from": "nd7d488",
-      "fromPin": 0,
-      "to": "nd8d488",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Roman Numerals",
+    "nodes": [
+      {
+        "id": "nd5d488",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "nd6d488",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "value"
+        }
+      },
+      {
+        "id": "nd7d488",
+        "type": "num.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "roman",
+          "value": "",
+          "radix": "16"
+        }
+      },
+      {
+        "id": "nd8d488",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "nd6d488",
+        "fromPin": 0,
+        "to": "nd7d488",
+        "toPin": 0
+      },
+      {
+        "from": "nd5d488",
+        "fromPin": 0,
+        "to": "nd8d488",
+        "toPin": 0
+      },
+      {
+        "from": "nd7d488",
+        "fromPin": 0,
+        "to": "nd8d488",
+        "toPin": 1
+      }
+    ]
+  }
+}

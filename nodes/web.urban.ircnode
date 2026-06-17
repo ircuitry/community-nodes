@@ -1,139 +1,168 @@
-{"typeId":"web.urban","title":"Urban Dictionary","subtitle":"composite","icon":"\uD83D\uDDEF\uFE0F","category":"Action","description":"An Urban Dictionary definition.","inputs":[{"name":"","kind":"Exec"},{"name":"term","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Urban Dictionary",
-  "nodes": [
+{
+  "typeId": "web.urban",
+  "title": "Urban Dictionary",
+  "subtitle": "composite",
+  "icon": "chat-circle",
+  "category": "Action",
+  "description": "An Urban Dictionary definition.",
+  "inputs": [
     {
-      "id": "n19dd48f",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n19ed48f",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "",
-        "body": ""
-      }
-    },
-    {
-      "id": "n19fd48f",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "term"
-      }
-    },
-    {
-      "id": "n1a0d48f",
-      "type": "data.encode",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "url",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n1a1d48f",
-      "type": "data.format",
-      "x": -120,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://api.urbandictionary.com/v0/define?term={a}"
-      }
-    },
-    {
-      "id": "n1a2d48f",
-      "type": "data.json",
-      "x": -120,
-      "y": 150,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "path": "list.0.definition"
-      }
-    },
-    {
-      "id": "n1a3d48f",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "term",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n19fd48f",
-      "fromPin": 0,
-      "to": "n1a0d48f",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1a0d48f",
-      "fromPin": 0,
-      "to": "n1a1d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1a1d48f",
-      "fromPin": 0,
-      "to": "n19ed48f",
-      "toPin": 1
-    },
-    {
-      "from": "n19ed48f",
-      "fromPin": 1,
-      "to": "n1a2d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n19dd48f",
-      "fromPin": 0,
-      "to": "n19ed48f",
-      "toPin": 0
-    },
-    {
-      "from": "n19ed48f",
-      "fromPin": 0,
-      "to": "n1a3d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1a2d48f",
-      "fromPin": 0,
-      "to": "n1a3d48f",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Urban Dictionary",
+    "nodes": [
+      {
+        "id": "n19dd48f",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n19ed48f",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "",
+          "body": ""
+        }
+      },
+      {
+        "id": "n19fd48f",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "term"
+        }
+      },
+      {
+        "id": "n1a0d48f",
+        "type": "data.encode",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "url",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n1a1d48f",
+        "type": "data.format",
+        "x": -120,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://api.urbandictionary.com/v0/define?term={a}"
+        }
+      },
+      {
+        "id": "n1a2d48f",
+        "type": "data.json",
+        "x": -120,
+        "y": 150,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "path": "list.0.definition"
+        }
+      },
+      {
+        "id": "n1a3d48f",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n19fd48f",
+        "fromPin": 0,
+        "to": "n1a0d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a0d48f",
+        "fromPin": 0,
+        "to": "n1a1d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a1d48f",
+        "fromPin": 0,
+        "to": "n19ed48f",
+        "toPin": 1
+      },
+      {
+        "from": "n19ed48f",
+        "fromPin": 1,
+        "to": "n1a2d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n19dd48f",
+        "fromPin": 0,
+        "to": "n19ed48f",
+        "toPin": 0
+      },
+      {
+        "from": "n19ed48f",
+        "fromPin": 0,
+        "to": "n1a3d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a2d48f",
+        "fromPin": 0,
+        "to": "n1a3d48f",
+        "toPin": 1
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@
   "typeId": "subflow.shout",
   "title": "Shout",
   "subtitle": "subflow",
-  "icon": "📣",
+  "icon": "megaphone",
   "category": "Logic",
   "description": "Reusable subflow example: uppercases the input text. Made via 'Save selection as a node'.",
   "inputs": [

@@ -2,7 +2,7 @@
   "typeId": "subflow.tidy-text",
   "title": "Tidy Text",
   "subtitle": "composite",
-  "icon": "🧹",
+  "icon": "broom",
   "category": "Data",
   "description": "Composite example: trims whitespace then lowercases the text.",
   "author": "ircuitry",

@@ -1,109 +1,142 @@
-{"typeId":"gen.gradient","title":"Color Gradient","subtitle":"composite","icon":"\uD83C\uDF08","category":"Data","description":"Blends a range of hex colours between two endpoints.","inputs":[{"name":"","kind":"Exec"},{"name":"start","kind":"Text"},{"name":"end","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Color Gradient",
-  "nodes": [
+{
+  "typeId": "gen.gradient",
+  "title": "Color Gradient",
+  "subtitle": "composite",
+  "icon": "rainbow",
+  "category": "Data",
+  "description": "Blends a range of hex colours between two endpoints.",
+  "inputs": [
     {
-      "id": "n14dd48c",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n14ed48c",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "start"
-      }
+      "name": "start",
+      "kind": "Text"
     },
     {
-      "id": "n14fd48c",
-      "type": "flow.arg",
-      "x": -460,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "end"
-      }
-    },
-    {
-      "id": "n150d48c",
-      "type": "data.format",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "{a} {b} 7"
-      }
-    },
-    {
-      "id": "n151d48c",
-      "type": "gen.random",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "gradient",
-        "spec": ""
-      }
-    },
-    {
-      "id": "n152d48c",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "end",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n14ed48c",
-      "fromPin": 0,
-      "to": "n150d48c",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n14fd48c",
-      "fromPin": 0,
-      "to": "n150d48c",
-      "toPin": 1
-    },
-    {
-      "from": "n150d48c",
-      "fromPin": 0,
-      "to": "n151d48c",
-      "toPin": 0
-    },
-    {
-      "from": "n14dd48c",
-      "fromPin": 0,
-      "to": "n152d48c",
-      "toPin": 0
-    },
-    {
-      "from": "n151d48c",
-      "fromPin": 0,
-      "to": "n152d48c",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Color Gradient",
+    "nodes": [
+      {
+        "id": "n14dd48c",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n14ed48c",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "start"
+        }
+      },
+      {
+        "id": "n14fd48c",
+        "type": "flow.arg",
+        "x": -460,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "end"
+        }
+      },
+      {
+        "id": "n150d48c",
+        "type": "data.format",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "{a} {b} 7"
+        }
+      },
+      {
+        "id": "n151d48c",
+        "type": "gen.random",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "gradient",
+          "spec": ""
+        }
+      },
+      {
+        "id": "n152d48c",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n14ed48c",
+        "fromPin": 0,
+        "to": "n150d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n14fd48c",
+        "fromPin": 0,
+        "to": "n150d48c",
+        "toPin": 1
+      },
+      {
+        "from": "n150d48c",
+        "fromPin": 0,
+        "to": "n151d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n14dd48c",
+        "fromPin": 0,
+        "to": "n152d48c",
+        "toPin": 0
+      },
+      {
+        "from": "n151d48c",
+        "fromPin": 0,
+        "to": "n152d48c",
+        "toPin": 1
+      }
+    ]
+  }
+}

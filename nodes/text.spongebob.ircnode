@@ -1,72 +1,101 @@
-{"typeId":"text.spongebob","title":"Caps Alternator","subtitle":"composite","icon":"\uD83E\uDDFD","category":"Data","description":"AlTeRnAtInG caps.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Caps Alternator",
-  "nodes": [
+{
+  "typeId": "text.spongebob",
+  "title": "Caps Alternator",
+  "subtitle": "composite",
+  "icon": "eraser",
+  "category": "Data",
+  "description": "AlTeRnAtInG caps.",
+  "inputs": [
     {
-      "id": "n51d484",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n52d484",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n53d484",
-      "type": "data.case",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "mock"
-      }
-    },
-    {
-      "id": "n54d484",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n52d484",
-      "fromPin": 0,
-      "to": "n53d484",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n51d484",
-      "fromPin": 0,
-      "to": "n54d484",
-      "toPin": 0
-    },
-    {
-      "from": "n53d484",
-      "fromPin": 0,
-      "to": "n54d484",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Caps Alternator",
+    "nodes": [
+      {
+        "id": "n51d484",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n52d484",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n53d484",
+        "type": "data.case",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "mock"
+        }
+      },
+      {
+        "id": "n54d484",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n52d484",
+        "fromPin": 0,
+        "to": "n53d484",
+        "toPin": 0
+      },
+      {
+        "from": "n51d484",
+        "fromPin": 0,
+        "to": "n54d484",
+        "toPin": 0
+      },
+      {
+        "from": "n53d484",
+        "fromPin": 0,
+        "to": "n54d484",
+        "toPin": 1
+      }
+    ]
+  }
+}

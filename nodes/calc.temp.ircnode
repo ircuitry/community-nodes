@@ -1,75 +1,117 @@
-{"typeId":"calc.temp","title":"Temperature Convert","subtitle":"composite","icon":"\uD83C\uDF21\uFE0F","category":"Data","description":"Converts a temperature between c / f / k.","inputs":[{"name":"","kind":"Exec"},{"name":"value","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"from","label":"From","type":"Text","default":"c"},{"key":"to","label":"To","type":"Text","default":"f"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Temperature Convert",
-  "nodes": [
+{
+  "typeId": "calc.temp",
+  "title": "Temperature Convert",
+  "subtitle": "composite",
+  "icon": "thermometer",
+  "category": "Data",
+  "description": "Converts a temperature between c / f / k.",
+  "inputs": [
     {
-      "id": "nc9d488",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "ncad488",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "value"
-      }
-    },
-    {
-      "id": "ncbd488",
-      "type": "data.convert",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "family": "temperature",
-        "value": "",
-        "from": "{from}",
-        "to": "{to}"
-      }
-    },
-    {
-      "id": "nccd488",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "value",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "ncad488",
-      "fromPin": 0,
-      "to": "ncbd488",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "nc9d488",
-      "fromPin": 0,
-      "to": "nccd488",
-      "toPin": 0
-    },
-    {
-      "from": "ncbd488",
-      "fromPin": 0,
-      "to": "nccd488",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "from",
+      "label": "From",
+      "type": "Text",
+      "default": "c"
+    },
+    {
+      "key": "to",
+      "label": "To",
+      "type": "Text",
+      "default": "f"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Temperature Convert",
+    "nodes": [
+      {
+        "id": "nc9d488",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "ncad488",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "value"
+        }
+      },
+      {
+        "id": "ncbd488",
+        "type": "data.convert",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "family": "temperature",
+          "value": "",
+          "from": "{from}",
+          "to": "{to}"
+        }
+      },
+      {
+        "id": "nccd488",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "ncad488",
+        "fromPin": 0,
+        "to": "ncbd488",
+        "toPin": 0
+      },
+      {
+        "from": "nc9d488",
+        "fromPin": 0,
+        "to": "nccd488",
+        "toPin": 0
+      },
+      {
+        "from": "ncbd488",
+        "fromPin": 0,
+        "to": "nccd488",
+        "toPin": 1
+      }
+    ]
+  }
+}

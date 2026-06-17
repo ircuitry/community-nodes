@@ -1,72 +1,108 @@
-{"typeId":"parse.jsonpath","title":"JSON Field Picker","subtitle":"composite","icon":"\uD83E\uDDE9","category":"Data","description":"Reads a field from JSON by dotted path.","inputs":[{"name":"","kind":"Exec"},{"name":"json","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"path","label":"Path","type":"Text","default":""}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "JSON Field Picker",
-  "nodes": [
+{
+  "typeId": "parse.jsonpath",
+  "title": "JSON Field Picker",
+  "subtitle": "composite",
+  "icon": "puzzle-piece",
+  "category": "Data",
+  "description": "Reads a field from JSON by dotted path.",
+  "inputs": [
     {
-      "id": "na1d486",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "na2d486",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "json"
-      }
-    },
-    {
-      "id": "na3d486",
-      "type": "data.json",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "path": "{path}"
-      }
-    },
-    {
-      "id": "na4d486",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "json",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "na2d486",
-      "fromPin": 0,
-      "to": "na3d486",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "na1d486",
-      "fromPin": 0,
-      "to": "na4d486",
-      "toPin": 0
-    },
-    {
-      "from": "na3d486",
-      "fromPin": 0,
-      "to": "na4d486",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "path",
+      "label": "Path",
+      "type": "Text",
+      "default": ""
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "JSON Field Picker",
+    "nodes": [
+      {
+        "id": "na1d486",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "na2d486",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "json"
+        }
+      },
+      {
+        "id": "na3d486",
+        "type": "data.json",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "path": "{path}"
+        }
+      },
+      {
+        "id": "na4d486",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "na2d486",
+        "fromPin": 0,
+        "to": "na3d486",
+        "toPin": 0
+      },
+      {
+        "from": "na1d486",
+        "fromPin": 0,
+        "to": "na4d486",
+        "toPin": 0
+      },
+      {
+        "from": "na3d486",
+        "fromPin": 0,
+        "to": "na4d486",
+        "toPin": 1
+      }
+    ]
+  }
+}

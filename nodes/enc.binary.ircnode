@@ -1,73 +1,109 @@
-{"typeId":"enc.binary","title":"Binary Encode/Decode","subtitle":"composite","icon":"\uD83D\uDD1F","category":"Data","description":"Converts text to 0/1 binary and back.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"mode","label":"Mode","type":"Text","default":"encode"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Binary Encode/Decode",
-  "nodes": [
+{
+  "typeId": "enc.binary",
+  "title": "Binary Encode/Decode",
+  "subtitle": "composite",
+  "icon": "list-numbers",
+  "category": "Data",
+  "description": "Converts text to 0/1 binary and back.",
+  "inputs": [
     {
-      "id": "n19d483",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1ad483",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n1bd483",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "binary",
-        "mode": "{mode}"
-      }
-    },
-    {
-      "id": "n1cd483",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1ad483",
-      "fromPin": 0,
-      "to": "n1bd483",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n19d483",
-      "fromPin": 0,
-      "to": "n1cd483",
-      "toPin": 0
-    },
-    {
-      "from": "n1bd483",
-      "fromPin": 0,
-      "to": "n1cd483",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Text",
+      "default": "encode"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Binary Encode/Decode",
+    "nodes": [
+      {
+        "id": "n19d483",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1ad483",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n1bd483",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "binary",
+          "mode": "{mode}"
+        }
+      },
+      {
+        "id": "n1cd483",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1ad483",
+        "fromPin": 0,
+        "to": "n1bd483",
+        "toPin": 0
+      },
+      {
+        "from": "n19d483",
+        "fromPin": 0,
+        "to": "n1cd483",
+        "toPin": 0
+      },
+      {
+        "from": "n1bd483",
+        "fromPin": 0,
+        "to": "n1cd483",
+        "toPin": 1
+      }
+    ]
+  }
+}

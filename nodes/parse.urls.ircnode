@@ -1,120 +1,153 @@
-{"typeId":"parse.urls","title":"Extract URLs","subtitle":"composite","icon":"\uD83D\uDD17","category":"Filter","description":"Pulls all URLs out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Extract URLs",
-  "nodes": [
+{
+  "typeId": "parse.urls",
+  "title": "Extract URLs",
+  "subtitle": "composite",
+  "icon": "link",
+  "category": "Filter",
+  "description": "Pulls all URLs out of text.",
+  "inputs": [
     {
-      "id": "na5d487",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "na6d487",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "na7d487",
-      "type": "data.regex",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "all",
-        "pattern": "https?://[^\\s]\u002B",
-        "replace": "",
-        "flags": ""
-      }
-    },
-    {
-      "id": "na8d487",
-      "type": "data.regex",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "count",
-        "pattern": "https?://[^\\s]\u002B",
-        "replace": "",
-        "flags": ""
-      }
-    },
-    {
-      "id": "na9d487",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
-    },
-    {
-      "id": "naad487",
-      "type": "flow.return",
-      "x": 320,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "count"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "na6d487",
-      "fromPin": 0,
-      "to": "na7d487",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "na6d487",
-      "fromPin": 0,
-      "to": "na8d487",
-      "toPin": 0
+      "name": "result",
+      "kind": "Text"
     },
     {
-      "from": "na5d487",
-      "fromPin": 0,
-      "to": "na9d487",
-      "toPin": 0
-    },
-    {
-      "from": "na7d487",
-      "fromPin": 0,
-      "to": "na9d487",
-      "toPin": 1
-    },
-    {
-      "from": "na5d487",
-      "fromPin": 0,
-      "to": "naad487",
-      "toPin": 0
-    },
-    {
-      "from": "na8d487",
-      "fromPin": 0,
-      "to": "naad487",
-      "toPin": 1
+      "name": "count",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Extract URLs",
+    "nodes": [
+      {
+        "id": "na5d487",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "na6d487",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "na7d487",
+        "type": "data.regex",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "all",
+          "pattern": "https?://[^\\s]+",
+          "replace": "",
+          "flags": ""
+        }
+      },
+      {
+        "id": "na8d487",
+        "type": "data.regex",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "count",
+          "pattern": "https?://[^\\s]+",
+          "replace": "",
+          "flags": ""
+        }
+      },
+      {
+        "id": "na9d487",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      },
+      {
+        "id": "naad487",
+        "type": "flow.return",
+        "x": 320,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "count"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "na6d487",
+        "fromPin": 0,
+        "to": "na7d487",
+        "toPin": 0
+      },
+      {
+        "from": "na6d487",
+        "fromPin": 0,
+        "to": "na8d487",
+        "toPin": 0
+      },
+      {
+        "from": "na5d487",
+        "fromPin": 0,
+        "to": "na9d487",
+        "toPin": 0
+      },
+      {
+        "from": "na7d487",
+        "fromPin": 0,
+        "to": "na9d487",
+        "toPin": 1
+      },
+      {
+        "from": "na5d487",
+        "fromPin": 0,
+        "to": "naad487",
+        "toPin": 0
+      },
+      {
+        "from": "na8d487",
+        "fromPin": 0,
+        "to": "naad487",
+        "toPin": 1
+      }
+    ]
+  }
+}

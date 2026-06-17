@@ -1,57 +1,89 @@
-{"typeId":"time.tz","title":"Time in Timezone","subtitle":"composite","icon":"\uD83C\uDF0D","category":"Data","description":"The current time in a timezone.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"zone","label":"Zone","type":"Text","default":"Europe/London"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Time in Timezone",
-  "nodes": [
+{
+  "typeId": "time.tz",
+  "title": "Time in Timezone",
+  "subtitle": "composite",
+  "icon": "globe-hemisphere-west",
+  "category": "Data",
+  "description": "The current time in a timezone.",
+  "inputs": [
     {
-      "id": "n117d48a",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
-    },
-    {
-      "id": "n118d48a",
-      "type": "data.datetime",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "now",
-        "input": "",
-        "format": "",
-        "zone": "{zone}"
-      }
-    },
-    {
-      "id": "n119d48a",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "",
+      "kind": "Exec"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n117d48a",
-      "fromPin": 0,
-      "to": "n119d48a",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n118d48a",
-      "fromPin": 0,
-      "to": "n119d48a",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "zone",
+      "label": "Zone",
+      "type": "Text",
+      "default": "Europe/London"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Time in Timezone",
+    "nodes": [
+      {
+        "id": "n117d48a",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n118d48a",
+        "type": "data.datetime",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "now",
+          "input": "",
+          "format": "",
+          "zone": "{zone}"
+        }
+      },
+      {
+        "id": "n119d48a",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n117d48a",
+        "fromPin": 0,
+        "to": "n119d48a",
+        "toPin": 0
+      },
+      {
+        "from": "n118d48a",
+        "fromPin": 0,
+        "to": "n119d48a",
+        "toPin": 1
+      }
+    ]
+  }
+}

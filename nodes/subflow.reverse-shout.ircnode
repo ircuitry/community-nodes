@@ -2,7 +2,7 @@
   "typeId": "subflow.reverse-shout",
   "title": "Reverse Shout",
   "subtitle": "composite",
-  "icon": "🔁",
+  "icon": "repeat",
   "category": "Data",
   "description": "Composite example: UPPERCASES then reverses the text (two nodes baked into one).",
   "author": "ircuitry",

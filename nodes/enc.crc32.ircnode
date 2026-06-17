@@ -1,72 +1,101 @@
-{"typeId":"enc.crc32","title":"CRC32 Checksum","subtitle":"composite","icon":"\uD83D\uDD10","category":"Data","description":"CRC32 checksum of the input.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "CRC32 Checksum",
-  "nodes": [
+{
+  "typeId": "enc.crc32",
+  "title": "CRC32 Checksum",
+  "subtitle": "composite",
+  "icon": "lock-key",
+  "category": "Data",
+  "description": "CRC32 checksum of the input.",
+  "inputs": [
     {
-      "id": "n41d484",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n42d484",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n43d484",
-      "type": "data.hash",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "crc32"
-      }
-    },
-    {
-      "id": "n44d484",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n42d484",
-      "fromPin": 0,
-      "to": "n43d484",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n41d484",
-      "fromPin": 0,
-      "to": "n44d484",
-      "toPin": 0
-    },
-    {
-      "from": "n43d484",
-      "fromPin": 0,
-      "to": "n44d484",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "CRC32 Checksum",
+    "nodes": [
+      {
+        "id": "n41d484",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n42d484",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n43d484",
+        "type": "data.hash",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "crc32"
+        }
+      },
+      {
+        "id": "n44d484",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n42d484",
+        "fromPin": 0,
+        "to": "n43d484",
+        "toPin": 0
+      },
+      {
+        "from": "n41d484",
+        "fromPin": 0,
+        "to": "n44d484",
+        "toPin": 0
+      },
+      {
+        "from": "n43d484",
+        "fromPin": 0,
+        "to": "n44d484",
+        "toPin": 1
+      }
+    ]
+  }
+}

@@ -1,74 +1,103 @@
-{"typeId":"text.numbering","title":"Number a List","subtitle":"composite","icon":"\uD83D\uDD22","category":"Data","description":"Numbers each line.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Number a List",
-  "nodes": [
+{
+  "typeId": "text.numbering",
+  "title": "Number a List",
+  "subtitle": "composite",
+  "icon": "hash",
+  "category": "Data",
+  "description": "Numbers each line.",
+  "inputs": [
     {
-      "id": "n7dd485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n7ed485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n7fd485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "numbering",
-        "n": "1",
-        "fill": " "
-      }
-    },
-    {
-      "id": "n80d485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n7ed485",
-      "fromPin": 0,
-      "to": "n7fd485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n7dd485",
-      "fromPin": 0,
-      "to": "n80d485",
-      "toPin": 0
-    },
-    {
-      "from": "n7fd485",
-      "fromPin": 0,
-      "to": "n80d485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Number a List",
+    "nodes": [
+      {
+        "id": "n7dd485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n7ed485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n7fd485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "numbering",
+          "n": "1",
+          "fill": " "
+        }
+      },
+      {
+        "id": "n80d485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n7ed485",
+        "fromPin": 0,
+        "to": "n7fd485",
+        "toPin": 0
+      },
+      {
+        "from": "n7dd485",
+        "fromPin": 0,
+        "to": "n80d485",
+        "toPin": 0
+      },
+      {
+        "from": "n7fd485",
+        "fromPin": 0,
+        "to": "n80d485",
+        "toPin": 1
+      }
+    ]
+  }
+}

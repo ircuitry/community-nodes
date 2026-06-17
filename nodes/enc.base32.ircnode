@@ -1,73 +1,109 @@
-{"typeId":"enc.base32","title":"Base32 Encode/Decode","subtitle":"composite","icon":"\uD83D\uDD21","category":"Data","description":"Encodes or decodes Base32.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"mode","label":"Mode","type":"Text","default":"encode"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Base32 Encode/Decode",
-  "nodes": [
+{
+  "typeId": "enc.base32",
+  "title": "Base32 Encode/Decode",
+  "subtitle": "composite",
+  "icon": "text-t",
+  "category": "Data",
+  "description": "Encodes or decodes Base32.",
+  "inputs": [
     {
-      "id": "n9d482",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "nad482",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "nbd482",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "base32",
-        "mode": "{mode}"
-      }
-    },
-    {
-      "id": "ncd482",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "nad482",
-      "fromPin": 0,
-      "to": "nbd482",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n9d482",
-      "fromPin": 0,
-      "to": "ncd482",
-      "toPin": 0
-    },
-    {
-      "from": "nbd482",
-      "fromPin": 0,
-      "to": "ncd482",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "mode",
+      "label": "Mode",
+      "type": "Text",
+      "default": "encode"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Base32 Encode/Decode",
+    "nodes": [
+      {
+        "id": "n9d482",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "nad482",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "nbd482",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "base32",
+          "mode": "{mode}"
+        }
+      },
+      {
+        "id": "ncd482",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "nad482",
+        "fromPin": 0,
+        "to": "nbd482",
+        "toPin": 0
+      },
+      {
+        "from": "n9d482",
+        "fromPin": 0,
+        "to": "ncd482",
+        "toPin": 0
+      },
+      {
+        "from": "nbd482",
+        "fromPin": 0,
+        "to": "ncd482",
+        "toPin": 1
+      }
+    ]
+  }
+}

@@ -1,121 +1,150 @@
-{"typeId":"web.shorten","title":"Shorten URL","subtitle":"composite","icon":"\uD83D\uDD17","category":"Action","description":"Shortens a URL via is.gd.","inputs":[{"name":"","kind":"Exec"},{"name":"url","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Shorten URL",
-  "nodes": [
+{
+  "typeId": "web.shorten",
+  "title": "Shorten URL",
+  "subtitle": "composite",
+  "icon": "link",
+  "category": "Action",
+  "description": "Shortens a URL via is.gd.",
+  "inputs": [
     {
-      "id": "n1b0d48f",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1b1d48f",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "",
-        "body": ""
-      }
-    },
-    {
-      "id": "n1b2d48f",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "url"
-      }
-    },
-    {
-      "id": "n1b3d48f",
-      "type": "data.encode",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "url",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n1b4d48f",
-      "type": "data.format",
-      "x": -120,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://is.gd/create.php?format=simple\u0026url={a}"
-      }
-    },
-    {
-      "id": "n1b5d48f",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "url",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1b2d48f",
-      "fromPin": 0,
-      "to": "n1b3d48f",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1b3d48f",
-      "fromPin": 0,
-      "to": "n1b4d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1b4d48f",
-      "fromPin": 0,
-      "to": "n1b1d48f",
-      "toPin": 1
-    },
-    {
-      "from": "n1b0d48f",
-      "fromPin": 0,
-      "to": "n1b1d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1b1d48f",
-      "fromPin": 0,
-      "to": "n1b5d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1b1d48f",
-      "fromPin": 1,
-      "to": "n1b5d48f",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Shorten URL",
+    "nodes": [
+      {
+        "id": "n1b0d48f",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1b1d48f",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "",
+          "body": ""
+        }
+      },
+      {
+        "id": "n1b2d48f",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "url"
+        }
+      },
+      {
+        "id": "n1b3d48f",
+        "type": "data.encode",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "url",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n1b4d48f",
+        "type": "data.format",
+        "x": -120,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://is.gd/create.php?format=simple&url={a}"
+        }
+      },
+      {
+        "id": "n1b5d48f",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1b2d48f",
+        "fromPin": 0,
+        "to": "n1b3d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1b3d48f",
+        "fromPin": 0,
+        "to": "n1b4d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1b4d48f",
+        "fromPin": 0,
+        "to": "n1b1d48f",
+        "toPin": 1
+      },
+      {
+        "from": "n1b0d48f",
+        "fromPin": 0,
+        "to": "n1b1d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1b1d48f",
+        "fromPin": 0,
+        "to": "n1b5d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1b1d48f",
+        "fromPin": 1,
+        "to": "n1b5d48f",
+        "toPin": 1
+      }
+    ]
+  }
+}

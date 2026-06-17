@@ -1,73 +1,102 @@
-{"typeId":"text.urldecode","title":"URL Decode","subtitle":"composite","icon":"\uD83D\uDD17","category":"Data","description":"Decodes a percent-encoded URL string.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "URL Decode",
-  "nodes": [
+{
+  "typeId": "text.urldecode",
+  "title": "URL Decode",
+  "subtitle": "composite",
+  "icon": "link",
+  "category": "Data",
+  "description": "Decodes a percent-encoded URL string.",
+  "inputs": [
     {
-      "id": "n15d483",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n16d483",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n17d483",
-      "type": "data.encode",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "url",
-        "mode": "decode"
-      }
-    },
-    {
-      "id": "n18d483",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n16d483",
-      "fromPin": 0,
-      "to": "n17d483",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n15d483",
-      "fromPin": 0,
-      "to": "n18d483",
-      "toPin": 0
-    },
-    {
-      "from": "n17d483",
-      "fromPin": 0,
-      "to": "n18d483",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "URL Decode",
+    "nodes": [
+      {
+        "id": "n15d483",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n16d483",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n17d483",
+        "type": "data.encode",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "url",
+          "mode": "decode"
+        }
+      },
+      {
+        "id": "n18d483",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n16d483",
+        "fromPin": 0,
+        "to": "n17d483",
+        "toPin": 0
+      },
+      {
+        "from": "n15d483",
+        "fromPin": 0,
+        "to": "n18d483",
+        "toPin": 0
+      },
+      {
+        "from": "n17d483",
+        "fromPin": 0,
+        "to": "n18d483",
+        "toPin": 1
+      }
+    ]
+  }
+}

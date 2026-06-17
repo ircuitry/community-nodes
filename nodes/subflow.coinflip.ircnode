@@ -2,7 +2,7 @@
   "typeId": "subflow.coinflip",
   "title": "Coin Flip",
   "subtitle": "composite",
-  "icon": "🪙",
+  "icon": "coin",
   "category": "Data",
   "description": "Composite example: returns 'heads' or 'tails' at random.",
   "author": "ircuitry",

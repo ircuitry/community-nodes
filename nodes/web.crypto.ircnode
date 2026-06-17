@@ -1,121 +1,150 @@
-{"typeId":"web.crypto","title":"Crypto Price","subtitle":"composite","icon":"\uD83E\uDE99","category":"Action","description":"A coin\u0027s price in USD.","inputs":[{"name":"","kind":"Exec"},{"name":"coin","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Crypto Price",
-  "nodes": [
+{
+  "typeId": "web.crypto",
+  "title": "Crypto Price",
+  "subtitle": "composite",
+  "icon": "coin",
+  "category": "Action",
+  "description": "A coin's price in USD.",
+  "inputs": [
     {
-      "id": "n1a4d48f",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n1a5d48f",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "",
-        "body": ""
-      }
-    },
-    {
-      "id": "n1a6d48f",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "coin"
-      }
-    },
-    {
-      "id": "n1a7d48f",
-      "type": "data.encode",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "url",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n1a8d48f",
-      "type": "data.format",
-      "x": -120,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://api.coingecko.com/api/v3/simple/price?ids={a}\u0026vs_currencies=usd"
-      }
-    },
-    {
-      "id": "n1a9d48f",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "coin",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n1a6d48f",
-      "fromPin": 0,
-      "to": "n1a7d48f",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n1a7d48f",
-      "fromPin": 0,
-      "to": "n1a8d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1a8d48f",
-      "fromPin": 0,
-      "to": "n1a5d48f",
-      "toPin": 1
-    },
-    {
-      "from": "n1a4d48f",
-      "fromPin": 0,
-      "to": "n1a5d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1a5d48f",
-      "fromPin": 0,
-      "to": "n1a9d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n1a5d48f",
-      "fromPin": 1,
-      "to": "n1a9d48f",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Crypto Price",
+    "nodes": [
+      {
+        "id": "n1a4d48f",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n1a5d48f",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "",
+          "body": ""
+        }
+      },
+      {
+        "id": "n1a6d48f",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "coin"
+        }
+      },
+      {
+        "id": "n1a7d48f",
+        "type": "data.encode",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "url",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n1a8d48f",
+        "type": "data.format",
+        "x": -120,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://api.coingecko.com/api/v3/simple/price?ids={a}&vs_currencies=usd"
+        }
+      },
+      {
+        "id": "n1a9d48f",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n1a6d48f",
+        "fromPin": 0,
+        "to": "n1a7d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a7d48f",
+        "fromPin": 0,
+        "to": "n1a8d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a8d48f",
+        "fromPin": 0,
+        "to": "n1a5d48f",
+        "toPin": 1
+      },
+      {
+        "from": "n1a4d48f",
+        "fromPin": 0,
+        "to": "n1a5d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a5d48f",
+        "fromPin": 0,
+        "to": "n1a9d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n1a5d48f",
+        "fromPin": 1,
+        "to": "n1a9d48f",
+        "toPin": 1
+      }
+    ]
+  }
+}

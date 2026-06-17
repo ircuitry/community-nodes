@@ -1,139 +1,168 @@
-{"typeId":"web.define","title":"Dictionary","subtitle":"composite","icon":"\uD83D\uDCD6","category":"Action","description":"The definition of a word.","inputs":[{"name":"","kind":"Exec"},{"name":"word","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Dictionary",
-  "nodes": [
+{
+  "typeId": "web.define",
+  "title": "Dictionary",
+  "subtitle": "composite",
+  "icon": "book-open",
+  "category": "Action",
+  "description": "The definition of a word.",
+  "inputs": [
     {
-      "id": "n196d48f",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n197d48f",
-      "type": "net.http",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "method": "GET",
-        "url": "https://",
-        "send": "body",
-        "field": "file",
-        "file": "",
-        "headers": "",
-        "body": ""
-      }
-    },
-    {
-      "id": "n198d48f",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "word"
-      }
-    },
-    {
-      "id": "n199d48f",
-      "type": "data.encode",
-      "x": -120,
-      "y": -70,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "url",
-        "mode": "encode"
-      }
-    },
-    {
-      "id": "n19ad48f",
-      "type": "data.format",
-      "x": -120,
-      "y": 40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "template": "https://api.dictionaryapi.dev/api/v2/entries/en/{a}"
-      }
-    },
-    {
-      "id": "n19bd48f",
-      "type": "data.json",
-      "x": -120,
-      "y": 150,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "path": "0.meanings.0.definitions.0.definition"
-      }
-    },
-    {
-      "id": "n19cd48f",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "word",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n198d48f",
-      "fromPin": 0,
-      "to": "n199d48f",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n199d48f",
-      "fromPin": 0,
-      "to": "n19ad48f",
-      "toPin": 0
-    },
-    {
-      "from": "n19ad48f",
-      "fromPin": 0,
-      "to": "n197d48f",
-      "toPin": 1
-    },
-    {
-      "from": "n197d48f",
-      "fromPin": 1,
-      "to": "n19bd48f",
-      "toPin": 0
-    },
-    {
-      "from": "n196d48f",
-      "fromPin": 0,
-      "to": "n197d48f",
-      "toPin": 0
-    },
-    {
-      "from": "n197d48f",
-      "fromPin": 0,
-      "to": "n19cd48f",
-      "toPin": 0
-    },
-    {
-      "from": "n19bd48f",
-      "fromPin": 0,
-      "to": "n19cd48f",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Dictionary",
+    "nodes": [
+      {
+        "id": "n196d48f",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n197d48f",
+        "type": "net.http",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "method": "GET",
+          "url": "https://",
+          "send": "body",
+          "field": "file",
+          "file": "",
+          "headers": "",
+          "body": ""
+        }
+      },
+      {
+        "id": "n198d48f",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "word"
+        }
+      },
+      {
+        "id": "n199d48f",
+        "type": "data.encode",
+        "x": -120,
+        "y": -70,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "url",
+          "mode": "encode"
+        }
+      },
+      {
+        "id": "n19ad48f",
+        "type": "data.format",
+        "x": -120,
+        "y": 40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "template": "https://api.dictionaryapi.dev/api/v2/entries/en/{a}"
+        }
+      },
+      {
+        "id": "n19bd48f",
+        "type": "data.json",
+        "x": -120,
+        "y": 150,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "path": "0.meanings.0.definitions.0.definition"
+        }
+      },
+      {
+        "id": "n19cd48f",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n198d48f",
+        "fromPin": 0,
+        "to": "n199d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n199d48f",
+        "fromPin": 0,
+        "to": "n19ad48f",
+        "toPin": 0
+      },
+      {
+        "from": "n19ad48f",
+        "fromPin": 0,
+        "to": "n197d48f",
+        "toPin": 1
+      },
+      {
+        "from": "n197d48f",
+        "fromPin": 1,
+        "to": "n19bd48f",
+        "toPin": 0
+      },
+      {
+        "from": "n196d48f",
+        "fromPin": 0,
+        "to": "n197d48f",
+        "toPin": 0
+      },
+      {
+        "from": "n197d48f",
+        "fromPin": 0,
+        "to": "n19cd48f",
+        "toPin": 0
+      },
+      {
+        "from": "n19bd48f",
+        "fromPin": 0,
+        "to": "n19cd48f",
+        "toPin": 1
+      }
+    ]
+  }
+}

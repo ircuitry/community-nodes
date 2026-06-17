@@ -1,75 +1,123 @@
-{"typeId":"calc.units","title":"Unit Convert","subtitle":"composite","icon":"\uD83D\uDCD0","category":"Data","description":"Converts a value between units.","inputs":[{"name":"","kind":"Exec"},{"name":"value","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"family","label":"Family","type":"Text","default":"length"},{"key":"from","label":"From","type":"Text","default":"km"},{"key":"to","label":"To","type":"Text","default":"mi"}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Unit Convert",
-  "nodes": [
+{
+  "typeId": "calc.units",
+  "title": "Unit Convert",
+  "subtitle": "composite",
+  "icon": "ruler",
+  "category": "Data",
+  "description": "Converts a value between units.",
+  "inputs": [
     {
-      "id": "ncdd488",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "nced488",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "value"
-      }
-    },
-    {
-      "id": "ncfd488",
-      "type": "data.convert",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "family": "{family}",
-        "value": "",
-        "from": "{from}",
-        "to": "{to}"
-      }
-    },
-    {
-      "id": "nd0d488",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "value",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "nced488",
-      "fromPin": 0,
-      "to": "ncfd488",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "ncdd488",
-      "fromPin": 0,
-      "to": "nd0d488",
-      "toPin": 0
-    },
-    {
-      "from": "ncfd488",
-      "fromPin": 0,
-      "to": "nd0d488",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "family",
+      "label": "Family",
+      "type": "Text",
+      "default": "length"
+    },
+    {
+      "key": "from",
+      "label": "From",
+      "type": "Text",
+      "default": "km"
+    },
+    {
+      "key": "to",
+      "label": "To",
+      "type": "Text",
+      "default": "mi"
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Unit Convert",
+    "nodes": [
+      {
+        "id": "ncdd488",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "nced488",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "value"
+        }
+      },
+      {
+        "id": "ncfd488",
+        "type": "data.convert",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "family": "{family}",
+          "value": "",
+          "from": "{from}",
+          "to": "{to}"
+        }
+      },
+      {
+        "id": "nd0d488",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "nced488",
+        "fromPin": 0,
+        "to": "ncfd488",
+        "toPin": 0
+      },
+      {
+        "from": "ncdd488",
+        "fromPin": 0,
+        "to": "nd0d488",
+        "toPin": 0
+      },
+      {
+        "from": "ncfd488",
+        "fromPin": 0,
+        "to": "nd0d488",
+        "toPin": 1
+      }
+    ]
+  }
+}

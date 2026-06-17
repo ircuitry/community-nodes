@@ -1,74 +1,116 @@
-{"typeId":"text.pad","title":"Pad Text","subtitle":"composite","icon":"\uD83D\uDCCF","category":"Data","description":"Pads text to a width.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"n","label":"N","type":"Text","default":"10"},{"key":"fill","label":"Fill","type":"Text","default":" "}],"subgraph":{
-  "format": "ircuitry.workflow.v1",
-  "name": "Pad Text",
-  "nodes": [
+{
+  "typeId": "text.pad",
+  "title": "Pad Text",
+  "subtitle": "composite",
+  "icon": "ruler",
+  "category": "Data",
+  "description": "Pads text to a width.",
+  "inputs": [
     {
-      "id": "n69d485",
-      "type": "flow.in",
-      "x": -460,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {}
+      "name": "",
+      "kind": "Exec"
     },
     {
-      "id": "n6ad485",
-      "type": "flow.arg",
-      "x": -460,
-      "y": -40,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "text"
-      }
-    },
-    {
-      "id": "n6bd485",
-      "type": "data.shape",
-      "x": -120,
-      "y": -180,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "op": "padleft",
-        "n": "{n}",
-        "fill": "{fill}"
-      }
-    },
-    {
-      "id": "n6cd485",
-      "type": "flow.return",
-      "x": 320,
-      "y": -160,
-      "muted": false,
-      "streamAsTool": false,
-      "title": "",
-      "params": {
-        "name": "result"
-      }
+      "name": "text",
+      "kind": "Text"
     }
   ],
-  "connections": [
+  "outputs": [
     {
-      "from": "n6ad485",
-      "fromPin": 0,
-      "to": "n6bd485",
-      "toPin": 0
+      "name": "then",
+      "kind": "Exec"
     },
     {
-      "from": "n69d485",
-      "fromPin": 0,
-      "to": "n6cd485",
-      "toPin": 0
-    },
-    {
-      "from": "n6bd485",
-      "fromPin": 0,
-      "to": "n6cd485",
-      "toPin": 1
+      "name": "result",
+      "kind": "Text"
     }
-  ]
-}}
+  ],
+  "params": [
+    {
+      "key": "n",
+      "label": "N",
+      "type": "Text",
+      "default": "10"
+    },
+    {
+      "key": "fill",
+      "label": "Fill",
+      "type": "Text",
+      "default": " "
+    }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Pad Text",
+    "nodes": [
+      {
+        "id": "n69d485",
+        "type": "flow.in",
+        "x": -460,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {}
+      },
+      {
+        "id": "n6ad485",
+        "type": "flow.arg",
+        "x": -460,
+        "y": -40,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "text"
+        }
+      },
+      {
+        "id": "n6bd485",
+        "type": "data.shape",
+        "x": -120,
+        "y": -180,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "op": "padleft",
+          "n": "{n}",
+          "fill": "{fill}"
+        }
+      },
+      {
+        "id": "n6cd485",
+        "type": "flow.return",
+        "x": 320,
+        "y": -160,
+        "muted": false,
+        "streamAsTool": false,
+        "title": "",
+        "params": {
+          "name": "result"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "from": "n6ad485",
+        "fromPin": 0,
+        "to": "n6bd485",
+        "toPin": 0
+      },
+      {
+        "from": "n69d485",
+        "fromPin": 0,
+        "to": "n6cd485",
+        "toPin": 0
+      },
+      {
+        "from": "n6bd485",
+        "fromPin": 0,
+        "to": "n6cd485",
+        "toPin": 1
+      }
+    ]
+  }
+}
