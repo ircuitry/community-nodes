@@ -1,0 +1,43 @@
+{
+  "typeId": "relay.discord",
+  "title": "Discord Send",
+  "subtitle": "composite",
+  "icon": "discord-logo",
+  "category": "Action",
+  "description": "Posts a message to a Discord channel via an incoming webhook. Setup: in Discord, Channel Settings > Integrations > Webhooks > New Webhook, copy the URL, and store it as an encrypted key named DISCORD_WEBHOOK. Handles quotes/newlines safely. Requires an ircuitry build with the data.encode json op.",
+  "author": "ircuitry",
+  "tags": ["discord", "relay", "webhook", "message", "bridge"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "message", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "result", "kind": "Text" }
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Discord Send",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -620, "y": -120, "params": {} },
+      { "id": "amsg", "type": "flow.arg", "x": -620, "y": 80, "params": { "name": "message" } },
+      { "id": "esc", "type": "data.encode", "x": -420, "y": 80, "params": { "op": "json", "mode": "encode" } },
+      { "id": "body", "type": "data.format", "x": -220, "y": 80, "params": { "template": "{\"content\":\"{a}\"}" } },
+      { "id": "sm", "type": "data.setvar", "x": -220, "y": -120, "params": { "name": "discord_body", "value": "" } },
+      { "id": "urlf", "type": "data.format", "x": -220, "y": 200, "params": { "template": "{{secret.DISCORD_WEBHOOK}}?wait=true" } },
+      { "id": "h", "type": "net.http", "x": 20, "y": -120, "params": { "method": "POST", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "Content-Type: application/json", "body": "{discord_body}", "timeout": "15" } },
+      { "id": "ret", "type": "flow.return", "x": 260, "y": -120, "params": { "name": "result" } }
+    ],
+    "connections": [
+      { "from": "amsg", "fromPin": 0, "to": "esc", "toPin": 0 },
+      { "from": "esc", "fromPin": 0, "to": "body", "toPin": 0 },
+      { "from": "in", "fromPin": 0, "to": "sm", "toPin": 0 },
+      { "from": "body", "fromPin": 0, "to": "sm", "toPin": 1 },
+      { "from": "urlf", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "sm", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 0, "to": "ret", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "ret", "toPin": 1 }
+    ]
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "count": 129,
+  "count": 131,
   "nodes": [
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "cal.icsfeed",
       "title": "Calendar Feed",
       "subtitle": "composite",
@@ -10680,9 +10680,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "push.ntfy",
       "title": "ntfy Push",
       "subtitle": "composite",
@@ -10904,6 +10904,221 @@
       "commit": "",
       "updated": "",
       "note": "",
+      "typeId": "relay.discord",
+      "title": "Discord Send",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "discord-logo",
+      "iconImage": null,
+      "description": "Posts a message to a Discord channel via an incoming webhook. Setup: in Discord, Channel Settings > Integrations > Webhooks > New Webhook, copy the URL, and store it as an encrypted key named DISCORD_WEBHOOK. Handles quotes/newlines safely. Requires an ircuitry build with the data.encode json op.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "discord",
+        "relay",
+        "webhook",
+        "message",
+        "bridge"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "message",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/relay.discord.ircnode",
+      "manifest": {
+        "typeId": "relay.discord",
+        "title": "Discord Send",
+        "subtitle": "composite",
+        "icon": "discord-logo",
+        "category": "Action",
+        "description": "Posts a message to a Discord channel via an incoming webhook. Setup: in Discord, Channel Settings > Integrations > Webhooks > New Webhook, copy the URL, and store it as an encrypted key named DISCORD_WEBHOOK. Handles quotes/newlines safely. Requires an ircuitry build with the data.encode json op.",
+        "author": "ircuitry",
+        "tags": [
+          "discord",
+          "relay",
+          "webhook",
+          "message",
+          "bridge"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "message",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Discord Send",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -620,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "amsg",
+              "type": "flow.arg",
+              "x": -620,
+              "y": 80,
+              "params": {
+                "name": "message"
+              }
+            },
+            {
+              "id": "esc",
+              "type": "data.encode",
+              "x": -420,
+              "y": 80,
+              "params": {
+                "op": "json",
+                "mode": "encode"
+              }
+            },
+            {
+              "id": "body",
+              "type": "data.format",
+              "x": -220,
+              "y": 80,
+              "params": {
+                "template": "{\"content\":\"{a}\"}"
+              }
+            },
+            {
+              "id": "sm",
+              "type": "data.setvar",
+              "x": -220,
+              "y": -120,
+              "params": {
+                "name": "discord_body",
+                "value": ""
+              }
+            },
+            {
+              "id": "urlf",
+              "type": "data.format",
+              "x": -220,
+              "y": 200,
+              "params": {
+                "template": "{{secret.DISCORD_WEBHOOK}}?wait=true"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": 20,
+              "y": -120,
+              "params": {
+                "method": "POST",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "Content-Type: application/json",
+                "body": "{discord_body}",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 260,
+              "y": -120,
+              "params": {
+                "name": "result"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "amsg",
+              "fromPin": 0,
+              "to": "esc",
+              "toPin": 0
+            },
+            {
+              "from": "esc",
+              "fromPin": 0,
+              "to": "body",
+              "toPin": 0
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 0
+            },
+            {
+              "from": "body",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 1
+            },
+            {
+              "from": "urlf",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "sm",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "relay.telegram",
       "title": "Telegram Send",
       "subtitle": "composite",
@@ -11225,9 +11440,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "social.mastodon",
       "title": "Mastodon Post",
       "subtitle": "composite",
@@ -18560,9 +18775,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "web.npm",
       "title": "npm Package",
       "subtitle": "composite",
@@ -18816,9 +19031,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "web.paste",
       "title": "Paste Text",
       "subtitle": "composite",
@@ -18997,9 +19212,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "7719f53",
+      "updated": "2026-06-20",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "web.pypi",
       "title": "PyPI Package",
       "subtitle": "composite",
@@ -19253,9 +19468,9 @@
       }
     },
     {
-      "commit": "21efcb1",
+      "commit": "7719f53",
       "updated": "2026-06-20",
-      "note": "feat: add feed.rss, web.reddit, web.hackernews composites",
+      "note": "feat: add web/push/relay/social/calendar composites",
       "typeId": "web.reddit",
       "title": "Reddit Hot",
       "subtitle": "composite",
@@ -20001,6 +20216,257 @@
               "fromPin": 1,
               "to": "n1b5d48f",
               "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "web.translate",
+      "title": "Translate",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "translate",
+      "iconImage": null,
+      "description": "Translates text using a LibreTranslate server. Set Endpoint to any LibreTranslate instance (self-hosted or hosted), Source (or 'auto') and Target language codes. If your instance needs an API key, store it as an encrypted key named LIBRETRANSLATE_KEY. Outputs the translated text.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "translate",
+        "language",
+        "libretranslate",
+        "web"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "endpoint",
+          "label": "Endpoint",
+          "type": "Text",
+          "default": "https://libretranslate.com"
+        },
+        {
+          "key": "source",
+          "label": "Source lang",
+          "type": "Text",
+          "default": "auto"
+        },
+        {
+          "key": "target",
+          "label": "Target lang",
+          "type": "Text",
+          "default": "en"
+        }
+      ],
+      "file": "nodes/web.translate.ircnode",
+      "manifest": {
+        "typeId": "web.translate",
+        "title": "Translate",
+        "subtitle": "composite",
+        "icon": "translate",
+        "category": "Action",
+        "description": "Translates text using a LibreTranslate server. Set Endpoint to any LibreTranslate instance (self-hosted or hosted), Source (or 'auto') and Target language codes. If your instance needs an API key, store it as an encrypted key named LIBRETRANSLATE_KEY. Outputs the translated text.",
+        "author": "ircuitry",
+        "tags": [
+          "translate",
+          "language",
+          "libretranslate",
+          "web"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "endpoint",
+            "label": "Endpoint",
+            "type": "Text",
+            "default": "https://libretranslate.com"
+          },
+          {
+            "key": "source",
+            "label": "Source lang",
+            "type": "Text",
+            "default": "auto"
+          },
+          {
+            "key": "target",
+            "label": "Target lang",
+            "type": "Text",
+            "default": "en"
+          }
+        ],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Translate",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -560,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "atext",
+              "type": "flow.arg",
+              "x": -560,
+              "y": 80,
+              "params": {
+                "name": "text"
+              }
+            },
+            {
+              "id": "enc",
+              "type": "data.encode",
+              "x": -360,
+              "y": 80,
+              "params": {
+                "op": "url",
+                "mode": "encode"
+              }
+            },
+            {
+              "id": "sm",
+              "type": "data.setvar",
+              "x": -360,
+              "y": -120,
+              "params": {
+                "name": "tr_q",
+                "value": ""
+              }
+            },
+            {
+              "id": "urlf",
+              "type": "data.format",
+              "x": -360,
+              "y": 200,
+              "params": {
+                "template": "{endpoint}/translate"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -120,
+              "y": -120,
+              "params": {
+                "method": "POST",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "Content-Type: application/x-www-form-urlencoded",
+                "body": "q={tr_q}&source={source}&target={target}&format=text&api_key={{secret.LIBRETRANSLATE_KEY}}",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "jr",
+              "type": "data.json",
+              "x": 120,
+              "y": 60,
+              "params": {
+                "path": "translatedText"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 340,
+              "y": -120,
+              "params": {
+                "name": "result"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "atext",
+              "fromPin": 0,
+              "to": "enc",
+              "toPin": 0
+            },
+            {
+              "from": "enc",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 1
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 0
+            },
+            {
+              "from": "urlf",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "sm",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jr",
+              "toPin": 0
+            },
+            {
+              "from": "jr",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
             }
           ]
         }

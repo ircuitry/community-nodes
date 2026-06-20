@@ -1,0 +1,47 @@
+{
+  "typeId": "web.translate",
+  "title": "Translate",
+  "subtitle": "composite",
+  "icon": "translate",
+  "category": "Action",
+  "description": "Translates text using a LibreTranslate server. Set Endpoint to any LibreTranslate instance (self-hosted or hosted), Source (or 'auto') and Target language codes. If your instance needs an API key, store it as an encrypted key named LIBRETRANSLATE_KEY. Outputs the translated text.",
+  "author": "ircuitry",
+  "tags": ["translate", "language", "libretranslate", "web"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "text", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "result", "kind": "Text" }
+  ],
+  "params": [
+    { "key": "endpoint", "label": "Endpoint", "type": "Text", "default": "https://libretranslate.com" },
+    { "key": "source", "label": "Source lang", "type": "Text", "default": "auto" },
+    { "key": "target", "label": "Target lang", "type": "Text", "default": "en" }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Translate",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -560, "y": -120, "params": {} },
+      { "id": "atext", "type": "flow.arg", "x": -560, "y": 80, "params": { "name": "text" } },
+      { "id": "enc", "type": "data.encode", "x": -360, "y": 80, "params": { "op": "url", "mode": "encode" } },
+      { "id": "sm", "type": "data.setvar", "x": -360, "y": -120, "params": { "name": "tr_q", "value": "" } },
+      { "id": "urlf", "type": "data.format", "x": -360, "y": 200, "params": { "template": "{endpoint}/translate" } },
+      { "id": "h", "type": "net.http", "x": -120, "y": -120, "params": { "method": "POST", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "Content-Type: application/x-www-form-urlencoded", "body": "q={tr_q}&source={source}&target={target}&format=text&api_key={{secret.LIBRETRANSLATE_KEY}}", "timeout": "15" } },
+      { "id": "jr", "type": "data.json", "x": 120, "y": 60, "params": { "path": "translatedText" } },
+      { "id": "ret", "type": "flow.return", "x": 340, "y": -120, "params": { "name": "result" } }
+    ],
+    "connections": [
+      { "from": "atext", "fromPin": 0, "to": "enc", "toPin": 0 },
+      { "from": "enc", "fromPin": 0, "to": "sm", "toPin": 1 },
+      { "from": "in", "fromPin": 0, "to": "sm", "toPin": 0 },
+      { "from": "urlf", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "sm", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "jr", "toPin": 0 },
+      { "from": "jr", "fromPin": 0, "to": "ret", "toPin": 1 },
+      { "from": "h", "fromPin": 0, "to": "ret", "toPin": 0 }
+    ]
+  }
+}
