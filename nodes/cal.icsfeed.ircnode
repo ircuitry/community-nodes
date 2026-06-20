@@ -1,0 +1,48 @@
+{
+  "typeId": "cal.icsfeed",
+  "title": "Calendar Feed",
+  "subtitle": "composite",
+  "icon": "calendar-dots",
+  "category": "Action",
+  "description": "Reads an iCalendar (.ics) URL and outputs the next upcoming event's summary, time, and location (count is 0 when the feed has no upcoming events). Works with any public webcal/ICS feed (Google Calendar, Outlook, Meetup, etc.).",
+  "author": "ircuitry",
+  "tags": ["calendar", "ics", "ical", "events", "web"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "url", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "summary", "kind": "Text" },
+    { "name": "when", "kind": "Text" },
+    { "name": "location", "kind": "Text" },
+    { "name": "count", "kind": "Number" }
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Calendar Feed",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "arg", "type": "flow.arg", "x": -460, "y": 60, "params": { "name": "url" } },
+      { "id": "ic", "type": "file.ical", "x": -220, "y": -120, "params": { "source": "", "mode": "next", "max": "1" } },
+      { "id": "rsum", "type": "flow.return", "x": 60, "y": -120, "params": { "name": "summary" } },
+      { "id": "rwhen", "type": "flow.return", "x": 60, "y": 0, "params": { "name": "when" } },
+      { "id": "rloc", "type": "flow.return", "x": 60, "y": 120, "params": { "name": "location" } },
+      { "id": "rcount", "type": "flow.return", "x": 60, "y": 240, "params": { "name": "count" } }
+    ],
+    "connections": [
+      { "from": "in", "fromPin": 0, "to": "ic", "toPin": 0 },
+      { "from": "arg", "fromPin": 0, "to": "ic", "toPin": 1 },
+      { "from": "ic", "fromPin": 0, "to": "rsum", "toPin": 0 },
+      { "from": "ic", "fromPin": 1, "to": "rsum", "toPin": 0 },
+      { "from": "ic", "fromPin": 2, "to": "rsum", "toPin": 1 },
+      { "from": "ic", "fromPin": 3, "to": "rwhen", "toPin": 1 },
+      { "from": "ic", "fromPin": 4, "to": "rloc", "toPin": 1 },
+      { "from": "ic", "fromPin": 6, "to": "rcount", "toPin": 1 },
+      { "from": "rsum", "fromPin": 0, "to": "rwhen", "toPin": 0 },
+      { "from": "rwhen", "fromPin": 0, "to": "rloc", "toPin": 0 },
+      { "from": "rloc", "fromPin": 0, "to": "rcount", "toPin": 0 }
+    ]
+  }
+}

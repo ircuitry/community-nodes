@@ -1,0 +1,39 @@
+{
+  "typeId": "web.paste",
+  "title": "Paste Text",
+  "subtitle": "composite",
+  "icon": "clipboard-text",
+  "category": "Action",
+  "description": "Uploads text to a pastebin and outputs the resulting URL. Defaults to paste.rs (raw body, returns the link). Point Endpoint at any host that accepts a raw POST body and returns a URL.",
+  "author": "ircuitry",
+  "tags": ["paste", "pastebin", "web", "share"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "text", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "url", "kind": "Text" }
+  ],
+  "params": [
+    { "key": "endpoint", "label": "Endpoint", "type": "Text", "default": "https://paste.rs" }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Paste Text",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "atext", "type": "flow.arg", "x": -460, "y": 40, "params": { "name": "text" } },
+      { "id": "sm", "type": "data.setvar", "x": -260, "y": -120, "params": { "name": "paste_text", "value": "" } },
+      { "id": "h", "type": "net.http", "x": -20, "y": -120, "params": { "method": "POST", "url": "{endpoint}", "send": "body", "field": "file", "file": "", "headers": "", "body": "{paste_text}", "timeout": "15" } },
+      { "id": "ret", "type": "flow.return", "x": 220, "y": -120, "params": { "name": "url" } }
+    ],
+    "connections": [
+      { "from": "in", "fromPin": 0, "to": "sm", "toPin": 0 },
+      { "from": "atext", "fromPin": 0, "to": "sm", "toPin": 1 },
+      { "from": "sm", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 0, "to": "ret", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "ret", "toPin": 1 }
+    ]
+  }
+}

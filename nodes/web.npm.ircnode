@@ -1,0 +1,49 @@
+{
+  "typeId": "web.npm",
+  "title": "npm Package",
+  "subtitle": "composite",
+  "icon": "package",
+  "category": "Action",
+  "description": "Looks up the latest version, description, and full manifest of an npm package from the public registry. Give it a package name.",
+  "author": "ircuitry",
+  "tags": ["npm", "node", "package", "web", "dev"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "package", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "version", "kind": "Text" },
+    { "name": "description", "kind": "Text" },
+    { "name": "json", "kind": "Text" }
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "npm Package",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "arg", "type": "flow.arg", "x": -460, "y": 40, "params": { "name": "package" } },
+      { "id": "url", "type": "data.format", "x": -260, "y": 40, "params": { "template": "https://registry.npmjs.org/{a}/latest" } },
+      { "id": "h", "type": "net.http", "x": -20, "y": -120, "params": { "method": "GET", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "", "body": "", "timeout": "15" } },
+      { "id": "jv", "type": "data.json", "x": 220, "y": 40, "params": { "path": "version" } },
+      { "id": "jd", "type": "data.json", "x": 220, "y": 160, "params": { "path": "description" } },
+      { "id": "rv", "type": "flow.return", "x": 460, "y": -120, "params": { "name": "version" } },
+      { "id": "rd", "type": "flow.return", "x": 460, "y": 0, "params": { "name": "description" } },
+      { "id": "rj", "type": "flow.return", "x": 460, "y": 120, "params": { "name": "json" } }
+    ],
+    "connections": [
+      { "from": "arg", "fromPin": 0, "to": "url", "toPin": 0 },
+      { "from": "url", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "in", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "jv", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "jd", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "rj", "toPin": 1 },
+      { "from": "jv", "fromPin": 0, "to": "rv", "toPin": 1 },
+      { "from": "jd", "fromPin": 0, "to": "rd", "toPin": 1 },
+      { "from": "h", "fromPin": 0, "to": "rv", "toPin": 0 },
+      { "from": "rv", "fromPin": 0, "to": "rd", "toPin": 0 },
+      { "from": "rd", "fromPin": 0, "to": "rj", "toPin": 0 }
+    ]
+  }
+}

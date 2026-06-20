@@ -1,6 +1,247 @@
 {
-  "count": 122,
+  "count": 129,
   "nodes": [
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "cal.icsfeed",
+      "title": "Calendar Feed",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "calendar-dots",
+      "iconImage": null,
+      "description": "Reads an iCalendar (.ics) URL and outputs the next upcoming event's summary, time, and location (count is 0 when the feed has no upcoming events). Works with any public webcal/ICS feed (Google Calendar, Outlook, Meetup, etc.).",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "calendar",
+        "ics",
+        "ical",
+        "events",
+        "web"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "url",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "summary",
+          "kind": "Text"
+        },
+        {
+          "name": "when",
+          "kind": "Text"
+        },
+        {
+          "name": "location",
+          "kind": "Text"
+        },
+        {
+          "name": "count",
+          "kind": "Number"
+        }
+      ],
+      "params": [],
+      "file": "nodes/cal.icsfeed.ircnode",
+      "manifest": {
+        "typeId": "cal.icsfeed",
+        "title": "Calendar Feed",
+        "subtitle": "composite",
+        "icon": "calendar-dots",
+        "category": "Action",
+        "description": "Reads an iCalendar (.ics) URL and outputs the next upcoming event's summary, time, and location (count is 0 when the feed has no upcoming events). Works with any public webcal/ICS feed (Google Calendar, Outlook, Meetup, etc.).",
+        "author": "ircuitry",
+        "tags": [
+          "calendar",
+          "ics",
+          "ical",
+          "events",
+          "web"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "url",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "summary",
+            "kind": "Text"
+          },
+          {
+            "name": "when",
+            "kind": "Text"
+          },
+          {
+            "name": "location",
+            "kind": "Text"
+          },
+          {
+            "name": "count",
+            "kind": "Number"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Calendar Feed",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 60,
+              "params": {
+                "name": "url"
+              }
+            },
+            {
+              "id": "ic",
+              "type": "file.ical",
+              "x": -220,
+              "y": -120,
+              "params": {
+                "source": "",
+                "mode": "next",
+                "max": "1"
+              }
+            },
+            {
+              "id": "rsum",
+              "type": "flow.return",
+              "x": 60,
+              "y": -120,
+              "params": {
+                "name": "summary"
+              }
+            },
+            {
+              "id": "rwhen",
+              "type": "flow.return",
+              "x": 60,
+              "y": 0,
+              "params": {
+                "name": "when"
+              }
+            },
+            {
+              "id": "rloc",
+              "type": "flow.return",
+              "x": 60,
+              "y": 120,
+              "params": {
+                "name": "location"
+              }
+            },
+            {
+              "id": "rcount",
+              "type": "flow.return",
+              "x": 60,
+              "y": 240,
+              "params": {
+                "name": "count"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "ic",
+              "toPin": 0
+            },
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "ic",
+              "toPin": 1
+            },
+            {
+              "from": "ic",
+              "fromPin": 0,
+              "to": "rsum",
+              "toPin": 0
+            },
+            {
+              "from": "ic",
+              "fromPin": 1,
+              "to": "rsum",
+              "toPin": 0
+            },
+            {
+              "from": "ic",
+              "fromPin": 2,
+              "to": "rsum",
+              "toPin": 1
+            },
+            {
+              "from": "ic",
+              "fromPin": 3,
+              "to": "rwhen",
+              "toPin": 1
+            },
+            {
+              "from": "ic",
+              "fromPin": 4,
+              "to": "rloc",
+              "toPin": 1
+            },
+            {
+              "from": "ic",
+              "fromPin": 6,
+              "to": "rcount",
+              "toPin": 1
+            },
+            {
+              "from": "rsum",
+              "fromPin": 0,
+              "to": "rwhen",
+              "toPin": 0
+            },
+            {
+              "from": "rwhen",
+              "fromPin": 0,
+              "to": "rloc",
+              "toPin": 0
+            },
+            {
+              "from": "rloc",
+              "fromPin": 0,
+              "to": "rcount",
+              "toPin": 0
+            }
+          ]
+        }
+      }
+    },
     {
       "commit": "b9a0e12",
       "updated": "2026-06-17",
@@ -2393,9 +2634,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "21efcb1",
+      "updated": "2026-06-20",
+      "note": "feat: add feed.rss, web.reddit, web.hackernews composites",
       "typeId": "feed.rss",
       "title": "RSS Feed",
       "subtitle": "composite",
@@ -10439,6 +10680,425 @@
       }
     },
     {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "push.ntfy",
+      "title": "ntfy Push",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "bell-ringing",
+      "iconImage": null,
+      "description": "Sends a push notification to your phone/desktop via an ntfy server (default ntfy.sh). Subscribe to the same topic in the ntfy app. No account needed for ntfy.sh. Set Server to your own host for a self-hosted instance.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "ntfy",
+        "push",
+        "notify",
+        "notification",
+        "alert"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "topic",
+          "kind": "Text"
+        },
+        {
+          "name": "message",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "server",
+          "label": "Server",
+          "type": "Text",
+          "default": "https://ntfy.sh"
+        }
+      ],
+      "file": "nodes/push.ntfy.ircnode",
+      "manifest": {
+        "typeId": "push.ntfy",
+        "title": "ntfy Push",
+        "subtitle": "composite",
+        "icon": "bell-ringing",
+        "category": "Action",
+        "description": "Sends a push notification to your phone/desktop via an ntfy server (default ntfy.sh). Subscribe to the same topic in the ntfy app. No account needed for ntfy.sh. Set Server to your own host for a self-hosted instance.",
+        "author": "ircuitry",
+        "tags": [
+          "ntfy",
+          "push",
+          "notify",
+          "notification",
+          "alert"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "topic",
+            "kind": "Text"
+          },
+          {
+            "name": "message",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "server",
+            "label": "Server",
+            "type": "Text",
+            "default": "https://ntfy.sh"
+          }
+        ],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "ntfy Push",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "atopic",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 40,
+              "params": {
+                "name": "topic"
+              }
+            },
+            {
+              "id": "amsg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 160,
+              "params": {
+                "name": "message"
+              }
+            },
+            {
+              "id": "sm",
+              "type": "data.setvar",
+              "x": -260,
+              "y": -120,
+              "params": {
+                "name": "ntfy_msg",
+                "value": ""
+              }
+            },
+            {
+              "id": "url",
+              "type": "data.format",
+              "x": -260,
+              "y": 40,
+              "params": {
+                "template": "{server}/{a}"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -20,
+              "y": -120,
+              "params": {
+                "method": "POST",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "{ntfy_msg}",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 220,
+              "y": -120,
+              "params": {
+                "name": "result"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 0
+            },
+            {
+              "from": "amsg",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 1
+            },
+            {
+              "from": "atopic",
+              "fromPin": 0,
+              "to": "url",
+              "toPin": 0
+            },
+            {
+              "from": "url",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "sm",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "relay.telegram",
+      "title": "Telegram Send",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "telegram-logo",
+      "iconImage": null,
+      "description": "Sends a message to a Telegram chat via a bot. Setup: create a bot with @BotFather, store its token as an encrypted key named TELEGRAM_BOT_TOKEN, and set the Chat ID (talk to the bot, then read it from https://api.telegram.org/bot<token>/getUpdates). Outputs the API response.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "telegram",
+        "relay",
+        "message",
+        "bridge",
+        "notify"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "message",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "result",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "chat",
+          "label": "Chat ID",
+          "type": "Text",
+          "default": ""
+        }
+      ],
+      "file": "nodes/relay.telegram.ircnode",
+      "manifest": {
+        "typeId": "relay.telegram",
+        "title": "Telegram Send",
+        "subtitle": "composite",
+        "icon": "telegram-logo",
+        "category": "Action",
+        "description": "Sends a message to a Telegram chat via a bot. Setup: create a bot with @BotFather, store its token as an encrypted key named TELEGRAM_BOT_TOKEN, and set the Chat ID (talk to the bot, then read it from https://api.telegram.org/bot<token>/getUpdates). Outputs the API response.",
+        "author": "ircuitry",
+        "tags": [
+          "telegram",
+          "relay",
+          "message",
+          "bridge",
+          "notify"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "message",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "result",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "chat",
+            "label": "Chat ID",
+            "type": "Text",
+            "default": ""
+          }
+        ],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Telegram Send",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "amsg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 60,
+              "params": {
+                "name": "message"
+              }
+            },
+            {
+              "id": "enc",
+              "type": "data.encode",
+              "x": -260,
+              "y": 60,
+              "params": {
+                "op": "url",
+                "mode": "encode"
+              }
+            },
+            {
+              "id": "url",
+              "type": "data.format",
+              "x": -60,
+              "y": 60,
+              "params": {
+                "template": "https://api.telegram.org/bot{{secret.TELEGRAM_BOT_TOKEN}}/sendMessage?chat_id={chat}&text={a}"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": 180,
+              "y": -120,
+              "params": {
+                "method": "GET",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 420,
+              "y": -120,
+              "params": {
+                "name": "result"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "amsg",
+              "fromPin": 0,
+              "to": "enc",
+              "toPin": 0
+            },
+            {
+              "from": "enc",
+              "fromPin": 0,
+              "to": "url",
+              "toPin": 0
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "url",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
       "commit": "b9a0e12",
       "updated": "2026-06-17",
       "note": "icons: use Phosphor icon names instead of emoji on every node",
@@ -10559,6 +11219,249 @@
               "fromPin": 0,
               "to": "ret",
               "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "social.mastodon",
+      "title": "Mastodon Post",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "mastodon-logo",
+      "iconImage": null,
+      "description": "Posts a status (toot) to a Mastodon account. Setup: in your Mastodon Preferences > Development create an app with write:statuses scope, then store its access token as an encrypted key named MASTODON_TOKEN. Set Instance to your home server. Outputs the new post's URL.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "mastodon",
+        "social",
+        "fediverse",
+        "post",
+        "toot"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "message",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "url",
+          "kind": "Text"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "instance",
+          "label": "Instance",
+          "type": "Text",
+          "default": "https://mastodon.social"
+        }
+      ],
+      "file": "nodes/social.mastodon.ircnode",
+      "manifest": {
+        "typeId": "social.mastodon",
+        "title": "Mastodon Post",
+        "subtitle": "composite",
+        "icon": "mastodon-logo",
+        "category": "Action",
+        "description": "Posts a status (toot) to a Mastodon account. Setup: in your Mastodon Preferences > Development create an app with write:statuses scope, then store its access token as an encrypted key named MASTODON_TOKEN. Set Instance to your home server. Outputs the new post's URL.",
+        "author": "ircuitry",
+        "tags": [
+          "mastodon",
+          "social",
+          "fediverse",
+          "post",
+          "toot"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "message",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "url",
+            "kind": "Text"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "instance",
+            "label": "Instance",
+            "type": "Text",
+            "default": "https://mastodon.social"
+          }
+        ],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Mastodon Post",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "amsg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 80,
+              "params": {
+                "name": "message"
+              }
+            },
+            {
+              "id": "enc",
+              "type": "data.encode",
+              "x": -260,
+              "y": 80,
+              "params": {
+                "op": "url",
+                "mode": "encode"
+              }
+            },
+            {
+              "id": "sm",
+              "type": "data.setvar",
+              "x": -260,
+              "y": -120,
+              "params": {
+                "name": "masto_status",
+                "value": ""
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -20,
+              "y": -120,
+              "params": {
+                "method": "POST",
+                "url": "{instance}/api/v1/statuses",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "Authorization: Bearer {{secret.MASTODON_TOKEN}}\nContent-Type: application/x-www-form-urlencoded",
+                "body": "status={masto_status}",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "ju",
+              "type": "data.json",
+              "x": 220,
+              "y": 80,
+              "params": {
+                "path": "url"
+              }
+            },
+            {
+              "id": "ru",
+              "type": "flow.return",
+              "x": 460,
+              "y": -120,
+              "params": {
+                "name": "url"
+              }
+            },
+            {
+              "id": "rj",
+              "type": "flow.return",
+              "x": 460,
+              "y": 0,
+              "params": {
+                "name": "json"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 0
+            },
+            {
+              "from": "amsg",
+              "fromPin": 0,
+              "to": "enc",
+              "toPin": 0
+            },
+            {
+              "from": "enc",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 1
+            },
+            {
+              "from": "sm",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "ju",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "rj",
+              "toPin": 1
+            },
+            {
+              "from": "ju",
+              "fromPin": 0,
+              "to": "ru",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "ru",
+              "toPin": 0
+            },
+            {
+              "from": "ru",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 0
             }
           ]
         }
@@ -17252,9 +18155,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "21efcb1",
+      "updated": "2026-06-20",
+      "note": "feat: add feed.rss, web.reddit, web.hackernews composites",
       "typeId": "web.hackernews",
       "title": "Hacker News",
       "subtitle": "composite",
@@ -17660,20 +18563,714 @@
       "commit": "",
       "updated": "",
       "note": "",
+      "typeId": "web.npm",
+      "title": "npm Package",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "package",
+      "iconImage": null,
+      "description": "Looks up the latest version, description, and full manifest of an npm package from the public registry. Give it a package name.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "npm",
+        "node",
+        "package",
+        "web",
+        "dev"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "package",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "version",
+          "kind": "Text"
+        },
+        {
+          "name": "description",
+          "kind": "Text"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/web.npm.ircnode",
+      "manifest": {
+        "typeId": "web.npm",
+        "title": "npm Package",
+        "subtitle": "composite",
+        "icon": "package",
+        "category": "Action",
+        "description": "Looks up the latest version, description, and full manifest of an npm package from the public registry. Give it a package name.",
+        "author": "ircuitry",
+        "tags": [
+          "npm",
+          "node",
+          "package",
+          "web",
+          "dev"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "package",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "version",
+            "kind": "Text"
+          },
+          {
+            "name": "description",
+            "kind": "Text"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "npm Package",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 40,
+              "params": {
+                "name": "package"
+              }
+            },
+            {
+              "id": "url",
+              "type": "data.format",
+              "x": -260,
+              "y": 40,
+              "params": {
+                "template": "https://registry.npmjs.org/{a}/latest"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -20,
+              "y": -120,
+              "params": {
+                "method": "GET",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "jv",
+              "type": "data.json",
+              "x": 220,
+              "y": 40,
+              "params": {
+                "path": "version"
+              }
+            },
+            {
+              "id": "jd",
+              "type": "data.json",
+              "x": 220,
+              "y": 160,
+              "params": {
+                "path": "description"
+              }
+            },
+            {
+              "id": "rv",
+              "type": "flow.return",
+              "x": 460,
+              "y": -120,
+              "params": {
+                "name": "version"
+              }
+            },
+            {
+              "id": "rd",
+              "type": "flow.return",
+              "x": 460,
+              "y": 0,
+              "params": {
+                "name": "description"
+              }
+            },
+            {
+              "id": "rj",
+              "type": "flow.return",
+              "x": 460,
+              "y": 120,
+              "params": {
+                "name": "json"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "url",
+              "toPin": 0
+            },
+            {
+              "from": "url",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jv",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jd",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "rj",
+              "toPin": 1
+            },
+            {
+              "from": "jv",
+              "fromPin": 0,
+              "to": "rv",
+              "toPin": 1
+            },
+            {
+              "from": "jd",
+              "fromPin": 0,
+              "to": "rd",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "rv",
+              "toPin": 0
+            },
+            {
+              "from": "rv",
+              "fromPin": 0,
+              "to": "rd",
+              "toPin": 0
+            },
+            {
+              "from": "rd",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "web.paste",
+      "title": "Paste Text",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "clipboard-text",
+      "iconImage": null,
+      "description": "Uploads text to a pastebin and outputs the resulting URL. Defaults to paste.rs (raw body, returns the link). Point Endpoint at any host that accepts a raw POST body and returns a URL.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "paste",
+        "pastebin",
+        "web",
+        "share"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "text",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "url",
+          "kind": "Text"
+        }
+      ],
+      "params": [
+        {
+          "key": "endpoint",
+          "label": "Endpoint",
+          "type": "Text",
+          "default": "https://paste.rs"
+        }
+      ],
+      "file": "nodes/web.paste.ircnode",
+      "manifest": {
+        "typeId": "web.paste",
+        "title": "Paste Text",
+        "subtitle": "composite",
+        "icon": "clipboard-text",
+        "category": "Action",
+        "description": "Uploads text to a pastebin and outputs the resulting URL. Defaults to paste.rs (raw body, returns the link). Point Endpoint at any host that accepts a raw POST body and returns a URL.",
+        "author": "ircuitry",
+        "tags": [
+          "paste",
+          "pastebin",
+          "web",
+          "share"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "text",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "url",
+            "kind": "Text"
+          }
+        ],
+        "params": [
+          {
+            "key": "endpoint",
+            "label": "Endpoint",
+            "type": "Text",
+            "default": "https://paste.rs"
+          }
+        ],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Paste Text",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "atext",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 40,
+              "params": {
+                "name": "text"
+              }
+            },
+            {
+              "id": "sm",
+              "type": "data.setvar",
+              "x": -260,
+              "y": -120,
+              "params": {
+                "name": "paste_text",
+                "value": ""
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -20,
+              "y": -120,
+              "params": {
+                "method": "POST",
+                "url": "{endpoint}",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "{paste_text}",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "ret",
+              "type": "flow.return",
+              "x": 220,
+              "y": -120,
+              "params": {
+                "name": "url"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 0
+            },
+            {
+              "from": "atext",
+              "fromPin": 0,
+              "to": "sm",
+              "toPin": 1
+            },
+            {
+              "from": "sm",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "ret",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "ret",
+              "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "web.pypi",
+      "title": "PyPI Package",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "package",
+      "iconImage": null,
+      "description": "Looks up the latest version, summary, and full metadata of a Python package from PyPI. Give it a package name.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "pypi",
+        "python",
+        "package",
+        "web",
+        "dev"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "package",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "version",
+          "kind": "Text"
+        },
+        {
+          "name": "summary",
+          "kind": "Text"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/web.pypi.ircnode",
+      "manifest": {
+        "typeId": "web.pypi",
+        "title": "PyPI Package",
+        "subtitle": "composite",
+        "icon": "package",
+        "category": "Action",
+        "description": "Looks up the latest version, summary, and full metadata of a Python package from PyPI. Give it a package name.",
+        "author": "ircuitry",
+        "tags": [
+          "pypi",
+          "python",
+          "package",
+          "web",
+          "dev"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "package",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "version",
+            "kind": "Text"
+          },
+          {
+            "name": "summary",
+            "kind": "Text"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "PyPI Package",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -120,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 40,
+              "params": {
+                "name": "package"
+              }
+            },
+            {
+              "id": "url",
+              "type": "data.format",
+              "x": -260,
+              "y": 40,
+              "params": {
+                "template": "https://pypi.org/pypi/{a}/json"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -20,
+              "y": -120,
+              "params": {
+                "method": "GET",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "jv",
+              "type": "data.json",
+              "x": 220,
+              "y": 40,
+              "params": {
+                "path": "info.version"
+              }
+            },
+            {
+              "id": "js",
+              "type": "data.json",
+              "x": 220,
+              "y": 160,
+              "params": {
+                "path": "info.summary"
+              }
+            },
+            {
+              "id": "rv",
+              "type": "flow.return",
+              "x": 460,
+              "y": -120,
+              "params": {
+                "name": "version"
+              }
+            },
+            {
+              "id": "rs",
+              "type": "flow.return",
+              "x": 460,
+              "y": 0,
+              "params": {
+                "name": "summary"
+              }
+            },
+            {
+              "id": "rj",
+              "type": "flow.return",
+              "x": 460,
+              "y": 120,
+              "params": {
+                "name": "json"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "url",
+              "toPin": 0
+            },
+            {
+              "from": "url",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jv",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "js",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "rj",
+              "toPin": 1
+            },
+            {
+              "from": "jv",
+              "fromPin": 0,
+              "to": "rv",
+              "toPin": 1
+            },
+            {
+              "from": "js",
+              "fromPin": 0,
+              "to": "rs",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "rv",
+              "toPin": 0
+            },
+            {
+              "from": "rv",
+              "fromPin": 0,
+              "to": "rs",
+              "toPin": 0
+            },
+            {
+              "from": "rs",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "21efcb1",
+      "updated": "2026-06-20",
+      "note": "feat: add feed.rss, web.reddit, web.hackernews composites",
       "typeId": "web.reddit",
       "title": "Reddit Hot",
       "subtitle": "composite",
       "category": "Action",
       "icon": "reddit-logo",
       "iconImage": null,
-      "description": "Fetches the top hot post from a subreddit and outputs its title, link, and the raw JSON. Give it a subreddit name (no r/ prefix).",
+      "description": "Fetches the top hot post from a subreddit via Reddit's authenticated API (works from cloud/VPS hosts, unlike the public .json which 403s datacenter IPs). Setup: create a 'script' app at reddit.com/prefs/apps, then store two encrypted keys named REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET. Give it a subreddit name (no r/ prefix). Outputs the post's title, link, and the raw listing JSON.",
       "language": "subgraph",
       "author": "ircuitry",
       "tags": [
         "reddit",
         "web",
         "social",
-        "news"
+        "news",
+        "oauth"
       ],
       "inputs": [
         {
@@ -17711,13 +19308,14 @@
         "subtitle": "composite",
         "icon": "reddit-logo",
         "category": "Action",
-        "description": "Fetches the top hot post from a subreddit and outputs its title, link, and the raw JSON. Give it a subreddit name (no r/ prefix).",
+        "description": "Fetches the top hot post from a subreddit via Reddit's authenticated API (works from cloud/VPS hosts, unlike the public .json which 403s datacenter IPs). Setup: create a 'script' app at reddit.com/prefs/apps, then store two encrypted keys named REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET. Give it a subreddit name (no r/ prefix). Outputs the post's title, link, and the raw listing JSON.",
         "author": "ircuitry",
         "tags": [
           "reddit",
           "web",
           "social",
-          "news"
+          "news",
+          "oauth"
         ],
         "inputs": [
           {
@@ -17755,40 +19353,104 @@
             {
               "id": "in",
               "type": "flow.in",
-              "x": -520,
-              "y": -140,
+              "x": -760,
+              "y": -160,
               "params": {}
             },
             {
               "id": "arg",
               "type": "flow.arg",
-              "x": -520,
-              "y": 0,
+              "x": -760,
+              "y": 320,
               "params": {
                 "name": "subreddit"
               }
             },
             {
-              "id": "url",
+              "id": "fc",
               "type": "data.format",
-              "x": -300,
-              "y": 0,
+              "x": -560,
+              "y": 140,
               "params": {
-                "template": "https://www.reddit.com/r/{a}/hot.json?limit=5"
+                "template": "{{secret.REDDIT_CLIENT_ID}}:{{secret.REDDIT_CLIENT_SECRET}}"
               }
             },
             {
-              "id": "h",
+              "id": "b64",
+              "type": "data.encode",
+              "x": -560,
+              "y": 260,
+              "params": {
+                "op": "base64",
+                "mode": "encode"
+              }
+            },
+            {
+              "id": "sb",
+              "type": "data.setvar",
+              "x": -560,
+              "y": -160,
+              "params": {
+                "name": "reddit_basic",
+                "value": ""
+              }
+            },
+            {
+              "id": "tok",
               "type": "net.http",
-              "x": -60,
-              "y": -140,
+              "x": -340,
+              "y": -160,
+              "params": {
+                "method": "POST",
+                "url": "https://www.reddit.com/api/v1/access_token",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "Authorization: Basic {reddit_basic}\nUser-Agent: ircuitry/1.0\nContent-Type: application/x-www-form-urlencoded",
+                "body": "grant_type=client_credentials",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "jtok",
+              "type": "data.json",
+              "x": -120,
+              "y": 60,
+              "params": {
+                "path": "access_token"
+              }
+            },
+            {
+              "id": "st",
+              "type": "data.setvar",
+              "x": -120,
+              "y": -160,
+              "params": {
+                "name": "reddit_token",
+                "value": ""
+              }
+            },
+            {
+              "id": "fu",
+              "type": "data.format",
+              "x": -120,
+              "y": 320,
+              "params": {
+                "template": "https://oauth.reddit.com/r/{a}/hot?limit=5&raw_json=1"
+              }
+            },
+            {
+              "id": "get",
+              "type": "net.http",
+              "x": 120,
+              "y": -160,
               "params": {
                 "method": "GET",
                 "url": "https://",
                 "send": "body",
                 "field": "file",
                 "file": "",
-                "headers": "User-Agent: ircuitry-bot",
+                "headers": "Authorization: Bearer {reddit_token}\nUser-Agent: ircuitry/1.0",
                 "body": "",
                 "timeout": "15"
               }
@@ -17796,8 +19458,8 @@
             {
               "id": "jt",
               "type": "data.json",
-              "x": 220,
-              "y": -60,
+              "x": 360,
+              "y": 60,
               "params": {
                 "path": "data.children.0.data.title"
               }
@@ -17805,8 +19467,8 @@
             {
               "id": "jl",
               "type": "data.json",
-              "x": 220,
-              "y": 60,
+              "x": 360,
+              "y": 180,
               "params": {
                 "path": "data.children.0.data.url"
               }
@@ -17814,8 +19476,8 @@
             {
               "id": "rt",
               "type": "flow.return",
-              "x": 480,
-              "y": -140,
+              "x": 600,
+              "y": -160,
               "params": {
                 "name": "title"
               }
@@ -17823,8 +19485,8 @@
             {
               "id": "rl",
               "type": "flow.return",
-              "x": 480,
-              "y": -20,
+              "x": 600,
+              "y": -40,
               "params": {
                 "name": "link"
               }
@@ -17832,8 +19494,8 @@
             {
               "id": "rj",
               "type": "flow.return",
-              "x": 480,
-              "y": 100,
+              "x": 600,
+              "y": 80,
               "params": {
                 "name": "json"
               }
@@ -17841,37 +19503,79 @@
           ],
           "connections": [
             {
-              "from": "arg",
+              "from": "in",
               "fromPin": 0,
-              "to": "url",
+              "to": "sb",
               "toPin": 0
             },
             {
-              "from": "url",
+              "from": "fc",
               "fromPin": 0,
-              "to": "h",
+              "to": "b64",
+              "toPin": 0
+            },
+            {
+              "from": "b64",
+              "fromPin": 0,
+              "to": "sb",
               "toPin": 1
             },
             {
-              "from": "in",
+              "from": "sb",
               "fromPin": 0,
-              "to": "h",
+              "to": "tok",
               "toPin": 0
             },
             {
-              "from": "h",
+              "from": "tok",
+              "fromPin": 1,
+              "to": "jtok",
+              "toPin": 0
+            },
+            {
+              "from": "jtok",
+              "fromPin": 0,
+              "to": "st",
+              "toPin": 1
+            },
+            {
+              "from": "tok",
+              "fromPin": 0,
+              "to": "st",
+              "toPin": 0
+            },
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "fu",
+              "toPin": 0
+            },
+            {
+              "from": "fu",
+              "fromPin": 0,
+              "to": "get",
+              "toPin": 1
+            },
+            {
+              "from": "st",
+              "fromPin": 0,
+              "to": "get",
+              "toPin": 0
+            },
+            {
+              "from": "get",
               "fromPin": 1,
               "to": "jt",
               "toPin": 0
             },
             {
-              "from": "h",
+              "from": "get",
               "fromPin": 1,
               "to": "jl",
               "toPin": 0
             },
             {
-              "from": "h",
+              "from": "get",
               "fromPin": 1,
               "to": "rj",
               "toPin": 1
@@ -17889,7 +19593,7 @@
               "toPin": 1
             },
             {
-              "from": "h",
+              "from": "get",
               "fromPin": 0,
               "to": "rt",
               "toPin": 0

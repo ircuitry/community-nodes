@@ -1,0 +1,49 @@
+{
+  "typeId": "web.pypi",
+  "title": "PyPI Package",
+  "subtitle": "composite",
+  "icon": "package",
+  "category": "Action",
+  "description": "Looks up the latest version, summary, and full metadata of a Python package from PyPI. Give it a package name.",
+  "author": "ircuitry",
+  "tags": ["pypi", "python", "package", "web", "dev"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "package", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "version", "kind": "Text" },
+    { "name": "summary", "kind": "Text" },
+    { "name": "json", "kind": "Text" }
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "PyPI Package",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "arg", "type": "flow.arg", "x": -460, "y": 40, "params": { "name": "package" } },
+      { "id": "url", "type": "data.format", "x": -260, "y": 40, "params": { "template": "https://pypi.org/pypi/{a}/json" } },
+      { "id": "h", "type": "net.http", "x": -20, "y": -120, "params": { "method": "GET", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "", "body": "", "timeout": "15" } },
+      { "id": "jv", "type": "data.json", "x": 220, "y": 40, "params": { "path": "info.version" } },
+      { "id": "js", "type": "data.json", "x": 220, "y": 160, "params": { "path": "info.summary" } },
+      { "id": "rv", "type": "flow.return", "x": 460, "y": -120, "params": { "name": "version" } },
+      { "id": "rs", "type": "flow.return", "x": 460, "y": 0, "params": { "name": "summary" } },
+      { "id": "rj", "type": "flow.return", "x": 460, "y": 120, "params": { "name": "json" } }
+    ],
+    "connections": [
+      { "from": "arg", "fromPin": 0, "to": "url", "toPin": 0 },
+      { "from": "url", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "in", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "jv", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "js", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "rj", "toPin": 1 },
+      { "from": "jv", "fromPin": 0, "to": "rv", "toPin": 1 },
+      { "from": "js", "fromPin": 0, "to": "rs", "toPin": 1 },
+      { "from": "h", "fromPin": 0, "to": "rv", "toPin": 0 },
+      { "from": "rv", "fromPin": 0, "to": "rs", "toPin": 0 },
+      { "from": "rs", "fromPin": 0, "to": "rj", "toPin": 0 }
+    ]
+  }
+}

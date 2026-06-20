@@ -1,0 +1,44 @@
+{
+  "typeId": "push.ntfy",
+  "title": "ntfy Push",
+  "subtitle": "composite",
+  "icon": "bell-ringing",
+  "category": "Action",
+  "description": "Sends a push notification to your phone/desktop via an ntfy server (default ntfy.sh). Subscribe to the same topic in the ntfy app. No account needed for ntfy.sh. Set Server to your own host for a self-hosted instance.",
+  "author": "ircuitry",
+  "tags": ["ntfy", "push", "notify", "notification", "alert"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "topic", "kind": "Text" },
+    { "name": "message", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "result", "kind": "Text" }
+  ],
+  "params": [
+    { "key": "server", "label": "Server", "type": "Text", "default": "https://ntfy.sh" }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "ntfy Push",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "atopic", "type": "flow.arg", "x": -460, "y": 40, "params": { "name": "topic" } },
+      { "id": "amsg", "type": "flow.arg", "x": -460, "y": 160, "params": { "name": "message" } },
+      { "id": "sm", "type": "data.setvar", "x": -260, "y": -120, "params": { "name": "ntfy_msg", "value": "" } },
+      { "id": "url", "type": "data.format", "x": -260, "y": 40, "params": { "template": "{server}/{a}" } },
+      { "id": "h", "type": "net.http", "x": -20, "y": -120, "params": { "method": "POST", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "", "body": "{ntfy_msg}", "timeout": "15" } },
+      { "id": "ret", "type": "flow.return", "x": 220, "y": -120, "params": { "name": "result" } }
+    ],
+    "connections": [
+      { "from": "in", "fromPin": 0, "to": "sm", "toPin": 0 },
+      { "from": "amsg", "fromPin": 0, "to": "sm", "toPin": 1 },
+      { "from": "atopic", "fromPin": 0, "to": "url", "toPin": 0 },
+      { "from": "url", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "sm", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 0, "to": "ret", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "ret", "toPin": 1 }
+    ]
+  }
+}

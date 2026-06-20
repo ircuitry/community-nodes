@@ -1,0 +1,47 @@
+{
+  "typeId": "social.mastodon",
+  "title": "Mastodon Post",
+  "subtitle": "composite",
+  "icon": "mastodon-logo",
+  "category": "Action",
+  "description": "Posts a status (toot) to a Mastodon account. Setup: in your Mastodon Preferences > Development create an app with write:statuses scope, then store its access token as an encrypted key named MASTODON_TOKEN. Set Instance to your home server. Outputs the new post's URL.",
+  "author": "ircuitry",
+  "tags": ["mastodon", "social", "fediverse", "post", "toot"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "message", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "url", "kind": "Text" },
+    { "name": "json", "kind": "Text" }
+  ],
+  "params": [
+    { "key": "instance", "label": "Instance", "type": "Text", "default": "https://mastodon.social" }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Mastodon Post",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "amsg", "type": "flow.arg", "x": -460, "y": 80, "params": { "name": "message" } },
+      { "id": "enc", "type": "data.encode", "x": -260, "y": 80, "params": { "op": "url", "mode": "encode" } },
+      { "id": "sm", "type": "data.setvar", "x": -260, "y": -120, "params": { "name": "masto_status", "value": "" } },
+      { "id": "h", "type": "net.http", "x": -20, "y": -120, "params": { "method": "POST", "url": "{instance}/api/v1/statuses", "send": "body", "field": "file", "file": "", "headers": "Authorization: Bearer {{secret.MASTODON_TOKEN}}\nContent-Type: application/x-www-form-urlencoded", "body": "status={masto_status}", "timeout": "15" } },
+      { "id": "ju", "type": "data.json", "x": 220, "y": 80, "params": { "path": "url" } },
+      { "id": "ru", "type": "flow.return", "x": 460, "y": -120, "params": { "name": "url" } },
+      { "id": "rj", "type": "flow.return", "x": 460, "y": 0, "params": { "name": "json" } }
+    ],
+    "connections": [
+      { "from": "in", "fromPin": 0, "to": "sm", "toPin": 0 },
+      { "from": "amsg", "fromPin": 0, "to": "enc", "toPin": 0 },
+      { "from": "enc", "fromPin": 0, "to": "sm", "toPin": 1 },
+      { "from": "sm", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "ju", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "rj", "toPin": 1 },
+      { "from": "ju", "fromPin": 0, "to": "ru", "toPin": 1 },
+      { "from": "h", "fromPin": 0, "to": "ru", "toPin": 0 },
+      { "from": "ru", "fromPin": 0, "to": "rj", "toPin": 0 }
+    ]
+  }
+}

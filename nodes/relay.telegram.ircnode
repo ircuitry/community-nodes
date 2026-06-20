@@ -1,0 +1,41 @@
+{
+  "typeId": "relay.telegram",
+  "title": "Telegram Send",
+  "subtitle": "composite",
+  "icon": "telegram-logo",
+  "category": "Action",
+  "description": "Sends a message to a Telegram chat via a bot. Setup: create a bot with @BotFather, store its token as an encrypted key named TELEGRAM_BOT_TOKEN, and set the Chat ID (talk to the bot, then read it from https://api.telegram.org/bot<token>/getUpdates). Outputs the API response.",
+  "author": "ircuitry",
+  "tags": ["telegram", "relay", "message", "bridge", "notify"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "message", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "result", "kind": "Text" }
+  ],
+  "params": [
+    { "key": "chat", "label": "Chat ID", "type": "Text", "default": "" }
+  ],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "Telegram Send",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -120, "params": {} },
+      { "id": "amsg", "type": "flow.arg", "x": -460, "y": 60, "params": { "name": "message" } },
+      { "id": "enc", "type": "data.encode", "x": -260, "y": 60, "params": { "op": "url", "mode": "encode" } },
+      { "id": "url", "type": "data.format", "x": -60, "y": 60, "params": { "template": "https://api.telegram.org/bot{{secret.TELEGRAM_BOT_TOKEN}}/sendMessage?chat_id={chat}&text={a}" } },
+      { "id": "h", "type": "net.http", "x": 180, "y": -120, "params": { "method": "GET", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "", "body": "", "timeout": "15" } },
+      { "id": "ret", "type": "flow.return", "x": 420, "y": -120, "params": { "name": "result" } }
+    ],
+    "connections": [
+      { "from": "amsg", "fromPin": 0, "to": "enc", "toPin": 0 },
+      { "from": "enc", "fromPin": 0, "to": "url", "toPin": 0 },
+      { "from": "in", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "url", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "h", "fromPin": 0, "to": "ret", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "ret", "toPin": 1 }
+    ]
+  }
+}
