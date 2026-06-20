@@ -1,0 +1,49 @@
+{
+  "typeId": "feed.rss",
+  "title": "RSS Feed",
+  "subtitle": "composite",
+  "icon": "rss",
+  "category": "Action",
+  "description": "Fetches an RSS or Atom feed URL and outputs the latest item's title, link, and the whole feed as JSON. Pair with On Timer + Set/Get Variable to announce only new items.",
+  "author": "ircuitry",
+  "tags": ["feed", "rss", "atom", "news", "web"],
+  "inputs": [
+    { "name": "", "kind": "Exec" },
+    { "name": "url", "kind": "Text" }
+  ],
+  "outputs": [
+    { "name": "then", "kind": "Exec" },
+    { "name": "title", "kind": "Text" },
+    { "name": "link", "kind": "Text" },
+    { "name": "json", "kind": "Text" }
+  ],
+  "params": [],
+  "subgraph": {
+    "format": "ircuitry.workflow.v1",
+    "name": "RSS Feed",
+    "nodes": [
+      { "id": "in", "type": "flow.in", "x": -460, "y": -140, "params": {} },
+      { "id": "arg", "type": "flow.arg", "x": -460, "y": 0, "params": { "name": "url" } },
+      { "id": "h", "type": "net.http", "x": -160, "y": -140, "params": { "method": "GET", "url": "https://", "send": "body", "field": "file", "file": "", "headers": "", "body": "", "timeout": "15" } },
+      { "id": "x", "type": "data.xml", "x": 120, "y": 20, "params": {} },
+      { "id": "jt", "type": "data.json", "x": 360, "y": -60, "params": { "path": "rss.channel.item.0.title" } },
+      { "id": "jl", "type": "data.json", "x": 360, "y": 60, "params": { "path": "rss.channel.item.0.link" } },
+      { "id": "rt", "type": "flow.return", "x": 620, "y": -140, "params": { "name": "title" } },
+      { "id": "rl", "type": "flow.return", "x": 620, "y": -20, "params": { "name": "link" } },
+      { "id": "rj", "type": "flow.return", "x": 620, "y": 100, "params": { "name": "json" } }
+    ],
+    "connections": [
+      { "from": "arg", "fromPin": 0, "to": "h", "toPin": 1 },
+      { "from": "in", "fromPin": 0, "to": "h", "toPin": 0 },
+      { "from": "h", "fromPin": 1, "to": "x", "toPin": 0 },
+      { "from": "x", "fromPin": 0, "to": "jt", "toPin": 0 },
+      { "from": "x", "fromPin": 0, "to": "jl", "toPin": 0 },
+      { "from": "x", "fromPin": 0, "to": "rj", "toPin": 1 },
+      { "from": "jt", "fromPin": 0, "to": "rt", "toPin": 1 },
+      { "from": "jl", "fromPin": 0, "to": "rl", "toPin": 1 },
+      { "from": "h", "fromPin": 0, "to": "rt", "toPin": 0 },
+      { "from": "rt", "fromPin": 0, "to": "rl", "toPin": 0 },
+      { "from": "rl", "fromPin": 0, "to": "rj", "toPin": 0 }
+    ]
+  }
+}

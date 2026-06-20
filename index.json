@@ -1,5 +1,5 @@
 {
-  "count": 119,
+  "count": 122,
   "nodes": [
     {
       "commit": "b9a0e12",
@@ -2387,6 +2387,260 @@
               "fromPin": 0,
               "to": "n30d483",
               "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "feed.rss",
+      "title": "RSS Feed",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "rss",
+      "iconImage": null,
+      "description": "Fetches an RSS or Atom feed URL and outputs the latest item's title, link, and the whole feed as JSON. Pair with On Timer + Set/Get Variable to announce only new items.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "feed",
+        "rss",
+        "atom",
+        "news",
+        "web"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "url",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "title",
+          "kind": "Text"
+        },
+        {
+          "name": "link",
+          "kind": "Text"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/feed.rss.ircnode",
+      "manifest": {
+        "typeId": "feed.rss",
+        "title": "RSS Feed",
+        "subtitle": "composite",
+        "icon": "rss",
+        "category": "Action",
+        "description": "Fetches an RSS or Atom feed URL and outputs the latest item's title, link, and the whole feed as JSON. Pair with On Timer + Set/Get Variable to announce only new items.",
+        "author": "ircuitry",
+        "tags": [
+          "feed",
+          "rss",
+          "atom",
+          "news",
+          "web"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "url",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "title",
+            "kind": "Text"
+          },
+          {
+            "name": "link",
+            "kind": "Text"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "RSS Feed",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -140,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": -460,
+              "y": 0,
+              "params": {
+                "name": "url"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -160,
+              "y": -140,
+              "params": {
+                "method": "GET",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "x",
+              "type": "data.xml",
+              "x": 120,
+              "y": 20,
+              "params": {}
+            },
+            {
+              "id": "jt",
+              "type": "data.json",
+              "x": 360,
+              "y": -60,
+              "params": {
+                "path": "rss.channel.item.0.title"
+              }
+            },
+            {
+              "id": "jl",
+              "type": "data.json",
+              "x": 360,
+              "y": 60,
+              "params": {
+                "path": "rss.channel.item.0.link"
+              }
+            },
+            {
+              "id": "rt",
+              "type": "flow.return",
+              "x": 620,
+              "y": -140,
+              "params": {
+                "name": "title"
+              }
+            },
+            {
+              "id": "rl",
+              "type": "flow.return",
+              "x": 620,
+              "y": -20,
+              "params": {
+                "name": "link"
+              }
+            },
+            {
+              "id": "rj",
+              "type": "flow.return",
+              "x": 620,
+              "y": 100,
+              "params": {
+                "name": "json"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "x",
+              "toPin": 0
+            },
+            {
+              "from": "x",
+              "fromPin": 0,
+              "to": "jt",
+              "toPin": 0
+            },
+            {
+              "from": "x",
+              "fromPin": 0,
+              "to": "jl",
+              "toPin": 0
+            },
+            {
+              "from": "x",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 1
+            },
+            {
+              "from": "jt",
+              "fromPin": 0,
+              "to": "rt",
+              "toPin": 1
+            },
+            {
+              "from": "jl",
+              "fromPin": 0,
+              "to": "rl",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "rt",
+              "toPin": 0
+            },
+            {
+              "from": "rt",
+              "fromPin": 0,
+              "to": "rl",
+              "toPin": 0
+            },
+            {
+              "from": "rl",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 0
             }
           ]
         }
@@ -16998,6 +17252,224 @@
       }
     },
     {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "web.hackernews",
+      "title": "Hacker News",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "y-combinator-logo",
+      "iconImage": null,
+      "description": "Fetches the current Hacker News front page and outputs the top story's title, link, and the raw JSON. No input needed.",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "hackernews",
+        "hn",
+        "web",
+        "news",
+        "tech"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "title",
+          "kind": "Text"
+        },
+        {
+          "name": "link",
+          "kind": "Text"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/web.hackernews.ircnode",
+      "manifest": {
+        "typeId": "web.hackernews",
+        "title": "Hacker News",
+        "subtitle": "composite",
+        "icon": "y-combinator-logo",
+        "category": "Action",
+        "description": "Fetches the current Hacker News front page and outputs the top story's title, link, and the raw JSON. No input needed.",
+        "author": "ircuitry",
+        "tags": [
+          "hackernews",
+          "hn",
+          "web",
+          "news",
+          "tech"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "title",
+            "kind": "Text"
+          },
+          {
+            "name": "link",
+            "kind": "Text"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Hacker News",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -460,
+              "y": -140,
+              "params": {}
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -200,
+              "y": -140,
+              "params": {
+                "method": "GET",
+                "url": "https://hn.algolia.com/api/v1/search?tags=front_page",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "",
+                "body": "",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "jt",
+              "type": "data.json",
+              "x": 100,
+              "y": -60,
+              "params": {
+                "path": "hits.0.title"
+              }
+            },
+            {
+              "id": "jl",
+              "type": "data.json",
+              "x": 100,
+              "y": 60,
+              "params": {
+                "path": "hits.0.url"
+              }
+            },
+            {
+              "id": "rt",
+              "type": "flow.return",
+              "x": 360,
+              "y": -140,
+              "params": {
+                "name": "title"
+              }
+            },
+            {
+              "id": "rl",
+              "type": "flow.return",
+              "x": 360,
+              "y": -20,
+              "params": {
+                "name": "link"
+              }
+            },
+            {
+              "id": "rj",
+              "type": "flow.return",
+              "x": 360,
+              "y": 100,
+              "params": {
+                "name": "json"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jt",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jl",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "rj",
+              "toPin": 1
+            },
+            {
+              "from": "jt",
+              "fromPin": 0,
+              "to": "rt",
+              "toPin": 1
+            },
+            {
+              "from": "jl",
+              "fromPin": 0,
+              "to": "rl",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "rt",
+              "toPin": 0
+            },
+            {
+              "from": "rt",
+              "fromPin": 0,
+              "to": "rl",
+              "toPin": 0
+            },
+            {
+              "from": "rl",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 0
+            }
+          ]
+        }
+      }
+    },
+    {
       "commit": "b9a0e12",
       "updated": "2026-06-17",
       "note": "icons: use Phosphor icon names instead of emoji on every node",
@@ -17179,6 +17651,260 @@
               "fromPin": 1,
               "to": "n1afd48f",
               "toPin": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "commit": "",
+      "updated": "",
+      "note": "",
+      "typeId": "web.reddit",
+      "title": "Reddit Hot",
+      "subtitle": "composite",
+      "category": "Action",
+      "icon": "reddit-logo",
+      "iconImage": null,
+      "description": "Fetches the top hot post from a subreddit and outputs its title, link, and the raw JSON. Give it a subreddit name (no r/ prefix).",
+      "language": "subgraph",
+      "author": "ircuitry",
+      "tags": [
+        "reddit",
+        "web",
+        "social",
+        "news"
+      ],
+      "inputs": [
+        {
+          "name": "",
+          "kind": "Exec"
+        },
+        {
+          "name": "subreddit",
+          "kind": "Text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "then",
+          "kind": "Exec"
+        },
+        {
+          "name": "title",
+          "kind": "Text"
+        },
+        {
+          "name": "link",
+          "kind": "Text"
+        },
+        {
+          "name": "json",
+          "kind": "Text"
+        }
+      ],
+      "params": [],
+      "file": "nodes/web.reddit.ircnode",
+      "manifest": {
+        "typeId": "web.reddit",
+        "title": "Reddit Hot",
+        "subtitle": "composite",
+        "icon": "reddit-logo",
+        "category": "Action",
+        "description": "Fetches the top hot post from a subreddit and outputs its title, link, and the raw JSON. Give it a subreddit name (no r/ prefix).",
+        "author": "ircuitry",
+        "tags": [
+          "reddit",
+          "web",
+          "social",
+          "news"
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "kind": "Exec"
+          },
+          {
+            "name": "subreddit",
+            "kind": "Text"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "then",
+            "kind": "Exec"
+          },
+          {
+            "name": "title",
+            "kind": "Text"
+          },
+          {
+            "name": "link",
+            "kind": "Text"
+          },
+          {
+            "name": "json",
+            "kind": "Text"
+          }
+        ],
+        "params": [],
+        "subgraph": {
+          "format": "ircuitry.workflow.v1",
+          "name": "Reddit Hot",
+          "nodes": [
+            {
+              "id": "in",
+              "type": "flow.in",
+              "x": -520,
+              "y": -140,
+              "params": {}
+            },
+            {
+              "id": "arg",
+              "type": "flow.arg",
+              "x": -520,
+              "y": 0,
+              "params": {
+                "name": "subreddit"
+              }
+            },
+            {
+              "id": "url",
+              "type": "data.format",
+              "x": -300,
+              "y": 0,
+              "params": {
+                "template": "https://www.reddit.com/r/{a}/hot.json?limit=5"
+              }
+            },
+            {
+              "id": "h",
+              "type": "net.http",
+              "x": -60,
+              "y": -140,
+              "params": {
+                "method": "GET",
+                "url": "https://",
+                "send": "body",
+                "field": "file",
+                "file": "",
+                "headers": "User-Agent: ircuitry-bot",
+                "body": "",
+                "timeout": "15"
+              }
+            },
+            {
+              "id": "jt",
+              "type": "data.json",
+              "x": 220,
+              "y": -60,
+              "params": {
+                "path": "data.children.0.data.title"
+              }
+            },
+            {
+              "id": "jl",
+              "type": "data.json",
+              "x": 220,
+              "y": 60,
+              "params": {
+                "path": "data.children.0.data.url"
+              }
+            },
+            {
+              "id": "rt",
+              "type": "flow.return",
+              "x": 480,
+              "y": -140,
+              "params": {
+                "name": "title"
+              }
+            },
+            {
+              "id": "rl",
+              "type": "flow.return",
+              "x": 480,
+              "y": -20,
+              "params": {
+                "name": "link"
+              }
+            },
+            {
+              "id": "rj",
+              "type": "flow.return",
+              "x": 480,
+              "y": 100,
+              "params": {
+                "name": "json"
+              }
+            }
+          ],
+          "connections": [
+            {
+              "from": "arg",
+              "fromPin": 0,
+              "to": "url",
+              "toPin": 0
+            },
+            {
+              "from": "url",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 1
+            },
+            {
+              "from": "in",
+              "fromPin": 0,
+              "to": "h",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jt",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "jl",
+              "toPin": 0
+            },
+            {
+              "from": "h",
+              "fromPin": 1,
+              "to": "rj",
+              "toPin": 1
+            },
+            {
+              "from": "jt",
+              "fromPin": 0,
+              "to": "rt",
+              "toPin": 1
+            },
+            {
+              "from": "jl",
+              "fromPin": 0,
+              "to": "rl",
+              "toPin": 1
+            },
+            {
+              "from": "h",
+              "fromPin": 0,
+              "to": "rt",
+              "toPin": 0
+            },
+            {
+              "from": "rt",
+              "fromPin": 0,
+              "to": "rl",
+              "toPin": 0
+            },
+            {
+              "from": "rl",
+              "fromPin": 0,
+              "to": "rj",
+              "toPin": 0
             }
           ]
         }
