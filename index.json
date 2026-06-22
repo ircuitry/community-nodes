@@ -2,9 +2,9 @@
   "count": 131,
   "nodes": [
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "cal.icsfeed",
       "title": "Calendar Feed",
       "subtitle": "composite",
@@ -243,9 +243,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.base",
       "title": "Base Converter",
       "subtitle": "composite",
@@ -397,9 +397,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.eval",
       "title": "Calculator",
       "subtitle": "composite",
@@ -535,9 +535,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.percent",
       "title": "Percentage",
       "subtitle": "composite",
@@ -673,9 +673,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.roman",
       "title": "Roman Numerals",
       "subtitle": "composite",
@@ -813,9 +813,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.temp",
       "title": "Temperature Convert",
       "subtitle": "composite",
@@ -980,9 +980,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.tip",
       "title": "Tip Split",
       "subtitle": "composite",
@@ -1118,9 +1118,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "calc.units",
       "title": "Unit Convert",
       "subtitle": "composite",
@@ -1297,9 +1297,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "coinflip",
       "title": "Coin Flip",
       "subtitle": "composite",
@@ -1410,9 +1410,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "date.countdown",
       "title": "Countdown",
       "subtitle": "composite",
@@ -1604,9 +1604,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "date.weekday",
       "title": "Day of Week",
       "subtitle": "composite",
@@ -1745,9 +1745,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "enc.base32",
       "title": "Base32 Encode/Decode",
       "subtitle": "composite",
@@ -1898,9 +1898,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "enc.binary",
       "title": "Binary Encode/Decode",
       "subtitle": "composite",
@@ -2051,9 +2051,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "enc.crc32",
       "title": "CRC32 Checksum",
       "subtitle": "composite",
@@ -2189,9 +2189,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "enc.hex",
       "title": "Hex Encode/Decode",
       "subtitle": "composite",
@@ -2342,9 +2342,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "enc.htmlescape",
       "title": "HTML Escape/Unescape",
       "subtitle": "composite",
@@ -2495,9 +2495,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "enc.morsebeep",
       "title": "Morse Visualizer",
       "subtitle": "composite",
@@ -2634,9 +2634,9 @@
       }
     },
     {
-      "commit": "21efcb1",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add feed.rss, web.reddit, web.hackernews composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "feed.rss",
       "title": "RSS Feed",
       "subtitle": "composite",
@@ -2888,9 +2888,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "filehost.image",
       "title": "Push Image to Filehost",
       "subtitle": "composite",
@@ -3090,9 +3090,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.8ball",
       "title": "Magic 8-Ball",
       "subtitle": "composite",
@@ -3202,9 +3202,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.choose",
       "title": "Choose One",
       "subtitle": "composite",
@@ -3342,9 +3342,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.clap",
       "title": "Clap Emojify",
       "subtitle": "composite",
@@ -3480,9 +3480,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.compliment",
       "title": "Compliment",
       "subtitle": "composite",
@@ -3592,9 +3592,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.decide",
       "title": "Decide",
       "subtitle": "composite",
@@ -3704,9 +3704,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.dice",
       "title": "Dice Roller",
       "subtitle": "composite",
@@ -3843,9 +3843,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.fortune",
       "title": "Fortune Cookie",
       "subtitle": "composite",
@@ -3955,9 +3955,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.insult",
       "title": "Playful Insult",
       "subtitle": "composite",
@@ -4067,9 +4067,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "fun.rps",
       "title": "Rock Paper Scissors",
       "subtitle": "composite",
@@ -4179,9 +4179,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.ascii",
       "title": "ASCII Banner",
       "subtitle": "composite",
@@ -4319,9 +4319,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.color",
       "title": "Random Color",
       "subtitle": "composite",
@@ -4432,9 +4432,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.dice",
       "title": "Dice Notation Roller",
       "subtitle": "composite",
@@ -4571,9 +4571,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.fakename",
       "title": "Fake Name",
       "subtitle": "composite",
@@ -4684,9 +4684,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.gradient",
       "title": "Color Gradient",
       "subtitle": "composite",
@@ -4867,9 +4867,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.lorem",
       "title": "Lorem Ipsum",
       "subtitle": "composite",
@@ -4994,9 +4994,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.password",
       "title": "Password Generator",
       "subtitle": "composite",
@@ -5121,9 +5121,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.placeholder",
       "title": "Placeholder Image URL",
       "subtitle": "composite",
@@ -5248,9 +5248,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.qrurl",
       "title": "QR Code URL",
       "subtitle": "composite",
@@ -5405,9 +5405,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.username",
       "title": "Username Generator",
       "subtitle": "composite",
@@ -5518,9 +5518,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gen.uuid",
       "title": "UUID",
       "subtitle": "composite",
@@ -5631,9 +5631,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gh.api",
       "title": "GitHub: API",
       "subtitle": "composite",
@@ -5813,9 +5813,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gh.comment",
       "title": "GitHub: Comment",
       "subtitle": "composite",
@@ -6004,9 +6004,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gh.issue.create",
       "title": "GitHub: Create Issue",
       "subtitle": "composite",
@@ -6209,9 +6209,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gh.pr.list",
       "title": "GitHub: List PRs",
       "subtitle": "composite",
@@ -6344,9 +6344,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "gh.run",
       "title": "GitHub: Run gh",
       "subtitle": "composite",
@@ -6523,9 +6523,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "hash.md5",
       "title": "MD5 Hash",
       "subtitle": "composite",
@@ -6661,9 +6661,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "hash.sha1",
       "title": "SHA1 Hash",
       "subtitle": "composite",
@@ -6799,9 +6799,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "hash.sha256",
       "title": "SHA-256 Hash",
       "subtitle": "composite",
@@ -6937,9 +6937,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "irc.rainbow",
       "title": "Rainbow Text",
       "subtitle": "composite",
@@ -7075,9 +7075,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "irc.stripcolor",
       "title": "Strip IRC Colors",
       "subtitle": "composite",
@@ -7213,9 +7213,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "morse.decode",
       "title": "Morse to Text",
       "subtitle": "composite",
@@ -7352,9 +7352,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "morse.encode",
       "title": "Text to Morse",
       "subtitle": "composite",
@@ -7491,9 +7491,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.basen",
       "title": "Number Base Converter",
       "subtitle": "composite",
@@ -7645,9 +7645,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.clamp",
       "title": "Clamp Number",
       "subtitle": "composite",
@@ -7833,9 +7833,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.factorial",
       "title": "Factorial",
       "subtitle": "composite",
@@ -7973,9 +7973,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.fibonacci",
       "title": "Fibonacci Number",
       "subtitle": "composite",
@@ -8113,9 +8113,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.gcd",
       "title": "GCD & LCM",
       "subtitle": "composite",
@@ -8337,9 +8337,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.ordinal",
       "title": "Ordinal Suffix",
       "subtitle": "composite",
@@ -8477,9 +8477,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.percentchange",
       "title": "Percent Change",
       "subtitle": "composite",
@@ -8689,9 +8689,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.primes",
       "title": "Prime Check",
       "subtitle": "composite",
@@ -8829,9 +8829,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.round",
       "title": "Round Number",
       "subtitle": "composite",
@@ -8969,9 +8969,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.stats",
       "title": "Number Stats",
       "subtitle": "composite",
@@ -9307,9 +9307,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "num.words",
       "title": "Number to Words",
       "subtitle": "composite",
@@ -9447,9 +9447,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.csvfield",
       "title": "CSV Field",
       "subtitle": "composite",
@@ -9601,9 +9601,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.emails",
       "title": "Extract Emails",
       "subtitle": "composite",
@@ -9795,9 +9795,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.hashtags",
       "title": "Extract Hashtags & Mentions",
       "subtitle": "composite",
@@ -9989,9 +9989,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.jsonpath",
       "title": "JSON Field Picker",
       "subtitle": "composite",
@@ -10141,9 +10141,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.lines",
       "title": "Pick Line",
       "subtitle": "composite",
@@ -10295,9 +10295,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.numbers",
       "title": "Extract Numbers",
       "subtitle": "composite",
@@ -10486,9 +10486,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "parse.urls",
       "title": "Extract URLs",
       "subtitle": "composite",
@@ -10680,9 +10680,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "push.ntfy",
       "title": "ntfy Push",
       "subtitle": "composite",
@@ -10901,9 +10901,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "relay.discord",
       "title": "Discord Send",
       "subtitle": "composite",
@@ -11116,9 +11116,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "relay.telegram",
       "title": "Telegram Send",
       "subtitle": "composite",
@@ -11314,9 +11314,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "subflow.shout",
       "title": "Shout",
       "subtitle": "subflow",
@@ -11440,9 +11440,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "social.mastodon",
       "title": "Mastodon Post",
       "subtitle": "composite",
@@ -11683,9 +11683,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "subflow.coinflip",
       "title": "Coin Flip",
       "subtitle": "composite",
@@ -11794,9 +11794,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "subflow.reverse-shout",
       "title": "Reverse Shout",
       "subtitle": "composite",
@@ -11943,9 +11943,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "subflow.tidy-text",
       "title": "Tidy Text",
       "subtitle": "composite",
@@ -12092,9 +12092,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.acronym",
       "title": "Acronym Maker",
       "subtitle": "composite",
@@ -12232,9 +12232,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.b64decode",
       "title": "Base64 Decode",
       "subtitle": "composite",
@@ -12371,9 +12371,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.b64encode",
       "title": "Base64 Encode",
       "subtitle": "composite",
@@ -12510,9 +12510,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.case",
       "title": "Change Case",
       "subtitle": "composite",
@@ -12662,9 +12662,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.count",
       "title": "Count Characters & Words",
       "subtitle": "composite",
@@ -12908,9 +12908,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.leet",
       "title": "Leetspeak",
       "subtitle": "composite",
@@ -13046,9 +13046,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.mdstrip",
       "title": "Strip Markdown",
       "subtitle": "composite",
@@ -13187,9 +13187,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.mock",
       "title": "Mock Case",
       "subtitle": "composite",
@@ -13325,9 +13325,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.numbering",
       "title": "Number a List",
       "subtitle": "composite",
@@ -13465,9 +13465,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.pad",
       "title": "Pad Text",
       "subtitle": "composite",
@@ -13631,9 +13631,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.repeat",
       "title": "Repeat Text",
       "subtitle": "composite",
@@ -13785,9 +13785,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.replace",
       "title": "Find & Replace",
       "subtitle": "composite",
@@ -13964,9 +13964,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.reverse",
       "title": "Reverse Text",
       "subtitle": "composite",
@@ -14104,9 +14104,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.rot13",
       "title": "ROT13",
       "subtitle": "composite",
@@ -14243,9 +14243,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.slug",
       "title": "Slugify",
       "subtitle": "composite",
@@ -14383,9 +14383,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.spongebob",
       "title": "Caps Alternator",
       "subtitle": "composite",
@@ -14521,9 +14521,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.titlecase",
       "title": "Smart Title Case",
       "subtitle": "composite",
@@ -14659,9 +14659,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.trim",
       "title": "Trim Text",
       "subtitle": "composite",
@@ -14799,9 +14799,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.truncate",
       "title": "Truncate Text",
       "subtitle": "composite",
@@ -14953,9 +14953,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.urldecode",
       "title": "URL Decode",
       "subtitle": "composite",
@@ -15092,9 +15092,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.urlencode",
       "title": "URL Encode",
       "subtitle": "composite",
@@ -15231,9 +15231,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.vowels",
       "title": "Disemvowel",
       "subtitle": "composite",
@@ -15371,9 +15371,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.wrap",
       "title": "Word Wrap",
       "subtitle": "composite",
@@ -15525,9 +15525,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.zalgo",
       "title": "Zalgo Text",
       "subtitle": "composite",
@@ -15679,9 +15679,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "text.zwsp",
       "title": "Invisible Ink (ZWSP)",
       "subtitle": "composite",
@@ -15832,9 +15832,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "time.age",
       "title": "Age Calculator",
       "subtitle": "composite",
@@ -15973,9 +15973,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "time.now",
       "title": "Current Time",
       "subtitle": "composite",
@@ -16114,9 +16114,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "time.tz",
       "title": "Time in Timezone",
       "subtitle": "composite",
@@ -16243,9 +16243,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "time.unix",
       "title": "Unix Timestamp",
       "subtitle": "composite",
@@ -16384,9 +16384,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "time.until",
       "title": "Countdown",
       "subtitle": "composite",
@@ -16525,9 +16525,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "tool.editfile",
       "title": "Edit File",
       "subtitle": "composite",
@@ -16740,9 +16740,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "tool.listfiles",
       "title": "List Files",
       "subtitle": "composite",
@@ -16900,9 +16900,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "tool.readfile",
       "title": "Read File",
       "subtitle": "composite",
@@ -17062,9 +17062,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "tool.run",
       "title": "Run Command",
       "subtitle": "composite",
@@ -17223,9 +17223,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "tool.search",
       "title": "Search Files (grep)",
       "subtitle": "composite",
@@ -17384,9 +17384,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.advice",
       "title": "Advice",
       "subtitle": "composite",
@@ -17526,9 +17526,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.crypto",
       "title": "Crypto Price",
       "subtitle": "composite",
@@ -17713,9 +17713,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.currency",
       "title": "Currency Convert",
       "subtitle": "composite",
@@ -17881,9 +17881,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.dadjoke",
       "title": "Dad Joke",
       "subtitle": "composite",
@@ -18023,9 +18023,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.define",
       "title": "Dictionary",
       "subtitle": "composite",
@@ -18228,9 +18228,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.fact",
       "title": "Random Fact",
       "subtitle": "composite",
@@ -18370,9 +18370,9 @@
       }
     },
     {
-      "commit": "21efcb1",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add feed.rss, web.reddit, web.hackernews composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.hackernews",
       "title": "Hacker News",
       "subtitle": "composite",
@@ -18588,9 +18588,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.iplookup",
       "title": "IP / Host Lookup",
       "subtitle": "composite",
@@ -18775,9 +18775,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.npm",
       "title": "npm Package",
       "subtitle": "composite",
@@ -19031,9 +19031,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.paste",
       "title": "Paste Text",
       "subtitle": "composite",
@@ -19212,9 +19212,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.pypi",
       "title": "PyPI Package",
       "subtitle": "composite",
@@ -19468,9 +19468,9 @@
       }
     },
     {
-      "commit": "7719f53",
+      "commit": "6cf9a0d",
       "updated": "2026-06-20",
-      "note": "feat: add web/push/relay/social/calendar composites",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.reddit",
       "title": "Reddit Hot",
       "subtitle": "composite",
@@ -19830,9 +19830,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.search",
       "title": "Web Search",
       "subtitle": "composite",
@@ -20035,9 +20035,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.shorten",
       "title": "Shorten URL",
       "subtitle": "composite",
@@ -20222,9 +20222,9 @@
       }
     },
     {
-      "commit": "",
-      "updated": "",
-      "note": "",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.translate",
       "title": "Translate",
       "subtitle": "composite",
@@ -20473,9 +20473,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.urban",
       "title": "Urban Dictionary",
       "subtitle": "composite",
@@ -20678,9 +20678,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.weather",
       "title": "Weather",
       "subtitle": "composite",
@@ -20865,9 +20865,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "web.wiki",
       "title": "Wikipedia",
       "subtitle": "composite",
@@ -21070,9 +21070,9 @@
       }
     },
     {
-      "commit": "b9a0e12",
-      "updated": "2026-06-17",
-      "note": "icons: use Phosphor icon names instead of emoji on every node",
+      "commit": "6cf9a0d",
+      "updated": "2026-06-20",
+      "note": "feat: add relay.discord (json-escaped) and web.translate (LibreTranslate)",
       "typeId": "wordcount",
       "title": "Word Count",
       "subtitle": "composite",
