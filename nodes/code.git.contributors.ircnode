@@ -1,0 +1,66 @@
+{"typeId":"code.git.contributors","title":"Git: Contributors","subtitle":"composite","icon":"users","category":"Code","description":"Commit counts by author.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Git: Contributors",
+  "nodes": [
+    {
+      "id": "n2cb7c2c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2cc7c2c",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "git shortlog -sn --all | head -20",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2cd7c2c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2cb7c2c",
+      "fromPin": 0,
+      "to": "n2cc7c2c",
+      "toPin": 0
+    },
+    {
+      "from": "n2cc7c2c",
+      "fromPin": 0,
+      "to": "n2cd7c2c",
+      "toPin": 0
+    },
+    {
+      "from": "n2cc7c2c",
+      "fromPin": 1,
+      "to": "n2cd7c2c",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,147 @@
+{"typeId":"web.nationalize","title":"Guess Nationality","subtitle":"composite","icon":"globe","category":"Action","description":"Guesses nationality from a name.","inputs":[{"name":"","kind":"Exec"},{"name":"name","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Guess Nationality",
+  "nodes": [
+    {
+      "id": "n3167c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3177c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n3187c2f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "name"
+      }
+    },
+    {
+      "id": "n3197c2f",
+      "type": "data.encode",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n31a7c2f",
+      "type": "data.format",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://api.nationalize.io?name={a}"
+      }
+    },
+    {
+      "id": "n31b7c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "country.0.country_id"
+      }
+    },
+    {
+      "id": "n31c7c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n3187c2f",
+      "fromPin": 0,
+      "to": "n3197c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3197c2f",
+      "fromPin": 0,
+      "to": "n31a7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n31a7c2f",
+      "fromPin": 0,
+      "to": "n3177c2f",
+      "toPin": 1
+    },
+    {
+      "from": "n3177c2f",
+      "fromPin": 1,
+      "to": "n31b7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3167c2f",
+      "fromPin": 0,
+      "to": "n3177c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3177c2f",
+      "fromPin": 0,
+      "to": "n31c7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n31b7c2f",
+      "fromPin": 0,
+      "to": "n31c7c2f",
+      "toPin": 1
+    }
+  ]
+}}

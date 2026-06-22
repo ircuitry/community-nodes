@@ -1,0 +1,89 @@
+{"typeId":"web.chuck","title":"Chuck Norris Joke","subtitle":"composite","icon":"person","category":"Action","description":"A random Chuck Norris joke.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Chuck Norris Joke",
+  "nodes": [
+    {
+      "id": "n2f17c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2f27c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://api.chucknorris.io/jokes/random",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2f37c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "value"
+      }
+    },
+    {
+      "id": "n2f47c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2f27c2f",
+      "fromPin": 1,
+      "to": "n2f37c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2f17c2f",
+      "fromPin": 0,
+      "to": "n2f27c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2f27c2f",
+      "fromPin": 0,
+      "to": "n2f47c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2f37c2f",
+      "fromPin": 0,
+      "to": "n2f47c2f",
+      "toPin": 1
+    }
+  ]
+}}

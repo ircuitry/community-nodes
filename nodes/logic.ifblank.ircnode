@@ -1,0 +1,79 @@
+{"typeId":"logic.ifblank","title":"Default If Blank","subtitle":"composite","icon":"placeholder","category":"Logic","description":"Returns the text, or a fallback when it\u0027s blank.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"replace","label":"Replace","type":"Text","default":"(none)"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Default If Blank",
+  "nodes": [
+    {
+      "id": "n2627c26",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2637c27",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2647c27",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "replace",
+        "pattern": "^\\s*$",
+        "replace": "{replace}",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2657c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2637c27",
+      "fromPin": 0,
+      "to": "n2647c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2627c26",
+      "fromPin": 0,
+      "to": "n2657c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2647c27",
+      "fromPin": 0,
+      "to": "n2657c27",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,147 @@
+{"typeId":"web.pokedex","title":"Pokedex Number","subtitle":"composite","icon":"game-controller","category":"Action","description":"The Pokedex number of a Pokemon.","inputs":[{"name":"","kind":"Exec"},{"name":"pokemon","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Pokedex Number",
+  "nodes": [
+    {
+      "id": "n31d7c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n31e7c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n31f7c2f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "pokemon"
+      }
+    },
+    {
+      "id": "n3207c2f",
+      "type": "data.encode",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n3217c2f",
+      "type": "data.format",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://pokeapi.co/api/v2/pokemon/{a}"
+      }
+    },
+    {
+      "id": "n3227c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "id"
+      }
+    },
+    {
+      "id": "n3237c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n31f7c2f",
+      "fromPin": 0,
+      "to": "n3207c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3207c2f",
+      "fromPin": 0,
+      "to": "n3217c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3217c2f",
+      "fromPin": 0,
+      "to": "n31e7c2f",
+      "toPin": 1
+    },
+    {
+      "from": "n31e7c2f",
+      "fromPin": 1,
+      "to": "n3227c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n31d7c2f",
+      "fromPin": 0,
+      "to": "n31e7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n31e7c2f",
+      "fromPin": 0,
+      "to": "n3237c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3227c2f",
+      "fromPin": 0,
+      "to": "n3237c2f",
+      "toPin": 1
+    }
+  ]
+}}

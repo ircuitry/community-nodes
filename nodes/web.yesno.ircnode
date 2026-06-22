@@ -1,0 +1,89 @@
+{"typeId":"web.yesno","title":"Yes or No","subtitle":"composite","icon":"scales","category":"Action","description":"A random yes/no answer (with a gif).","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Yes or No",
+  "nodes": [
+    {
+      "id": "n2fd7c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2fe7c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://yesno.wtf/api",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2ff7c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "answer"
+      }
+    },
+    {
+      "id": "n3007c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2fe7c2f",
+      "fromPin": 1,
+      "to": "n2ff7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2fd7c2f",
+      "fromPin": 0,
+      "to": "n2fe7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2fe7c2f",
+      "fromPin": 0,
+      "to": "n3007c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2ff7c2f",
+      "fromPin": 0,
+      "to": "n3007c2f",
+      "toPin": 1
+    }
+  ]
+}}

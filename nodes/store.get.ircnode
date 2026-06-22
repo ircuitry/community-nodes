@@ -1,0 +1,61 @@
+{"typeId":"store.get","title":"Read Value","subtitle":"composite","icon":"database","category":"Storage","description":"Reads a value from the bot database by key (defaults to the current nick).","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"value","kind":"Text"}],"params":[{"key":"table","label":"Table","type":"Text","default":"main"},{"key":"key","label":"Key","type":"Text","default":"{nick}"},{"key":"default","label":"Default","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Read Value",
+  "nodes": [
+    {
+      "id": "n2a07c28",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2a17c28",
+      "type": "db.get",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "table": "{table}",
+        "mode": "value",
+        "key": "{key}",
+        "default": "{default}",
+        "find": ""
+      }
+    },
+    {
+      "id": "n2a27c28",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "value"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2a07c28",
+      "fromPin": 0,
+      "to": "n2a27c28",
+      "toPin": 0
+    },
+    {
+      "from": "n2a17c28",
+      "fromPin": 0,
+      "to": "n2a27c28",
+      "toPin": 1
+    }
+  ]
+}}

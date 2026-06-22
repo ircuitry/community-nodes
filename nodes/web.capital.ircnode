@@ -1,0 +1,147 @@
+{"typeId":"web.capital","title":"Country Capital","subtitle":"composite","icon":"bank","category":"Action","description":"The capital city of a country.","inputs":[{"name":"","kind":"Exec"},{"name":"country","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Country Capital",
+  "nodes": [
+    {
+      "id": "n3247c30",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3257c30",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n3267c30",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "country"
+      }
+    },
+    {
+      "id": "n3277c30",
+      "type": "data.encode",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n3287c30",
+      "type": "data.format",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://restcountries.com/v3.1/name/{a}"
+      }
+    },
+    {
+      "id": "n3297c30",
+      "type": "data.json",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "0.capital.0"
+      }
+    },
+    {
+      "id": "n32a7c30",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n3267c30",
+      "fromPin": 0,
+      "to": "n3277c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3277c30",
+      "fromPin": 0,
+      "to": "n3287c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3287c30",
+      "fromPin": 0,
+      "to": "n3257c30",
+      "toPin": 1
+    },
+    {
+      "from": "n3257c30",
+      "fromPin": 1,
+      "to": "n3297c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3247c30",
+      "fromPin": 0,
+      "to": "n3257c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3257c30",
+      "fromPin": 0,
+      "to": "n32a7c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3297c30",
+      "fromPin": 0,
+      "to": "n32a7c30",
+      "toPin": 1
+    }
+  ]
+}}

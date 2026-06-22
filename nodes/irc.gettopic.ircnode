@@ -1,0 +1,77 @@
+{"typeId":"irc.gettopic","title":"Channel Topic","subtitle":"composite","icon":"clipboard","category":"Ircv3","description":"The current topic of a channel.","inputs":[{"name":"","kind":"Exec"},{"name":"channel","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"topic","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Channel Topic",
+  "nodes": [
+    {
+      "id": "n2847c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2857c27",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "channel"
+      }
+    },
+    {
+      "id": "n2867c27",
+      "type": "irc.channel",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "channel": "",
+        "field": "topic"
+      }
+    },
+    {
+      "id": "n2877c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "topic"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2857c27",
+      "fromPin": 0,
+      "to": "n2867c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2847c27",
+      "fromPin": 0,
+      "to": "n2877c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2867c27",
+      "fromPin": 0,
+      "to": "n2877c27",
+      "toPin": 1
+    }
+  ]
+}}

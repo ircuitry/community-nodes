@@ -1,0 +1,126 @@
+{"typeId":"parse.questions","title":"Extract Questions","subtitle":"composite","icon":"question","category":"Filter","description":"Pulls question sentences out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Questions",
+  "nodes": [
+    {
+      "id": "n2387c23",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2397c23",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n23a7c23",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "[A-Z][^.?!]*\\?",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n23b7c23",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "[A-Z][^.?!]*\\?",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n23c7c23",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n23d7c23",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2397c23",
+      "fromPin": 0,
+      "to": "n23a7c23",
+      "toPin": 0
+    },
+    {
+      "from": "n2397c23",
+      "fromPin": 0,
+      "to": "n23b7c23",
+      "toPin": 0
+    },
+    {
+      "from": "n2387c23",
+      "fromPin": 0,
+      "to": "n23c7c23",
+      "toPin": 0
+    },
+    {
+      "from": "n23a7c23",
+      "fromPin": 0,
+      "to": "n23c7c23",
+      "toPin": 1
+    },
+    {
+      "from": "n2387c23",
+      "fromPin": 0,
+      "to": "n23d7c23",
+      "toPin": 0
+    },
+    {
+      "from": "n23b7c23",
+      "fromPin": 0,
+      "to": "n23d7c23",
+      "toPin": 1
+    }
+  ]
+}}

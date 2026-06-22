@@ -1,0 +1,89 @@
+{"typeId":"web.catfact","title":"Cat Fact","subtitle":"composite","icon":"cat","category":"Action","description":"A random cat fact.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Cat Fact",
+  "nodes": [
+    {
+      "id": "n2ed7c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2ee7c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://catfact.ninja/fact",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2ef7c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "fact"
+      }
+    },
+    {
+      "id": "n2f07c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2ee7c2f",
+      "fromPin": 1,
+      "to": "n2ef7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2ed7c2f",
+      "fromPin": 0,
+      "to": "n2ee7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2ee7c2f",
+      "fromPin": 0,
+      "to": "n2f07c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2ef7c2f",
+      "fromPin": 0,
+      "to": "n2f07c2f",
+      "toPin": 1
+    }
+  ]
+}}

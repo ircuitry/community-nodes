@@ -1,0 +1,97 @@
+{"typeId":"logic.smaller","title":"Smaller Of Two","subtitle":"composite","icon":"arrow-fat-down","category":"Logic","description":"The smaller of two numbers.","inputs":[{"name":"","kind":"Exec"},{"name":"a","kind":"Text"},{"name":"b","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Smaller Of Two",
+  "nodes": [
+    {
+      "id": "n25d7c25",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n25e7c26",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "a"
+      }
+    },
+    {
+      "id": "n25f7c26",
+      "type": "flow.arg",
+      "x": -460,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "b"
+      }
+    },
+    {
+      "id": "n2607c26",
+      "type": "data.math",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "min",
+        "a": "0",
+        "b": "1"
+      }
+    },
+    {
+      "id": "n2617c26",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n25e7c26",
+      "fromPin": 0,
+      "to": "n2607c26",
+      "toPin": 0
+    },
+    {
+      "from": "n25f7c26",
+      "fromPin": 0,
+      "to": "n2607c26",
+      "toPin": 1
+    },
+    {
+      "from": "n25d7c25",
+      "fromPin": 0,
+      "to": "n2617c26",
+      "toPin": 0
+    },
+    {
+      "from": "n2607c26",
+      "fromPin": 0,
+      "to": "n2617c26",
+      "toPin": 1
+    }
+  ]
+}}

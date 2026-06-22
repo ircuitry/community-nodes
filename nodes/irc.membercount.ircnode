@@ -1,0 +1,77 @@
+{"typeId":"irc.membercount","title":"Member Count","subtitle":"composite","icon":"users-three","category":"Ircv3","description":"How many people are in a channel.","inputs":[{"name":"","kind":"Exec"},{"name":"channel","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Member Count",
+  "nodes": [
+    {
+      "id": "n28c7c28",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n28d7c28",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "channel"
+      }
+    },
+    {
+      "id": "n28e7c28",
+      "type": "irc.channel",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "channel": "",
+        "field": "count"
+      }
+    },
+    {
+      "id": "n28f7c28",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n28d7c28",
+      "fromPin": 0,
+      "to": "n28e7c28",
+      "toPin": 0
+    },
+    {
+      "from": "n28c7c28",
+      "fromPin": 0,
+      "to": "n28f7c28",
+      "toPin": 0
+    },
+    {
+      "from": "n28e7c28",
+      "fromPin": 0,
+      "to": "n28f7c28",
+      "toPin": 1
+    }
+  ]
+}}

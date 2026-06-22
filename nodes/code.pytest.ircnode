@@ -1,0 +1,66 @@
+{"typeId":"code.pytest","title":"Python: pytest","subtitle":"composite","icon":"test-tube","category":"Code","description":"Runs pytest.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Python: pytest",
+  "nodes": [
+    {
+      "id": "n2d47c2e",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2d57c2e",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "pytest -q",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2d67c2e",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2d47c2e",
+      "fromPin": 0,
+      "to": "n2d57c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2d57c2e",
+      "fromPin": 0,
+      "to": "n2d67c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2d57c2e",
+      "fromPin": 1,
+      "to": "n2d67c2e",
+      "toPin": 1
+    }
+  ]
+}}

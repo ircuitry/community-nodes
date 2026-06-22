@@ -1,0 +1,126 @@
+{"typeId":"parse.times","title":"Extract Times","subtitle":"composite","icon":"clock","category":"Filter","description":"Pulls HH:MM(:SS) times out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Times",
+  "nodes": [
+    {
+      "id": "n2087c1f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2097c1f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n20a7c1f",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\\b\\d{1,2}:\\d{2}(?::\\d{2})?\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n20b7c1f",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\\b\\d{1,2}:\\d{2}(?::\\d{2})?\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n20c7c1f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n20d7c1f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2097c1f",
+      "fromPin": 0,
+      "to": "n20a7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n2097c1f",
+      "fromPin": 0,
+      "to": "n20b7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n2087c1f",
+      "fromPin": 0,
+      "to": "n20c7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n20a7c1f",
+      "fromPin": 0,
+      "to": "n20c7c1f",
+      "toPin": 1
+    },
+    {
+      "from": "n2087c1f",
+      "fromPin": 0,
+      "to": "n20d7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n20b7c1f",
+      "fromPin": 0,
+      "to": "n20d7c1f",
+      "toPin": 1
+    }
+  ]
+}}

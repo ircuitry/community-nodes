@@ -1,0 +1,126 @@
+{"typeId":"parse.dates","title":"Extract Dates","subtitle":"composite","icon":"calendar","category":"Filter","description":"Pulls YYYY-MM-DD dates out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Dates",
+  "nodes": [
+    {
+      "id": "n20e7c1f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n20f7c1f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2107c1f",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\\b\\d{4}-\\d{2}-\\d{2}\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2117c1f",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\\b\\d{4}-\\d{2}-\\d{2}\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2127c1f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n2137c1f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n20f7c1f",
+      "fromPin": 0,
+      "to": "n2107c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n20f7c1f",
+      "fromPin": 0,
+      "to": "n2117c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n20e7c1f",
+      "fromPin": 0,
+      "to": "n2127c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n2107c1f",
+      "fromPin": 0,
+      "to": "n2127c1f",
+      "toPin": 1
+    },
+    {
+      "from": "n20e7c1f",
+      "fromPin": 0,
+      "to": "n2137c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n2117c1f",
+      "fromPin": 0,
+      "to": "n2137c1f",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,84 @@
+{"typeId":"store.set","title":"Save Value","subtitle":"composite","icon":"floppy-disk","category":"Storage","description":"Saves a value to the bot database under a key.","inputs":[{"name":"","kind":"Exec"},{"name":"value","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"saved","kind":"Text"}],"params":[{"key":"table","label":"Table","type":"Text","default":"main"},{"key":"key","label":"Key","type":"Text","default":"{nick}"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Save Value",
+  "nodes": [
+    {
+      "id": "n2a37c29",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2a47c29",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "value"
+      }
+    },
+    {
+      "id": "n2a57c29",
+      "type": "db.set",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "table": "{table}",
+        "key": "{key}",
+        "value": ""
+      }
+    },
+    {
+      "id": "n2a67c29",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "saved"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2a47c29",
+      "fromPin": 0,
+      "to": "n2a57c29",
+      "toPin": 1
+    },
+    {
+      "from": "n2a37c29",
+      "fromPin": 0,
+      "to": "n2a57c29",
+      "toPin": 0
+    },
+    {
+      "from": "n2a57c29",
+      "fromPin": 0,
+      "to": "n2a67c29",
+      "toPin": 0
+    },
+    {
+      "from": "n2a47c29",
+      "fromPin": 0,
+      "to": "n2a67c29",
+      "toPin": 1
+    }
+  ]
+}}

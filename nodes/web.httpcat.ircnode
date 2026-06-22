@@ -1,0 +1,76 @@
+{"typeId":"web.httpcat","title":"HTTP Status Cat","subtitle":"composite","icon":"cat","category":"Action","description":"An http.cat image URL for a status code.","inputs":[{"name":"","kind":"Exec"},{"name":"code","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "HTTP Status Cat",
+  "nodes": [
+    {
+      "id": "n3367c30",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3377c30",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "code"
+      }
+    },
+    {
+      "id": "n3387c30",
+      "type": "data.format",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://http.cat/{a}"
+      }
+    },
+    {
+      "id": "n3397c30",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "url"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n3377c30",
+      "fromPin": 0,
+      "to": "n3387c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3367c30",
+      "fromPin": 0,
+      "to": "n3397c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3387c30",
+      "fromPin": 0,
+      "to": "n3397c30",
+      "toPin": 1
+    }
+  ]
+}}

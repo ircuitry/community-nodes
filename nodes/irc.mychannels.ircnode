@@ -1,0 +1,57 @@
+{"typeId":"irc.mychannels","title":"My Channels","subtitle":"composite","icon":"list","category":"Ircv3","description":"The channels the bot is in.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"channels","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "My Channels",
+  "nodes": [
+    {
+      "id": "n2787c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2797c27",
+      "type": "irc.me",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "field": "channels"
+      }
+    },
+    {
+      "id": "n27a7c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "channels"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2787c27",
+      "fromPin": 0,
+      "to": "n27a7c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2797c27",
+      "fromPin": 0,
+      "to": "n27a7c27",
+      "toPin": 1
+    }
+  ]
+}}

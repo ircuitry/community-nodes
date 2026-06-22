@@ -1,0 +1,57 @@
+{"typeId":"irc.serverinfo","title":"Server ISUPPORT","subtitle":"composite","icon":"info","category":"Ircv3","description":"What the server advertises (ISUPPORT / 005).","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"isupport","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Server ISUPPORT",
+  "nodes": [
+    {
+      "id": "n27e7c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n27f7c27",
+      "type": "irc.me",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "field": "isupport"
+      }
+    },
+    {
+      "id": "n2807c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "isupport"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n27e7c27",
+      "fromPin": 0,
+      "to": "n2807c27",
+      "toPin": 0
+    },
+    {
+      "from": "n27f7c27",
+      "fromPin": 0,
+      "to": "n2807c27",
+      "toPin": 1
+    }
+  ]
+}}

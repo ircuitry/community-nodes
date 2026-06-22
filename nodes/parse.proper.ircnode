@@ -1,0 +1,126 @@
+{"typeId":"parse.proper","title":"Extract Proper Nouns","subtitle":"composite","icon":"text-aa","category":"Filter","description":"Pulls Capitalized words out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Proper Nouns",
+  "nodes": [
+    {
+      "id": "n2327c22",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2337c22",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2347c22",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\\b[A-Z][a-z]\u002B\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2357c22",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\\b[A-Z][a-z]\u002B\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2367c22",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n2377c22",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2337c22",
+      "fromPin": 0,
+      "to": "n2347c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2337c22",
+      "fromPin": 0,
+      "to": "n2357c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2327c22",
+      "fromPin": 0,
+      "to": "n2367c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2347c22",
+      "fromPin": 0,
+      "to": "n2367c22",
+      "toPin": 1
+    },
+    {
+      "from": "n2327c22",
+      "fromPin": 0,
+      "to": "n2377c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2357c22",
+      "fromPin": 0,
+      "to": "n2377c22",
+      "toPin": 1
+    }
+  ]
+}}

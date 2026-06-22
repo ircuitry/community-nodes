@@ -1,0 +1,126 @@
+{"typeId":"parse.mdlinks","title":"Extract Markdown Links","subtitle":"composite","icon":"link","category":"Filter","description":"Pulls [text](url) links out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Markdown Links",
+  "nodes": [
+    {
+      "id": "n21a7c1f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n21b7c1f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n21c7c1f",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\\[[^\\]]\u002B\\]\\([^)]\u002B\\)",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n21d7c1f",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\\[[^\\]]\u002B\\]\\([^)]\u002B\\)",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n21e7c1f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n21f7c1f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n21b7c1f",
+      "fromPin": 0,
+      "to": "n21c7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n21b7c1f",
+      "fromPin": 0,
+      "to": "n21d7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n21a7c1f",
+      "fromPin": 0,
+      "to": "n21e7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n21c7c1f",
+      "fromPin": 0,
+      "to": "n21e7c1f",
+      "toPin": 1
+    },
+    {
+      "from": "n21a7c1f",
+      "fromPin": 0,
+      "to": "n21f7c1f",
+      "toPin": 0
+    },
+    {
+      "from": "n21d7c1f",
+      "fromPin": 0,
+      "to": "n21f7c1f",
+      "toPin": 1
+    }
+  ]
+}}

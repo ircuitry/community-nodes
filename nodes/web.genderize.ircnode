@@ -1,0 +1,147 @@
+{"typeId":"web.genderize","title":"Guess Gender","subtitle":"composite","icon":"user","category":"Action","description":"Guesses gender from a name.","inputs":[{"name":"","kind":"Exec"},{"name":"name","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Guess Gender",
+  "nodes": [
+    {
+      "id": "n30f7c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3107c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n3117c2f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "name"
+      }
+    },
+    {
+      "id": "n3127c2f",
+      "type": "data.encode",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n3137c2f",
+      "type": "data.format",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://api.genderize.io?name={a}"
+      }
+    },
+    {
+      "id": "n3147c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "gender"
+      }
+    },
+    {
+      "id": "n3157c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n3117c2f",
+      "fromPin": 0,
+      "to": "n3127c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3127c2f",
+      "fromPin": 0,
+      "to": "n3137c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3137c2f",
+      "fromPin": 0,
+      "to": "n3107c2f",
+      "toPin": 1
+    },
+    {
+      "from": "n3107c2f",
+      "fromPin": 1,
+      "to": "n3147c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n30f7c2f",
+      "fromPin": 0,
+      "to": "n3107c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3107c2f",
+      "fromPin": 0,
+      "to": "n3157c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3147c2f",
+      "fromPin": 0,
+      "to": "n3157c2f",
+      "toPin": 1
+    }
+  ]
+}}

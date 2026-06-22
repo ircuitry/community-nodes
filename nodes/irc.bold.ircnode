@@ -1,0 +1,76 @@
+{"typeId":"irc.bold","title":"Bold Text","subtitle":"composite","icon":"text-b","category":"Ircv3","description":"Wraps text in IRC bold.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Bold Text",
+  "nodes": [
+    {
+      "id": "n2667c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2677c27",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2687c27",
+      "type": "irc.color",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "bold"
+      }
+    },
+    {
+      "id": "n2697c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2677c27",
+      "fromPin": 0,
+      "to": "n2687c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2667c27",
+      "fromPin": 0,
+      "to": "n2697c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2687c27",
+      "fromPin": 0,
+      "to": "n2697c27",
+      "toPin": 1
+    }
+  ]
+}}

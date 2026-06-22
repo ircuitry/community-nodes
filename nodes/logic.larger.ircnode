@@ -1,0 +1,97 @@
+{"typeId":"logic.larger","title":"Larger Of Two","subtitle":"composite","icon":"arrow-fat-up","category":"Logic","description":"The larger of two numbers.","inputs":[{"name":"","kind":"Exec"},{"name":"a","kind":"Text"},{"name":"b","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Larger Of Two",
+  "nodes": [
+    {
+      "id": "n2587c24",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2597c25",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "a"
+      }
+    },
+    {
+      "id": "n25a7c25",
+      "type": "flow.arg",
+      "x": -460,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "b"
+      }
+    },
+    {
+      "id": "n25b7c25",
+      "type": "data.math",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "max",
+        "a": "0",
+        "b": "1"
+      }
+    },
+    {
+      "id": "n25c7c25",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2597c25",
+      "fromPin": 0,
+      "to": "n25b7c25",
+      "toPin": 0
+    },
+    {
+      "from": "n25a7c25",
+      "fromPin": 0,
+      "to": "n25b7c25",
+      "toPin": 1
+    },
+    {
+      "from": "n2587c24",
+      "fromPin": 0,
+      "to": "n25c7c25",
+      "toPin": 0
+    },
+    {
+      "from": "n25b7c25",
+      "fromPin": 0,
+      "to": "n25c7c25",
+      "toPin": 1
+    }
+  ]
+}}

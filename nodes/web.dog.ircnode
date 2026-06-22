@@ -1,0 +1,89 @@
+{"typeId":"web.dog","title":"Random Dog","subtitle":"composite","icon":"dog","category":"Action","description":"A random dog photo URL.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Random Dog",
+  "nodes": [
+    {
+      "id": "n2e97c2e",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2ea7c2e",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://dog.ceo/api/breeds/image/random",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2eb7c2e",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "message"
+      }
+    },
+    {
+      "id": "n2ec7c2e",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2ea7c2e",
+      "fromPin": 1,
+      "to": "n2eb7c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2e97c2e",
+      "fromPin": 0,
+      "to": "n2ea7c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2ea7c2e",
+      "fromPin": 0,
+      "to": "n2ec7c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2eb7c2e",
+      "fromPin": 0,
+      "to": "n2ec7c2e",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,57 @@
+{"typeId":"irc.network","title":"Network Name","subtitle":"composite","icon":"globe-hemisphere-west","category":"Ircv3","description":"The network the bot is connected to.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"network","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Network Name",
+  "nodes": [
+    {
+      "id": "n2757c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2767c27",
+      "type": "irc.me",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "field": "network"
+      }
+    },
+    {
+      "id": "n2777c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "network"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2757c27",
+      "fromPin": 0,
+      "to": "n2777c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2767c27",
+      "fromPin": 0,
+      "to": "n2777c27",
+      "toPin": 1
+    }
+  ]
+}}

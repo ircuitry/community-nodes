@@ -1,0 +1,79 @@
+{"typeId":"check.numeric","title":"Is Numeric?","subtitle":"composite","icon":"hash","category":"Filter","description":"Echoes the number if the text is numeric, else blank.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Is Numeric?",
+  "nodes": [
+    {
+      "id": "n2507c24",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2517c24",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2527c24",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "first",
+        "pattern": "^-?\\d\u002B(?:\\.\\d\u002B)?$",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2537c24",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2517c24",
+      "fromPin": 0,
+      "to": "n2527c24",
+      "toPin": 0
+    },
+    {
+      "from": "n2507c24",
+      "fromPin": 0,
+      "to": "n2537c24",
+      "toPin": 0
+    },
+    {
+      "from": "n2527c24",
+      "fromPin": 0,
+      "to": "n2537c24",
+      "toPin": 1
+    }
+  ]
+}}

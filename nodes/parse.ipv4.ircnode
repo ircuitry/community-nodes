@@ -1,0 +1,126 @@
+{"typeId":"parse.ipv4","title":"Extract IP Addresses","subtitle":"composite","icon":"globe","category":"Filter","description":"Pulls IPv4 addresses out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract IP Addresses",
+  "nodes": [
+    {
+      "id": "n1fc7c1d",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n1fd7c1d",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n1fe7c1d",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n1ff7c1d",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2007c1d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n2017c1d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n1fd7c1d",
+      "fromPin": 0,
+      "to": "n1fe7c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n1fd7c1d",
+      "fromPin": 0,
+      "to": "n1ff7c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n1fc7c1d",
+      "fromPin": 0,
+      "to": "n2007c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n1fe7c1d",
+      "fromPin": 0,
+      "to": "n2007c1d",
+      "toPin": 1
+    },
+    {
+      "from": "n1fc7c1d",
+      "fromPin": 0,
+      "to": "n2017c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n1ff7c1d",
+      "fromPin": 0,
+      "to": "n2017c1d",
+      "toPin": 1
+    }
+  ]
+}}

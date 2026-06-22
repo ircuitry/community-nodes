@@ -1,0 +1,66 @@
+{"typeId":"code.git.branches","title":"Git: Branches","subtitle":"composite","icon":"git-branch","category":"Code","description":"All branches.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Git: Branches",
+  "nodes": [
+    {
+      "id": "n2c87c2c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2c97c2c",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "git branch -a",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2ca7c2c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2c87c2c",
+      "fromPin": 0,
+      "to": "n2c97c2c",
+      "toPin": 0
+    },
+    {
+      "from": "n2c97c2c",
+      "fromPin": 0,
+      "to": "n2ca7c2c",
+      "toPin": 0
+    },
+    {
+      "from": "n2c97c2c",
+      "fromPin": 1,
+      "to": "n2ca7c2c",
+      "toPin": 1
+    }
+  ]
+}}

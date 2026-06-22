@@ -1,0 +1,89 @@
+{"typeId":"web.quotable","title":"Random Quote","subtitle":"composite","icon":"quotes","category":"Action","description":"A random quote.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Random Quote",
+  "nodes": [
+    {
+      "id": "n3327c30",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3337c30",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://api.quotable.io/random",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n3347c30",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "content"
+      }
+    },
+    {
+      "id": "n3357c30",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n3337c30",
+      "fromPin": 1,
+      "to": "n3347c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3327c30",
+      "fromPin": 0,
+      "to": "n3337c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3337c30",
+      "fromPin": 0,
+      "to": "n3357c30",
+      "toPin": 0
+    },
+    {
+      "from": "n3347c30",
+      "fromPin": 0,
+      "to": "n3357c30",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,126 @@
+{"typeId":"parse.domains","title":"Extract Domains","subtitle":"composite","icon":"globe","category":"Filter","description":"Pulls bare domain names out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Domains",
+  "nodes": [
+    {
+      "id": "n22c7c22",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n22d7c22",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n22e7c22",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\\b[a-z0-9-]\u002B(?:\\.[a-z]{2,})\u002B\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n22f7c22",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\\b[a-z0-9-]\u002B(?:\\.[a-z]{2,})\u002B\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2307c22",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n2317c22",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n22d7c22",
+      "fromPin": 0,
+      "to": "n22e7c22",
+      "toPin": 0
+    },
+    {
+      "from": "n22d7c22",
+      "fromPin": 0,
+      "to": "n22f7c22",
+      "toPin": 0
+    },
+    {
+      "from": "n22c7c22",
+      "fromPin": 0,
+      "to": "n2307c22",
+      "toPin": 0
+    },
+    {
+      "from": "n22e7c22",
+      "fromPin": 0,
+      "to": "n2307c22",
+      "toPin": 1
+    },
+    {
+      "from": "n22c7c22",
+      "fromPin": 0,
+      "to": "n2317c22",
+      "toPin": 0
+    },
+    {
+      "from": "n22f7c22",
+      "fromPin": 0,
+      "to": "n2317c22",
+      "toPin": 1
+    }
+  ]
+}}

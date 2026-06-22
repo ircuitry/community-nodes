@@ -1,0 +1,66 @@
+{"typeId":"code.git.log","title":"Git: Recent Log","subtitle":"composite","icon":"git-commit","category":"Code","description":"The last 10 commits.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Git: Recent Log",
+  "nodes": [
+    {
+      "id": "n2c27c2c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2c37c2c",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "git log --oneline -10",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2c47c2c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2c27c2c",
+      "fromPin": 0,
+      "to": "n2c37c2c",
+      "toPin": 0
+    },
+    {
+      "from": "n2c37c2c",
+      "fromPin": 0,
+      "to": "n2c47c2c",
+      "toPin": 0
+    },
+    {
+      "from": "n2c37c2c",
+      "fromPin": 1,
+      "to": "n2c47c2c",
+      "toPin": 1
+    }
+  ]
+}}

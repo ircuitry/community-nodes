@@ -1,0 +1,79 @@
+{"typeId":"check.email","title":"Valid Email?","subtitle":"composite","icon":"envelope","category":"Filter","description":"Echoes the address if it\u0027s a valid email, else blank.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Valid Email?",
+  "nodes": [
+    {
+      "id": "n2447c24",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2457c24",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2467c24",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "first",
+        "pattern": "^[\\w.\u002B-]\u002B@[\\w-]\u002B\\.[\\w.-]\u002B$",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2477c24",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2457c24",
+      "fromPin": 0,
+      "to": "n2467c24",
+      "toPin": 0
+    },
+    {
+      "from": "n2447c24",
+      "fromPin": 0,
+      "to": "n2477c24",
+      "toPin": 0
+    },
+    {
+      "from": "n2467c24",
+      "fromPin": 0,
+      "to": "n2477c24",
+      "toPin": 1
+    }
+  ]
+}}

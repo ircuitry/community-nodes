@@ -1,0 +1,57 @@
+{"typeId":"irc.mycaps","title":"Enabled Caps","subtitle":"composite","icon":"plugs-connected","category":"Ircv3","description":"The IRCv3 capabilities in use.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"caps","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Enabled Caps",
+  "nodes": [
+    {
+      "id": "n27b7c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n27c7c27",
+      "type": "irc.me",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "field": "caps"
+      }
+    },
+    {
+      "id": "n27d7c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "caps"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n27b7c27",
+      "fromPin": 0,
+      "to": "n27d7c27",
+      "toPin": 0
+    },
+    {
+      "from": "n27c7c27",
+      "fromPin": 0,
+      "to": "n27d7c27",
+      "toPin": 1
+    }
+  ]
+}}

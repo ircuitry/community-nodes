@@ -1,0 +1,64 @@
+{"typeId":"store.leaderboard","title":"Leaderboard","subtitle":"composite","icon":"trophy","category":"Storage","description":"Top 10 by numeric value from a key/value table (edit the SQL for your schema).","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[{"key":"file","label":"File","type":"Text","default":"data.sqlite"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Leaderboard",
+  "nodes": [
+    {
+      "id": "n2bc7c2a",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2bd7c2b",
+      "type": "db.sql",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "file": "{file}",
+        "sql": "SELECT key, value FROM main ORDER BY CAST(value AS INTEGER) DESC LIMIT 10;"
+      }
+    },
+    {
+      "id": "n2be7c2b",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2bc7c2a",
+      "fromPin": 0,
+      "to": "n2bd7c2b",
+      "toPin": 0
+    },
+    {
+      "from": "n2bd7c2b",
+      "fromPin": 0,
+      "to": "n2be7c2b",
+      "toPin": 0
+    },
+    {
+      "from": "n2bd7c2b",
+      "fromPin": 1,
+      "to": "n2be7c2b",
+      "toPin": 1
+    }
+  ]
+}}

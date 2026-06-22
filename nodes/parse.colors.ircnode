@@ -1,0 +1,126 @@
+{"typeId":"parse.colors","title":"Extract Hex Colors","subtitle":"composite","icon":"palette","category":"Filter","description":"Pulls #hex colours out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Hex Colors",
+  "nodes": [
+    {
+      "id": "n2027c1d",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2037c1d",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2047c1d",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "#[0-9a-fA-F]{6}\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2057c1d",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "#[0-9a-fA-F]{6}\\b",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2067c1d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n2077c1d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2037c1d",
+      "fromPin": 0,
+      "to": "n2047c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n2037c1d",
+      "fromPin": 0,
+      "to": "n2057c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n2027c1d",
+      "fromPin": 0,
+      "to": "n2067c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n2047c1d",
+      "fromPin": 0,
+      "to": "n2067c1d",
+      "toPin": 1
+    },
+    {
+      "from": "n2027c1d",
+      "fromPin": 0,
+      "to": "n2077c1d",
+      "toPin": 0
+    },
+    {
+      "from": "n2057c1d",
+      "fromPin": 0,
+      "to": "n2077c1d",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,57 @@
+{"typeId":"web.catimg","title":"Random Cat Image","subtitle":"composite","icon":"cat","category":"Action","description":"A random cat image URL (cataas.com).","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"url","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Random Cat Image",
+  "nodes": [
+    {
+      "id": "n33a7c30",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n33b7c30",
+      "type": "data.format",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://cataas.com/cat"
+      }
+    },
+    {
+      "id": "n33c7c30",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "url"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n33a7c30",
+      "fromPin": 0,
+      "to": "n33c7c30",
+      "toPin": 0
+    },
+    {
+      "from": "n33b7c30",
+      "fromPin": 0,
+      "to": "n33c7c30",
+      "toPin": 1
+    }
+  ]
+}}

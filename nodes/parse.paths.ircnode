@@ -1,0 +1,126 @@
+{"typeId":"parse.paths","title":"Extract File Paths","subtitle":"composite","icon":"folder","category":"Filter","description":"Pulls /unix/style paths out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract File Paths",
+  "nodes": [
+    {
+      "id": "n2267c22",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2277c22",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2287c22",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "(?:/[\\w.-]\u002B)\u002B",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2297c22",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "(?:/[\\w.-]\u002B)\u002B",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n22a7c22",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n22b7c22",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2277c22",
+      "fromPin": 0,
+      "to": "n2287c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2277c22",
+      "fromPin": 0,
+      "to": "n2297c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2267c22",
+      "fromPin": 0,
+      "to": "n22a7c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2287c22",
+      "fromPin": 0,
+      "to": "n22a7c22",
+      "toPin": 1
+    },
+    {
+      "from": "n2267c22",
+      "fromPin": 0,
+      "to": "n22b7c22",
+      "toPin": 0
+    },
+    {
+      "from": "n2297c22",
+      "fromPin": 0,
+      "to": "n22b7c22",
+      "toPin": 1
+    }
+  ]
+}}

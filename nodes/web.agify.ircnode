@@ -1,0 +1,147 @@
+{"typeId":"web.agify","title":"Guess Age","subtitle":"composite","icon":"cake","category":"Action","description":"Guesses someone\u0027s age from their name.","inputs":[{"name":"","kind":"Exec"},{"name":"name","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Guess Age",
+  "nodes": [
+    {
+      "id": "n3087c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3097c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n30a7c2f",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "name"
+      }
+    },
+    {
+      "id": "n30b7c2f",
+      "type": "data.encode",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "url",
+        "mode": "encode"
+      }
+    },
+    {
+      "id": "n30c7c2f",
+      "type": "data.format",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "template": "https://api.agify.io?name={a}"
+      }
+    },
+    {
+      "id": "n30d7c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": 150,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "age"
+      }
+    },
+    {
+      "id": "n30e7c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n30a7c2f",
+      "fromPin": 0,
+      "to": "n30b7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n30b7c2f",
+      "fromPin": 0,
+      "to": "n30c7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n30c7c2f",
+      "fromPin": 0,
+      "to": "n3097c2f",
+      "toPin": 1
+    },
+    {
+      "from": "n3097c2f",
+      "fromPin": 1,
+      "to": "n30d7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3087c2f",
+      "fromPin": 0,
+      "to": "n3097c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3097c2f",
+      "fromPin": 0,
+      "to": "n30e7c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n30d7c2f",
+      "fromPin": 0,
+      "to": "n30e7c2f",
+      "toPin": 1
+    }
+  ]
+}}

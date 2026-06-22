@@ -1,0 +1,70 @@
+{"typeId":"web.numtrivia","title":"Number Trivia","subtitle":"composite","icon":"hash","category":"Action","description":"A trivia fact about a random number.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Number Trivia",
+  "nodes": [
+    {
+      "id": "n3057c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n3067c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "http://numbersapi.com/random/trivia",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n3077c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n3057c2f",
+      "fromPin": 0,
+      "to": "n3067c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3067c2f",
+      "fromPin": 0,
+      "to": "n3077c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n3067c2f",
+      "fromPin": 1,
+      "to": "n3077c2f",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,89 @@
+{"typeId":"web.kanye","title":"Kanye Quote","subtitle":"composite","icon":"quotes","category":"Action","description":"A random Kanye West quote.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Kanye Quote",
+  "nodes": [
+    {
+      "id": "n2f57c2f",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2f67c2f",
+      "type": "net.http",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "method": "GET",
+        "url": "https://api.kanye.rest",
+        "send": "body",
+        "field": "file",
+        "file": "",
+        "headers": "",
+        "body": "",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2f77c2f",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "quote"
+      }
+    },
+    {
+      "id": "n2f87c2f",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2f67c2f",
+      "fromPin": 1,
+      "to": "n2f77c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2f57c2f",
+      "fromPin": 0,
+      "to": "n2f67c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2f67c2f",
+      "fromPin": 0,
+      "to": "n2f87c2f",
+      "toPin": 0
+    },
+    {
+      "from": "n2f77c2f",
+      "fromPin": 0,
+      "to": "n2f87c2f",
+      "toPin": 1
+    }
+  ]
+}}

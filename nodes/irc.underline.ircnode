@@ -1,0 +1,76 @@
+{"typeId":"irc.underline","title":"Underline Text","subtitle":"composite","icon":"text-underline","category":"Ircv3","description":"Wraps text in IRC underline.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Underline Text",
+  "nodes": [
+    {
+      "id": "n26e7c27",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n26f7c27",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2707c27",
+      "type": "irc.color",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "underline"
+      }
+    },
+    {
+      "id": "n2717c27",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n26f7c27",
+      "fromPin": 0,
+      "to": "n2707c27",
+      "toPin": 0
+    },
+    {
+      "from": "n26e7c27",
+      "fromPin": 0,
+      "to": "n2717c27",
+      "toPin": 0
+    },
+    {
+      "from": "n2707c27",
+      "fromPin": 0,
+      "to": "n2717c27",
+      "toPin": 1
+    }
+  ]
+}}

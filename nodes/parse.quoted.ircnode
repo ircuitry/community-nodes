@@ -1,0 +1,126 @@
+{"typeId":"parse.quoted","title":"Extract Quoted Text","subtitle":"composite","icon":"quotes","category":"Filter","description":"Pulls \u0022quoted\u0022 strings out of text.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"},{"name":"count","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Extract Quoted Text",
+  "nodes": [
+    {
+      "id": "n23e7c23",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n23f7c23",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2407c23",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "all",
+        "pattern": "\u0022[^\u0022]\u002B\u0022",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2417c23",
+      "type": "data.regex",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "count",
+        "pattern": "\u0022[^\u0022]\u002B\u0022",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2427c23",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    },
+    {
+      "id": "n2437c23",
+      "type": "flow.return",
+      "x": 320,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "count"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n23f7c23",
+      "fromPin": 0,
+      "to": "n2407c23",
+      "toPin": 0
+    },
+    {
+      "from": "n23f7c23",
+      "fromPin": 0,
+      "to": "n2417c23",
+      "toPin": 0
+    },
+    {
+      "from": "n23e7c23",
+      "fromPin": 0,
+      "to": "n2427c23",
+      "toPin": 0
+    },
+    {
+      "from": "n2407c23",
+      "fromPin": 0,
+      "to": "n2427c23",
+      "toPin": 1
+    },
+    {
+      "from": "n23e7c23",
+      "fromPin": 0,
+      "to": "n2437c23",
+      "toPin": 0
+    },
+    {
+      "from": "n2417c23",
+      "fromPin": 0,
+      "to": "n2437c23",
+      "toPin": 1
+    }
+  ]
+}}

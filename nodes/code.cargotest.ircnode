@@ -1,0 +1,66 @@
+{"typeId":"code.cargotest","title":"Rust: cargo test","subtitle":"composite","icon":"test-tube","category":"Code","description":"Runs cargo test.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Rust: cargo test",
+  "nodes": [
+    {
+      "id": "n2da7c2e",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2db7c2e",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "cargo test",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2dc7c2e",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2da7c2e",
+      "fromPin": 0,
+      "to": "n2db7c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2db7c2e",
+      "fromPin": 0,
+      "to": "n2dc7c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2db7c2e",
+      "fromPin": 1,
+      "to": "n2dc7c2e",
+      "toPin": 1
+    }
+  ]
+}}

@@ -1,0 +1,133 @@
+{"typeId":"zim.wiki","title":"Offline Wiki","subtitle":"composite","icon":"books","category":"Storage","description":"Looks a topic up in an offline .zim archive (Kiwix / offline Wikipedia): searches article titles, opens the best match, and returns its text. Set the .zim file\u0027s path on the node and wire a !wiki command into \u0027topic\u0027.","inputs":[{"name":"","kind":"Exec"},{"name":"topic","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"article","kind":"Text"}],"params":[{"key":"path","label":"Path","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Offline Wiki",
+  "nodes": [
+    {
+      "id": "n1f67c1c",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n1f77c1c",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "topic"
+      }
+    },
+    {
+      "id": "n1f87c1c",
+      "type": "zim.search",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "search_wiki",
+        "path": "{path}",
+        "count": "1",
+        "query": ""
+      }
+    },
+    {
+      "id": "n1f97c1c",
+      "type": "data.json",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "path": "0.title"
+      }
+    },
+    {
+      "id": "n1fa7c1c",
+      "type": "zim.article",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "read_article",
+        "path": "{path}",
+        "html": "false",
+        "maxChars": "4000",
+        "title": ""
+      }
+    },
+    {
+      "id": "n1fb7c1c",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "article"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n1f77c1c",
+      "fromPin": 0,
+      "to": "n1f87c1c",
+      "toPin": 1
+    },
+    {
+      "from": "n1f87c1c",
+      "fromPin": 1,
+      "to": "n1f97c1c",
+      "toPin": 0
+    },
+    {
+      "from": "n1f97c1c",
+      "fromPin": 0,
+      "to": "n1fa7c1c",
+      "toPin": 1
+    },
+    {
+      "from": "n1f67c1c",
+      "fromPin": 0,
+      "to": "n1f87c1c",
+      "toPin": 0
+    },
+    {
+      "from": "n1f87c1c",
+      "fromPin": 0,
+      "to": "n1fa7c1c",
+      "toPin": 0
+    },
+    {
+      "from": "n1fa7c1c",
+      "fromPin": 0,
+      "to": "n1fb7c1c",
+      "toPin": 0
+    },
+    {
+      "from": "n1fa7c1c",
+      "fromPin": 2,
+      "to": "n1fb7c1c",
+      "toPin": 1
+    }
+  ]
+}}

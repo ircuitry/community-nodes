@@ -1,0 +1,66 @@
+{"typeId":"code.todos","title":"Find TODOs","subtitle":"composite","icon":"check-square","category":"Code","description":"Greps the codebase for TODO / FIXME / HACK.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Find TODOs",
+  "nodes": [
+    {
+      "id": "n2e07c2e",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2e17c2e",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "grep -rn -E \u0027TODO|FIXME|HACK\u0027 . | head -50",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2e27c2e",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2e07c2e",
+      "fromPin": 0,
+      "to": "n2e17c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2e17c2e",
+      "fromPin": 0,
+      "to": "n2e27c2e",
+      "toPin": 0
+    },
+    {
+      "from": "n2e17c2e",
+      "fromPin": 1,
+      "to": "n2e27c2e",
+      "toPin": 1
+    }
+  ]
+}}

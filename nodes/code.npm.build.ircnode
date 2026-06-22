@@ -1,0 +1,66 @@
+{"typeId":"code.npm.build","title":"npm: Build","subtitle":"composite","icon":"hammer","category":"Code","description":"Runs the npm build script.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"output","kind":"Text"}],"params":[{"key":"root","label":"Root","type":"Text","default":""}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "npm: Build",
+  "nodes": [
+    {
+      "id": "n2d17c2d",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2d27c2d",
+      "type": "code.shell",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "run_command",
+        "root": "{root}",
+        "command": "npm run build",
+        "timeout": "30"
+      }
+    },
+    {
+      "id": "n2d37c2d",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "output"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2d17c2d",
+      "fromPin": 0,
+      "to": "n2d27c2d",
+      "toPin": 0
+    },
+    {
+      "from": "n2d27c2d",
+      "fromPin": 0,
+      "to": "n2d37c2d",
+      "toPin": 0
+    },
+    {
+      "from": "n2d27c2d",
+      "fromPin": 1,
+      "to": "n2d37c2d",
+      "toPin": 1
+    }
+  ]
+}}

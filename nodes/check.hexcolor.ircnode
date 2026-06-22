@@ -1,0 +1,79 @@
+{"typeId":"check.hexcolor","title":"Valid Hex Color?","subtitle":"composite","icon":"palette","category":"Filter","description":"Echoes the colour if it\u0027s a valid #hex, else blank.","inputs":[{"name":"","kind":"Exec"},{"name":"text","kind":"Text"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"result","kind":"Text"}],"params":[],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Valid Hex Color?",
+  "nodes": [
+    {
+      "id": "n2547c24",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2557c24",
+      "type": "flow.arg",
+      "x": -460,
+      "y": -40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "text"
+      }
+    },
+    {
+      "id": "n2567c24",
+      "type": "data.regex",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "first",
+        "pattern": "^#?[0-9a-fA-F]{6}$",
+        "replace": "",
+        "flags": ""
+      }
+    },
+    {
+      "id": "n2577c24",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "result"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2557c24",
+      "fromPin": 0,
+      "to": "n2567c24",
+      "toPin": 0
+    },
+    {
+      "from": "n2547c24",
+      "fromPin": 0,
+      "to": "n2577c24",
+      "toPin": 0
+    },
+    {
+      "from": "n2567c24",
+      "fromPin": 0,
+      "to": "n2577c24",
+      "toPin": 1
+    }
+  ]
+}}

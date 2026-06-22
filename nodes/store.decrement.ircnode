@@ -1,0 +1,109 @@
+{"typeId":"store.decrement","title":"Decrement Counter","subtitle":"composite","icon":"minus-circle","category":"Storage","description":"Subtracts one from a numeric counter and saves it.","inputs":[{"name":"","kind":"Exec"}],"outputs":[{"name":"then","kind":"Exec"},{"name":"value","kind":"Text"}],"params":[{"key":"table","label":"Table","type":"Text","default":"main"},{"key":"key","label":"Key","type":"Text","default":"{nick}"}],"subgraph":{
+  "format": "ircuitry.workflow.v1",
+  "name": "Decrement Counter",
+  "nodes": [
+    {
+      "id": "n2ac7c29",
+      "type": "flow.in",
+      "x": -460,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {}
+    },
+    {
+      "id": "n2ad7c29",
+      "type": "db.get",
+      "x": -120,
+      "y": -180,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "table": "{table}",
+        "mode": "value",
+        "key": "{key}",
+        "default": "0",
+        "find": ""
+      }
+    },
+    {
+      "id": "n2ae7c2a",
+      "type": "data.math",
+      "x": -120,
+      "y": -70,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "op": "-",
+        "a": "0",
+        "b": "1"
+      }
+    },
+    {
+      "id": "n2af7c2a",
+      "type": "db.set",
+      "x": -120,
+      "y": 40,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "table": "{table}",
+        "key": "{key}",
+        "value": ""
+      }
+    },
+    {
+      "id": "n2b07c2a",
+      "type": "flow.return",
+      "x": 320,
+      "y": -160,
+      "muted": false,
+      "streamAsTool": false,
+      "title": "",
+      "colorTag": -1,
+      "params": {
+        "name": "value"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "n2ad7c29",
+      "fromPin": 0,
+      "to": "n2ae7c2a",
+      "toPin": 0
+    },
+    {
+      "from": "n2ae7c2a",
+      "fromPin": 0,
+      "to": "n2af7c2a",
+      "toPin": 1
+    },
+    {
+      "from": "n2ac7c29",
+      "fromPin": 0,
+      "to": "n2af7c2a",
+      "toPin": 0
+    },
+    {
+      "from": "n2af7c2a",
+      "fromPin": 0,
+      "to": "n2b07c2a",
+      "toPin": 0
+    },
+    {
+      "from": "n2ae7c2a",
+      "fromPin": 0,
+      "to": "n2b07c2a",
+      "toPin": 1
+    }
+  ]
+}}
